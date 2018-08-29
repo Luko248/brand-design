@@ -1,0 +1,13 @@
+﻿@import "../Base/global";
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 5rem 0;
+
+    @include res-max-tablet {
+        width: 100%;
+        padding: 3rem 2rem;
+    }
+}

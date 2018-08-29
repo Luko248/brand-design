@@ -1,0 +1,54 @@
+﻿@import "../Base/global";
+
+.slider {
+   height: 40rem;
+   width: 100%;
+    background-color: $color-bg;
+
+    .slick-list, .slick-track {
+        height: 100%;
+    }
+
+    .slide-item {
+        background-color: $color-bg;
+        background-image: url('../Images/Backgrounds/slider-home-1.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        opacity: .9;
+
+        &.second {
+            background-image: url('../Images/Backgrounds/slider-home-2.jpg');
+        }
+
+        &.third {
+            background-image: url('../Images/Backgrounds/slider-home-3.jpg');
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        h3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            text-transform: uppercase;
+            color: $color-white;
+            font-size: $font-size-title;
+            opacity: 0;
+            font-family: $title-font;
+        }
+
+        &.slick-active h3 {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            transition: all 1s;
+            transition-delay: .5s;
+            letter-spacing: 5px;
+            font-weight: 300;
+        }
+    }
+}

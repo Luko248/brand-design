@@ -1,0 +1,33 @@
+﻿@import "../Base/global";
+
+.grid {
+    &-container {
+        display: grid;
+        grid-template-rows: 50vh 5rem auto 10rem ;
+        height: 100%;
+
+        > * {
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: $font-size-lg;
+        }
+    }
+
+    &-header {
+        &__landing {
+            padding: 0;
+        }
+    }
+
+    &-nav {
+        padding: 0 2rem;
+    }
+
+    &-body {
+        background-color: pink;
+    }
+
+    &-footer {
+        background-color: yellow;
+    }
+}

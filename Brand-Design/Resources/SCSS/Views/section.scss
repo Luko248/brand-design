@@ -1,0 +1,21 @@
+﻿@import "../Base/global";
+
+.section {
+    &-header {
+        background-color: $color-bg;
+    }
+
+    &-about {
+        background-color: $color-bg;
+    }
+
+    &-references {
+    }
+
+    &-contact {
+    }
+
+    &-title {
+        color: $color-white;
+    }
+}

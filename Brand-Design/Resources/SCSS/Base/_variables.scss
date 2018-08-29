@@ -1,0 +1,50 @@
+﻿// To get all mixins in other *.scss file use: @import "/Base/global";
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-primary: #a815d7;
+$color-secondary: #01ffa9;
+$color-error: #d91313;
+$color-font: $color-black;
+$color-outline: lighten($color-primary, 20%);
+$color-background: #fcfcfc;
+$color-navigation: #f6f2f2;
+$color-border: #757575;
+$color-bg: #170f24;
+$color-transparent: rgba(0, 0, 0, 0);
+
+
+$font-awesome: 'fontawesome';
+$font-header-h1: 'Anja';
+$font-subheader-h2: 'Anja';
+$font-subheader-h3: 'Anja';
+$font-text: 'Open Sans', sans-serif;
+$title-font: 'Anja';
+
+// Helpfull variables
+$outline-width: 1px;
+$transition-time: .3s;
+$animate-all: all $transition-time;
+
+// All devices width for responsivity
+$width-mobile: 480px;
+$width-tablet: 768px;
+$width-desktop: 980px;
+$width-desktop-large: 1200px;
+
+//font-sizes
+$font-size-title: 3rem;
+$font-size-normal: 1.6rem;
+$font-size-lg: 2rem;
+$radius: .3rem;
+
+@font-face {
+    font-family: 'IndieFlower';
+    src: url('/Resources/fonts/IndieFlower.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'fontawesome';
+    src: url('/Resources/fonts/fontAwesome/fontawesome-webfont.ttf') format('truetype'), url('/Resources/fonts/fontAwesome/fontawesome-webfont.woff') format('woff'), url('/Resources/fonts/fontAwesome/fontawesome-webfont.woff2') format('woff2');
+}

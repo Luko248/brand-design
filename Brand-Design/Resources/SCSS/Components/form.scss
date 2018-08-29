@@ -1,0 +1,55 @@
+﻿@import "../Base/global";
+
+.form {
+    width: 60rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include res-max-tablet {
+        width: 40rem;
+    }
+
+    @include res-max-mobile {
+        width: 100%;
+    }
+
+    > div {
+        flex: 0 0 49%;
+        max-width: 49%;
+        width: 49%;
+        margin-bottom: 2rem;
+
+        @include res-max-tablet {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.full {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    &-input {
+        width: 100%;
+        padding: .5rem;
+        height: 4rem;
+        box-sizing: border-box;
+
+        &__textarea {
+            min-height: 15rem;
+            max-height: 30rem;
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+}

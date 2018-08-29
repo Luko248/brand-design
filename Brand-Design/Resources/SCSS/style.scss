@@ -1,0 +1,24 @@
+﻿//External
+@import "External/slick";
+@import "External/slick-theme";
+
+// Base 
+@import "Base/default.scss";
+@import "Base/shared-classes.scss";
+
+// Components
+@import "Components/burger-button";
+@import "Components/buttons.scss";
+@import "Components/container.scss";
+@import "Components/form";
+@import "Components/slider";
+@import "Components/typography.scss";
+
+// Modules
+@import "Modules/navigation.scss";
+@import "Modules/header.scss";
+@import "Modules/footer.scss";
+@import "Modules/grid-layout";
+
+//Views
+@import "Views/section";
