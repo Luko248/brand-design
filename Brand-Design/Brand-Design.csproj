@@ -83,6 +83,8 @@
     <Content Include="Resources\JS\jQuery\jquery-3.3.1.min.js" />
     <Content Include="Resources\JS\Slick\slick.js" />
     <Content Include="Resources\JS\Slick\slick.min.js" />
+    <Content Include="Resources\postcss-image-set.js" />
+    <Content Include="Resources\postcss.config.js" />
     <Content Include="Resources\SCSS\External\slick-theme.css" />
     <Content Include="Resources\SCSS\External\slick-theme.min.css" />
     <Content Include="Resources\SCSS\External\slick.css" />
@@ -93,6 +95,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
     <None Include="packages.config" />
     <Content Include="Resources\Fonts\Anja\Anja.ttf" />
     <Content Include="Resources\Fonts\Slick\slick.eot" />
@@ -121,6 +125,7 @@
     <Content Include="Resources\SCSS\Modules\navigation.scss" />
     <Content Include="Resources\SCSS\style.scss" />
     <Content Include="Resources\SCSS\Views\section.scss" />
+    <Content Include="Resources\tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
