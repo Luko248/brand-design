@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,8 +70,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="Resources\CSS\style.css" />
-    <Content Include="Resources\CSS\style.min.css" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
     <Content Include="Resources\Images\Backgrounds\main-bg.png" />
     <Content Include="Resources\Images\Backgrounds\night-sky.gif" />
@@ -78,17 +78,15 @@
     <Content Include="Resources\Images\Backgrounds\slider-home-3.jpg" />
     <Content Include="Resources\Images\Icons\rocket.svg" />
     <Content Include="Resources\Images\Logos\big-logo.svg" />
-    <Content Include="Resources\JS\Init.js" />
-    <Content Include="Resources\JS\Init.min.js" />
-    <Content Include="Resources\JS\jQuery\jquery-3.3.1.min.js" />
-    <Content Include="Resources\JS\Slick\slick.js" />
-    <Content Include="Resources\JS\Slick\slick.min.js" />
+    <Content Include="Resources\Scripts\Libs\jQuery\jquery-3.3.1.min.js" />
+    <Content Include="Resources\Scripts\Libs\Slick\slick.js" />
+    <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
-    <Content Include="Resources\SCSS\External\slick-theme.css" />
-    <Content Include="Resources\SCSS\External\slick-theme.min.css" />
-    <Content Include="Resources\SCSS\External\slick.css" />
-    <Content Include="Resources\SCSS\External\slick.min.css" />
+    <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.css" />
+    <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.min.css" />
+    <Content Include="Resources\Stylesheets\SCSS\External\slick.css" />
+    <Content Include="Resources\Stylesheets\SCSS\External\slick.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,29 +100,29 @@
     <Content Include="Resources\Fonts\Slick\slick.eot" />
     <Content Include="Resources\Fonts\Slick\slick.ttf" />
     <Content Include="Resources\Fonts\Slick\slick.woff" />
-    <Content Include="Resources\SCSS\Base\default.scss" />
-    <Content Include="Resources\SCSS\Base\Mixins\_grid-flex.scss" />
-    <Content Include="Resources\SCSS\Base\Mixins\_responsive.scss" />
-    <Content Include="Resources\SCSS\Base\shared-classes.scss" />
-    <Content Include="Resources\SCSS\Base\_fonts.scss" />
-    <Content Include="Resources\SCSS\Base\_functions.scss" />
-    <Content Include="Resources\SCSS\Base\_global.scss" />
-    <Content Include="Resources\SCSS\Base\_mixins.scss" />
-    <Content Include="Resources\SCSS\Base\_variables.scss" />
-    <Content Include="Resources\SCSS\Components\burger-button.scss" />
-    <Content Include="Resources\SCSS\Components\buttons.scss" />
-    <Content Include="Resources\SCSS\Components\container.scss" />
-    <Content Include="Resources\SCSS\Components\form.scss" />
-    <Content Include="Resources\SCSS\Components\slider.scss" />
-    <Content Include="Resources\SCSS\Components\typography.scss" />
-    <Content Include="Resources\SCSS\External\slick-theme.scss" />
-    <Content Include="Resources\SCSS\External\slick.scss" />
-    <Content Include="Resources\SCSS\Modules\footer.scss" />
-    <Content Include="Resources\SCSS\Modules\grid-layout.scss" />
-    <Content Include="Resources\SCSS\Modules\header.scss" />
-    <Content Include="Resources\SCSS\Modules\navigation.scss" />
-    <Content Include="Resources\SCSS\style.scss" />
-    <Content Include="Resources\SCSS\Views\section.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\default.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\Mixins\_grid-flex.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\Mixins\_responsive.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\shared-classes.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\_fonts.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\_functions.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\_global.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\_mixins.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\_variables.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\burger-button.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\buttons.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\container.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\form.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\slider.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\typography.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\External\slick.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Modules\footer.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Modules\grid-layout.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Modules\header.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Modules\navigation.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\style.scss" />
+    <Content Include="Resources\Stylesheets\Views\section.scss" />
     <Content Include="Resources\tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -136,12 +134,21 @@
   <ItemGroup>
     <Folder Include="Resources\Images\Faicons\" />
     <Folder Include="Resources\Images\Referencies\" />
+    <Folder Include="Resources\Stylesheets\CSS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
