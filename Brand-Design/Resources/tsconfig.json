@@ -1,6 +1,6 @@
 ﻿{
   "compilerOptions": {
-    "outFile": "../wwwroot/js/app.js",
+    "outFile": "../Resources/Scripts/JS/app.js",
     "lib": [ "dom", "es5", "es2015.core", "es2015.promise" ],
     "strictNullChecks": false,
     "noEmitOnError": true,
@@ -9,8 +9,8 @@
     "sourceMap": true,
     "target": "es5"
   },
-  "compileOnSave": false,
+  "compileOnSave": true,
   "exclude": [
-    "_Scripts/typings"
+    "Scripts/typings"
   ]
 }

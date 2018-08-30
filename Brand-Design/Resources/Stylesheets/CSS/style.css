@@ -1,0 +1,1062 @@
+/*@import "External/slick";
+@import "External/slick-theme";*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box !important; }
+
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #000;
+  margin: 0;
+  background-color: #170f24;
+  overflow-x: hidden !important;
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.element-to-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.text-strong {
+  font-weight: bold; }
+
+.text-to-center {
+  text-align: center !important; }
+
+.text-to-left {
+  text-align: left !important; }
+
+.text-to-right {
+  text-align: right !important; }
+
+.text-justify {
+  text-align: justify !important; }
+
+.nav-item-center {
+  white-space: nowrap; }
+  @media only screen and (min-width: 769px) {
+    .nav-item-center {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); } }
+
+.nav-item-right {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translate(0, -50%); }
+  @media only screen and (max-width: 768px) {
+    .nav-item-right {
+      position: relative;
+      top: unset;
+      right: unset;
+      transform: translate(0, 0);
+      margin-bottom: 2rem; } }
+
+.nav-item-left {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%); }
+  @media only screen and (max-width: 768px) {
+    .nav-item-left {
+      position: relative;
+      top: unset;
+      right: unset;
+      transform: translate(0, 0);
+      margin-bottom: 2rem; } }
+
+.clean-button {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  display: inline-block !important;
+  float: none !important; }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.burger-button {
+  position: relative;
+  width: 3.5rem;
+  height: 3rem;
+  border: 0.1rem solid #000;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: none; }
+  @media only screen and (max-width: 768px) {
+    .burger-button {
+      display: block; } }
+  .burger-button > div {
+    background-color: #000;
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: .2rem;
+    border-radius: .1rem; }
+  .burger-button:before, .burger-button:after {
+    display: block;
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    background-color: #000;
+    content: "";
+    transition: all 0.3s;
+    height: .2rem;
+    border-radius: .1rem; }
+  .burger-button:before {
+    top: .3rem;
+    transform: translate(-50%, 150%) rotate(0); }
+  .burger-button:after {
+    bottom: .3rem;
+    transform: translate(-50%, -150%) rotate(0); }
+  .burger-button.open:before {
+    width: 50%;
+    transform: translate(-20%, 325%) rotate(25deg); }
+  .burger-button.open:after {
+    width: 50%;
+    transform: translate(-20%, -325%) rotate(-25deg); }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  padding: .4rem .8rem;
+  border: 0.1rem solid #a815d7;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 0.3rem; }
+  .button.send {
+    margin: 0 auto;
+    display: block;
+    width: 18rem;
+    text-transform: uppercase;
+    padding: .8rem; }
+    .button.send:after {
+      font-family: "fontawesome";
+      padding-left: 1.5rem;
+      content: "\f1d8"; }
+  .button:hover {
+    text-decoration: none;
+    background-color: #1a1a1a;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+
+.btn-nav {
+  display: none;
+  position: fixed;
+  top: .5rem;
+  right: 1rem;
+  padding: 0;
+  z-index: 200;
+  color: #000;
+  font-size: xx-large;
+  background-image: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .btn-nav:focus {
+    outline: none; }
+  .btn-nav:after {
+    font-family: "fontawesome";
+    content: '\f0c9'; }
+  .btn-nav:hover {
+    color: #1a1a1a;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+  @media only screen and (max-width: 768px) {
+    .btn-nav {
+      display: block; } }
+
+.scroll-btn {
+  color: #000;
+  display: block;
+  height: 10vh;
+  width: 10vh;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  background: url("/Resources/images/Icons/milk.svg"), url("/Resources/images/Icons/arrow-up.svg");
+  background-size: contain, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: center, center;
+  background-position-y: center, -1rem;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer; }
+  .scroll-btn:hover {
+    -webkit-animation: btn-anim 1s infinite;
+    animation: btn-anim 1s infinite;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+  .scroll-btn:focus {
+    outline: none; }
+
+.scroll-top-btn {
+  position: relative;
+  margin: auto;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  width: 8rem;
+  height: 8rem;
+  left: unset;
+  background: url("/Resources/images/Icons/milk.svg"), url("/Resources/images/Icons/arrow-down.svg");
+  background-size: contain, contain;
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: center, center;
+  background-position-y: center, 1.8rem;
+  bottom: unset;
+  cursor: pointer; }
+  .scroll-top-btn:hover {
+    -webkit-animation: btn-anim-up 1s infinite;
+    animation: btn-anim-up 1s infinite;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+  .scroll-top-btn:focus {
+    outline: none; }
+
+@-webkit-keyframes btn-anim {
+  0% {
+    background-position-y: center, -1rem; }
+  50% {
+    background-position-y: center, .5rem; }
+  100% {
+    background-position-y: center, -1rem; } }
+
+@keyframes btn-anim {
+  0% {
+    background-position-y: center, -1rem; }
+  50% {
+    background-position-y: center, .5rem; }
+  100% {
+    background-position-y: center, -1rem; } }
+
+@-webkit-keyframes btn-anim-up {
+  0% {
+    background-position-y: center, 1.8rem; }
+  50% {
+    background-position-y: center, 0rem; }
+  100% {
+    background-position-y: center, 1.8rem; } }
+
+@keyframes btn-anim-up {
+  0% {
+    background-position-y: center, 1.5rem; }
+  50% {
+    background-position-y: center, .5rem; }
+  100% {
+    background-position-y: center, 1.5rem; } }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 5rem 0; }
+  @media only screen and (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 3rem 2rem; } }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.form {
+  width: 60rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto; }
+  @media only screen and (max-width: 768px) {
+    .form {
+      width: 40rem; } }
+  @media only screen and (max-width: 480px) {
+    .form {
+      width: 100%; } }
+  .form > div {
+    flex: 0 0 49%;
+    max-width: 49%;
+    width: 49%;
+    margin-bottom: 2rem; }
+    @media only screen and (max-width: 768px) {
+      .form > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%; } }
+    .form > div:last-child {
+      margin-bottom: 0; }
+    .form > div.full {
+      flex: 0 0 100%;
+      max-width: 100%;
+      width: 100%; }
+  .form-input {
+    width: 100%;
+    padding: .5rem;
+    height: 4rem;
+    box-sizing: border-box; }
+    .form-input__textarea {
+      min-height: 15rem;
+      max-height: 30rem;
+      min-width: 100%;
+      max-width: 100%; }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.slider {
+  height: 40rem;
+  width: 100%;
+  background-color: #170f24; }
+  .slider .slick-list, .slider .slick-track {
+    height: 100%; }
+  .slider .slide-item {
+    background-color: #170f24;
+    background-image: url("../Images/Backgrounds/slider-home-1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    opacity: .9; }
+    .slider .slide-item.second {
+      background-image: url("../Images/Backgrounds/slider-home-2.jpg"); }
+    .slider .slide-item.third {
+      background-image: url("../Images/Backgrounds/slider-home-3.jpg"); }
+    .slider .slide-item:focus {
+      outline: none; }
+    .slider .slide-item h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 3rem;
+      opacity: 0;
+      font-family: "Anja"; }
+    .slider .slide-item.slick-active h3 {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+      transition: all 1s;
+      transition-delay: .5s;
+      letter-spacing: 5px;
+      font-weight: 300; }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+h1 {
+  font-size: 2.6rem;
+  font-family: "Anja";
+  font-weight: 300; }
+
+h2 {
+  font-size: 2.2rem;
+  font-family: "Anja"; }
+
+h3 {
+  font-size: 1.8rem;
+  font-family: "Anja"; }
+
+p, span, a {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif; }
+
+.section-title {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 3rem;
+  font-size: 3rem; }
+
+.section-desc {
+  margin: 0;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 1.6rem; }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  height: 5rem;
+  background-color: #fff;
+  transition: all .1s; }
+  @media only screen and (max-width: 768px) {
+    nav {
+      justify-content: flex-end;
+      transition: all 0.3s; } }
+  nav.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #170f24;
+    transition: all .1s; }
+    nav.fixed .menu {
+      background-color: #170f24;
+      border-color: #170f24; }
+    nav.fixed .menu a > span {
+      color: #fff;
+      transition: all .1s; }
+    nav.fixed .menu a:before {
+      background-color: #fff; }
+    nav.fixed .burger-button {
+      border-color: #fff; }
+      nav.fixed .burger-button > div {
+        background-color: #fff; }
+      nav.fixed .burger-button:before, nav.fixed .burger-button:after {
+        background-color: #fff; }
+  nav.nav-open .menu {
+    transform: translateX(0);
+    transition: all 0.3s; }
+
+.menu {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  flex: 0 0 80%;
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  transition: all 0.3s; }
+  .menu > * {
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -moz-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-flex-basis: 18rem;
+    -moz-flex-basis: 18rem;
+    -ms-flex-preferred-size: 18rem;
+    flex-basis: 18rem;
+    width: 18rem;
+    box-sizing: border-box; }
+  @media only screen and (max-width: 480px) {
+    .menu {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .menu > * {
+        width: 100%; }
+        .menu > *:not(:last-child) {
+          margin-bottom: 1rem; } }
+  @media only screen and (max-width: 980px) {
+    .menu {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      align-items: center; }
+      .menu > * {
+        -webkit-box-flex: 0;
+        -webkit-flex-grow: 0;
+        -moz-flex-grow: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        -moz-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-flex-basis: 12rem;
+        -moz-flex-basis: 12rem;
+        -ms-flex-preferred-size: 12rem;
+        flex-basis: 12rem;
+        width: 12rem;
+        box-sizing: border-box; } }
+  @media only screen and (max-width: 980px) and (max-width: 480px) {
+    .menu {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .menu > * {
+        width: 100%; }
+        .menu > *:not(:last-child) {
+          margin-bottom: 1rem; } }
+  @media only screen and (max-width: 768px) {
+    .menu {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      align-items: flex-start;
+      position: absolute;
+      top: 5rem;
+      right: 0;
+      width: 30rem;
+      flex: none;
+      max-width: none;
+      transform: translateX(100%);
+      border-bottom: 2rem solid #fff; }
+      .menu > * {
+        -webkit-box-flex: 0;
+        -webkit-flex-grow: 0;
+        -moz-flex-grow: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        -moz-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-flex-basis: 100%;
+        -moz-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        width: 100%;
+        box-sizing: border-box; } }
+  @media only screen and (max-width: 768px) and (max-width: 480px) {
+    .menu {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .menu > * {
+        width: 100%; }
+        .menu > *:not(:last-child) {
+          margin-bottom: 1rem; } }
+  @media only screen and (max-width: 480px) {
+    .menu {
+      width: 100%; } }
+  .menu a {
+    position: relative;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 5rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    z-index: 9999; }
+    @media only screen and (max-width: 768px) {
+      .menu a {
+        text-align: right;
+        padding-right: 2rem;
+        box-sizing: border-box; } }
+    .menu a:before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0;
+      background-color: #170f24;
+      transition: all 0.3s;
+      z-index: -1; }
+      @media only screen and (max-width: 768px) {
+        .menu a:before {
+          top: 85%;
+          left: 2rem;
+          height: .1rem;
+          width: calc(100% - 4rem); } }
+    .menu a > span {
+      color: #000;
+      transition: all 0.3s;
+      transition: all 0.3s; }
+    .menu a:hover, .menu a.active {
+      transition: all 0.3s;
+      transition-delay: .35s; }
+      .menu a:hover > span, .menu a.active > span {
+        color: #fff;
+        transition: all 0.3s; }
+        @media only screen and (max-width: 768px) {
+          .menu a:hover > span, .menu a.active > span {
+            color: #000; } }
+      .menu a:hover:before, .menu a.active:before {
+        height: 100%;
+        transition: all 0.3s; }
+        @media only screen and (max-width: 768px) {
+          .menu a:hover:before, .menu a.active:before {
+            height: .1rem; } }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+header .main-logo {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto; }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 50vh 5rem auto 10rem;
+  height: 100%; }
+  .grid-container > * {
+    padding: 3rem 2rem;
+    text-align: center;
+    font-size: 2rem; }
+
+.grid-header__landing {
+  padding: 0; }
+
+.grid-nav {
+  padding: 0 2rem; }
+
+.grid-body {
+  background-color: pink; }
+
+.grid-footer {
+  background-color: yellow; }
+
+/*@font-face {
+    font-family: 'Anja';
+    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
+}*/
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'IndieFlower';
+  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.section-header {
+  background-color: #170f24; }
+
+.section-about {
+  background-color: #170f24; }
+
+.section-title {
+  color: #fff; }
+
+/*# sourceMappingURL=style.css.map */

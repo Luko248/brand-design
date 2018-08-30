@@ -83,6 +83,7 @@
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
+    <Content Include="Resources\Stylesheets\CSS\style.css" />
     <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.css" />
     <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.min.css" />
     <Content Include="Resources\Stylesheets\SCSS\External\slick.css" />
@@ -122,8 +123,9 @@
     <Content Include="Resources\Stylesheets\SCSS\Modules\header.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Modules\navigation.scss" />
     <Content Include="Resources\Stylesheets\SCSS\style.scss" />
-    <Content Include="Resources\Stylesheets\Views\section.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Views\section.scss" />
     <Content Include="Resources\tsconfig.json" />
+    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,7 +136,7 @@
   <ItemGroup>
     <Folder Include="Resources\Images\Faicons\" />
     <Folder Include="Resources\Images\Referencies\" />
-    <Folder Include="Resources\Stylesheets\CSS\" />
+    <Folder Include="Resources\Scripts\JS\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
