@@ -78,6 +78,7 @@
     <Content Include="Resources\Images\Backgrounds\slider-home-3.jpg" />
     <Content Include="Resources\Images\Icons\rocket.svg" />
     <Content Include="Resources\Images\Logos\big-logo.svg" />
+    <Content Include="Resources\Scripts\JS\Init.js" />
     <Content Include="Resources\Scripts\Libs\jQuery\jquery-3.3.1.min.js" />
     <Content Include="Resources\Scripts\Libs\Slick\slick.js" />
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
@@ -126,6 +127,7 @@
     <Content Include="Resources\Stylesheets\SCSS\Views\section.scss" />
     <Content Include="Resources\tsconfig.json" />
     <Content Include="Resources\Stylesheets\CSS\style.css.map" />
+    <Content Include="Resources\Scripts\JS\Init.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,7 +138,6 @@
   <ItemGroup>
     <Folder Include="Resources\Images\Faicons\" />
     <Folder Include="Resources\Images\Referencies\" />
-    <Folder Include="Resources\Scripts\JS\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />

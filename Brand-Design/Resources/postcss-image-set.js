@@ -184,5 +184,3 @@ module.exports = postcss.plugin('postcss-image-set-polyfill', () =>
         });
     }
 );
-
-
