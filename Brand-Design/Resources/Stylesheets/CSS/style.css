@@ -336,6 +336,10 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -395,6 +399,10 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -431,6 +439,10 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -455,6 +467,10 @@ a img {
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -518,6 +534,10 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -571,6 +591,10 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -599,6 +623,10 @@ p, span, a {
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -875,6 +903,10 @@ p, span, a {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -899,8 +931,8 @@ header .main-logo {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'fontawesome';
-  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -909,10 +941,86 @@ header .main-logo {
 @font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+.footer {
+  padding: 0 2rem;
+  padding-top: 3rem;
+  background-color: black; }
+  .footer__container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between; }
+    @media only screen and (max-width: 768px) {
+      .footer__container {
+        width: 100%; } }
+  .footer__box {
+    flex: 0 0 33%;
+    max-width: 33%;
+    width: 33%; }
+    .footer__box--full-flex {
+      flex: 0 0 100%;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      padding: .5rem 0; }
+  .footer__text-item {
+    position: relative;
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 1rem; }
+    .footer__text-item:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-150%, -50%);
+      display: none;
+      width: 2rem;
+      text-align: center;
+      font-family: "FontAwesome";
+      font-size: 1.8rem;
+      text-align: center;
+      color: #fff;
+      content: ""; }
+    .footer__text-item--right {
+      text-align: right; }
+    .footer__text-item--user:before {
+      display: block;
+      content: "\f007"; }
+    .footer__text-item--ic:before {
+      font-family: "Anja";
+      display: block;
+      content: "IC"; }
+    .footer__text-item--mail:before {
+      display: block;
+      content: "\f0e0";
+      font-size: 1.6rem; }
+    .footer__text-item--phone:before {
+      display: block;
+      content: "\f10b";
+      font-size: 2.2rem; }
+  .footer__link {
+    color: #01ffa9;
+    font-size: 1.6rem;
+    transition: all 0.3s; }
+    .footer__link:hover {
+      color: #00cd88;
+      transition: all 0.3s; }
 
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
   font-family: 'fontawesome';

@@ -1,5 +1,106 @@
 ﻿@import "../base/global";
 
-footer{
+.footer {
+    padding: 0 2rem;
+    padding-top: 3rem;
+    background-color: black;
 
+    &__container {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include res-max-tablet {
+            width: 100%;
+        }
+    }
+
+    &__box {
+        flex: 0 0 33%;
+        max-width: 33%;
+        width: 33%;
+
+        &--social {
+        }
+
+        &--full-flex {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            padding: .5rem 0;
+        }
+    }
+
+    &__text-item {
+        position: relative;
+        color: $color-white;
+        font-size: $font-size-s;
+        margin-bottom: 1rem;
+
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-150%, -50%);
+            display: none;
+            width: 2rem;
+            text-align: center;
+            font-family: $font-awesome;
+            font-size: $font-size-m;
+            text-align: center;
+            color: $color-white;
+            content: "";
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--user {
+            &:before {
+                display: block;
+                content: "\f007";
+            }
+        }
+
+        &--ic {
+            &:before {
+                font-family: $font-logo;
+                display: block;
+                content: "IC";
+            }
+        }
+
+        &--mail {
+            &:before {
+                display: block;
+                content: "\f0e0";
+                font-size: $font-size-s;
+            }
+        }
+
+        &--phone {
+            &:before {
+                display: block;
+                content: "\f10b";
+                font-size: $font-size-xl;
+            }
+        }
+    }
+
+    &__link {
+        color: $color-secondary;
+        font-size: $font-size-s;
+        transition: $animate-all;
+
+        &:hover {
+            color: $color-secondary-hover;
+            transition: $animate-all;
+        }
+    }
 }
