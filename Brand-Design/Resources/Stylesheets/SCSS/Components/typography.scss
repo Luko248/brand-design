@@ -2,18 +2,15 @@
 
 h1 {
     font-size: 2.6rem;
-    font-family: $font-header-h1;
     font-weight: 300;
 }
 
 h2 {
     font-size: 2.2rem;
-    font-family: $font-subheader-h2;
 }
 
 h3 {
     font-size: 1.8rem;
-    font-family: $font-subheader-h3;
 }
 
 p, span, a {
@@ -28,7 +25,7 @@ p, span, a {
     margin-bottom: 3rem;
     font-size: $font-size-title;
 
-    &.secondary {
+    &--secondary {
     }
 }
 
@@ -39,6 +36,6 @@ p, span, a {
     text-align: center;
     font-size: $font-size-normal;
 
-    &.secondary {
+    &--secondary {
     }
 }

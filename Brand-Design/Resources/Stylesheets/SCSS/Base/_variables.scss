@@ -2,7 +2,6 @@
 
 $color-white: #fff;
 $color-black: #000;
-
 $color-primary: #a815d7;
 $color-secondary: #01ffa9;
 $color-error: #d91313;
@@ -14,13 +13,9 @@ $color-border: #757575;
 $color-bg: #170f24;
 $color-transparent: rgba(0, 0, 0, 0);
 
-
-$font-awesome: 'fontawesome';
-$font-header-h1: 'Anja';
-$font-subheader-h2: 'Anja';
-$font-subheader-h3: 'Anja';
 $font-text: 'Open Sans', sans-serif;
-$title-font: 'Anja';
+$font-title: $font-text;
+$font-awesome: 'fontawesome';
 
 // Helpfull variables
 $outline-width: 1px;
@@ -38,11 +33,6 @@ $font-size-title: 3rem;
 $font-size-normal: 1.6rem;
 $font-size-lg: 2rem;
 $radius: .3rem;
-
-@font-face {
-    font-family: 'IndieFlower';
-    src: url('/Resources/fonts/IndieFlower.ttf') format('truetype');
-}
 
 @font-face {
     font-family: 'fontawesome';
