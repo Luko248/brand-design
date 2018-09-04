@@ -46,7 +46,7 @@
         transform: translate(-50%, -150%) rotate(0);
     }
 
-    &.open {
+    &--open {
         &:before {
             width: 50%;
             transform: translate(-20%,325%) rotate(25deg);

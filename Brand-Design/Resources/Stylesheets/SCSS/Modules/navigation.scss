@@ -1,6 +1,6 @@
 ﻿@import "../Base/global";
 
-nav {
+.nav {
     position: relative;
     width: 100%;
     display: flex;
@@ -8,90 +8,58 @@ nav {
     justify-content: center;
     z-index: 999;
     height: 5rem;
+    padding: 0 2rem;
+    box-sizing: border-box;
     background-color: $color-white;
-    transition: all .1s;
 
     @include res-max-tablet {
         justify-content: flex-end;
         transition: $animate-all;
     }
 
-    &.fixed {
+    &--fixed {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        background-color: $color-bg; 
-        transition: all .1s;
-
-        .menu {
-            background-color: $color-bg;
-            border-color: $color-bg;
-        }
-
-        .menu a {
-            > span {
-                color: $color-white;
-                transition: all .1s;
-            }
-
-            &:before {
-                background-color: $color-white;
-            }
-        }
-
-        .burger-button {
-            border-color: $color-white;
-
-            > div {
-                background-color: $color-white;
-            }
-
-            &:before, &:after {
-                background-color: $color-white;
-            }
-        }
     }
 
-    &.nav-open {
+    &__menu {
+        @include flex-wrapper-row(0, 0, 18rem, center, center);
+        flex: 0 0 80%;
+        width: 80%;
+        max-width: 80%;
+        margin: 0 auto;
+        background-color: $color-white;
+        transition: $animate-all;
 
-        .menu {
+        @include res-max-desktop-small {
+            @include flex-wrapper-row(0, 0, 12rem, center, center);
+        }
+
+        @include res-max-tablet {
+            @include flex-wrapper-row(0, 0, 100%, flex-start, flex-start);
+            position: absolute;
+            top: 5rem;
+            right: 0;
+            width: 30rem;
+            flex: none;
+            max-width: none;
+            transform: translateX(100%);
+            border-bottom: 2rem solid $color-white;
+        }
+
+        @include res-max-mobile {
+            width: 100%;
+        }
+
+        &--open {
             transform: translateX(0);
             transition: $animate-all;
         }
     }
-}
 
-.menu {
-    @include flex-wrapper-row(0, 0, 18rem, center, center);
-    flex: 0 0 80%;
-    width: 80%;
-    max-width: 80%;
-    margin: 0 auto;
-    background-color: $color-white;
-    transition: $animate-all;
-
-    @include res-max-desktop-small {
-        @include flex-wrapper-row(0, 0, 12rem, center, center);
-    }
-
-    @include res-max-tablet {
-        @include flex-wrapper-row(0, 0, 100%, flex-start, flex-start);
-        position: absolute;
-        top: 5rem;
-        right: 0;
-        width: 30rem;
-        flex: none;
-        max-width: none;
-        transform: translateX(100%);
-        border-bottom: 2rem solid $color-white;
-    }
-
-    @include res-max-mobile {
-        width: 100%;
-    }
-
-    a {
+    &__item {
         position: relative;
         display: block;
         text-align: center;

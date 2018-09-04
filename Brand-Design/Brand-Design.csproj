@@ -131,8 +131,8 @@
     <Content Include="Resources\Stylesheets\SCSS\Views\section.scss" />
     <Content Include="Resources\tsconfig.json" />
     <Content Include="Resources\Scripts\JS\Init.js.map" />
-    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <Content Include="Resources\Images\Favicons\site.webmanifest" />
+    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
