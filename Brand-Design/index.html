@@ -39,7 +39,7 @@
 </head>
 
 <body>
-    <header class="header header--landing">
+    <header class="header header--landing" id="Home">
         <img src="Resources/Images/Logos/big-logo.svg" alt="Main logo" class="main-logo" />
     </header>
 
@@ -49,10 +49,10 @@
             <div></div>
         </div>
         <ul class="nav__menu">
-            <li><a href="/" class="nav__item"><span>Home</span></a></li>
-            <li><a href="/" class="nav__item"><span>About us</span></a></li>
-            <li><a href="/" class="nav__item"><span>References</span></a></li>
-            <li><a href="/" class="nav__item"><span>Contact</span></a></li>
+            <li><a href="#Home" class="nav__item"><span>Home</span></a></li>
+            <li><a href="#About" class="nav__item"><span>About us</span></a></li>
+            <li><a href="#References" class="nav__item"><span>References</span></a></li>
+            <li><a href="#Contact" class="nav__item"><span>Contact</span></a></li>
         </ul>
     </nav>
 
@@ -64,22 +64,22 @@
                 <div class="slider__item slider__item--third"><h3>Polepy</h3></div>
             </div>
         </section>
-        <section class="section section--about">
+        <section class="section section--about" id="About">
             <div class="container">
                 <h2 class="section__title">About</h2>
             </div>
         </section>
-        <section class="section section--references">
+        <section class="section section--references" id="References">
             <div class="container">
                 <h2 class="section__title">References</h2>
             </div>
         </section>
-        <section class="section section--contact">
+        <section class="section section--contact" id="Contact">
             <div class="container">
                 <h2 class="section__title">Contact</h2>
                 <form class="form" method="post">
                     <div class="form__wrapper">
-                        <input type="text" placeholder="Jméno *" class="form__input" autofocus />
+                        <input type="text" placeholder="Jméno *" class="form__input" />
                     </div>
                     <div class="form__wrapper">
                         <input type="text" placeholder="Příjmění *" class="form__input" />
