@@ -1,18 +1,18 @@
 $(document).ready(function () {
-    var HeaderHeight = $('header.grid-header__landing').innerHeight();
-    var Nav = $('nav');
+    var HeaderHeight = $('.header--landing').height();
+    var Nav = $('.navigation');
+    $('.burger-button').click(function () {
+        $(this).toggleClass('open');
+        $('nav').toggleClass('nav-open');
+    });
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        if (scroll >= HeaderHeight) {
+        if (scroll > HeaderHeight) {
             Nav.addClass("fixed");
         }
         else {
             Nav.removeClass("fixed");
         }
-    });
-    $('.burger-button').click(function () {
-        $(this).toggleClass('open');
-        $('nav').toggleClass('nav-open');
     });
 });
 //# sourceMappingURL=Init.js.map

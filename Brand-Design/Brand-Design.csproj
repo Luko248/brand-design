@@ -85,10 +85,6 @@
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
     <Content Include="Resources\Stylesheets\CSS\style.css" />
-    <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.css" />
-    <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.min.css" />
-    <Content Include="Resources\Stylesheets\SCSS\External\slick.css" />
-    <Content Include="Resources\Stylesheets\SCSS\External\slick.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -120,14 +116,13 @@
     <Content Include="Resources\Stylesheets\SCSS\External\slick-theme.scss" />
     <Content Include="Resources\Stylesheets\SCSS\External\slick.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Modules\footer.scss" />
-    <Content Include="Resources\Stylesheets\SCSS\Modules\grid-layout.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Modules\header.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Modules\navigation.scss" />
     <Content Include="Resources\Stylesheets\SCSS\style.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Views\section.scss" />
     <Content Include="Resources\tsconfig.json" />
-    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <Content Include="Resources\Scripts\JS\Init.js.map" />
+    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

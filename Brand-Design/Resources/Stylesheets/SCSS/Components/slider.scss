@@ -1,33 +1,29 @@
 ﻿@import "../Base/global";
 
 .slider {
-   height: 40rem;
-   width: 100%;
+    height: 40rem;
+    width: 100%;
     background-color: $color-bg;
 
-    .slick-list, .slick-track {
-        height: 100%;
-    }
-
-    .slide-item {
-        background-color: $color-bg;
-        background-image: url('../Images/Backgrounds/slider-home-1.jpg');
+    &__item {
+        background-color: $color-white;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
+        height: calc(50vh - 5rem);
         opacity: .9;
 
-        &.second {
-            background-image: url('../Images/Backgrounds/slider-home-2.jpg');
+        &--first {
+            background-image: url('/Resources/Images/Backgrounds/slider-home-1.jpg');
         }
 
-        &.third {
-            background-image: url('../Images/Backgrounds/slider-home-3.jpg');
+        &--second {
+            background-image: url('/Resources/Images/Backgrounds/slider-home-2.jpg');
         }
 
-        &:focus {
-            outline: none;
+        &--third {
+            background-image: url('/Resources/Images/Backgrounds/slider-home-3.jpg');
         }
 
         h3 {
@@ -39,7 +35,7 @@
             color: $color-white;
             font-size: $font-size-title;
             opacity: 0;
-            font-family: $title-font;
+            font-family: $font-text;
         }
 
         &.slick-active h3 {
@@ -50,5 +46,9 @@
             letter-spacing: 5px;
             font-weight: 300;
         }
+    }
+
+    .slick-list, .slick-track {
+        height: 100%;
     }
 }

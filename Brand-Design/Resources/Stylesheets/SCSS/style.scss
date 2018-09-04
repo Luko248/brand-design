@@ -1,6 +1,6 @@
 ﻿//External
-/*@import "External/slick";
-@import "External/slick-theme";*/
+@import "External/slick";
+@import "External/slick-theme";
 
 // Base 
 @import "Base/default.scss";
@@ -18,7 +18,6 @@
 @import "Modules/navigation.scss";
 @import "Modules/header.scss";
 @import "Modules/footer.scss";
-@import "Modules/grid-layout";
 
 //Views
 @import "Views/section";

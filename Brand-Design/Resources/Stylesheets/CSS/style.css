@@ -1,5 +1,207 @@
-/*@import "External/slick";
-@import "External/slick-theme";*/
+@charset "UTF-8";
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+/* Slider */
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("./fonts/../../fonts/slick/slick.eot");
+  src: url("./fonts/../../fonts/slick/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/../../fonts/slick/slick.woff") format("woff"), url("./fonts/../../fonts/slick/slick.ttf") format("truetype"), url("./fonts/../../fonts/slick/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  z-index: 1; }
+  .slick-prev:hover, .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    outline: none;
+    background: transparent;
+    color: transparent; }
+    .slick-prev:hover:before, .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before {
+      opacity: 1; }
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0.25; }
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: "slick";
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+.slick-prev {
+  left: 2rem; }
+  [dir="rtl"] .slick-prev {
+    left: auto;
+    right: -25px; }
+  .slick-prev:before {
+    content: "←"; }
+    [dir="rtl"] .slick-prev:before {
+      content: "→"; }
+
+.slick-next {
+  right: 2rem; }
+  [dir="rtl"] .slick-next {
+    left: -25px;
+    right: auto; }
+  .slick-next:before {
+    content: "→"; }
+    [dir="rtl"] .slick-next:before {
+      content: "←"; }
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px; }
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer; }
+      .slick-dots li button:hover, .slick-dots li button:focus {
+        outline: none; }
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+          opacity: 1; }
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "•";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 6px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    .slick-dots li.slick-active button:before {
+      color: black;
+      opacity: 0.75; }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -141,10 +343,10 @@ a img {
   display: inline-block !important;
   float: none !important; }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -212,10 +414,10 @@ a img {
     width: 50%;
     transform: translate(-20%, -325%) rotate(-25deg); }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -379,10 +581,10 @@ a img {
   100% {
     background-position-y: center, 1.5rem; } }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -417,10 +619,10 @@ a img {
       width: 100%;
       padding: 3rem 2rem; } }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -485,10 +687,10 @@ a img {
       min-width: 100%;
       max-width: 100%; }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -517,23 +719,21 @@ a img {
   height: 40rem;
   width: 100%;
   background-color: #170f24; }
-  .slider .slick-list, .slider .slick-track {
-    height: 100%; }
-  .slider .slide-item {
-    background-color: #170f24;
-    background-image: url("../Images/Backgrounds/slider-home-1.jpg");
+  .slider__item {
+    background-color: #fff;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    height: calc(50vh - 5rem);
     opacity: .9; }
-    .slider .slide-item.second {
-      background-image: url("../Images/Backgrounds/slider-home-2.jpg"); }
-    .slider .slide-item.third {
-      background-image: url("../Images/Backgrounds/slider-home-3.jpg"); }
-    .slider .slide-item:focus {
-      outline: none; }
-    .slider .slide-item h3 {
+    .slider__item--first {
+      background-image: url("/Resources/Images/Backgrounds/slider-home-1.jpg"); }
+    .slider__item--second {
+      background-image: url("/Resources/Images/Backgrounds/slider-home-2.jpg"); }
+    .slider__item--third {
+      background-image: url("/Resources/Images/Backgrounds/slider-home-3.jpg"); }
+    .slider__item h3 {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -542,19 +742,21 @@ a img {
       color: #fff;
       font-size: 3rem;
       opacity: 0;
-      font-family: "Anja"; }
-    .slider .slide-item.slick-active h3 {
+      font-family: "Open Sans", sans-serif; }
+    .slider__item.slick-active h3 {
       transform: translate(-50%, -50%);
       opacity: 1;
       transition: all 1s;
       transition-delay: .5s;
       letter-spacing: 5px;
       font-weight: 300; }
+  .slider .slick-list, .slider .slick-track {
+    height: 100%; }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -608,10 +810,10 @@ p, span, a {
   text-align: center;
   font-size: 1.6rem; }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -910,10 +1112,10 @@ nav {
           .menu a:hover:before, .menu a.active:before {
             height: .1rem; } }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -940,15 +1142,16 @@ nav {
 
 header .main-logo {
   display: block;
-  height: 100%;
+  height: 50vh;
+  max-height: 768px;
   width: auto;
   max-width: 100%;
   margin: 0 auto; }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
@@ -973,59 +1176,10 @@ header .main-logo {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
-@font-face {
-  font-family: 'fontawesome';
-  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'fontawesome';
-  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'fontawesome';
-  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-.grid-container {
-  display: grid;
-  grid-template-rows: 50vh 5rem auto 10rem;
-  height: 100%; }
-  .grid-container > * {
-    padding: 3rem 2rem;
-    text-align: center;
-    font-size: 2rem; }
-
-.grid-header__landing {
-  padding: 0; }
-
-.grid-nav {
-  padding: 0 2rem; }
-
-.grid-body {
-  background-color: pink; }
-
-.grid-footer {
-  background-color: yellow; }
-
-/*@font-face {
-    font-family: 'Anja';
-    src: url('../Fonts/Anja/Anja.ttf') format('truetype');
-}*/
 @font-face {
   font-family: 'IndieFlower';
   src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }

@@ -3,7 +3,8 @@
 header {
     .main-logo {
         display: block;
-        height: 100%;
+        height: 50vh;
+        max-height: 768px;
         width: auto;
         max-width: 100%;
         margin: 0 auto;
