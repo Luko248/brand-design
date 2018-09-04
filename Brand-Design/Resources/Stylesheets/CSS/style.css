@@ -203,10 +203,6 @@
       opacity: 0.75; }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
@@ -262,16 +258,8 @@ a img {
   border: none; }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -348,24 +336,12 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -419,24 +395,12 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -452,19 +416,9 @@ a img {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  border-radius: 0.3rem; }
-  .button.send {
-    margin: 0 auto;
-    display: block;
-    width: 18rem;
-    text-transform: uppercase;
-    padding: .8rem; }
-    .button.send:after {
-      font-family: "fontawesome";
-      padding-left: 1.5rem;
-      content: "\f1d8"; }
+  border-radius: 0.2rem; }
   .button:hover {
     text-decoration: none;
     background-color: #1a1a1a;
@@ -472,138 +426,17 @@ a img {
     -webkit-transition: all 0.3s;
     transition: all 0.3s; }
 
-.btn-nav {
-  display: none;
-  position: fixed;
-  top: .5rem;
-  right: 1rem;
-  padding: 0;
-  z-index: 200;
-  color: #000;
-  font-size: xx-large;
-  background-image: none;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
-  .btn-nav:focus {
-    outline: none; }
-  .btn-nav:after {
-    font-family: "fontawesome";
-    content: '\f0c9'; }
-  .btn-nav:hover {
-    color: #1a1a1a;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
-  @media only screen and (max-width: 768px) {
-    .btn-nav {
-      display: block; } }
-
-.scroll-btn {
-  color: #000;
-  display: block;
-  height: 10vh;
-  width: 10vh;
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-  background: url("/Resources/images/Icons/milk.svg"), url("/Resources/images/Icons/arrow-up.svg");
-  background-size: contain, contain;
-  background-repeat: no-repeat, no-repeat;
-  background-position-x: center, center;
-  background-position-y: center, -1rem;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  cursor: pointer; }
-  .scroll-btn:hover {
-    -webkit-animation: btn-anim 1s infinite;
-    animation: btn-anim 1s infinite;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
-  .scroll-btn:focus {
-    outline: none; }
-
-.scroll-top-btn {
-  position: relative;
-  margin: auto;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-  width: 8rem;
-  height: 8rem;
-  left: unset;
-  background: url("/Resources/images/Icons/milk.svg"), url("/Resources/images/Icons/arrow-down.svg");
-  background-size: contain, contain;
-  background-repeat: no-repeat, no-repeat;
-  background-position-x: center, center;
-  background-position-y: center, 1.8rem;
-  bottom: unset;
-  cursor: pointer; }
-  .scroll-top-btn:hover {
-    -webkit-animation: btn-anim-up 1s infinite;
-    animation: btn-anim-up 1s infinite;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
-  .scroll-top-btn:focus {
-    outline: none; }
-
-@-webkit-keyframes btn-anim {
-  0% {
-    background-position-y: center, -1rem; }
-  50% {
-    background-position-y: center, .5rem; }
-  100% {
-    background-position-y: center, -1rem; } }
-
-@keyframes btn-anim {
-  0% {
-    background-position-y: center, -1rem; }
-  50% {
-    background-position-y: center, .5rem; }
-  100% {
-    background-position-y: center, -1rem; } }
-
-@-webkit-keyframes btn-anim-up {
-  0% {
-    background-position-y: center, 1.8rem; }
-  50% {
-    background-position-y: center, 0rem; }
-  100% {
-    background-position-y: center, 1.8rem; } }
-
-@keyframes btn-anim-up {
-  0% {
-    background-position-y: center, 1.5rem; }
-  50% {
-    background-position-y: center, .5rem; }
-  100% {
-    background-position-y: center, 1.5rem; } }
-
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -624,24 +457,12 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -660,56 +481,49 @@ a img {
   @media only screen and (max-width: 480px) {
     .form {
       width: 100%; } }
-  .form > div {
+  .form__wrapper {
     flex: 0 0 49%;
     max-width: 49%;
     width: 49%;
     margin-bottom: 2rem; }
     @media only screen and (max-width: 768px) {
-      .form > div {
+      .form__wrapper {
         flex: 0 0 100%;
         max-width: 100%;
         width: 100%; } }
-    .form > div:last-child {
+    .form__wrapper:last-child {
       margin-bottom: 0; }
-    .form > div.full {
+    .form__wrapper--full {
       flex: 0 0 100%;
       max-width: 100%;
       width: 100%; }
-  .form-input {
+  .form__input {
     width: 100%;
     padding: .5rem;
     height: 4rem;
-    box-sizing: border-box; }
-    .form-input__textarea {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem; }
+    .form__input--textarea {
       min-height: 15rem;
       max-height: 30rem;
       min-width: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.6rem; }
 
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -758,81 +572,56 @@ a img {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 h1 {
-  font-size: 2.6rem;
-  font-family: "Anja";
+  font-size: 3rem;
   font-weight: 300; }
 
 h2 {
-  font-size: 2.2rem;
-  font-family: "Anja"; }
+  font-size: 2.2rem; }
 
 h3 {
-  font-size: 1.8rem;
-  font-family: "Anja"; }
+  font-size: 2rem; }
 
 p, span, a {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: "Open Sans", sans-serif; }
 
 .section-title {
   text-align: center;
   margin: 0;
   margin-bottom: 3rem;
-  font-size: 3rem; }
+  font-family: "Open Sans", sans-serif;
+  font-size: 3rem;
+  color: #000; }
 
 .section-desc {
   margin: 0;
   margin-bottom: 3rem;
   text-align: center;
-  font-size: 1.6rem; }
+  font-size: 1.8rem; }
 
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -1117,24 +906,12 @@ nav {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -1153,24 +930,12 @@ header .main-logo {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'fontawesome';
@@ -1181,36 +946,27 @@ header .main-logo {
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 @font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
-@font-face {
-  font-family: 'IndieFlower';
-  src: url("/Resources/fonts/IndieFlower.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'fontawesome';
-  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
-
-.section-header {
+.section--header {
   background-color: #170f24; }
 
-.section-about {
-  background-color: #170f24; }
+.section--about {
+  background-color: #fff; }
 
-.section-title {
-  color: #fff; }
+.section--references {
+  background-color: #fff; }
+
+.section--contact {
+  background-color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

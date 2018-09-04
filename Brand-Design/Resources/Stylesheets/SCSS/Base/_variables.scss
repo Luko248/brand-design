@@ -18,7 +18,8 @@ $font-title: $font-text;
 $font-awesome: 'fontawesome';
 
 // Helpfull variables
-$outline-width: 1px;
+$outline-width: .1rem;
+$radius: .2rem;
 $transition-time: .3s;
 $animate-all: all $transition-time;
 
@@ -29,10 +30,13 @@ $width-desktop: 980px;
 $width-desktop-large: 1200px;
 
 //font-sizes
-$font-size-title: 3rem;
-$font-size-normal: 1.6rem;
-$font-size-lg: 2rem;
-$radius: .3rem;
+$font-size-xxl: 3rem;
+$font-size-xl: 2.2rem;
+$font-size-l: 2rem;
+$font-size-m: 1.8rem;
+$font-size-s: 1.6rem;
+$font-size-xs: 1.2rem;
+$font-size-xxs: 1rem;
 
 @font-face {
     font-family: 'fontawesome';

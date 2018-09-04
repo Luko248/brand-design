@@ -1,40 +1,40 @@
 ﻿@import "../Base/global";
 
 h1 {
-    font-size: 2.6rem;
+    font-size: $font-size-xxl;
     font-weight: 300;
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: $font-size-xl;
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: $font-size-l;
 }
 
 p, span, a {
-    font-size: $font-size-normal;
+    font-size: $font-size-m;
     font-family: $font-text;
 }
-
 
 .section-title {
     text-align: center;
     margin: 0;
     margin-bottom: 3rem;
-    font-size: $font-size-title;
+    font-family: $font-title;
+    font-size: $font-size-xxl;
+    color: $color-black;
 
     &--secondary {
     }
 }
 
-
 .section-desc {
     margin: 0;
     margin-bottom: 3rem;
     text-align: center;
-    font-size: $font-size-normal;
+    font-size: $font-size-m;
 
     &--secondary {
     }
