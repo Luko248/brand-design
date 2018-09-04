@@ -1,19 +1,43 @@
 ﻿@import "../Base/global";
 
 .section {
+    background-color: $color-white;
+
     &--header {
         background-color: $color-bg;
     }
 
+    &--slider {
+    }
+
     &--about {
-        background-color: $color-white;
     }
 
     &--references {
-        background-color: $color-white;
     }
 
     &--contact {
-        background-color: $color-white;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 3rem;
+        font-family: $font-title;
+        font-size: $font-size-xxl;
+        color: $color-black;
+
+        &--secondary {
+        }
+    }
+
+    &__desc {
+        margin: 0;
+        margin-bottom: 3rem;
+        text-align: center;
+        font-size: $font-size-m;
+
+        &--secondary {
+        }
     }
 }

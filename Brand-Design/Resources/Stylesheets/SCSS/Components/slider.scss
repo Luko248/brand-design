@@ -1,12 +1,9 @@
 ﻿@import "../Base/global";
 
 .slider {
-    height: 40rem;
     width: 100%;
-    background-color: $color-bg;
 
     &__item {
-        background-color: $color-white;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -24,6 +21,10 @@
 
         &--third {
             background-image: url('/Resources/Images/Backgrounds/slider-home-3.jpg');
+        }
+
+        &:focus{
+            outline: none;
         }
 
         h3 {

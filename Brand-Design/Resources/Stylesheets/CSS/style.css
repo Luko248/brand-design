@@ -530,11 +530,8 @@ a img {
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 .slider {
-  height: 40rem;
-  width: 100%;
-  background-color: #170f24; }
+  width: 100%; }
   .slider__item {
-    background-color: #fff;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -547,6 +544,8 @@ a img {
       background-image: url("/Resources/Images/Backgrounds/slider-home-2.jpg"); }
     .slider__item--third {
       background-image: url("/Resources/Images/Backgrounds/slider-home-3.jpg"); }
+    .slider__item:focus {
+      outline: none; }
     .slider__item h3 {
       position: absolute;
       top: 50%;
@@ -596,20 +595,6 @@ h3 {
 p, span, a {
   font-size: 1.8rem;
   font-family: "Open Sans", sans-serif; }
-
-.section-title {
-  text-align: center;
-  margin: 0;
-  margin-bottom: 3rem;
-  font-family: "Open Sans", sans-serif;
-  font-size: 3rem;
-  color: #000; }
-
-.section-desc {
-  margin: 0;
-  margin-bottom: 3rem;
-  text-align: center;
-  font-size: 1.8rem; }
 
 @font-face {
   font-family: 'Anja';
@@ -941,16 +926,21 @@ header .main-logo {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
-.section--header {
-  background-color: #170f24; }
-
-.section--about {
+.section {
   background-color: #fff; }
-
-.section--references {
-  background-color: #fff; }
-
-.section--contact {
-  background-color: #fff; }
+  .section--header {
+    background-color: #170f24; }
+  .section__title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 3rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    color: #000; }
+  .section__desc {
+    margin: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 1.8rem; }
 
 /*# sourceMappingURL=style.css.map */
