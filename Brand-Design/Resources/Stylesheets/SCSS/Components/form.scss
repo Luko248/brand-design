@@ -22,7 +22,7 @@
         max-width: 100%;
         width: 100%;
         margin-bottom: 2.5rem;
-        @include border('bottom', $outline-width, solid, $color-primary);
+        @include border('bottom', $outline-width, solid, $color-black);
 
         &:last-child {
             margin-bottom: 0;

@@ -502,7 +502,7 @@ a img {
     max-width: 100%;
     width: 100%;
     margin-bottom: 2.5rem;
-    border-bottom: 0.1rem solid #a815d7; }
+    border-bottom: 0.1rem solid #000; }
     .form__wrapper:last-child {
       margin-bottom: 0; }
     .form__wrapper:before {
@@ -550,7 +550,7 @@ a img {
     .form__input:focus {
       outline: none; }
     .form__input:focus ~ label, .form__input:not(:empty) ~ label, .form__input:valid ~ label {
-      transform: translate(-0.3rem, -150%) scale(0.8, 0.8);
+      transform: translate(-0.5rem, -150%) scale(0.8, 0.8);
       color: #a815d7;
       transition: all 0.3s; }
 
