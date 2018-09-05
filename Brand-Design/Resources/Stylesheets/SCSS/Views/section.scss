@@ -10,6 +10,7 @@
     }
 
     &--references {
+        /*background-color: $color-bg;*/
     }
 
     &--contact {
@@ -22,9 +23,12 @@
         margin-bottom: 3rem;
         font-family: $font-title;
         font-size: $font-size-xxl;
-        color: $color-black;
+        color: $color-font;
+        font-weight: 300;
+        text-transform: uppercase;
 
         &--secondary {
+            color: $color-white;
         }
     }
 
@@ -33,6 +37,8 @@
         margin-bottom: 3rem;
         text-align: center;
         font-size: $font-size-m;
+        line-height: $font-size-xxl;
+        font-weight: 300;
 
         &--secondary {
         }

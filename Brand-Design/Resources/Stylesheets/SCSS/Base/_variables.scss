@@ -11,6 +11,8 @@ $color-font: $color-black;
 $color-outline: lighten($color-primary, 20%);
 $color-placeholder: #999;
 $color-bg: #170f24;
+$color-box-shadow: rgba(0,0,0,0.75);
+$color-overlay: rgba(0,0,0,0.6);
 $color-transparent: rgba(0, 0, 0, 0);
 
 $font-text: 'Open Sans', sans-serif;
@@ -23,6 +25,8 @@ $outline-width: .1rem;
 $radius: .2rem;
 $transition-time: .3s;
 $animate-all: all $transition-time;
+$btn-padding: .8rem 1.6rem;
+$base-border: $outline-width solid $color-primary;
 
 // All devices width for responsivity
 $width-mobile: 480px;
