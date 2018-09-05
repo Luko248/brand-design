@@ -1,7 +1,8 @@
 ﻿@import "../Base/global";
 
 .form {
-    width: 60rem;
+    max-width: 60rem;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

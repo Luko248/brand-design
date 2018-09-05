@@ -459,16 +459,27 @@ a img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch; }
+  @media only screen and (max-width: 768px) {
+    .flex-container {
+      align-items: flex-start;
+      flex-direction: row-reverse; } }
   .flex-container__box {
     flex: 0 0 50%;
     max-width: 50%;
     width: 50%; }
+    @media only screen and (max-width: 768px) {
+      .flex-container__box {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        height: 30rem; } }
     .flex-container__box--with-padding {
-      padding: 5rem 0; }
+      padding: 5rem 2rem;
+      box-sizing: border-box; }
       @media only screen and (max-width: 768px) {
         .flex-container__box--with-padding {
           padding: 3rem 2rem;
-          box-sizing: border-box; } }
+          height: auto; } }
     .flex-container__box .i4ewOd-pzNkMb-haAclf {
       display: none !important; }
 
@@ -523,7 +534,8 @@ a img {
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
 .form {
-  width: 60rem;
+  max-width: 60rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
