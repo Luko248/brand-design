@@ -1,0 +1,28 @@
+﻿@import "../Base/global";
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+    &__box {
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 50%;
+
+        &--with-padding {
+            padding: 5rem 0;
+
+            @include res-max-tablet {
+                padding: 3rem 2rem;
+                box-sizing: border-box;
+            }
+        }
+
+        .i4ewOd-pzNkMb-haAclf {
+            display: none !important;
+        }
+    }
+}

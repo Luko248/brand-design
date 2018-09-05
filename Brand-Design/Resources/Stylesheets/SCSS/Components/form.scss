@@ -23,6 +23,7 @@
         width: 100%;
         margin-bottom: 2.5rem;
         @include border('bottom', $outline-width, solid, $color-black);
+        transition: $animate-all;
 
         &:last-child {
             margin-bottom: 0;
@@ -42,6 +43,9 @@
         }
 
         &:focus-within {
+            @include border('bottom', $outline-width, solid, $color-primary);
+            transition: $animate-all;
+
             &:before {
                 width: 100%;
                 transition: $animate-all;
@@ -86,7 +90,7 @@
             outline: none;
         }
 
-        &:focus ~ label, &:not(:empty) ~ label, &:valid ~ label {
+        &:focus + label, &:not(:placeholder-shown) + label, &:valid + label {
             transform: translate(-.5rem, -150%) scale(.8, .8);
             color: $color-primary;
             transition: $animate-all;

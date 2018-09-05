@@ -13,7 +13,7 @@
     background-color: $color-white;
 
     @include res-max-tablet {
-        justify-content: flex-end;
+        justify-content: space-between;
         transition: $animate-all;
     }
 
@@ -122,6 +122,24 @@
                     height: .1rem;
                 }
             }
+        }
+    }
+
+    &__mobile-logo {
+        display: none;
+        height: auto;
+        width: 20rem;
+
+        > img {
+            height: 90%;
+            display: block;
+            width: auto;
+        }
+
+        text-decoration: none;
+
+        @include res-max-tablet {
+            display: block;
         }
     }
 }

@@ -453,6 +453,45 @@ a img {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch; }
+  .flex-container__box {
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 50%; }
+    .flex-container__box--with-padding {
+      padding: 5rem 0; }
+      @media only screen and (max-width: 768px) {
+        .flex-container__box--with-padding {
+          padding: 3rem 2rem;
+          box-sizing: border-box; } }
+    .flex-container__box .i4ewOd-pzNkMb-haAclf {
+      display: none !important; }
+
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
 .container {
   width: 70%;
   margin: 0 auto;
@@ -502,7 +541,8 @@ a img {
     max-width: 100%;
     width: 100%;
     margin-bottom: 2.5rem;
-    border-bottom: 0.1rem solid #000; }
+    border-bottom: 0.1rem solid #000;
+    transition: all 0.3s; }
     .form__wrapper:last-child {
       margin-bottom: 0; }
     .form__wrapper:before {
@@ -516,9 +556,12 @@ a img {
       content: "";
       background-color: #a815d7;
       transition: all 0.3s; }
-    .form__wrapper:focus-within:before {
-      width: 100%;
+    .form__wrapper:focus-within {
+      border-bottom: 0.1rem solid #a815d7;
       transition: all 0.3s; }
+      .form__wrapper:focus-within:before {
+        width: 100%;
+        transition: all 0.3s; }
   .form__label {
     position: absolute;
     top: 1.2rem;
@@ -549,7 +592,7 @@ a img {
       font-size: 1.6rem; }
     .form__input:focus {
       outline: none; }
-    .form__input:focus ~ label, .form__input:not(:empty) ~ label, .form__input:valid ~ label {
+    .form__input:focus + label, .form__input:not(:placeholder-shown) + label, .form__input:valid + label {
       transform: translate(-0.5rem, -150%) scale(0.8, 0.8);
       color: #a815d7;
       transition: all 0.3s; }
@@ -678,7 +721,7 @@ p, span, a {
   background-color: #fff; }
   @media only screen and (max-width: 768px) {
     .nav {
-      justify-content: flex-end;
+      justify-content: space-between;
       transition: all 0.3s; } }
   .nav--fixed {
     position: fixed;
@@ -922,6 +965,18 @@ p, span, a {
         @media only screen and (max-width: 768px) {
           .nav__item:hover:before, .nav__item.active:before {
             height: .1rem; } }
+  .nav__mobile-logo {
+    display: none;
+    height: auto;
+    width: 20rem;
+    text-decoration: none; }
+    .nav__mobile-logo > img {
+      height: 90%;
+      display: block;
+      width: auto; }
+    @media only screen and (max-width: 768px) {
+      .nav__mobile-logo {
+        display: block; } }
 
 @font-face {
   font-family: 'Anja';
