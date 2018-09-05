@@ -79,22 +79,28 @@
                 <h2 class="section__title">Contact</h2>
                 <form class="form" method="post">
                     <div class="form__wrapper">
-                        <input type="text" placeholder="Jméno *" class="form__input" />
+                        <input type="text" class="form__input" required />
+                        <label class="form__label">Jméno *</label>
                     </div>
                     <div class="form__wrapper">
-                        <input type="text" placeholder="Příjmění *" class="form__input" />
+                        <input type="text" class="form__input" required />
+                        <label class="form__label">Příjmění *</label>
                     </div>
                     <div class="form__wrapper">
-                        <input type="email" placeholder="E-mail *" class="form__input" />
+                        <input type="email" class="form__input" required />
+                        <label class="form__label">Email *</label>
                     </div>
                     <div class="form__wrapper">
-                        <input type="tel" placeholder="Telefon" class="form__input" />
+                        <input type="tel" class="form__input" required pattern="*."/>
+                        <label class="form__label">Telefon</label>
                     </div>
-                    <div class="form__wrapper form__wrapper--full">
-                        <input type="number" placeholder="Aktuální rok *" class="form__input" />
+                    <div class="form__wrapper">
+                        <input type="number" class="form__input" required />
+                        <label class="form__label">Aktuální rok *</label>
                     </div>
-                    <div class="form__wrapper form__wrapper--full">
-                        <textarea placeholder="Vaše zpráva *" class="form__input form__input--textarea"></textarea>
+                    <div class="form__wrapper">
+                        <textarea class="form__input form__input--textarea" required></textarea>
+                        <label class="form__label">Vaše zpráva *</label>
                     </div>
                 </form>
             </div>

@@ -3,10 +3,6 @@
 .section {
     background-color: $color-white;
 
-    &--header {
-        background-color: $color-bg;
-    }
-
     &--slider {
     }
 
@@ -17,6 +13,7 @@
     }
 
     &--contact {
+        background-color: $color-transparent;
     }
 
     &__title {

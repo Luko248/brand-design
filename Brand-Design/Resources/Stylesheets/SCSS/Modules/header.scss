@@ -1,6 +1,6 @@
 ﻿@import "../Base/global";
 
-header {
+.header {
     .main-logo {
         display: block;
         height: 50vh;
@@ -8,5 +8,9 @@ header {
         width: auto;
         max-width: 100%;
         margin: 0 auto;
+    }
+
+    &--landing{
+        background-color: $color-bg;
     }
 }

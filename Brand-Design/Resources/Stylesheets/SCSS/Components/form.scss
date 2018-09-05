@@ -17,26 +17,49 @@
     }
 
     &__wrapper {
-        flex: 0 0 49%;
-        max-width: 49%;
-        width: 49%;
-        margin-bottom: 2rem;
-
-        @include res-max-tablet {
-            flex: 0 0 100%;
-            max-width: 100%;
-            width: 100%;
-        }
+        position: relative;
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 2.5rem;
+        @include border('bottom', $outline-width, solid, $color-primary);
 
         &:last-child {
             margin-bottom: 0;
         }
 
-        &--full {
-            flex: 0 0 100%;
-            max-width: 100%;
-            width: 100%;
+        &:before {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: block;
+            width: 0;
+            height: .2rem;
+            transform: translateY(-50%);
+            content: "";
+            background-color: $color-primary;
+            transition: $animate-all;
         }
+
+        &:focus-within {
+            &:before {
+                width: 100%;
+                transition: $animate-all;
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 1.2rem;
+        left: 0;
+        display: block;
+        width: 10rem;
+        transform: translate(1rem, 0) scale(1, 1);
+        font-size: $font-size-s;
+        color: $color-placeholder;
+        transition: $animate-all;
+        z-index: -1;
     }
 
     &__input {
@@ -46,6 +69,8 @@
         box-sizing: border-box;
         font-family: $font-text;
         font-size: $font-size-s;
+        background-color: $color-transparent;
+        border: none;
 
         &--textarea {
             min-height: 15rem;
@@ -55,6 +80,16 @@
             box-sizing: border-box;
             font-family: $font-text;
             font-size: $font-size-s;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus ~ label, &:not(:empty) ~ label, &:valid ~ label {
+            transform: translate(-.5rem, -150%) scale(.8, .8);
+            color: $color-primary;
+            transition: $animate-all;
         }
     }
 }

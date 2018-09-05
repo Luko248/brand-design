@@ -232,7 +232,6 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #000;
   margin: 0;
-  background-color: #170f24;
   overflow-x: hidden !important;
   box-sizing: border-box; }
 
@@ -498,28 +497,48 @@ a img {
     .form {
       width: 100%; } }
   .form__wrapper {
-    flex: 0 0 49%;
-    max-width: 49%;
-    width: 49%;
-    margin-bottom: 2rem; }
-    @media only screen and (max-width: 768px) {
-      .form__wrapper {
-        flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%; } }
+    position: relative;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    border-bottom: 0.1rem solid #a815d7; }
     .form__wrapper:last-child {
       margin-bottom: 0; }
-    .form__wrapper--full {
-      flex: 0 0 100%;
-      max-width: 100%;
-      width: 100%; }
+    .form__wrapper:before {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: block;
+      width: 0;
+      height: .2rem;
+      transform: translateY(-50%);
+      content: "";
+      background-color: #a815d7;
+      transition: all 0.3s; }
+    .form__wrapper:focus-within:before {
+      width: 100%;
+      transition: all 0.3s; }
+  .form__label {
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    display: block;
+    width: 10rem;
+    transform: translate(1rem, 0) scale(1, 1);
+    font-size: 1.6rem;
+    color: #999;
+    transition: all 0.3s;
+    z-index: -1; }
   .form__input {
     width: 100%;
     padding: .5rem;
     height: 4rem;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    background-color: rgba(0, 0, 0, 0);
+    border: none; }
     .form__input--textarea {
       min-height: 15rem;
       max-height: 30rem;
@@ -528,6 +547,12 @@ a img {
       box-sizing: border-box;
       font-family: "Open Sans", sans-serif;
       font-size: 1.6rem; }
+    .form__input:focus {
+      outline: none; }
+    .form__input:focus ~ label, .form__input:not(:empty) ~ label, .form__input:valid ~ label {
+      transform: translate(-0.3rem, -150%) scale(0.8, 0.8);
+      color: #a815d7;
+      transition: all 0.3s; }
 
 @font-face {
   font-family: 'Anja';
@@ -918,13 +943,16 @@ p, span, a {
   font-family: 'fontawesome';
   src: url("/Resources/fonts/fontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/fonts/fontAwesome/fontawesome-webfont.woff2") format("woff2"); }
 
-header .main-logo {
+.header .main-logo {
   display: block;
   height: 50vh;
   max-height: 768px;
   width: auto;
   max-width: 100%;
   margin: 0 auto; }
+
+.header--landing {
+  background-color: #170f24; }
 
 @font-face {
   font-family: 'Anja';
@@ -1036,8 +1064,8 @@ header .main-logo {
 
 .section {
   background-color: #fff; }
-  .section--header {
-    background-color: #170f24; }
+  .section--contact {
+    background-color: rgba(0, 0, 0, 0); }
   .section__title {
     text-align: center;
     margin: 0;

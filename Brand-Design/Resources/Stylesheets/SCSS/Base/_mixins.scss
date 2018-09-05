@@ -14,3 +14,7 @@
     border-color: $color-error !important;
     box-shadow: 0 0 0 $outline-width $color-error !important;
 }
+
+@mixin border($direction, $width, $style, $color) {
+    border-#{$direction}: $width $style $color;
+}
