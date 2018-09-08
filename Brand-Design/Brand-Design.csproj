@@ -71,8 +71,6 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
-    <Content Include="Resources\Images\Backgrounds\main-bg.png" />
-    <Content Include="Resources\Images\Backgrounds\night-sky.gif" />
     <Content Include="Resources\Images\Backgrounds\slider-home-1.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-2.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-3.jpg" />
@@ -86,11 +84,12 @@
     <Content Include="Resources\Images\Favicons\favicon.ico" />
     <Content Include="Resources\Images\Favicons\mstile-150x150.png" />
     <Content Include="Resources\Images\Favicons\safari-pinned-tab.svg" />
-    <Content Include="Resources\Images\Icons\rocket.svg" />
+    <Content Include="Resources\Images\Icons\green-drop.svg" />
     <Content Include="Resources\Images\Logos\big-logo.svg" />
     <Content Include="Resources\Images\Logos\logo-mobile.svg" />
     <Content Include="Resources\Scripts\JS\Init.js" />
     <Content Include="Resources\Scripts\Libs\jQuery\jquery-3.3.1.min.js" />
+    <Content Include="Resources\Scripts\Libs\Paralax\parallax.min.js" />
     <Content Include="Resources\Scripts\Libs\Slick\slick.js" />
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
@@ -139,6 +138,8 @@
     <Content Include="Resources\Fonts\FontAwesome\fontawesome-webfont.woff2" />
     <Content Include="Resources\Stylesheets\SCSS\Components\flex-container.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Components\animated-box.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\parallax-custom.scss" />
+    <Content Include="Resources\Fonts\Prometo\prometo.otf" />
     <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
