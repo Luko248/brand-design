@@ -12,6 +12,11 @@
         flex-direction: row-reverse;
     }
 
+    &--center {
+        height: 100%;
+        align-items: center;
+    }
+
     &__box {
         flex: 0 0 50%;
         max-width: 50%;

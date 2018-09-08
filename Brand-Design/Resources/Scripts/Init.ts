@@ -12,13 +12,11 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        if (scroll > HeaderHeight) {
+        if (scroll > 50) {
             Nav.addClass("nav--fixed");
-            Main.css("margin-top", "5rem");
         }
         else {
             Nav.removeClass("nav--fixed");
-            Main.css("margin-top", "0");
         }
     });
 });

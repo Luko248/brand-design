@@ -1,7 +1,6 @@
 ﻿@import "../Base/global";
 
 .section {
-    background-color: $color-white;
 
     &--slider {
     }
@@ -10,7 +9,6 @@
     }
 
     &--references {
-        background-color: $color-black;
     }
 
     &--contact {
@@ -18,29 +16,96 @@
     }
 
     &__title {
+        position: relative;
         text-align: center;
         margin: 0;
-        margin-bottom: 3rem;
-        font-family: $font-prometo;
+        margin-bottom: 4rem;
+        font-family: $font-title;
         font-size: $font-size-xxl;
         color: $color-font;
         font-weight: 300;
         text-transform: uppercase;
 
+        &:after {
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            width: 12rem;
+            display: block;
+            height: .1rem;
+            transform: translateX(-50%);
+            border-bottom: .3rem dashed $color-secondary;
+            content: "";
+        }
+
         &--secondary {
             color: $color-white;
         }
+
+        &--left {
+
+
+            &:after {
+                left: 0;
+                transform: translateX(0);
+            }
+
+            text-align: left;
+        }
+
+        &--right {
+            &:after {
+                left: auto;
+                transform: translateX(0);
+                right: 0;
+            }
+
+            text-align: right;
+        }
     }
+
+    &__subtitle {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 2.5rem;
+        font-family: $font-title;
+        font-size: 3rem;
+        color: $color-font;
+        text-transform: uppercase;
+
+        &--secondary {
+            color: $color-white;
+        }
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
 
     &__desc {
         margin: 0;
         margin-bottom: 3rem;
         text-align: center;
-        font-size: $font-size-m;
-        line-height: $font-size-xxl;
+        font-size: $font-size-l;
         font-weight: 300;
+        line-height: $font-size-xxl;
 
         &--secondary {
+            color: $color-white;
+        }
+
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
         }
     }
 }

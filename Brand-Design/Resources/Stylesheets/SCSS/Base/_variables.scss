@@ -15,11 +15,14 @@ $color-box-shadow: rgba(0,0,0,0.75);
 $color-overlay: rgba(0,0,0,0.6);
 $color-transparent: rgba(0, 0, 0, 0);
 
-$font-text: 'Open Sans', sans-serif;
-$font-title: $font-text;
 $font-awesome: 'FontAwesome';
 $font-logo: 'Anja';
-$font-prometo: 'Prometo';
+$font-prometo-l: 'Prometo-l';
+$font-prometo-r: 'Prometo-r';
+$font-roboto-l: 'Roboto-l';
+$font-roboto-r: 'Roboto-l';
+$font-text: $font-roboto-l;
+$font-title: $font-prometo-l;
 
 // Helpfull variables
 $outline-width: .1rem;
@@ -36,15 +39,10 @@ $width-desktop: 980px;
 $width-desktop-large: 1200px;
 
 //font-sizes
-$font-size-xxl: 3rem;
+$font-size-xxl: 4.5rem;
 $font-size-xl: 2.2rem;
 $font-size-l: 2rem;
 $font-size-m: 1.8rem;
 $font-size-s: 1.6rem;
 $font-size-xs: 1.2rem;
 $font-size-xxs: 1rem;
-
-@font-face {
-    font-family: 'fontawesome';
-    src: url('/Resources/fonts/fontAwesome/fontawesome-webfont.ttf') format('truetype'), url('/Resources/fonts/fontAwesome/fontawesome-webfont.woff') format('woff'), url('/Resources/fonts/fontAwesome/fontawesome-webfont.woff2') format('woff2');
-}

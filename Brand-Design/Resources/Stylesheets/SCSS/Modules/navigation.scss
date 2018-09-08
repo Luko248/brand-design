@@ -1,20 +1,23 @@
 ﻿@import "../Base/global";
 
 .nav {
-    position: relative;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    height: 6rem;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     z-index: 999;
-    height: 5rem;
     overflow-x: hidden;
-    padding: 0 2rem;
+    padding: 0 15%;
     box-sizing: border-box;
-    background-color: $color-white;
+    background-color: $color-transparent;
     -webkit-box-shadow: 0px 0px 5px 0px $color-transparent;
     -moz-box-shadow: 0px 0px 5px 0px $color-transparent;
     box-shadow: 0px 0px 5px 0px $color-transparent;
+    transition: background-color .1s, box-shadow .1s;
 
     @include res-max-tablet {
         justify-content: space-between;
@@ -24,25 +27,43 @@
     &--fixed {
         position: fixed;
         top: 0;
-        left: 0;
-        width: 100%;
         -webkit-box-shadow: 0px 0px 5px 0px $color-box-shadow;
         -moz-box-shadow: 0px 0px 5px 0px $color-box-shadow;
         box-shadow: 0px 0px 5px 0px $color-box-shadow;
-        transition: $animate-all;
+        background-color: $color-white;
+        transition: background-color .1s, box-shadow .1s;
+
+        .nav__item {
+            span {
+                color: $color-font;
+                transition: $animate-all;
+            }
+
+            &:before {
+                border-color: $color-black;
+                height: calc(100% - 12px);
+            }
+        }
+
+        .nav__logo > img {
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: block;
+            }
+        }
     }
 
     &__menu {
-        @include flex-wrapper-row(0, 0, 18rem, center, center);
-        flex: 0 0 80%;
-        width: 80%;
-        max-width: 80%;
-        margin: 0 auto;
-        background-color: $color-white;
+        @include flex-wrapper-row(0, 0, auto, center, center);
+        width: auto;
         transition: $animate-all;
 
         @include res-max-desktop-small {
-            @include flex-wrapper-row(0, 0, 12rem, center, center);
+            @include flex-wrapper-row(0, 0, auto, center, center);
+            width: auto;
         }
 
         @include res-max-tablet {
@@ -65,17 +86,30 @@
             transform: translateX(0);
             transition: $animate-all;
         }
+
+        > li {
+            margin-left: 5rem;
+
+            @include res-max-tablet {
+                margin-left: auto;
+            }
+        }
     }
 
     &__item {
         position: relative;
         display: block;
-        text-align: center;
+        text-align: right;
         text-decoration: none;
-        line-height: 5rem;
+        line-height: 6rem;
         text-transform: uppercase;
         box-sizing: border-box;
         z-index: 9999;
+        overflow-y: hidden;
+
+        &:first-child {
+            margin-left: 0;
+        }
 
         @include res-max-tablet {
             text-align: right;
@@ -88,11 +122,13 @@
             display: block;
             content: '';
             width: 100%;
-            height: 0;
+            height: calc(100% - 8px);
             top: 0;
             left: 0;
-            background-color: $color-bg;
+            transform: translateX(-110%);
+            background-color: $color-transparent;
             transition: $animate-all;
+            border-bottom: 2px dashed $color-white;
             z-index: -1;
 
             @include res-max-tablet {
@@ -104,26 +140,17 @@
         }
 
         > span {
-            color: $color-black;
+            color: $color-white;
+            transition: $animate-all;
             transition: $animate-all;
             transition: $animate-all;
         }
 
         &:hover, &.active {
             transition: $animate-all;
-            transition-delay: .35s;
-
-            > span {
-                color: $color-white;
-                transition: $animate-all;
-
-                @include res-max-tablet {
-                    color: $color-black;
-                }
-            }
 
             &:before {
-                height: 100%;
+                transform: translateX(0);
                 transition: $animate-all;
 
                 @include res-max-tablet {
@@ -133,15 +160,24 @@
         }
     }
 
-    &__mobile-logo {
-        display: none;
+
+    &__logo {
+        display: block;
         height: auto;
         width: 20rem;
 
         > img {
-            height: 90%;
-            display: block;
             width: auto;
+
+            &.desktop {
+                display: block;
+                height: 6rem;
+            }
+
+            &.mobile {
+                display: none;
+                height: 5rem;
+            }
         }
 
         text-decoration: none;

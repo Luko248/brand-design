@@ -10,6 +10,21 @@
 }
 
 @font-face {
-    font-family: 'Prometo';
-    src: url('/Resources//Fonts/Prometo/prometo.otf') format('opentype');
+    font-family: 'Prometo-l';
+    src: url('/Resources/Fonts/Prometo/prometo-light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Preometo-r';
+    src: url('/Resources/Fonts/Prometo/preometo-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Roboto-l';
+    src: url('/Resources/Fonts/Roboto/roboto-lifgt.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Roboto-r';
+    src: url('/Resources/Fonts/Roboto/roboto-regular.otf') format('opentype');
 }

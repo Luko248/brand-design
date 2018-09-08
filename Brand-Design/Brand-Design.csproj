@@ -71,10 +71,12 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
+    <Content Include="Resources\Images\Backgrounds\exposition_bg.jpg" />
+    <Content Include="Resources\Images\Backgrounds\print_bg.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-1.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-2.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-3.jpg" />
-    <Content Include="Resources\Images\Backgrounds\test-box-bg.JPG" />
+    <Content Include="Resources\Images\Backgrounds\stick_bg.jpg" />
     <Content Include="Resources\Images\Favicons\android-chrome-192x192.png" />
     <Content Include="Resources\Images\Favicons\android-chrome-512x512.png" />
     <Content Include="Resources\Images\Favicons\apple-touch-icon.png" />
@@ -84,17 +86,18 @@
     <Content Include="Resources\Images\Favicons\favicon.ico" />
     <Content Include="Resources\Images\Favicons\mstile-150x150.png" />
     <Content Include="Resources\Images\Favicons\safari-pinned-tab.svg" />
-    <Content Include="Resources\Images\Icons\green-drop.svg" />
-    <Content Include="Resources\Images\Logos\big-logo.svg" />
-    <Content Include="Resources\Images\Logos\logo-mobile.svg" />
+    <Content Include="Resources\Images\Logos\logo_circle.svg" />
+    <Content Include="Resources\Images\Logos\logo_white.svg" />
+    <Content Include="Resources\Images\Logos\logo_black.svg" />
     <Content Include="Resources\Scripts\JS\Init.js" />
+    <Content Include="Resources\Scripts\Libs\aos\aos.css" />
+    <Content Include="Resources\Scripts\Libs\aos\aos.js" />
     <Content Include="Resources\Scripts\Libs\jQuery\jquery-3.3.1.min.js" />
     <Content Include="Resources\Scripts\Libs\Paralax\parallax.min.js" />
     <Content Include="Resources\Scripts\Libs\Slick\slick.js" />
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
-    <Content Include="Resources\Stylesheets\CSS\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,8 +142,11 @@
     <Content Include="Resources\Stylesheets\SCSS\Components\flex-container.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Components\animated-box.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Components\parallax-custom.scss" />
-    <Content Include="Resources\Fonts\Prometo\prometo.otf" />
-    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
+    <Content Include="Resources\Fonts\Roboto\roboto-lifgt.otf" />
+    <Content Include="Resources\Fonts\Prometo\prometo-light.otf" />
+    <Content Include="Resources\Fonts\Prometo\preometo-regular.otf" />
+    <Content Include="Resources\Fonts\Roboto\roboto-regular.otf" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\logo.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,7 +155,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\Images\Icons\" />
     <Folder Include="Resources\Images\Referencies\" />
+    <Folder Include="Resources\Stylesheets\CSS\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />

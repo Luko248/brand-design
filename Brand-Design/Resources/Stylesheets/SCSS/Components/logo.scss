@@ -1,0 +1,16 @@
+﻿@import "../Base/global";
+
+.big-logo-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border: none;
+
+    > img {
+        display: block;
+        width: 85%;
+        margin: 0 auto;
+        border: none;
+    }
+}

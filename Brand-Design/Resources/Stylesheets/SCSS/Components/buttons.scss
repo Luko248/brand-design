@@ -4,22 +4,22 @@
     display: block;
     width: 22rem;
     margin: 0 auto;
+    height: 6rem;
     text-decoration: none;
-    color: $color-font;
+    color: $color-white;
     padding: $btn-padding;
-    font-size: $font-size-m;
-    font-weight: 300;
-    background-color: $color-secondary;
-    border: $base-border;
-    border-color: $color-black;
-    border-radius: $radius;
+    font-size: $font-size-l;
+    font-family: $font-prometo-r;
+    font-weight: 500;
+    background-color: $color-black;
+    border: none;
     text-transform: uppercase;
     text-align: center;
+    border-radius: 0;
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 5px 0px $color-transparent;
     -moz-box-shadow: 0px 0px 5px 0px $color-transparent;
     box-shadow: 0px 0px 5px 0px $color-transparent;
-    transition: $animate-all;
 
     &:focus {
         outline: none;
@@ -30,8 +30,14 @@
     }
 
     &:hover {
+        cursor: pointer;
         text-decoration: none;
         transition: $animate-all;
+
+        span, span:after {
+            color: $color-secondary;
+            transition: $animate-all;
+        }
     }
 
     &--secondary {
@@ -39,8 +45,7 @@
 
     &--submit {
         width: 100%;
-        max-width: 60rem;
-        margin-top: 2rem;
+        margin-top: 4rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,20 +53,21 @@
 
     &__text {
         position: relative;
-        border-color: $color-black;
-        font-size: $font-size-m;
-        font-size: $font-size-m;
+        border-color: $color-white;
+        font-size: $font-size-l;
         text-transform: uppercase;
+        transition: $animate-all;
 
         &:after {
             position: absolute;
             left: 100%;
             top: 50%;
             transform: translate(50%, -50%);
-            color: $color-black;
+            color: $color-white;
             font-family: $font-awesome;
-            font-size: $font-size-m;
+            font-size: $font-size-l;
             content: "\f1d8";
+            transition: $animate-all;
         }
     }
 }
