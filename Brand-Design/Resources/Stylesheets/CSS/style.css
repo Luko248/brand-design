@@ -345,9 +345,8 @@ a img {
 
 .burger-button {
   position: relative;
-  width: 3.5rem;
-  height: 3rem;
-  border: 0.1rem solid #000;
+  width: 5rem;
+  height: 4rem;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   display: none; }
@@ -357,12 +356,13 @@ a img {
   .burger-button > div {
     background-color: #000;
     position: absolute;
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: .2rem;
-    border-radius: .1rem; }
+    display: block;
+    height: .3rem;
+    width: 100%;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0);
+    transition: .25s ease-in-out; }
   .burger-button:before, .burger-button:after {
     display: block;
     position: absolute;
@@ -371,7 +371,7 @@ a img {
     background-color: #000;
     content: "";
     transition: all 0.3s;
-    height: .2rem;
+    height: .3rem;
     border-radius: .1rem; }
   .burger-button:before {
     top: .3rem;
@@ -998,10 +998,14 @@ p, span, a {
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0);
   transition: background-color .1s, box-shadow .1s; }
+  @media only screen and (max-width: 1200px) {
+    .nav {
+      padding: 0 2rem; } }
   @media only screen and (max-width: 768px) {
     .nav {
       justify-content: space-between;
-      transition: all 0.3s; } }
+      transition: all 0.3s;
+      padding: 0 2rem; } }
   .nav--fixed {
     position: fixed;
     top: 0;
@@ -1206,6 +1210,9 @@ p, span, a {
       transition: all 0.3s; }
     .nav__menu > li {
       margin-left: 5rem; }
+      @media only screen and (max-width: 1200px) {
+        .nav__menu > li {
+          margin-left: 3rem; } }
       @media only screen and (max-width: 768px) {
         .nav__menu > li {
           margin-left: auto; } }
@@ -1491,5 +1498,7 @@ p, span, a {
     text-align: left; }
   .section__desc--right {
     text-align: right; }
+  .section__desc--mo-margin {
+    margin-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */

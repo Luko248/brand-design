@@ -19,9 +19,14 @@
     box-shadow: 0px 0px 5px 0px $color-transparent;
     transition: background-color .1s, box-shadow .1s;
 
+    @include res-max-desktop-large {
+        padding: 0 2rem;
+    }
+
     @include res-max-tablet {
         justify-content: space-between;
         transition: $animate-all;
+        padding: 0 2rem;
     }
 
     &--fixed {
@@ -89,6 +94,10 @@
 
         > li {
             margin-left: 5rem;
+
+            @include res-max-desktop-large {
+                margin-left: 3rem;
+            }
 
             @include res-max-tablet {
                 margin-left: auto;

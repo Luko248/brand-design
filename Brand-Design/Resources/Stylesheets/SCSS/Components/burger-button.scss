@@ -2,9 +2,8 @@
 
 .burger-button {
     position: relative;
-    width: 3.5rem;
-    height: 3rem;
-    border: .1rem solid $color-black;
+    width: 5rem;
+    height: 4rem;
     background-color: $color-transparent;
     cursor: pointer;
     display: none;
@@ -16,24 +15,26 @@
     > div {
         background-color: $color-black;
         position: absolute;
-        width: 80%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: .2rem;
-        border-radius: .1rem;
+        display: block;
+        height: .3rem;
+        width: 100%;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0);
+        transition: .25s ease-in-out;
     }
 
     &:before, &:after {
         display: block;
         position: absolute;
-        width: 80%;
-        left: 50%;
+        height: .3rem;
+        width: 100%;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
         background-color: $color-black;
         content: "";
-        transition: $animate-all;
-        height: .2rem;
-        border-radius: .1rem;
     }
 
     &:before {
@@ -55,6 +56,81 @@
         &:after {
             width: 50%;
             transform: translate(-20%, -325%) rotate(-25deg);
+        }
+    }
+}
+
+
+.burger-container {
+    width: 5rem;
+    height: 4rem;
+    transition: $animate-all;
+    cursor: pointer;
+    float: right;
+    display: none;
+    position: relative;
+
+    @include res-max-tablet {
+        display: block;
+    }
+
+    .nav-burger {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 3.5rem;
+        height: 2.5rem;
+        transform: rotate(0deg) translate(-50%, -50%);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        transition: $animate-all;
+
+        > span {
+            display: block;
+            position: absolute;
+            height: .3rem;
+            width: 100%;
+            background: $color-svg-bg;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 50%;
+                transform: rotate(0deg) translateY(-50%);
+            }
+
+            &:nth-child(3) {
+                top: 100%;
+                transform: rotate(0deg) translateY(-100%);
+            }
+        }
+
+        &.open {
+            transition: $animate-all;
+
+            > span {
+                &:nth-child(1) {
+                    top: 50%;
+                    transform: rotate(135deg) translateY(0);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    left: 100%;
+                }
+
+                &:nth-child(3) {
+                    top: 50%;
+                    transform: rotate(-135deg) translateY(0);
+                }
+            }
         }
     }
 }

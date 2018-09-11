@@ -10,13 +10,19 @@ $(document).ready(function () {
         Menu.toggleClass('nav__menu--open');
     });
 
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll > 50) {
-            Nav.addClass("nav--fixed");
-        }
-        else {
-            Nav.removeClass("nav--fixed");
-        }
-    });
+    if ($(window).width() > 768) {
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll > 50) {
+                Nav.addClass("nav--fixed");
+            }
+            else {
+                Nav.removeClass("nav--fixed");
+            }
+        });
+    }
+    else {
+        Nav.addClass("nav--fixed");
+    }
+   
 });
