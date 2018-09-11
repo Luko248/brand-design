@@ -14,3 +14,27 @@
         border: none;
     }
 }
+
+.marker-window {
+
+    h3 {
+        margin: 0;
+        font-weight: 300;
+        color: $color-bg;
+        font-family: $font-logo;
+        font-size: $font-size-xl;
+    }
+
+    span {
+        font-weight: 300;
+        font-size: $font-size-xxs;
+        font-family: $font-logo;
+        color: $color-secondary;
+    }
+
+    > div {
+        margin-top: .5rem;
+        padding-top: .5rem;
+        border-top: 1px solid $color-primary;
+    }
+}

@@ -135,7 +135,6 @@
     <Content Include="Resources\Stylesheets\SCSS\style.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Views\section.scss" />
     <Content Include="Resources\tsconfig.json" />
-    <Content Include="Resources\Scripts\JS\Init.js.map" />
     <Content Include="Resources\Images\Favicons\site.webmanifest" />
     <Content Include="Resources\Fonts\FontAwesome\fontawesome-webfont.ttf" />
     <Content Include="Resources\Fonts\FontAwesome\fontawesome-webfont.woff" />
@@ -148,6 +147,7 @@
     <Content Include="Resources\Fonts\Prometo\preometo-regular.otf" />
     <Content Include="Resources\Fonts\Roboto\roboto-regular.otf" />
     <Content Include="Resources\Stylesheets\SCSS\Components\logo.scss" />
+    <Content Include="Resources\Scripts\JS\Init.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
+    <TypeScriptCompile Include="Resources\Scripts\GoogleMapsInit.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
