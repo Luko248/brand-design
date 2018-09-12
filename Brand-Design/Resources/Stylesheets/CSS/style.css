@@ -1448,6 +1448,25 @@ p, span, a {
     flex: 0 0 33%;
     max-width: 33%;
     width: 33%; }
+    .footer__box--social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center; }
+      .footer__box--social a {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        text-decoration: none;
+        transform: scale(1, 1);
+        transition: all 0.3s; }
+        .footer__box--social a:first-child {
+          margin-right: 1rem; }
+        .footer__box--social a:hover {
+          transform: scale(1.1, 1.1);
+          transition: all 0.3s; }
+      .footer__box--social img {
+        width: 100%; }
     .footer__box--full-flex {
       flex: 0 0 100%;
       max-width: 100%;
@@ -1458,37 +1477,12 @@ p, span, a {
     position: relative;
     color: #fff;
     font-size: 1.6rem;
-    margin-bottom: 1rem; }
-    .footer__text-item:before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translate(-150%, -50%);
-      display: none;
-      width: 2rem;
-      text-align: center;
-      font-family: "FontAwesome";
-      font-size: 1.8rem;
-      text-align: center;
-      color: #fff;
-      content: ""; }
+    margin-bottom: .5rem; }
+    .footer__text-item--title {
+      font-size: 2rem;
+      margin-bottom: 1rem; }
     .footer__text-item--right {
       text-align: right; }
-    .footer__text-item--user:before {
-      display: block;
-      content: "\f007"; }
-    .footer__text-item--ic:before {
-      font-family: "Anja";
-      display: block;
-      content: "IC"; }
-    .footer__text-item--mail:before {
-      display: block;
-      content: "\f0e0";
-      font-size: 1.6rem; }
-    .footer__text-item--phone:before {
-      display: block;
-      content: "\f10b";
-      font-size: 2.2rem; }
   .footer__link {
     color: #01ffa9;
     font-size: 1.6rem;

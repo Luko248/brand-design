@@ -86,6 +86,8 @@
     <Content Include="Resources\Images\Favicons\favicon.ico" />
     <Content Include="Resources\Images\Favicons\mstile-150x150.png" />
     <Content Include="Resources\Images\Favicons\safari-pinned-tab.svg" />
+    <Content Include="Resources\Images\Icons\facebook.svg" />
+    <Content Include="Resources\Images\Icons\instagram.svg" />
     <Content Include="Resources\Images\Icons\marker.png" />
     <Content Include="Resources\Images\Logos\logo_circle.svg" />
     <Content Include="Resources\Images\Logos\logo_white.svg" />

@@ -204,7 +204,7 @@ function conferenceMap() {
         anchor: new google.maps.Point(0, 32)
     };
     var infowindow = new google.maps.InfoWindow({
-        content: "<div class='marker-window'><h3>Brand<br>DESIGN</h3><span>graphic solutions</span><br><div>Veslařská 254/349<br>637 00 Brno</div></div>",
+        content: "<div class='marker-window'><h3>Brand<br>DESIGN</h3><span>graphic solutions</span><br><div>Veslařská 254/349<br>637 00, Brno</div></div>",
         anchor: new google.maps.Point(0, 0)
     });
     var marker = new google.maps.Marker({
