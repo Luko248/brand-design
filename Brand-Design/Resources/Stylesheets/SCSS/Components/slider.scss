@@ -33,9 +33,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
-            background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
+            background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
             z-index: 1;
             opacity: 1;
             transition: $animate-all;
@@ -63,7 +63,7 @@
                 transition: $animate-all;
                 transform: translateY(10%);
                 transition: transform 1s;
-                transition-delay:  .6s;
+                transition-delay: .6s;
 
                 &:hover {
                     transition: $animate-all;

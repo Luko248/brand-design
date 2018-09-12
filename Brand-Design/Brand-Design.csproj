@@ -89,6 +89,7 @@
     <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_480.jpg" />
     <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_768.jpg" />
     <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_980.jpg" />
+    <Content Include="Resources\Images\Backgrounds\parallax-bg-1.jpg" />
     <Content Include="Resources\Images\Backgrounds\print_bg.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-1.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-2.jpg" />
