@@ -18,11 +18,11 @@
         }
 
         &--second {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-1.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_480.jpg') 480w);
+            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-2.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_480.jpg') 480w);
         }
 
         &--third {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-1.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_480.jpg') 480w);
+            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-3.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_480.jpg') 480w);
         }
 
         &:after {
@@ -45,11 +45,30 @@
             outline: none;
         }
 
-        &.slick-active .slider__content {
-            transform: translateY(-100%);
-            opacity: 1;
-            transition: all 1s;
-            transition-delay: .5s;
+        &.slick-active {
+            .slider__content {
+                opacity: 1;
+                transition: all 1s;
+                transition-delay: .5s;
+            }
+
+            .slider__title {
+                transition: $animate-all;
+                transform: translateY(-10%);
+                transition: transform 1s;
+                transition-delay: .6s;
+            }
+
+            .slider__button {
+                transition: $animate-all;
+                transform: translateY(10%);
+                transition: transform 1s;
+                transition-delay:  .6s;
+
+                &:hover {
+                    transition: $animate-all;
+                }
+            }
         }
     }
 
@@ -70,8 +89,10 @@
         font-weight: 500;
         color: $color-white;
         letter-spacing: .5rem;
-        text-transform: uppercase;
         position: relative;
+        transform: translateY(0);
+        transition: all 1s;
+        transition-delay: .5s;
 
         &:after {
             position: absolute;
@@ -86,8 +107,28 @@
     }
 
     &__button {
-    }
+        display: block;
+        width: 25rem;
+        border: .2rem solid $color-white;
+        color: $color-white;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 2rem;
+        font-size: $font-size-l;
+        text-decoration: none;
+        box-sizing: border-box;
+        margin-top: 2rem;
+        transform: translateY(0);
+        transition: transform 1s;
+        transition-delay: .5s;
+        transition: $animate-all;
 
+        &:hover {
+            background-color: $color-white;
+            color: $color-font;
+            transition: $animate-all;
+        }
+    }
 
     .slick-list, .slick-track {
         height: 100%;
