@@ -13,10 +13,10 @@
         height: 100%;
         display: block;
         content: "";
-        background: -moz-linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);
+        /*background: -moz-linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);
         background: -webkit-linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);
-        background: linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);
-        /*background-color: $color-bg;
-        opacity: .7;*/
+        background: linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);*/
+        background-color: $color-bg;
+        opacity: .7;
     }
 }

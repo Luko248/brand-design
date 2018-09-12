@@ -59,6 +59,7 @@
         border-color: $color-white;
         font-size: $font-size-l;
         text-transform: uppercase;
+        letter-spacing: .2rem;
         transition: $animate-all;
 
         &:after {

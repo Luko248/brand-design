@@ -108,7 +108,7 @@
 
     &__button {
         display: block;
-        width: 25rem;
+        width: 26rem;
         border: .2rem solid $color-white;
         color: $color-white;
         text-transform: uppercase;
@@ -121,6 +121,7 @@
         transform: translateY(0);
         transition: transform 1s;
         transition-delay: .5s;
+        letter-spacing: .2rem;
         transition: $animate-all;
 
         &:hover {

@@ -69,7 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="expositions.html" />
     <Content Include="index.html" />
+    <Content Include="printing-and-production.html" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
     <Content Include="Resources\Images\Backgrounds\exposition_bg.jpg" />
     <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-1_1200.jpg" />
@@ -120,6 +122,7 @@
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
     <Content Include="Resources\Stylesheets\CSS\style.css" />
+    <Content Include="sticks.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
