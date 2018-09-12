@@ -92,6 +92,9 @@
     <Content Include="Resources\Images\Logos\logo_circle.svg" />
     <Content Include="Resources\Images\Logos\logo_white.svg" />
     <Content Include="Resources\Images\Logos\logo_black.svg" />
+    <Content Include="Resources\Images\Meta\meta-image-fb.png" />
+    <Content Include="Resources\Images\Meta\meta-image-google.png" />
+    <Content Include="Resources\Images\Meta\meta-image-twitter.png" />
     <Content Include="Resources\Scripts\JS\Init.js" />
     <Content Include="Resources\Scripts\Libs\aos\aos.css" />
     <Content Include="Resources\Scripts\Libs\aos\aos.js" />
