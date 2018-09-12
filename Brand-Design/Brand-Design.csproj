@@ -72,6 +72,21 @@
     <Content Include="index.html" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
     <Content Include="Resources\Images\Backgrounds\exposition_bg.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-1_1200.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-1_1440.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-1_480.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-1_768.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-1_980.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-2_1200.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-2_1440.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-2_480.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-2_768.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-2_980.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_1200.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_1440.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_480.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_768.jpg" />
+    <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_980.jpg" />
     <Content Include="Resources\Images\Backgrounds\print_bg.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-1.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-2.jpg" />
@@ -104,6 +119,7 @@
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
+    <Content Include="Resources\Stylesheets\CSS\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +169,7 @@
     <Content Include="Resources\Fonts\Roboto\roboto-regular.otf" />
     <Content Include="Resources\Stylesheets\SCSS\Components\logo.scss" />
     <Content Include="Resources\Scripts\JS\Init.js.map" />
+    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images\Referencies\" />
-    <Folder Include="Resources\Stylesheets\CSS\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
