@@ -6,6 +6,9 @@
     }
 
     &--about {
+        .container {
+            padding: 8rem 0;
+        }
     }
 
     &--references {
@@ -108,7 +111,7 @@
             text-align: right;
         }
 
-        &--mo-margin{
+        &--mo-margin {
             margin-bottom: 0;
         }
     }

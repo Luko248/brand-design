@@ -106,6 +106,7 @@
     <Content Include="Resources\Images\Icons\facebook.svg" />
     <Content Include="Resources\Images\Icons\instagram.svg" />
     <Content Include="Resources\Images\Icons\marker.png" />
+    <Content Include="Resources\Images\Icons\view-ico.svg" />
     <Content Include="Resources\Images\Logos\logo_circle.svg" />
     <Content Include="Resources\Images\Logos\logo_white.svg" />
     <Content Include="Resources\Images\Logos\logo_black.svg" />
