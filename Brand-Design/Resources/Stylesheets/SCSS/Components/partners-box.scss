@@ -1,0 +1,51 @@
+﻿@import "../Base/global";
+
+.partners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    @include res-max-tablet {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    &__text {
+        font-size: $font-size-xl;
+        margin-right: 3rem;
+        margin-bottom: 0;
+
+        @include res-max-tablet {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+            margin-right: 0;
+            text-align: center;
+            font-size: $font-size-l;
+        }
+    }
+
+    &__logo {
+        width: 15rem;
+        display: block;
+        text-decoration: none;
+
+        @include res-max-tablet {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        > img {
+            width: 100%;
+
+            @include res-max-tablet {
+                display: block;
+                max-width: 20rem;
+                margin: 0 auto;
+                margin-top: 2rem
+            }
+        }
+    }
+}

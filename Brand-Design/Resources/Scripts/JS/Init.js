@@ -223,10 +223,15 @@ var Nav = $('.nav');
 var Main = $('main');
 var Header = $('header');
 var Menu = $('.nav__menu');
+var NavItem = $('.nav__item');
 $(document).ready(function () {
     $('.burger-button').click(function () {
         $(this).toggleClass('burger-button--open');
         Menu.toggleClass('nav__menu--open');
+    });
+    NavItem.click(function () {
+        NavItem.removeClass('nav__item--active');
+        $(this).addClass('nav__item--active');
     });
     if ($(window).width() > 768 && Header.hasClass('header--landing')) {
         $(window).scroll(function () {

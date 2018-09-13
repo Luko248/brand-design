@@ -155,7 +155,7 @@
             transition: $animate-all;
         }
 
-        &:hover, &.active {
+        &:hover, &--active {
             transition: $animate-all;
 
             &:before {

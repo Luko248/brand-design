@@ -2,23 +2,12 @@
 
 .parallax-window {
     height: 35rem;
-    background: $color-transparent;
+    background: $color-bg;
     position: relative;
+    background-image: none !important;
 
-    &:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        content: "";
-        z-index: 1;
-        /*background: -moz-linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);
-        background: -webkit-linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);
-        background: linear-gradient(45deg, rgba(1, 255, 169, 0.4) 0%, rgba(168, 21, 215, 0.4) 100%);*/
-        background-color: $color-bg;
-        opacity: .9;
+    @include res-max-tablet {
+        height: 25rem;
     }
 
     &__content {
@@ -44,6 +33,12 @@
             text-align: center;
             font-weight: 300;
             text-transform: uppercase;
+
+            @include res-max-tablet {
+                font-size: $font-size-xl;
+                margin-right: 0;
+                text-align: center;
+            }
         }
 
         a {
@@ -60,6 +55,12 @@
             transition-delay: .5s;
             letter-spacing: .2rem;
             transition: $animate-all;
+
+            @include res-max-tablet {
+                padding: 1rem;
+                margin-top: 1.5rem;
+                font-size: $font-size-m;
+            }
 
             &:hover {
                 background-color: $color-white;

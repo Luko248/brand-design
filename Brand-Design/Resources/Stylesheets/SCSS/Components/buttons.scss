@@ -11,7 +11,7 @@
     font-size: $font-size-l;
     font-family: $font-prometo-r;
     font-weight: 500;
-    background-color: $color-black;
+    background-color: $color-button;
     border: none;
     text-transform: uppercase;
     text-align: center;
@@ -20,6 +20,11 @@
     -webkit-box-shadow: 0px 0px 7px 0px $color-transparent;
     -moz-box-shadow: 0px 0px 7px 0px $color-transparent;
     box-shadow: 0px 0px 7px 0px $color-transparent;
+
+    @include res-max-tablet {
+        padding: 1rem;
+        font-size: $font-size-m;
+    }
 
     &:focus {
         outline: none;

@@ -90,6 +90,7 @@
     <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_768.jpg" />
     <Content Include="Resources\Images\Backgrounds\OtherSizes\slider-home-3_980.jpg" />
     <Content Include="Resources\Images\Backgrounds\parallax-bg-1.jpg" />
+    <Content Include="Resources\Images\Backgrounds\parallax-bg-2.svg" />
     <Content Include="Resources\Images\Backgrounds\print_bg.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-1.jpg" />
     <Content Include="Resources\Images\Backgrounds\slider-home-2.jpg" />
@@ -111,6 +112,7 @@
     <Content Include="Resources\Images\Logos\logo_circle.svg" />
     <Content Include="Resources\Images\Logos\logo_white.svg" />
     <Content Include="Resources\Images\Logos\logo_black.svg" />
+    <Content Include="Resources\Images\Logos\mistry-mont-logo.svg" />
     <Content Include="Resources\Images\Meta\meta-image-fb.png" />
     <Content Include="Resources\Images\Meta\meta-image-google.png" />
     <Content Include="Resources\Images\Meta\meta-image-twitter.png" />
@@ -175,6 +177,7 @@
     <Content Include="Resources\Stylesheets\SCSS\Components\logo.scss" />
     <Content Include="Resources\Scripts\JS\Init.js.map" />
     <Content Include="Resources\Stylesheets\CSS\style.css.map" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\partners-box.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

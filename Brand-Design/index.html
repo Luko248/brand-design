@@ -84,7 +84,7 @@
             <div></div>
         </div>
         <ul class="nav__menu">
-            <li><a href="#Home" id="HomeScroll" class="nav__item"><span>Domů</span></a></li>
+            <li><a href="#Home" id="HomeScroll" class="nav__item nav__item--active"><span>Domů</span></a></li>
             <li><a href="#About" id="AboutScroll" class="nav__item"><span>O společnosti</span></a></li>
             <li><a href="#References" id="ReferencesScroll" class="nav__item"><span>Reference</span></a></li>
             <li><a href="#Contact" id="ContactScroll" class="nav__item"><span>Kontakt</span></a></li>
@@ -94,7 +94,7 @@
     <main>
         <section class="section section--about" id="About">
             <div class="container">
-                <div class="flex-container flex-container--center">
+                <div class="flex-container flex-container--center flex-container--mobile-reverse ">
                     <div class="flex-container__box">
                         <div class="big-logo-container" data-aos="fade-right">
                             <img src="Resources/Images/Logos/logo_circle.svg" alt="Main logo" class="main-logo" />
@@ -121,7 +121,7 @@
         <section class="section section--references" id="References">
             <div class="container">
                 <h2 class="section__title" data-aos="fade-up">Co nabízíme</h2>
-                <div class="flex-container flex-container--center">
+                <div class="flex-container flex-container--center flex-container--mobile-reverse">
                     <div class="flex-container__box flex-container__box--with-padding">
                         <a href="printing-and-production.html" class="anim-box anim-box--print" data-aos="fade-right">
                             <div class="anim-box__inner-box">
@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                             <div class="anim-box__view-ico">
-                                <img src="Resources/Images/Icons/view-ico.svg" alt="search-icon"/>
+                                <img src="Resources/Images/Icons/view-ico.svg" alt="search-icon" />
                             </div>
                         </a>
                     </div>
@@ -168,7 +168,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="flex-container flex-container--center">
+                <div class="flex-container flex-container--center flex-container--mobile-reverse">
                     <div class="flex-container__box flex-container__box--with-padding">
                         <a href="sticks.html" class="anim-box anim-box--stick" data-aos="fade-right">
                             <div class="anim-box__inner-box">
@@ -193,11 +193,21 @@
                 </div>
             </div>
         </section>
-        <!--<section class="parallax-window" data-parallax="scroll" data-image-src="Resources/Images/Backgrounds/parallax-bg-2.jpg">
-            
-        </section>-->
+        <section class="section section--partners">
+            <div class="container">
+                <h2 class="section__title" data-aos="fade-top">Partneři</h2>
+                <div class="partners">
+                    <p class="partners__text" data-aos="fade-right">
+                        Aktivne spolupracujeme s firmou Mistry Mont s.r.o.
+                    </p>
+                    <a href="https://www.mistrymont.cz/" class="partners__logo" target="_blank" data-aos="fade-left">
+                        <img src="Resources/Images/Logos/mistry-mont-logo.svg" alt="Mistry Mont Logo" />
+                    </a>
+                </div>
+            </div>
+        </section>
         <section class="section section--contact" id="Contact">
-            <div class="flex-container">
+            <div class="flex-container flex-container--mobile-reverse ">
                 <div id="ConfMap" class="flex-container__box"></div>
                 <div class="flex-container__box">
                     <div class="container">
@@ -307,10 +317,11 @@
                 arrows: false,
                 fade: true
             });
-        });
-        AOS.init({
-            startEvent: 'load',
-            easing: 'ease-in-out-sine'
+            AOS.init({
+                startEvent: 'load',
+                easing: 'ease-in-out-sine',
+                disable: 'mobile'
+            });
         });
     </script>
 
