@@ -3,10 +3,16 @@
 .section {
     overflow: hidden;
 
-    &--slider {
+    &--reference-detail {
+        background-color: $color-bg;
+
+        @include res-max-tablet {
+            margin-top: 6rem;
+        }
     }
 
-    &--references {
+    &--hidden {
+        display: none;
     }
 
     &--partners {
