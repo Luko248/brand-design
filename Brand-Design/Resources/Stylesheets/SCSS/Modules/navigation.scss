@@ -10,7 +10,6 @@
     align-items: center;
     justify-content: space-between;
     z-index: 999;
-    overflow-x: hidden;
     padding: 0 15%;
     box-sizing: border-box;
     background-color: $color-transparent;
@@ -74,17 +73,40 @@
         @include res-max-tablet {
             @include flex-wrapper-row(0, 0, 100%, flex-start, flex-start);
             position: absolute;
-            top: 5rem;
+            top: 6rem;
             right: 0;
             width: 30rem;
             flex: none;
             max-width: none;
             transform: translateX(100%);
             border-bottom: 2rem solid $color-white;
+            border-left: 1px solid $color-box-shadow;
         }
 
         @include res-max-mobile {
             width: 100%;
+            border-left: none;
+        }
+
+        &:after {
+            position: absolute;
+            top: 99%;
+            height: 100vh;
+            background-color: $color-white;
+            display: block;
+            width: 100%;
+            left: 0;
+            content: "";
+            display: none;
+            border-left: 1px solid $color-box-shadow;
+
+            @include res-max-tablet {
+                display: block;
+            }
+
+            @include res-max-mobile {
+                border-left: none;
+            }
         }
 
         &--open {
@@ -101,6 +123,12 @@
 
             @include res-max-tablet {
                 margin-left: auto;
+                background-color: $color-white;
+            }
+
+            @include res-max-mobile {
+                margin-bottom: 0 !important;
+                align-self: flex-start;
             }
         }
     }
@@ -143,15 +171,15 @@
             @include res-max-tablet {
                 top: 85%;
                 left: 2rem;
-                height: .1rem;
+                height: .1rem !important;
                 width: calc(100% - 4rem);
+                border-bottom: 2px solid $color-black;
+                transform: translateX(0);
             }
         }
 
         > span {
             color: $color-white;
-            transition: $animate-all;
-            transition: $animate-all;
             transition: $animate-all;
         }
 
@@ -163,9 +191,13 @@
                 transition: $animate-all;
 
                 @include res-max-tablet {
-                    height: .1rem;
+                    height: .1rem !important;
                 }
             }
+        }
+
+        &--active:before {
+            border-color: $color-primary !important;
         }
     }
 

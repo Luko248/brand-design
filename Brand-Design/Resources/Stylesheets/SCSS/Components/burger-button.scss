@@ -2,8 +2,8 @@
 
 .burger-button {
     position: relative;
-    width: 5rem;
-    height: 4rem;
+    width: 4rem;
+    height: 3rem;
     background-color: $color-transparent;
     cursor: pointer;
     display: none;
@@ -19,8 +19,9 @@
         height: .3rem;
         width: 100%;
         opacity: 1;
-        left: 0;
-        transform: rotate(0);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         transition: .25s ease-in-out;
     }
 
@@ -30,7 +31,7 @@
         height: .3rem;
         width: 100%;
         opacity: 1;
-        left: 0;
+        left: 50%;
         transform: rotate(0deg);
         transition: .25s ease-in-out;
         background-color: $color-black;
@@ -38,24 +39,30 @@
     }
 
     &:before {
-        top: .3rem;
-        transform: translate(-50%, 150%) rotate(0);
+        top: 0;
+        transform: translate(-50%, 0) rotate(0);
     }
 
     &:after {
-        bottom: .3rem;
-        transform: translate(-50%, -150%) rotate(0);
+        bottom: 0;
+        transform: translate(-50%, 0) rotate(0);
     }
 
     &--open {
+
+        div {
+            transform: translate(200%, -50%);
+            opacity: 0;
+        }
+
         &:before {
-            width: 50%;
-            transform: translate(-20%,325%) rotate(25deg);
+            transform: translate(-50%, -.1rem) rotate(45deg);
+            top: 50%;
         }
 
         &:after {
-            width: 50%;
-            transform: translate(-20%, -325%) rotate(-25deg);
+            transform: translate(-50%, .1rem) rotate(-45deg);
+            bottom: 50%;
         }
     }
 }
