@@ -176,8 +176,8 @@
     <Content Include="Resources\Fonts\Roboto\roboto-regular.otf" />
     <Content Include="Resources\Stylesheets\SCSS\Components\logo.scss" />
     <Content Include="Resources\Scripts\JS\Init.js.map" />
-    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <Content Include="Resources\Stylesheets\SCSS\Components\partners-box.scss" />
+    <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

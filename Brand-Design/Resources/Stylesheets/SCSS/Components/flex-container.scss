@@ -12,15 +12,17 @@
     }
 
     &--small-reverse {
-
-        @include res-max-desktop-small {
+        @include res-max-desktop-large {
             flex-direction: column-reverse;
         }
 
         .flex-container__box {
-            flex: 0 0 100%;
-            max-width: 100%;
-            width: 100%;
+
+            @include res-max-desktop-large {
+                flex: 0 0 100%;
+                max-width: 100%;
+                width: 100%;
+            }
         }
     }
 
@@ -65,7 +67,11 @@
     }
 
     #ConfMap {
-        @include res-max-desktop-small {
+        @include res-max-desktop-large {
+            height: 40rem;
+        }
+
+        @include res-max-tablet {
             height: 30rem;
         }
     }

@@ -14,15 +14,53 @@
         transition: $animate-all;
 
         &--first {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-1.jpg') 4096w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_1440.jpg') 1440w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_1200.jpg') 1200w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_980.jpg') 980w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_768.jpg') 768w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_480.jpg') 480w);
+            background-image: url('/Resources/Images/Backgrounds/slider-home-1.jpg');
+
+            @include res-max-desktop-large {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_1200.jpg');
+            }
+
+            @include res-max-desktop-small {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_980.jpg');
+            }
+
+            @include res-max-tablet {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_768.jpg');
+            }
+
         }
 
         &--second {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-2.jpg') 4096w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_1440.jpg') 1440w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_1200.jpg') 1200w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_980.jpg') 980w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_768.jpg') 768w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_480.jpg') 480w);
+            background-image: url('/Resources/Images/Backgrounds/slider-home-2.jpg');
+
+            @include res-max-desktop-large {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_1200.jpg');
+            }
+
+            @include res-max-desktop-small {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_980.jpg');
+            }
+
+            @include res-max-tablet {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_768.jpg');
+            }
         }
 
         &--third {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-3.jpg') 4096w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_1440.jpg') 1440w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_1200.jpg') 1200w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_980.jpg') 980w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_768.jpg') 768w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_480.jpg') 480w);
+            background-image: url('/Resources/Images/Backgrounds/slider-home-3.jpg');
+
+            @include res-max-desktop-large {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_1200.jpg');
+            }
+
+            @include res-max-desktop-small {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_980.jpg');
+            }
+
+            @include res-max-tablet {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_768.jpg');
+            }
+
         }
 
         &:after {

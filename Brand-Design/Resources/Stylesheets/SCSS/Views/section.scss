@@ -6,22 +6,6 @@
     &--slider {
     }
 
-    &--about {
-        /*.container {
-            padding: 8rem 0;
-
-            @include res-max-tablet {
-                width: 100%;
-                padding: 6rem 2rem;
-            }
-
-            @include res-max-tablet {
-                width: 100%;
-                padding: 3rem 2rem;
-            }
-        }*/
-    }
-
     &--references {
     }
 
@@ -76,7 +60,7 @@
         &--left {
             text-align: left;
 
-            @include res-max-desktop-small {
+            @include res-max-desktop-large {
                 text-align: center;
             }
 
@@ -84,7 +68,7 @@
                 left: 0;
                 transform: translateX(0);
 
-                @include res-max-desktop-small {
+                @include res-max-desktop-large {
                     left: 50%;
                     transform: translateX(-50%);
                 }
@@ -127,7 +111,7 @@
         }
 
         @include res-max-mobile {
-           display: none
+            display: none
         }
 
         &--secondary {
@@ -167,6 +151,10 @@
             line-height: $font-size-xl;
         }
 
+        b {
+            color: $color-strong;
+        }
+
         &--secondary {
             color: $color-white;
         }
@@ -175,7 +163,7 @@
         &--left {
             text-align: left;
 
-            @include res-max-tablet {
+            @include res-max-desktop-large {
                 text-align: center;
             }
         }
