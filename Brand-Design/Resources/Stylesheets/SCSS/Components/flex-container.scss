@@ -11,6 +11,19 @@
         align-items: flex-start;
     }
 
+    &--small-reverse {
+
+        @include res-max-desktop-small {
+            flex-direction: column-reverse;
+        }
+
+        .flex-container__box {
+            flex: 0 0 100%;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
     &--mobile-reverse {
 
         @include res-max-tablet {
@@ -52,7 +65,7 @@
     }
 
     #ConfMap {
-        @include res-max-tablet {
+        @include res-max-desktop-small {
             height: 30rem;
         }
     }

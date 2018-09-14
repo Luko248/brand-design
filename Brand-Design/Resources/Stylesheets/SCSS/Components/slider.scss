@@ -14,15 +14,15 @@
         transition: $animate-all;
 
         &--first {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-1.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-1_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-1_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-1_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-1_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-1_480.jpg') 480w);
+            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-1.jpg') 4096w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_1440.jpg') 1440w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_1200.jpg') 1200w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_980.jpg') 980w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_768.jpg') 768w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_480.jpg') 480w);
         }
 
         &--second {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-2.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-2_480.jpg') 480w);
+            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-2.jpg') 4096w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_1440.jpg') 1440w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_1200.jpg') 1200w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_980.jpg') 980w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_768.jpg') 768w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_480.jpg') 480w);
         }
 
         &--third {
-            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-3.jpg'), 1x, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_1440.jpg') 1440w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_1200.jpg') 1200w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_980.jpg') 980w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_768.jpg') 768w, url('/Resources/images/Backgrounds/OtherSizes/slider-home-3_480.jpg') 480w);
+            background-image: image-set(url('/Resources/Images/Backgrounds/slider-home-3.jpg') 4096w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_1440.jpg') 1440w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_1200.jpg') 1200w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_980.jpg') 980w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_768.jpg') 768w, url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_480.jpg') 480w);
         }
 
         &:after {
@@ -76,16 +76,18 @@
         position: absolute;
         top: 50%;
         left: 15%;
-        transform: translateY(-50%);
+        transform: translate(0, -50%);
         z-index: 2;
         opacity: 0;
         transition: all 1s;
         transition-delay: .5s;
 
-        @include res-max-mobile {
-            left: 0;
+        @include res-max-tablet {
+            left: 50%;
+            transform: translate(-50%, -50%);
             padding: 0 2rem;
             box-sizing: border-box;
+            width: 100%;
         }
     }
 

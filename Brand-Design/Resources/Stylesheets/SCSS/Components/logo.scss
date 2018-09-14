@@ -12,6 +12,14 @@
         width: 85%;
         margin: 0 auto;
         border: none;
+
+        @include res-max-desktop-small {
+            width: 50%;
+        }
+
+        @include res-max-mobile {
+            width: 85%;
+        }
     }
 }
 

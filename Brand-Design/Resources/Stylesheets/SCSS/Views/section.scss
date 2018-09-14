@@ -7,7 +7,7 @@
     }
 
     &--about {
-        .container {
+        /*.container {
             padding: 8rem 0;
 
             @include res-max-tablet {
@@ -19,7 +19,7 @@
                 width: 100%;
                 padding: 3rem 2rem;
             }
-        }
+        }*/
     }
 
     &--references {
@@ -76,7 +76,7 @@
         &--left {
             text-align: left;
 
-            @include res-max-tablet {
+            @include res-max-desktop-small {
                 text-align: center;
             }
 
@@ -84,7 +84,7 @@
                 left: 0;
                 transform: translateX(0);
 
-                @include res-max-tablet {
+                @include res-max-desktop-small {
                     left: 50%;
                     transform: translateX(-50%);
                 }

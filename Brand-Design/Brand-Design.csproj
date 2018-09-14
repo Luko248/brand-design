@@ -186,6 +186,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources\Images\Backgrounds\Slider\" />
     <Folder Include="Resources\Images\Referencies\" />
   </ItemGroup>
   <ItemGroup>
