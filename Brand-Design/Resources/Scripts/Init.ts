@@ -6,10 +6,17 @@ var Menu = $('.nav__menu');
 var NavItem = $('.nav__item');
 
 $(document).ready(function () {
-   
+
     $('.burger-button').click(function () {
         $(this).toggleClass('burger-button--open');
         Menu.toggleClass('nav__menu--open');
+    });
+
+    $(document).click(function (e) {
+        if ($(e.target).closest($('.burger-button')).length == 0) {
+            $('.burger-button').removeClass('burger-button--open');
+            Menu.removeClass('nav__menu--open');
+        }
     });
 
     NavItem.click(function () {

@@ -279,6 +279,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images\Backgrounds\Slider\" />
+    <Folder Include="Resources\Images\Referencies\Expositions\Brno\" />
+    <Folder Include="Resources\Images\Referencies\Expositions\Stuttgart\" />
+    <Folder Include="Resources\Images\Referencies\Expositions\Valtice\" />
+    <Folder Include="Resources\Images\Referencies\Expositions\Wien\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
