@@ -241,7 +241,7 @@ body {
   flex-flow: column wrap;
   width: 100%;
   min-height: 100%;
-  overflow: hidden; }
+  overflow-x: hidden; }
   body header {
     flex: 0 0 auto; }
   body nav {
@@ -965,7 +965,7 @@ a img {
 
 .parallax-window {
   height: 35rem;
-  background: #170f24;
+  background: rgba(0, 0, 0, 0);
   position: relative; }
   @media only screen and (max-width: 768px) {
     .parallax-window {
@@ -1995,7 +1995,7 @@ p, span, a {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
         line-height: 2.2rem; } }
-    .section__desc b {
+    .section__desc b, .section__desc strong {
       color: #7e07db; }
     .section__desc--secondary {
       color: #fff; }
