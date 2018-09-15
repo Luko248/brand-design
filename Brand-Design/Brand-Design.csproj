@@ -109,6 +109,20 @@
     <Content Include="Resources\Images\Icons\instagram.svg" />
     <Content Include="Resources\Images\Icons\marker.png" />
     <Content Include="Resources\Images\Icons\view-ico.svg" />
+    <Content Include="Resources\Images\Print\tisk-zakáky-Repsol_Stavanger 2018_1024.jpg" />
+    <Content Include="Resources\Images\Print\tisk-zakáky-Repsol_Stavanger 2018__480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-3D-nápisu z polystyrénu-a pvc_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-3D-nápisu z polystyrénu-a pvc_480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS-2_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS-2_480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS_480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-realizácia-Repsol_Stavanger-2018-2_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-realizácia-Repsol_Stavanger-2018-2_480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-realizácia-Repsol_Stavanger-2018_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-a-realizácia-Repsol_Stavanger-2018_480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-svíticiho-3d-loga_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-svíticiho-3d-loga_480.jpg" />
     <Content Include="Resources\Images\Referencies\Expositions\Argentina-Paris\Anuga-Paris-10_480.jpg" />
     <Content Include="Resources\Images\Logos\logo_circle.svg" />
     <Content Include="Resources\Images\Logos\logo_white.svg" />
@@ -205,6 +219,12 @@
     <Content Include="Resources\Images\Referencies\Expositions\Mnichov\Mnichov-8_480.jpg" />
     <Content Include="Resources\Images\Referencies\Expositions\Mnichov\Mnichov-9_1024.jpg" />
     <Content Include="Resources\Images\Referencies\Expositions\Mnichov\Mnichov-9_480.jpg" />
+    <Content Include="Resources\Images\Referencies\Expositions\Wien\wien-1_1024.jpg" />
+    <Content Include="Resources\Images\Referencies\Expositions\Wien\wien-1_480.jpg" />
+    <Content Include="Resources\Images\Referencies\Expositions\Wien\wien-2_1024.jpg" />
+    <Content Include="Resources\Images\Referencies\Expositions\Wien\wien-2_480.jpg" />
+    <Content Include="Resources\Images\Referencies\Expositions\Wien\wien-3_1024.jpg" />
+    <Content Include="Resources\Images\Referencies\Expositions\Wien\wien-3_480.jpg" />
     <Content Include="Resources\Scripts\JS\Init.js" />
     <Content Include="Resources\Scripts\Libs\aos\aos.css" />
     <Content Include="Resources\Scripts\Libs\aos\aos.js" />
@@ -282,7 +302,6 @@
     <Folder Include="Resources\Images\Referencies\Expositions\Brno\" />
     <Folder Include="Resources\Images\Referencies\Expositions\Stuttgart\" />
     <Folder Include="Resources\Images\Referencies\Expositions\Valtice\" />
-    <Folder Include="Resources\Images\Referencies\Expositions\Wien\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
