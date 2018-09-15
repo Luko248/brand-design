@@ -41,7 +41,12 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        height: 100%;
         transform: translate(-50%, -50%);
+    }
+
+    &:focus {
+        outline: none;
     }
 
     &:hover {
@@ -175,7 +180,7 @@
         width: 3.5rem;
         height: 3.5rem;
         z-index: 2;
-        opacity: .3;
+        opacity: .15;
         transition: $animate-all;
 
         @include res-max-tablet {

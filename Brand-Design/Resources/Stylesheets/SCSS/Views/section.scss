@@ -63,6 +63,10 @@
             color: $color-white;
         }
 
+        &--no-margin{
+            margin-bottom: 0;
+        }
+
         &--left {
             text-align: left;
 

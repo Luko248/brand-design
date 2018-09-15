@@ -109,10 +109,10 @@
     <Content Include="Resources\Images\Icons\instagram.svg" />
     <Content Include="Resources\Images\Icons\marker.png" />
     <Content Include="Resources\Images\Icons\view-ico.svg" />
-    <Content Include="Resources\Images\Print\tisk-zakáky-Repsol_Stavanger 2018_1024.jpg" />
-    <Content Include="Resources\Images\Print\tisk-zakáky-Repsol_Stavanger 2018__480.jpg" />
-    <Content Include="Resources\Images\Print\výroba-3D-nápisu z polystyrénu-a pvc_1024.jpg" />
-    <Content Include="Resources\Images\Print\výroba-3D-nápisu z polystyrénu-a pvc_480.jpg" />
+    <Content Include="Resources\Images\Print\tisk-zakáky-Repsol_Stavanger-2018_1024.jpg" />
+    <Content Include="Resources\Images\Print\tisk-zakáky-Repsol_Stavanger-2018_480.jpg" />
+    <Content Include="Resources\Images\Print\výroba-3D-nápisu_1024.jpg" />
+    <Content Include="Resources\Images\Print\výroba-3D-nápisu_480.jpg" />
     <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS-2_1024.jpg" />
     <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS-2_480.jpg" />
     <Content Include="Resources\Images\Print\výroba-a-lepení-stánek-ODS_1024.jpg" />
@@ -302,6 +302,7 @@
     <Folder Include="Resources\Images\Referencies\Expositions\Brno\" />
     <Folder Include="Resources\Images\Referencies\Expositions\Stuttgart\" />
     <Folder Include="Resources\Images\Referencies\Expositions\Valtice\" />
+    <Folder Include="Resources\Images\Sticks\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Resources\Scripts\Init.ts" />
