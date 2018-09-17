@@ -153,7 +153,7 @@
             font-size: $font-size-xxl;
             color: $color-white;
 
-            @include res-max-tablet {
+            @include res-max-desktop-HD {
                 font-size: 3rem;
             }
         }
