@@ -301,8 +301,17 @@
     <Content Include="Resources\Images\Referencies\Sticks\KLV_1024.jpg" />
     <Content Include="Resources\Images\Referencies\Sticks\KLV_480.jpg" />
     <Content Include="Resources\Scripts\JS\Init.js" />
+    <Content Include="Resources\Scripts\JS\Init.min.js">
+      <DependentUpon>Init.js</DependentUpon>
+    </Content>
     <Content Include="Resources\Scripts\Libs\aos\aos.css" />
     <Content Include="Resources\Scripts\Libs\aos\aos.js" />
+    <Content Include="Resources\Scripts\Libs\aos\aos.min.css">
+      <DependentUpon>aos.css</DependentUpon>
+    </Content>
+    <Content Include="Resources\Scripts\Libs\aos\aos.min.js">
+      <DependentUpon>aos.js</DependentUpon>
+    </Content>
     <Content Include="Resources\Scripts\Libs\FancyBox\jquery.fancybox.min.css" />
     <Content Include="Resources\Scripts\Libs\FancyBox\jquery.fancybox.min.js" />
     <Content Include="Resources\Scripts\Libs\jQuery\jquery-3.3.1.min.js" />
@@ -311,7 +320,12 @@
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
+    <Content Include="Resources\SEO\sitemap.xml" />
     <Content Include="Resources\Stylesheets\CSS\style.css" />
+    <Content Include="Resources\Stylesheets\CSS\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="robots.txt" />
     <Content Include="sticks.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -321,6 +335,7 @@
   <ItemGroup>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <None Include="bundleconfig.json" />
     <None Include="packages.config" />
     <Content Include="Resources\Fonts\Anja\Anja.ttf" />
     <Content Include="Resources\Fonts\Slick\slick.eot" />

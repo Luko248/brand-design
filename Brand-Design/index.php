@@ -65,8 +65,8 @@ if ($_POST)
 	<meta name="twitter:creator" content="">
 	<meta name="twitter:image" content="/Resources/Images/Meta/meta-image-twitter.png" />
 
-	<link href="Resources/Scripts/Libs/aos/aos.css" rel="stylesheet" />
-	<link href="Resources/Stylesheets/CSS/style.css" rel="stylesheet" />
+	<link href="Resources/Scripts/Libs/aos/aos.min.css" rel="stylesheet" />
+	<link href="Resources/Stylesheets/CSS/style.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -487,9 +487,9 @@ if ($_POST)
 	<script src="Resources/Scripts/Libs/jQuery/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script src="Resources/Scripts/Libs/Slick/slick.min.js" type="text/javascript"></script>
 	<script src="Resources/Scripts/Libs/Paralax/parallax.min.js"></script>
-	<script src="Resources/Scripts/Libs/aos/aos.js"></script>
+	<script src="Resources/Scripts/Libs/aos/aos.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV0KW_yweaQJEXvzMdNr-2uEbO_3Ba-Ls&callback=conferenceMap" async defer></script>
-	<script src="Resources/Scripts/JS/Init.js" type="text/javascript"></script>
+	<script src="Resources/Scripts/JS/Init.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('.slider').slick({

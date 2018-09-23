@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Allow: .js
+Allow: .css
+
+Sitemap: http://brand-design.cz/Resources/SEO//sitemap.xml
