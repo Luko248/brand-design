@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="expositions.html" />
-    <Content Include="index.html" />
+    <Content Include="index.php" />
     <Content Include="printing-and-production.html" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
     <Content Include="Resources\Images\Backgrounds\exposition_bg.jpg" />

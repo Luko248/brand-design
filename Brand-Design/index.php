@@ -8,24 +8,23 @@ if ($_POST)
         isset($_POST['priezvisko']) && $_POST['priezvisko'] &&
         isset($_POST['email']) && $_POST['email'] &&
         isset($_POST['zprava']) && $_POST['zprava'] &&
-        isset($_POST['cislo']) && $_POST['cislo'] &&
-        isset($_POST['rok']) && $_POST['rok'] == date('Y'))
+        isset($_POST['cislo']) && $_POST['cislo'])
     {
-        $hlavicka = 'From:'. 'Meno: ' . $_POST['jmeno'] .' '. $_POST['priezvisko'] .' '. $_POST['email'] . ' | Tel: ' . $_POST['cislo'];
+        $hlavicka = 'From:'. 'Meno: ' . $_POST['jmeno'] .' '. $_POST['priezvisko'] . ' | Tel: ' . $_POST['cislo'];
         $hlavicka .= "\nMIME-Version: 1.0\n";
         $hlavicka .= "Content-Type: text/html; charset=\"utf-8\"\n";
-        $adresa = 'info@brand-design.com';
+        $adresa = 'chylik.lukas@gmail.com';
         $predmet = 'Nová správa z brand-design.cz';
         $uspech = mb_send_mail($adresa, $predmet, $_POST['zprava'], $hlavicka);
         if ($uspech)
         {
-            $hlaska = 'Email byl úspěšně odeslán, odpovíme Vám v co nejdříve.';
+            $hlaska = '<p class="form__validation-message">Email byl úspěšně odeslán, Odpovíme Vám v co nejkratším možném čase.<p>';
         }
         else
-            $hlaska = 'Email se nepovedlo odesát. Zkontrolujte adresu.';
+            $hlaska = '<p class="form__validation-message form__validation-message--error">Email se nepovedlo odesát. Zkontrolujte adresu.<p>';	
     }
     else
-        $hlaska = 'Formulař není správně vyplněn!';
+        $hlaska = '<p class="form__validation-message form__validation-message--error">Formulař není správně vyplněn!<p>';
 }
 ?>
 
@@ -247,6 +246,7 @@ if ($_POST)
 
  </g>
 </svg>
+
 		</a>
 		<div class="burger-button">
 			<div></div>
@@ -383,10 +383,6 @@ if ($_POST)
 						<h2 class="section__title section__title--left" data-aos="fade-right">Napište nám</h2>
 						<div data-aos="fade-right">
 							<form class="form" method="post">
-								<?php
-								if ($hlaska)
-								echo('<p class="validation-message">' . $hlaska . '</p>');
-								?>
 								<div class="form__wrapper">
 									<input type="text"
 										   name="jmeno"
@@ -401,7 +397,7 @@ if ($_POST)
 										   class="form__input"
 										   placeholder=" "
 										   required />
-									<label class="form__label">Příjmění *</label>
+									<label class="form__label">Příjmení *</label>
 								</div>
 								<div class="form__wrapper">
 									<input type="email"
@@ -424,16 +420,19 @@ if ($_POST)
 									<textarea class="form__input form__input--textarea" name="zprava" placeholder=" " required></textarea>
 									<label class="form__label">Vaše zpráva *</label>
 								</div>
+								<button type="submit" value="Odeslat" class="button button--submit">
+									<span class="button__text">Send</span>
+								</button>
+									<?php
+								if ($hlaska)
+								echo ($hlaska);
+								?>
 							</form>
-							<button type="submit" value="Odeslat" class="button button--submit">
-								<span class="button__text">Send</span>
-							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
 	</main>
 
 	<footer class="footer">

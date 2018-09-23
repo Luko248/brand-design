@@ -66,6 +66,8 @@
         z-index: -1;
     }
 
+
+
     &__input {
         width: 100%;
         padding: .5rem;
@@ -94,6 +96,15 @@
             transform: translate(-.5rem, -150%) scale(.8, .8);
             color: $color-primary;
             transition: $animate-all;
+        }
+    }
+
+    &__validation-message{
+        margin-top: 1rem;
+        color: $color-secondary-hover;
+        text-align: center;
+        &--error{
+            color: $color-error;
         }
     }
 }
