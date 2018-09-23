@@ -1,6 +1,5 @@
 ﻿<?php
 mb_internal_encoding("UTF-8");
-
 $hlaska = '';
 if ($_POST)
 {
@@ -13,7 +12,7 @@ if ($_POST)
         $hlavicka = 'From:'. 'Meno: ' . $_POST['jmeno'] .' '. $_POST['priezvisko'] . ' | Tel: ' . $_POST['cislo'];
         $hlavicka .= "\nMIME-Version: 1.0\n";
         $hlavicka .= "Content-Type: text/html; charset=\"utf-8\"\n";
-        $adresa = 'chylik.lukas@gmail.com';
+        $adresa = 'info@brand-design.cz';
         $predmet = 'Nová správa z brand-design.cz';
         $uspech = mb_send_mail($adresa, $predmet, $_POST['zprava'], $hlavicka);
         if ($uspech)
@@ -34,9 +33,10 @@ if ($_POST)
 	<meta charset="utf-8" />
 	<title>BrandDESIGN - graphic solutions</title>
 	<meta name="author" content="Lukáš Chylík" />
-	<meta name="description" content="" />
+	<meta name="description" content="Navrh brandu a loga, velkoplošní grafika, Design konferenčních a veltržních stánků, návrh a výroba velkoplošních polepú na auta či výlohu" />
+	<meta name="keywords" content="Návrg Loga Brno, Logo Brno, Návrh designu, Design Brno, Konferenční stánky, Návrh brandu, Brand, Design, Velkoplošní grafika, Polepy na auta">
+	<meta name="google-site-verification" content="WlojpglePdITx8NvvfRNi0UoxVJ5Ft-Yy0G-QUHjUs0" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-	<meta name="keywords" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="apple-touch-icon" sizes="180x180" href="/Resources/Images/Favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/Resources/Images/Favicons/favicon-32x32.png">
@@ -269,7 +269,6 @@ if ($_POST)
 						</div>
 					</div>
 					<div class="flex-container__box flex-container__box--with-padding">
-
 						<h2 class="section__title section__title--left" data-aos="fade-left" data-aos-delay="100">O společnosti</h2>
 						<p class="section__desc section__desc--left" data-aos="fade-left" data-aos-delay="100">
 							Společnost <strong>BrandDESING</strong> vznikla po dlouholetých zkušenostech, aby zviditelnila <b>Vaši značku</b>. Zabývá se digitální velkoformátovým tiskem, řezanou grafikou a lepením, se sídlem v Brně.
