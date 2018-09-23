@@ -269,6 +269,7 @@ if ($_POST)
 						</div>
 					</div>
 					<div class="flex-container__box flex-container__box--with-padding">
+					<h1 class="main-title">BrandDESIGN - Graphic Solutions</h1>
 						<h2 class="section__title section__title--left" data-aos="fade-left" data-aos-delay="100">O společnosti</h2>
 						<p class="section__desc section__desc--left" data-aos="fade-left" data-aos-delay="100">
 							Společnost <strong>BrandDESING</strong> vznikla po dlouholetých zkušenostech, aby zviditelnila <b>Vaši značku</b>. Zabývá se digitální velkoformátovým tiskem, řezanou grafikou a lepením, se sídlem v Brně.

@@ -18,3 +18,10 @@ p, span, a {
     font-family: $font-text;
     
 }
+
+h1.main-title{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(-2000px);
+}

@@ -1467,6 +1467,12 @@ p, span, a {
   font-size: 2rem;
   font-family: "Roboto-l"; }
 
+h1.main-title {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(-2000px); }
+
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
