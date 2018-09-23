@@ -253,5 +253,8 @@ $(document).ready(function () {
     else {
         Nav.addClass("nav--fixed");
     }
+    setTimeout(function () {
+        $('.loading-anim').css("display", "none");
+    }, 1200);
 });
 //# sourceMappingURL=Init.js.map

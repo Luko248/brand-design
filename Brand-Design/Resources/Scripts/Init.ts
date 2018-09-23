@@ -39,6 +39,10 @@ $(document).ready(function () {
         Nav.addClass("nav--fixed");
     }
 
+    setTimeout(function () {
+        $('.loading-anim').css("display", "none");
+    }, 1200);
+
     //$('#HomeScroll').click(function () {
     //    $('html,body').animate({
     //        scrollTop: $('.header--landing').offset().top

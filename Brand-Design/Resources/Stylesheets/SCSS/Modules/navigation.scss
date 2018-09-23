@@ -16,7 +16,7 @@
     -webkit-box-shadow: 0px 0px 5px 0px $color-transparent;
     -moz-box-shadow: 0px 0px 5px 0px $color-transparent;
     box-shadow: 0px 0px 5px 0px $color-transparent;
-    transition: background-color .1s, box-shadow .1s;
+    transition: background-color 0, box-shadow .3s;
 
     @include res-max-desktop-large {
         padding: 0 2rem;
@@ -49,14 +49,19 @@
             }
         }
 
-        .nav__logo > img {
-            &.desktop {
-                display: none;
+        .nav__logo > svg {
+            transform: scale(.8,.8);
+            transition: $animate-all;
+
+            .fil4 {
+                fill: $color-black;
+                transition: $animate-all;
             }
 
-            &.mobile {
-                display: block;
-            }
+            /*.str3 {
+                stroke: $color-black;
+                transition: $animate-all;
+            }*/
         }
     }
 
@@ -208,22 +213,64 @@
         display: block;
         height: auto;
         width: 20rem;
+        text-decoration: none;
 
-        > img {
+        > svg {
+            display: block;
             width: auto;
+            transform: scale(1,1);
+            transition: $animate-all;
 
-            &.desktop {
-                display: block;
-                height: 6rem;
+            .str3 {
+                stroke: #FEFEFE;
+                stroke-width: 0.49998;
+                transition: $animate-all;
             }
 
-            &.mobile {
-                display: none;
-                height: 5rem;
+            .str2 {
+                stroke: #01FFA9;
+                stroke-width: 0.49998;
+            }
+
+            .str1 {
+                stroke: #7E07DB;
+                stroke-width: 0.49998;
+            }
+
+            .str0 {
+                stroke: #A815D7;
+                stroke-width: 0.49998;
+            }
+
+            .fil0 {
+                fill: #01FFA9;
+            }
+
+            .fil2 {
+                fill: #7E07DB;
+            }
+
+            .fil3 {
+                fill: #7E07DB;
+            }
+
+            .fil1 {
+                fill: #A815D7;
+            }
+
+            .fil4 {
+                fill: #FEFEFE;
+                fill-rule: nonzero;
+                transition: $animate-all;
+            }
+
+            .fil5 {
+                fill: #01FFA9;
+                fill-rule: nonzero;
             }
         }
 
-        text-decoration: none;
+
 
         @include res-max-tablet {
             display: block;

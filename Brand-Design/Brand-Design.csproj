@@ -109,6 +109,7 @@
     <Content Include="Resources\Images\Icons\instagram.svg" />
     <Content Include="Resources\Images\Icons\marker.png" />
     <Content Include="Resources\Images\Icons\view-ico.svg" />
+    <Content Include="Resources\Images\Logos\Logo_B.svg" />
     <Content Include="Resources\Images\Referencies\Print\tisk-zakáky-Repsol_Stavanger-2018_1024.jpg" />
     <Content Include="Resources\Images\Referencies\Print\tisk-zakáky-Repsol_Stavanger-2018_480.jpg" />
     <Content Include="Resources\Images\Referencies\Print\výroba-3D-nápisu_1024.jpg" />
@@ -125,8 +126,6 @@
     <Content Include="Resources\Images\Referencies\Print\výroba-svíticiho-3d-loga_480.jpg" />
     <Content Include="Resources\Images\Referencies\Expositions\Argentina-Paris\Anuga-Paris-10_480.jpg" />
     <Content Include="Resources\Images\Logos\logo_circle.svg" />
-    <Content Include="Resources\Images\Logos\logo_white.svg" />
-    <Content Include="Resources\Images\Logos\logo_black.svg" />
     <Content Include="Resources\Images\Logos\mistry-mont-logo.svg" />
     <Content Include="Resources\Images\Meta\meta-image-fb.png" />
     <Content Include="Resources\Images\Meta\meta-image-google.png" />
@@ -366,6 +365,7 @@
     <Content Include="Resources\Stylesheets\SCSS\Components\partners-box.scss" />
     <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <Content Include="Resources\Stylesheets\SCSS\Components\gallery.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Components\loading-anim.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

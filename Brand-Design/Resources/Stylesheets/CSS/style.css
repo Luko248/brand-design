@@ -944,6 +944,74 @@ a img {
   font-family: 'Roboto-r';
   src: url("/Resources/Fonts/Roboto/roboto-regular.otf") format("opentype"); }
 
+.loading-anim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 1080px;
+  background-color: #fff;
+  z-index: 9999;
+  opacity: 1;
+  animation: change-opacity 1.5s forwards; }
+  .loading-anim > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32rem; }
+  .loading-anim svg {
+    display: block;
+    width: 100%;
+    transform: scale(1, 1);
+    min-height: 20rem;
+    animation: change-scale 1s infinite; }
+    @media only screen and (max-width: 480px) {
+      .loading-anim svg {
+        height: 10rem;
+        min-height: 10rem; } }
+
+@keyframes change-scale {
+  0% {
+    transform: scale(1, 1); }
+  50% {
+    transform: scale(1.2, 1.2); }
+  100% {
+    transform: scale(1, 1); } }
+
+@keyframes change-opacity {
+  0% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@font-face {
+  font-family: 'Anja';
+  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"), url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'Prometo-l';
+  src: url("/Resources/Fonts/Prometo/prometo-light.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Preometo-r';
+  src: url("/Resources/Fonts/Prometo/preometo-regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Roboto-l';
+  src: url("/Resources/Fonts/Roboto/roboto-lifgt.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Roboto-r';
+  src: url("/Resources/Fonts/Roboto/roboto-regular.otf") format("opentype"); }
+
 .form {
   width: 100%;
   display: flex;
@@ -1492,7 +1560,7 @@ p, span, a {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0);
-  transition: background-color .1s, box-shadow .1s; }
+  transition: background-color 0, box-shadow .3s; }
   @media only screen and (max-width: 1200px) {
     .nav {
       padding: 0 2rem; } }
@@ -1515,10 +1583,16 @@ p, span, a {
     .nav--fixed .nav__item:before {
       border-color: #000;
       height: calc(100% - 12px); }
-    .nav--fixed .nav__logo > img.desktop {
-      display: none; }
-    .nav--fixed .nav__logo > img.mobile {
-      display: block; }
+    .nav--fixed .nav__logo > svg {
+      transform: scale(0.8, 0.8);
+      transition: all 0.3s;
+      /*.str3 {
+                stroke: $color-black;
+                transition: $animate-all;
+            }*/ }
+      .nav--fixed .nav__logo > svg .fil4 {
+        fill: #000;
+        transition: all 0.3s; }
   .nav__menu {
     width: 100%;
     display: -webkit-box;
@@ -1792,14 +1866,39 @@ p, span, a {
     height: auto;
     width: 20rem;
     text-decoration: none; }
-    .nav__logo > img {
-      width: auto; }
-      .nav__logo > img.desktop {
-        display: block;
-        height: 6rem; }
-      .nav__logo > img.mobile {
-        display: none;
-        height: 5rem; }
+    .nav__logo > svg {
+      display: block;
+      width: auto;
+      transform: scale(1, 1);
+      transition: all 0.3s; }
+      .nav__logo > svg .str3 {
+        stroke: #FEFEFE;
+        stroke-width: 0.49998;
+        transition: all 0.3s; }
+      .nav__logo > svg .str2 {
+        stroke: #01FFA9;
+        stroke-width: 0.49998; }
+      .nav__logo > svg .str1 {
+        stroke: #7E07DB;
+        stroke-width: 0.49998; }
+      .nav__logo > svg .str0 {
+        stroke: #A815D7;
+        stroke-width: 0.49998; }
+      .nav__logo > svg .fil0 {
+        fill: #01FFA9; }
+      .nav__logo > svg .fil2 {
+        fill: #7E07DB; }
+      .nav__logo > svg .fil3 {
+        fill: #7E07DB; }
+      .nav__logo > svg .fil1 {
+        fill: #A815D7; }
+      .nav__logo > svg .fil4 {
+        fill: #FEFEFE;
+        fill-rule: nonzero;
+        transition: all 0.3s; }
+      .nav__logo > svg .fil5 {
+        fill: #01FFA9;
+        fill-rule: nonzero; }
     @media only screen and (max-width: 768px) {
       .nav__logo {
         display: block; } }
