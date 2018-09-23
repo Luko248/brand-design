@@ -26,9 +26,9 @@
         }
 
         @include res-max-desktop-small {
-            flex: 0 0 33.333%;
-            max-width: 33.333%;
-            width: 33.333%;
+            flex: 0 0 calc(100/3);
+            max-width: calc(100/3);
+            width: calc(100/3);
             height: 28rem;
         }
 

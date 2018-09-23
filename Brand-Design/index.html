@@ -1,4 +1,35 @@
-﻿<!DOCTYPE html>
+﻿<?php
+mb_internal_encoding("UTF-8");
+
+$hlaska = '';
+if ($_POST)
+{
+    if (isset($_POST['jmeno']) && $_POST['jmeno'] &&
+        isset($_POST['priezvisko']) && $_POST['priezvisko'] &&
+        isset($_POST['email']) && $_POST['email'] &&
+        isset($_POST['zprava']) && $_POST['zprava'] &&
+        isset($_POST['cislo']) && $_POST['cislo'] &&
+        isset($_POST['rok']) && $_POST['rok'] == date('Y'))
+    {
+        $hlavicka = 'From:'. 'Meno: ' . $_POST['jmeno'] .' '. $_POST['priezvisko'] .' '. $_POST['email'] . ' | Tel: ' . $_POST['cislo'];
+        $hlavicka .= "\nMIME-Version: 1.0\n";
+        $hlavicka .= "Content-Type: text/html; charset=\"utf-8\"\n";
+        $adresa = 'info@brand-design.com';
+        $predmet = 'Nová správa z brand-design.cz';
+        $uspech = mb_send_mail($adresa, $predmet, $_POST['zprava'], $hlavicka);
+        if ($uspech)
+        {
+            $hlaska = 'Email byl úspěšně odeslán, odpovíme Vám v co nejdříve.';
+        }
+        else
+            $hlaska = 'Email se nepovedlo odesát. Zkontrolujte adresu.';
+    }
+    else
+        $hlaska = 'Formulař není správně vyplněn!';
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -105,7 +136,7 @@
                         <h2 class="section__title section__title--left" data-aos="fade-left" data-aos-delay="100">O společnosti</h2>
                         <p class="section__desc section__desc--left" data-aos="fade-left" data-aos-delay="100">
                             Společnost <strong>BrandDESING</strong> vznikla po dlouholetých zkušenostech, aby zviditelnila <b>Vaši značku</b>. Zabývá se digitální velkoformátovým tiskem, řezanou grafikou a lepením, se sídlem v Brně.
-</p>
+                        </p>
                         <p class="section__desc section__desc--left" data-aos="fade-left" data-aos-delay="100">
                             Dlouhodobě spolupracujeme z firmami na výrobě grafiky pro veletrhy, výstavy a kongresy, nejen v ČR, ale i po <b>celém světě</b>. Realizujeme polepy aut, výloh a pod. Výrobou 3D log a potiskem textilu. Výrobu reklamy zajistímetot od návrhu, přes výrobu až po samotné nalepení
                         </p>
@@ -215,32 +246,49 @@
                         <h2 class="section__title section__title--left" data-aos="fade-right">Napište nám</h2>
                         <div data-aos="fade-right">
                             <form class="form" method="post">
+                                <?php
+                                if ($hlaska)
+                                echo('<p class="validation-message">' . $hlaska . '</p>');
+                                ?>
                                 <div class="form__wrapper">
-                                    <input type="text" class="form__input" placeholder=" " required />
+                                    <input type="text"
+                                           name="jmeno"
+                                           class="form__input"
+                                           placeholder=" "
+                                           required />
                                     <label class="form__label">Jméno *</label>
                                 </div>
                                 <div class="form__wrapper">
-                                    <input type="text" class="form__input" placeholder=" " required />
+                                    <input type="text"
+                                           name="priezvisko"
+                                           class="form__input"
+                                           placeholder=" "
+                                           required />
                                     <label class="form__label">Příjmění *</label>
                                 </div>
                                 <div class="form__wrapper">
-                                    <input type="email" class="form__input" placeholder=" " required />
+                                    <input type="email"
+                                           class="form__input"
+                                           placeholder=" "
+                                           name="email"
+                                           required />
                                     <label class="form__label">Email *</label>
                                 </div>
                                 <div class="form__wrapper">
-                                    <input type="tel" class="form__input" placeholder=" " required pattern="*." />
+                                    <input type="tel"
+                                           class="form__input"
+                                           placeholder=" "
+                                           name="cislo"
+                                           required
+                                           pattern="*." />
                                     <label class="form__label">Telefon</label>
                                 </div>
                                 <div class="form__wrapper">
-                                    <input type="number" class="form__input" placeholder=" " required />
-                                    <label class="form__label">Aktuální rok *</label>
-                                </div>
-                                <div class="form__wrapper">
-                                    <textarea class="form__input form__input--textarea" placeholder=" " required></textarea>
+                                    <textarea class="form__input form__input--textarea" name="zprava" placeholder=" " required></textarea>
                                     <label class="form__label">Vaše zpráva *</label>
                                 </div>
                             </form>
-                            <button type="submit" class="button button--submit">
+                            <button type="submit" value="Odeslat" class="button button--submit">
                                 <span class="button__text">Send</span>
                             </button>
                         </div>
