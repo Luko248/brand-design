@@ -150,7 +150,7 @@ if ($_POST)
 					<h3 class="slider__title">
 						<b>Vaše</b> značka je důležitá
 					</h3>
-					<a href="#About" id="AboutScroll" class="slider__button">
+					<a href="#About" id="AboutScroll" class="slider__button to-about">
 						Zjistit více
 					</a>
 				</div>
@@ -170,7 +170,7 @@ if ($_POST)
 					<h3 class="slider__title">
 						Kérka pro <b>Váš</b> vůz?
 					</h3>
-					<a href="#Contact" id="ContactScroll" class="slider__button">
+					<a href="#Contact" id="ContactScroll" class="slider__button to-contact">
 						Kontaktujte nás
 					</a>
 				</div>

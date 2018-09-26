@@ -2203,6 +2203,8 @@ h1.main-title {
       color: #7e07db; }
     .section__desc--secondary {
       color: #fff; }
+      .section__desc--secondary b, .section__desc--secondary strong {
+        color: #01ffa9; }
     .section__desc--left {
       text-align: left; }
       @media only screen and (max-width: 1200px) {

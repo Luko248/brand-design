@@ -24,6 +24,17 @@ $(document).ready(function () {
         $(this).addClass('nav__item--active');
     });
 
+    $('.to-about').click(function () {
+        NavItem.removeClass('nav__item--active');
+        $('.nav__menu li:nth-child(2) a').addClass('nav__item--active');
+    });
+
+    $('.to-contact').click(function () {
+        NavItem.removeClass('nav__item--active');
+        $('.nav__menu li:nth-child(4) a').addClass('nav__item--active');
+    });
+
+
     if ($(window).width() > 768 && Header.hasClass('header--landing')) {
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();

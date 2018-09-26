@@ -63,7 +63,7 @@
             color: $color-white;
         }
 
-        &--no-margin{
+        &--no-margin {
             margin-bottom: 0;
         }
 
@@ -167,6 +167,10 @@
 
         &--secondary {
             color: $color-white;
+
+            b, strong {
+                color: $color-secondary;
+            }
         }
 
 
