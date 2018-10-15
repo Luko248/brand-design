@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* Slider */
 .slick-slider {
   position: relative;
@@ -2260,6 +2260,12 @@ h1.main-title {
     margin-bottom: 2rem;
     font-size: 2rem; }
   .success-email .button {
-    display: inline-block; }
+    display: block;
+    width: 32rem; }
+    .success-email .button span {
+      line-height: 4rem; }
+    @media only screen and (max-width: 480px) {
+      .success-email .button {
+        width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

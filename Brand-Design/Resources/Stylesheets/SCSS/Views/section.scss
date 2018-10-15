@@ -205,6 +205,15 @@
     }
 
     .button {
-        display: inline-block;
+        display: block;
+        width: 32rem;
+
+        span {
+            line-height: 4rem;
+        }
+
+        @include res-max-mobile {
+            width: 100%;
+        }
     }
 }

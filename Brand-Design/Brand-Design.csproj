@@ -69,7 +69,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Email.php" />
+    <Content Include="Email.html" />
+    <Content Include="en\Email.php" />
     <Content Include="en\expositions.html" />
     <Content Include="en\index.html" />
     <Content Include="en\printing-and-production.html" />
