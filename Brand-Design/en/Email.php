@@ -3,7 +3,7 @@ if(isset($_POST['email'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
 	$headers = "Content-Type: text/html; charset=UTF-8";
-    $email_to = "chylik.lukas@gmail.com";
+    $email_to = "info@brand-design.cz";
     $email_subject = "Nová zpráva z BrandDESIGN";
 
     function died($error) {
