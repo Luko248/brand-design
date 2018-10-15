@@ -31,7 +31,11 @@ RewriteRule ^domains/[^/]+/(.+[^/])$ /$1/ [R]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^subdom/[^/]+/(.+[^/])$ /$1/ [R]
 
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /html/(.*).html\ HTTP/
-RewriteRule .* http://brand-design.cz/html/%1 [R=301,L]
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /html/(.*)\ HTTP/
-RewriteRule .* %1.html [L]
+# To externally redirect /dir/foo.shtml to /dir/foo
+RewriteCond %{THE_REQUEST} ^GET\s.+\.shtml [NC]
+RewriteRule ^(.+)\.shtml$ /$1 [R=301,L,NC]
+
+# To internally redirect /dir/foo to /dir/foo.shtml
+RewriteCond %{REQUEST_URI} !\.shtml$ [NC]
+RewriteCond %{REQUEST_FILENAME}.shtml -f
+RewriteRule . %{REQUEST_URI}.shtml [L]

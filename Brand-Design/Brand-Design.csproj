@@ -69,8 +69,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Email.php" />
+    <Content Include="en\expositions.html" />
+    <Content Include="en\index.html" />
+    <Content Include="en\printing-and-production.html" />
+    <Content Include="en\sticks.html" />
     <Content Include="expositions.html" />
-    <Content Include="index.php" />
+    <Content Include="index.html" />
     <Content Include="printing-and-production.html" />
     <Content Include="Resources\Fonts\Slick\slick.svg" />
     <Content Include="Resources\Images\Backgrounds\exposition_bg.jpg" />

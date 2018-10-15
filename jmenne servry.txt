@@ -1,0 +1,44 @@
+Zmena mennych servrov - (webhosting)
+»14:34:53 David Král: Dobrý den, jak Vám mohu pomoci?
+»14:35:56 Martin Luksaj: Dobrý den, mam u Vás nejakú moznost aby moj web bezal na HTTPS?
+»14:36:58 David Král: Ano, v prípade webhosting NoLimit, VPS i dedikovaného serveru.
+
+Jedná se o brand-design.cz ?
+»14:37:46 Martin Luksaj: Ano, no jasne ale to by som musel zmenit NOLimit
+»14:37:57 Martin Luksaj: hosting na noLimit*
+»14:39:56 Martin Luksaj: Mozem to vyriesit bpomocou nejakej webovej aplikácie napr cloudflare. ked vam poslem ich nazvy mennych servrov, a zmenite mi ich, malo by to fungovat nie?
+»14:40:01 Martin Luksaj: brit.ns.cloudflare.com
+jonah.ns.cloudflare.com
+»14:41:25 David Král: DNS servery Vám zmenit mohu, poté bude záležet na smerování doménu u DNS cloudflare.
+
+SSL a HTTPS rešíte na strane poskytovatele hostingu, tedy pokud bude nadále smerovat doména na webhosting zde u nás.
+
+Máte 2 možnosti :
+
+1)Návod pro Let's Encrypt(certifikát zdarma) :
+
+Pro HTTPS je potreba mít aktivní príplatkovou službu: "HTTPS na doméne (SNI)" -> https://client.wedos.com/webhosting/webhost-ext-detail.php?id=199624&k=https_sni, poté zde: https://client.wedos.com/webhosting/https.html?id=199624 nastavíte HTTPS skrze Let's Encrypt pomocí tohoto návodu: https://kb.wedos.com/a/708/nastaveni-domen-pro-lets-encrypt-certifikat.html
+
+Certifikát bude vygenerován do 30 minut. 
+
+2)Návod pro vlastní certifikát :
+
+https://kb.wedos.com/cs/webhosting/https.html
+
+Postací také SNI, pokud nemáte certifikát pro vlastní IP.
+
+prípadne si napríklad zde mužete zakoupit vlastní pokud jej nemáte, ale mel byste zájem: https://www.ssls.cz/
+
+Záleží tedy, jestli si zakoupíte vlastní certifikát nebo využijete Let's encrypt.
+»14:43:23 Martin Luksaj: ok dakujem :)
+»14:45:00 David Král: Tedy DNS servery si prejete zmenit?
+»15:55:54 Martin Luksaj: ano
+»15:56:16 Martin Luksaj: alebo zatial to nemente
+napisem ked tak, len som chcel info
+ Seznam priložených souboru
+<
+
+
+
+priložit soubor
+© WEDOS

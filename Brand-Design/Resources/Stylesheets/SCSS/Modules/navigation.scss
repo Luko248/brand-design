@@ -37,6 +37,14 @@
         background-color: $color-white;
         transition: background-color .1s, box-shadow .1s;
 
+        .lang-switcher {
+            color: $color-font;
+
+            a {
+                color: $color-font;
+            }
+        }
+
         .nav__item {
             span {
                 color: $color-font;
@@ -50,14 +58,13 @@
         }
 
         .nav__logo > svg {
-            transform: scale(.8,.8);
+            width: 80%;
             transition: $animate-all;
 
             .fil4 {
                 fill: $color-black;
                 transition: $animate-all;
             }
-
             /*.str3 {
                 stroke: $color-black;
                 transition: $animate-all;
@@ -208,17 +215,23 @@
         }
     }
 
+    &__right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
 
     &__logo {
         display: block;
         height: auto;
-        width: 20rem;
+        width: 14rem;
         text-decoration: none;
 
         > svg {
             display: block;
-            width: auto;
-            transform: scale(1,1);
+            width: 100%;
             transition: $animate-all;
 
             .str3 {
@@ -274,6 +287,40 @@
 
         @include res-max-tablet {
             display: block;
+        }
+    }
+}
+
+.lang-switcher {
+    color: $color-white;
+    font-weight: 500;
+    font-size: $font-size-m;
+
+    @include res-max-tablet {
+        text-align: right;
+        padding-right: 2rem;
+        color: $color-black;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-white;
+
+        @include res-max-tablet {
+            color: $color-black;
+        }
+
+        &.active {
+            color: $color-secondary;
+
+            @include res-max-tablet {
+                color: $color-primary;
+            }
+        }
+
+        &:hover {
+            color: $color-secondary-hover;
+            transition: $animate-all;
         }
     }
 }

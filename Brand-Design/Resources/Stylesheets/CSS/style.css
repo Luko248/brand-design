@@ -724,6 +724,9 @@ a img {
       content: "\f1d8";
       transition: all 0.3s; }
 
+.switch {
+  opacity: 0; }
+
 @font-face {
   font-family: 'Anja';
   src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype"); }
@@ -1593,6 +1596,10 @@ h1.main-title {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     background-color: #fff;
     transition: background-color .1s, box-shadow .1s; }
+    .nav--fixed .lang-switcher {
+      color: #000; }
+      .nav--fixed .lang-switcher a {
+        color: #000; }
     .nav--fixed .nav__item span {
       color: #000;
       transition: all 0.3s; }
@@ -1600,7 +1607,7 @@ h1.main-title {
       border-color: #000;
       height: calc(100% - 12px); }
     .nav--fixed .nav__logo > svg {
-      transform: scale(0.8, 0.8);
+      width: 80%;
       transition: all 0.3s;
       /*.str3 {
                 stroke: $color-black;
@@ -1877,15 +1884,20 @@ h1.main-title {
     @media only screen and (max-width: 768px) {
       .nav__item--active:before {
         border-color: #a815d7 !important; } }
+  .nav__right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center; }
   .nav__logo {
     display: block;
     height: auto;
-    width: 20rem;
+    width: 14rem;
     text-decoration: none; }
     .nav__logo > svg {
       display: block;
-      width: auto;
-      transform: scale(1, 1);
+      width: 100%;
       transition: all 0.3s; }
       .nav__logo > svg .str3 {
         stroke: #FEFEFE;
@@ -1918,6 +1930,30 @@ h1.main-title {
     @media only screen and (max-width: 768px) {
       .nav__logo {
         display: block; } }
+
+.lang-switcher {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.8rem; }
+  @media only screen and (max-width: 768px) {
+    .lang-switcher {
+      text-align: right;
+      padding-right: 2rem;
+      color: #000; } }
+  .lang-switcher a {
+    text-decoration: none;
+    color: #fff; }
+    @media only screen and (max-width: 768px) {
+      .lang-switcher a {
+        color: #000; } }
+    .lang-switcher a.active {
+      color: #01ffa9; }
+      @media only screen and (max-width: 768px) {
+        .lang-switcher a.active {
+          color: #a815d7; } }
+    .lang-switcher a:hover {
+      color: #00cd88;
+      transition: all 0.3s; }
 
 @font-face {
   font-family: 'Anja';
@@ -2217,5 +2253,13 @@ h1.main-title {
           text-align: center; } }
     .section__desc--no-margin {
       margin-bottom: 0; }
+
+.success-email {
+  text-align: center; }
+  .success-email .success {
+    margin-bottom: 2rem;
+    font-size: 2rem; }
+  .success-email .button {
+    display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

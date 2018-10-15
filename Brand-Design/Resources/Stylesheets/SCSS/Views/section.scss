@@ -195,3 +195,16 @@
         }
     }
 }
+
+.success-email {
+    text-align: center;
+
+    .success {
+        margin-bottom: 2rem;
+        font-size: $font-size-l;
+    }
+
+    .button {
+        display: inline-block;
+    }
+}
