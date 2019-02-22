@@ -1128,14 +1128,18 @@ a img {
   font-family: 'Roboto-r';
   src: url("/Resources/Fonts/Roboto/roboto-regular.otf") format("opentype"); }
 
-.parallax-window {
+.banner-window {
   height: 35rem;
   background: rgba(0, 0, 0, 0);
-  position: relative; }
+  position: relative;
+  background-image: url("/Resources/Images/Backgrounds/parallax-bg-1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
   @media only screen and (max-width: 768px) {
-    .parallax-window {
+    .banner-window {
       height: 25rem; } }
-  .parallax-window:after {
+  .banner-window:after {
     position: absolute;
     top: 0;
     left: 0;
@@ -1146,7 +1150,7 @@ a img {
     z-index: 1;
     background-color: #170f24;
     opacity: .9; }
-  .parallax-window__content {
+  .banner-window__content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1160,7 +1164,7 @@ a img {
     padding: 0 2rem;
     box-sizing: border-box;
     z-index: 2; }
-    .parallax-window__content h3 {
+    .banner-window__content h3 {
       color: #fff;
       font-size: 3.5rem;
       font-family: "Prometo-l";
@@ -1169,11 +1173,11 @@ a img {
       font-weight: 300;
       text-transform: uppercase; }
       @media only screen and (max-width: 768px) {
-        .parallax-window__content h3 {
+        .banner-window__content h3 {
           font-size: 2.2rem;
           margin-right: 0;
           text-align: center; } }
-    .parallax-window__content a {
+    .banner-window__content a {
       display: block;
       width: 30rem;
       border: 0.2rem solid #fff;
@@ -1188,11 +1192,11 @@ a img {
       letter-spacing: .2rem;
       transition: all ease-in-out 0.3s; }
       @media only screen and (max-width: 768px) {
-        .parallax-window__content a {
+        .banner-window__content a {
           padding: 1rem;
           margin-top: 1.5rem;
           font-size: 1.8rem; } }
-      .parallax-window__content a:hover {
+      .banner-window__content a:hover {
         background-color: #fff;
         color: #000;
         transition: all ease-in-out 0.3s; }

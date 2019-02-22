@@ -1,9 +1,13 @@
 ﻿@import "../Base/global";
 
-.parallax-window {
+.banner-window {
     height: 35rem;
     background: $color-transparent;
     position: relative;
+    background-image: url('/Resources/Images/Backgrounds/parallax-bg-1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     @include res-max-tablet {
         height: 25rem;
