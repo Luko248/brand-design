@@ -966,20 +966,18 @@ a img {
   z-index: 9999;
   opacity: 1;
   animation: change-opacity 1.5s forwards; }
-  .loading-anim > div {
+  .loading-anim img {
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 32rem; }
-  .loading-anim svg {
-    display: block;
-    width: 100%;
+    width: 20rem;
     transform: scale(1, 1);
     min-height: 20rem;
     animation: change-scale 1s infinite; }
     @media only screen and (max-width: 480px) {
-      .loading-anim svg {
+      .loading-anim img {
         height: 10rem;
         min-height: 10rem; } }
 
