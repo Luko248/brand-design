@@ -359,12 +359,12 @@
     <Content Include="Resources\Scripts\Libs\Slick\slick.min.js" />
     <Content Include="Resources\postcss-image-set.js" />
     <Content Include="Resources\postcss.config.js" />
-    <Content Include="Resources\SEO\sitemap.xml" />
     <Content Include="Resources\Stylesheets\CSS\style.css" />
     <Content Include="Resources\Stylesheets\CSS\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
     <Content Include="robots.txt" />
+    <Content Include="sitemap.xml" />
     <Content Include="sticks.html" />
     <Content Include="Web.config" />
   </ItemGroup>

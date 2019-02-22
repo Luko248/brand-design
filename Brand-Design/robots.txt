@@ -4,4 +4,4 @@ Allow: /
 Allow: .js
 Allow: .css
 
-Sitemap: https://brand-design.cz/Resources/SEO/sitemap.xml
+Sitemap: https://brand-design.cz/sitemap.xml
