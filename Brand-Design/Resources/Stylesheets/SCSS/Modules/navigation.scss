@@ -57,18 +57,13 @@
             }
         }
 
-        .nav__logo > svg {
-            width: 80%;
+        .nav__logo > img {
             transition: $animate-all;
+            opacity: 0;
 
-            .fil4 {
-                fill: $color-black;
-                transition: $animate-all;
+            &:nth-child(2) {
+                opacity: 1;
             }
-            /*.str3 {
-                stroke: $color-black;
-                transition: $animate-all;
-            }*/
         }
     }
 
@@ -228,58 +223,20 @@
         height: auto;
         width: 14rem;
         text-decoration: none;
+        position: relative;
 
-        > svg {
+        > img {
             display: block;
             width: 100%;
             transition: $animate-all;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
 
-            .str3 {
-                stroke: #FEFEFE;
-                stroke-width: 0.49998;
-                transition: $animate-all;
-            }
-
-            .str2 {
-                stroke: #01FFA9;
-                stroke-width: 0.49998;
-            }
-
-            .str1 {
-                stroke: #7E07DB;
-                stroke-width: 0.49998;
-            }
-
-            .str0 {
-                stroke: #A815D7;
-                stroke-width: 0.49998;
-            }
-
-            .fil0 {
-                fill: #01FFA9;
-            }
-
-            .fil2 {
-                fill: #7E07DB;
-            }
-
-            .fil3 {
-                fill: #7E07DB;
-            }
-
-            .fil1 {
-                fill: #A815D7;
-            }
-
-            .fil4 {
-                fill: #FEFEFE;
-                fill-rule: nonzero;
-                transition: $animate-all;
-            }
-
-            .fil5 {
-                fill: #01FFA9;
-                fill-rule: nonzero;
+            &:nth-child(2) {
+                opacity: 0;
             }
         }
 

@@ -115,6 +115,8 @@
     <Content Include="Resources\Images\Icons\instagram.svg" />
     <Content Include="Resources\Images\Icons\marker.png" />
     <Content Include="Resources\Images\Icons\view-ico.svg" />
+    <Content Include="Resources\Images\Logos\logo-black.svg" />
+    <Content Include="Resources\Images\Logos\logo.svg" />
     <Content Include="Resources\Images\Logos\Logo_B.svg" />
     <Content Include="Resources\Images\Referencies\Expositions\Brno\Boehringer-1_1024.jpg" />
     <Content Include="Resources\Images\Referencies\Expositions\Brno\Boehringer-1_480.jpg" />

@@ -42,20 +42,24 @@ body {
 
     header {
         flex: 0 0 auto;
+        max-width: 100vw;
     }
 
     nav {
         flex: 0 0 auto;
+        max-width: 100vw;
     }
 
     main {
         flex: 1 1 auto;
         width: 100%;
         height: 100%;
+        max-width: 100vw;
     }
 
     footer {
         flex: 0 0 auto;
+        max-width: 100vw;
     }
 }
 

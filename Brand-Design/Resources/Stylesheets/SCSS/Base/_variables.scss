@@ -30,7 +30,7 @@ $font-title: $font-prometo-l;
 $outline-width: .1rem;
 $radius: .2rem;
 $transition-time: .3s;
-$animate-all: all $transition-time;
+$animate-all: all ease-in-out $transition-time;
 $btn-padding: .8rem 1.6rem;
 $base-border: $outline-width solid $color-primary;
 
