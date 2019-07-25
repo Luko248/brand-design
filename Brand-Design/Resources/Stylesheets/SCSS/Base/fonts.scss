@@ -2,29 +2,35 @@
 @font-face {
     font-family: 'Anja';
     src: url('/Resources/Fonts/Anja/Anja.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'FontAwesome';
     src: url('/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf') format('truetype'), url('/Resources/Fonts/FontAwesome/fontawesome-webfont.woff') format('woff'), url('/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2') format('woff2');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Prometo-l';
     src: url('/Resources/Fonts/Prometo/prometo-light.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Preometo-r';
     src: url('/Resources/Fonts/Prometo/preometo-regular.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto-l';
     src: url('/Resources/Fonts/Roboto/roboto-lifgt.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Roboto-r';
     src: url('/Resources/Fonts/Roboto/roboto-regular.otf') format('opentype');
+    font-display: swap;
 }

@@ -385,7 +385,7 @@
     <Content Include="Resources\Stylesheets\SCSS\Base\Mixins\_grid-flex.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Base\Mixins\_responsive.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Base\shared-classes.scss" />
-    <Content Include="Resources\Stylesheets\SCSS\Base\_fonts.scss" />
+    <Content Include="Resources\Stylesheets\SCSS\Base\fonts.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Base\_functions.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Base\_global.scss" />
     <Content Include="Resources\Stylesheets\SCSS\Base\_mixins.scss" />
