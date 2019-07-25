@@ -420,6 +420,7 @@
     <Content Include="Resources\Stylesheets\SCSS\Components\partners-box.scss" />
     <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <Content Include="Resources\Stylesheets\SCSS\Components\gallery.scss" />
+    <Content Include="Resources\.stylelintrc.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

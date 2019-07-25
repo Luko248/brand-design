@@ -1,41 +1,41 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .burger-button {
     position: relative;
+    display: none;
     width: 4rem;
     height: 3rem;
     background-color: $color-transparent;
     cursor: pointer;
-    display: none;
 
     @include res-max-tablet {
         display: block;
     }
 
     > div {
-        background-color: $color-black;
         position: absolute;
-        display: block;
-        height: .3rem;
-        width: 100%;
-        opacity: 1;
-        left: 50%;
         top: 50%;
+        left: 50%;
+        display: block;
+        width: 100%;
+        height: .3rem;
+        background-color: $color-black;
+        opacity: 1;
         transform: translate(-50%, -50%);
         transition: .25s ease-in-out;
     }
 
     &:before, &:after {
-        display: block;
         position: absolute;
-        height: .3rem;
-        width: 100%;
-        opacity: 1;
         left: 50%;
+        display: block;
+        content: "";
+        width: 100%;
+        height: .3rem;
+        background-color: $color-black;
+        opacity: 1;
         transform: rotate(0deg);
         transition: .25s ease-in-out;
-        background-color: $color-black;
-        content: "";
     }
 
     &:before {
@@ -51,56 +51,56 @@
     &--open {
 
         div {
-            transform: translate(200%, -50%);
             opacity: 0;
+            transform: translate(200%, -50%);
         }
 
         &:before {
-            transform: translate(-50%, -.1rem) rotate(45deg);
             top: 50%;
+            transform: translate(-50%, -.1rem) rotate(45deg);
         }
 
         &:after {
-            transform: translate(-50%, .1rem) rotate(-45deg);
             bottom: 50%;
+            transform: translate(-50%, .1rem) rotate(-45deg);
         }
     }
 }
 
 
 .burger-container {
+    position: relative;
+    display: none;
     width: 5rem;
     height: 4rem;
+    float: right;
     transition: $animate-all;
     cursor: pointer;
-    float: right;
-    display: none;
-    position: relative;
 
     @include res-max-tablet {
         display: block;
     }
 
     .nav-burger {
-        display: block;
         position: absolute;
         top: 50%;
         left: 50%;
+        display: block;
         width: 3.5rem;
         height: 2.5rem;
         transform: rotate(0deg) translate(-50%, -50%);
         transition: .5s ease-in-out;
-        cursor: pointer;
         transition: $animate-all;
+        cursor: pointer;
 
         > span {
-            display: block;
             position: absolute;
-            height: .3rem;
+            left: 0;
+            display: block;
             width: 100%;
+            height: .3rem;
             background: $color-bg;
             opacity: 1;
-            left: 0;
             transform: rotate(0deg);
             transition: .25s ease-in-out;
 
@@ -129,8 +129,8 @@
                 }
 
                 &:nth-child(2) {
-                    opacity: 0;
                     left: 100%;
+                    opacity: 0;
                 }
 
                 &:nth-child(3) {

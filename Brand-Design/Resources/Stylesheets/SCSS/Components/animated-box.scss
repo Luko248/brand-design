@@ -1,4 +1,4 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .anim-box {
     position: relative;
@@ -7,19 +7,19 @@
     max-width: 45rem;
     min-height: 32rem;
     max-height: 36rem;
-    padding: 2rem;
     box-sizing: border-box;
-    text-decoration: none;
+    padding: 2rem;
     margin: 0 auto;
-    color: $color-white;
     background-position: center;
-    background-size: cover;
+    color: $color-white;
+    text-decoration: none;
     overflow: hidden;
+    background-size: cover;
 
     @include res-max-tablet {
         flex: 0 0 100%;
-        max-width: 100%;
         width: 100%;
+        max-width: 100%;
         min-height: 25rem;
         max-height: 32rem;
     }
@@ -78,15 +78,15 @@
         top: 0;
         left: 0;
         display: block;
+        content: "";
         width: 110%;
         height: 110%;
         background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
         background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
         background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
-        z-index: 1;
         opacity: 1;
-        content: "";
         transition: $animate-all;
+        z-index: 1;
 
         @include res-max-tablet {
             opacity: 0;
@@ -99,15 +99,15 @@
         top: 0;
         left: 0;
         display: block;
+        content: "";
         width: 110%;
         height: 110%;
         background: -moz-linear-gradient(45deg, rgba(1, 255, 169, 0.6) 0%, rgba(168, 21, 215, 0.6) 100%);
         background: -webkit-linear-gradient(45deg, rgba(1, 255, 169, 0.6) 0%, rgba(168, 21, 215, 0.6) 100%);
         background: linear-gradient(45deg, rgba(1, 255, 169, 0.6) 0%, rgba(168, 21, 215, 0.6) 100%);
-        z-index: 2;
         opacity: 0;
-        content: "";
         transition: $animate-all;
+        z-index: 2;
 
         @include res-max-tablet {
             opacity: 1;
@@ -119,15 +119,15 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(0, 0);
-        width: 87%;
-        height: 85%;
-        border: $base-border;
-        border-color: $color-white;
-        opacity: 0;
-        transition: $animate-all;
         display: flex;
         align-items: center;
+        width: 87%;
+        height: 85%;
+        opacity: 0;
+        border: $base-border;
+        border-color: $color-white;
+        transform: translate(-50%, -50%) scale(0, 0);
+        transition: $animate-all;
         z-index: 3;
 
         @include res-max-tablet {
@@ -143,15 +143,15 @@
         }
 
         h3 {
+            box-sizing: border-box;
             padding: 0 2rem;
             margin: 0;
             margin-bottom: .5rem;
-            box-sizing: border-box;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 300;
             font-size: $font-size-xxl;
+            font-weight: 300;
             color: $color-white;
+            text-align: center;
+            text-transform: uppercase;
 
             @include res-max-desktop-HD {
                 font-size: 3rem;
@@ -162,26 +162,26 @@
             flex: 0 0 100%;
             width: 100%;
             max-width: 100%;
-            padding: 0 2rem;
             box-sizing: border-box;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 300;
+            padding: 0 2rem;
             font-size: $font-size-m;
+            font-weight: 300;
             color: $color-white;
+            text-align: center;
+            text-transform: uppercase;
         }
     }
 
     &__view-ico {
         position: absolute;
-        bottom: 2rem;
         right: 2rem;
+        bottom: 2rem;
         display: block;
         width: 3.5rem;
         height: 3.5rem;
-        z-index: 2;
         opacity: .15;
         transition: $animate-all;
+        z-index: 2;
 
         @include res-max-tablet {
             opacity: 0;

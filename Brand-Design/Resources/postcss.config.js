@@ -3,6 +3,6 @@
     parser: context.options.parser,
     plugins: [
         require('./postcss-image-set.js'),
-        require('autoprefixer')({browsers: "last 3 versions"}),
+        require('autoprefixer')({ browsers: "last 3 versions", grid: true })
     ]
 })

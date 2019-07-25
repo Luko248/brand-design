@@ -1,12 +1,12 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .header {
     .main-logo {
         display: block;
-        height: 15rem;
-        max-height: 768px;
         width: auto;
         max-width: 100%;
+        height: 15rem;
+        max-height: 768px;
         margin: 0 auto;
     }
 

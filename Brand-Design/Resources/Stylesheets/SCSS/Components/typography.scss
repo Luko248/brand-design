@@ -1,4 +1,4 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 h1 {
     font-size: $font-size-xxl;
@@ -14,14 +14,14 @@ h3 {
 }
 
 p, span, a {
-    font-size: $font-size-l;
     font-family: $font-text;
+    font-size: $font-size-l;
     
 }
 
 h1.main-title{
     position: absolute;
-    z-index: -1;
     opacity: 0;
     transform: translateY(-2000px);
+    z-index: -1;
 }

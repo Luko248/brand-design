@@ -1,11 +1,11 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .form {
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
     margin: 0 auto;
 
     @include res-max-tablet {
@@ -19,11 +19,11 @@
     &__wrapper {
         position: relative;
         flex: 0 0 100%;
-        max-width: 100%;
         width: 100%;
+        max-width: 100%;
         margin-bottom: 3rem;
-        @include border('bottom', $outline-width, solid, $color-black);
         transition: $animate-all;
+        @include border('bottom', $outline-width, solid, $color-black);
 
         &:last-child {
             margin-bottom: 0;
@@ -34,11 +34,11 @@
             top: 100%;
             left: 0;
             display: block;
+            content: "";
             width: 0;
             height: .2rem;
-            transform: translateY(-50%);
-            content: "";
             background-color: $color-primary;
+            transform: translateY(-50%);
             transition: $animate-all;
         }
 
@@ -59,9 +59,9 @@
         left: 0;
         display: block;
         width: 10rem;
-        transform: translate(1rem, 0) scale(1, 1);
         font-size: $font-size-s;
         color: $color-placeholder;
+        transform: translate(1rem, 0) scale(1, 1);
         transition: $animate-all;
         z-index: -1;
     }
@@ -70,19 +70,19 @@
 
     &__input {
         width: 100%;
-        padding: .5rem;
         height: 4rem;
         box-sizing: border-box;
-        font-family: $font-text;
-        font-size: $font-size-s;
+        padding: .5rem;
         background-color: $color-transparent;
         border: none;
+        font-family: $font-text;
+        font-size: $font-size-s;
 
         &--textarea {
-            min-height: 15rem;
-            max-height: 30rem;
             min-width: 100%;
             max-width: 100%;
+            min-height: 15rem;
+            max-height: 30rem;
             box-sizing: border-box;
             font-family: $font-text;
             font-size: $font-size-s;
@@ -93,8 +93,8 @@
         }
 
         &:focus + label, &:not(:placeholder-shown) + label, &:valid + label {
-            transform: translate(-.5rem, -150%) scale(.8, .8);
             color: $color-primary;
+            transform: translate(-.5rem, -150%) scale(.8, .8);
             transition: $animate-all;
         }
     }

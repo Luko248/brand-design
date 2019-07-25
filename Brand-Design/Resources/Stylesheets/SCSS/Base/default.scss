@@ -1,4 +1,4 @@
-﻿@import "variables";
+@import "variables";
 
 // IMPORTANT: Never include this file in other *.scss files
 
@@ -17,28 +17,28 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
     box-sizing: border-box !important;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 html {
-    font-size: 62.5%;
     height: 100%;
+    font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: $font-text;
-    color: $color-font;
-    margin: 0;
-    box-sizing: border-box;
     position: relative;
     display: flex;
     flex-flow: column wrap;
     width: 100%;
     min-height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: $font-text;
+    color: $color-font;
     overflow-x: hidden;
 
     header {
@@ -54,8 +54,8 @@ body {
     main {
         flex: 1 1 auto;
         width: 100%;
-        height: 100%;
         max-width: 100vw;
+        height: 100%;
     }
 
     footer {
@@ -75,8 +75,8 @@ table {
 }
 
 caption, th, td {
-    text-align: left;
     font-weight: normal;
+    text-align: left;
     vertical-align: middle;
 }
 

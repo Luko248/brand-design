@@ -1,6 +1,6 @@
 ﻿{
   "compilerOptions": {
-    "outFile": "../Resources/Scripts/JS/Init.js",
+    "outFile": "../Resources/JS/app.js",
     "lib": [ "dom", "es5", "es2015.core", "es2015.promise" ],
     "strictNullChecks": false,
     "noEmitOnError": true,
@@ -11,6 +11,7 @@
   },
   "compileOnSave": false,
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "Scripts/typings"
   ]
 }

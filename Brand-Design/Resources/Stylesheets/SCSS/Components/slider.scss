@@ -1,17 +1,17 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .slider {
     width: 100%;
 
     &__item {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         position: relative;
         height: 100vh;
         max-height: 1080px;
+        background-repeat: no-repeat;
+        background-position: center;
         opacity: 1;
         transition: $animate-all;
+        background-size: cover;
 
         &--first {
             background-image: url('/Resources/Images/Backgrounds/slider-home-1.jpg');
@@ -62,19 +62,19 @@
         }
 
         &:after {
-            display: block;
-            content: "";
             position: absolute;
             top: 0;
             left: 0;
+            display: block;
+            content: "";
             width: 100%;
             height: 100%;
             background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
             background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
             background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
-            z-index: 1;
             opacity: 1;
             transition: $animate-all;
+            z-index: 1;
         }
 
         &:focus {
@@ -89,15 +89,15 @@
             }
 
             .slider__title {
-                transition: $animate-all;
                 transform: translateY(-10%);
+                transition: $animate-all;
                 transition: transform 1s;
                 transition-delay: .6s;
             }
 
             .slider__button {
-                transition: $animate-all;
                 transform: translateY(10%);
+                transition: $animate-all;
                 transition: transform 1s;
                 transition-delay: .6s;
 
@@ -112,28 +112,28 @@
         position: absolute;
         top: 50%;
         left: 15%;
-        transform: translate(0, -50%);
-        z-index: 2;
         opacity: 0;
+        transform: translate(0, -50%);
         transition: all 1s;
         transition-delay: .5s;
+        z-index: 2;
 
         @include res-max-tablet {
             left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 0 2rem;
-            box-sizing: border-box;
             width: 100%;
+            box-sizing: border-box;
+            padding: 0 2rem;
+            transform: translate(-50%, -50%);
         }
     }
 
     &__title {
+        position: relative;
         font-family: $font-title;
         font-size: 5rem;
         font-weight: 500;
-        color: $color-white;
         letter-spacing: .5rem;
-        position: relative;
+        color: $color-white;
         transform: translateY(0);
         transition: all 1s;
         transition-delay: .5s;
@@ -147,19 +147,19 @@
         @include res-max-tablet {
             display: block;
             width: 100%;
-            text-align: center;
             font-size: 2.5rem;
+            text-align: center;
         }
 
         &:after {
             position: absolute;
-            left: .5rem;
             bottom: -1rem;
+            left: .5rem;
             display: block;
+            content: "";
             width: 15rem;
             height: .1rem;
             border-bottom: .2rem dashed $color-secondary;
-            content: "";
 
             @include res-max-tablet {
                 left: 50%;
@@ -171,27 +171,27 @@
     &__button {
         display: block;
         width: 26rem;
-        border: .2rem solid $color-white;
-        color: $color-white;
-        text-transform: uppercase;
-        text-align: center;
-        padding: 2rem;
-        font-size: $font-size-l;
-        text-decoration: none;
         box-sizing: border-box;
+        padding: 2rem;
         margin-top: 2rem;
+        border: .2rem solid $color-white;
+        font-size: $font-size-l;
+        letter-spacing: .2rem;
+        color: $color-white;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
         transform: translateY(0);
         transition: transform 1s;
-        transition-delay: .5s;
-        letter-spacing: .2rem;
         transition: $animate-all;
+        transition-delay: .5s;
 
         @include res-max-tablet {
-            padding: 1rem;
             width: 24rem;
-            font-size: $font-size-m;
+            padding: 1rem;
             margin: 0 auto;
             margin-top: 2rem;
+            font-size: $font-size-m;
         }
 
         &:hover {

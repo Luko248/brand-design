@@ -1,21 +1,21 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .button {
     display: block;
     width: 22rem;
-    margin: 0 auto;
     height: 6rem;
-    text-decoration: none;
-    color: $color-white;
     padding: $btn-padding;
-    font-size: $font-size-l;
-    font-family: $font-prometo-r;
-    font-weight: 500;
+    margin: 0 auto;
     background-color: $color-button;
     border: none;
-    text-transform: uppercase;
-    text-align: center;
     border-radius: 0;
+    font-family: $font-prometo-r;
+    font-size: $font-size-l;
+    font-weight: 500;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 7px 0px $color-transparent;
     -moz-box-shadow: 0px 0px 7px 0px $color-transparent;
@@ -27,17 +27,17 @@
     }
 
     &:focus {
-        outline: none;
+        transition: $animate-all;
         -webkit-box-shadow: 0px 0px 7px 0px $color-primary;
         -moz-box-shadow: 0px 0px 7px 0px $color-primary;
         box-shadow: 0px 0px 7px 0px $color-primary;
-        transition: $animate-all;
+        outline: none;
     }
 
     &:hover {
-        cursor: pointer;
         text-decoration: none;
         transition: $animate-all;
+        cursor: pointer;
         -webkit-box-shadow: 0px 0px 7px 0px $color-secondary;
         -moz-box-shadow: 0px 0px 7px 0px $color-secondary;
         box-shadow: 0px 0px 7px 0px $color-secondary;
@@ -52,29 +52,29 @@
     }
 
     &--submit {
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
     }
 
     &__text {
         position: relative;
         border-color: $color-white;
         font-size: $font-size-l;
-        text-transform: uppercase;
         letter-spacing: .2rem;
+        text-transform: uppercase;
         transition: $animate-all;
 
         &:after {
             position: absolute;
-            left: 100%;
             top: 50%;
-            transform: translate(50%, -50%);
-            color: $color-white;
+            left: 100%;
+            content: "\f1d8";
             font-family: $font-awesome;
             font-size: $font-size-l;
-            content: "\f1d8";
+            color: $color-white;
+            transform: translate(50%, -50%);
             transition: $animate-all;
         }
     }

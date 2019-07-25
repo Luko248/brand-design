@@ -1,11 +1,11 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .flex-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: stretch;
+    justify-content: space-between;
 
     @include res-max-tablet {
         align-items: flex-start;
@@ -20,8 +20,8 @@
 
             @include res-max-desktop-large {
                 flex: 0 0 100%;
-                max-width: 100%;
                 width: 100%;
+                max-width: 100%;
             }
         }
     }
@@ -34,34 +34,34 @@
     }
 
     &--center {
-        height: 100%;
         align-items: center;
+        height: 100%;
     }
 
     &__box {
         flex: 0 0 50%;
-        max-width: 50%;
         width: 50%;
+        max-width: 50%;
         overflow: hidden;
 
         @include res-max-tablet {
             flex: 0 0 100%;
-            max-width: 100%;
             width: 100%;
+            max-width: 100%;
         }
 
         &--with-padding {
-            padding: 5rem 2rem;
             box-sizing: border-box;
+            padding: 5rem 2rem;
 
             @include res-max-tablet {
-                padding: 3rem 2rem;
                 height: auto;
+                padding: 3rem 2rem;
             }
 
             @include res-max-mobile {
-                padding: 1.5rem 2rem;
                 height: auto;
+                padding: 1.5rem 2rem;
             }
         }
     }

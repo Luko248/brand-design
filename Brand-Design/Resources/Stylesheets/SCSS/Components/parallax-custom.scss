@@ -1,13 +1,13 @@
-﻿@import "../Base/global";
+@import "../Base/global";
 
 .banner-window {
+    position: relative;
     height: 35rem;
     background: $color-transparent;
-    position: relative;
     background-image: url('/Resources/Images/Backgrounds/parallax-bg-1.jpg');
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
 
     @include res-max-tablet {
         height: 25rem;
@@ -17,42 +17,42 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         display: block;
         content: "";
-        z-index: 1;
+        width: 100%;
+        height: 100%;
         background-color: $color-bg;
         opacity: .9;
+        z-index: 1;
     }
 
     &__content {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100%;
-        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
-        padding: 0 2rem;
+        justify-content: center;
+        width: 100%;
         box-sizing: border-box;
+        padding: 0 2rem;
+        transform: translate(-50%, -50%);
         z-index: 2;
 
         h3 {
-            color: $color-white;
-            font-size: 3.5rem;
-            font-family: $font-title;
             margin-right: 5rem;
-            text-align: center;
+            font-family: $font-title;
+            font-size: 3.5rem;
             font-weight: 300;
+            color: $color-white;
+            text-align: center;
             text-transform: uppercase;
 
             @include res-max-tablet {
-                font-size: $font-size-xl;
                 margin-right: 0;
+                font-size: $font-size-xl;
                 text-align: center;
             }
         }
@@ -60,17 +60,17 @@
         a {
             display: block;
             width: 30rem;
-            border: .2rem solid $color-white;
-            color: $color-white;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: $font-size-l;
-            text-decoration: none;
             box-sizing: border-box;
-            transition-delay: .5s;
+            padding: 2rem 1rem;
+            border: .2rem solid $color-white;
+            font-size: $font-size-l;
             letter-spacing: .2rem;
+            color: $color-white;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
             transition: $animate-all;
+            transition-delay: .5s;
 
             @include res-max-tablet {
                 padding: 1rem;

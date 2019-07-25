@@ -1,17 +1,14 @@
-﻿@import "responsive";
+@import "responsive";
 
 // IMPORTANT: Never include this file in other *.scss files
 // Use @import: "mixins"
 
 @mixin flex-wrapper-row($items-grow: 0, $items-shrink: 0, $items-width: 30%, $items-align: flex-start, $justify-content: space-between) {
-    width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
     -webkit-flex-direction: row;
     -moz-flex-direction: row;
     -ms-flex-direction: row;
@@ -20,6 +17,17 @@
     -moz-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+
+    -webkit-align-items: $items-align;
+    -moz-align-items: $items-align;
+    align-items: $items-align;
+
+    -webkit-justify-content: $justify-content;
+    -moz-justify-content: $justify-content;
+    justify-content: $justify-content;
+    width: 100%;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
 
     @if $justify-content == flex-start {
         -webkit-box-pack: start;
@@ -41,10 +49,6 @@
         -ms-flex-pack: $justify-content;
     }
 
-    -webkit-justify-content: $justify-content;
-    -moz-justify-content: $justify-content;
-    justify-content: $justify-content;
-
     @if $items-align == flex-start {
         -webkit-box-align: start;
         -ms-flex-align: start;
@@ -57,10 +61,6 @@
         -webkit-box-align: $items-align;
         -ms-flex-align: $items-align;
     }
-
-    -webkit-align-items: $items-align;
-    -moz-align-items: $items-align;
-    align-items: $items-align;
 
     & > * {
         @if $items-grow == true {
@@ -106,19 +106,19 @@
 
         -webkit-flex-basis: $items-width;
         -moz-flex-basis: $items-width;
-        -ms-flex-preferred-size: $items-width;
         flex-basis: $items-width;
         width: $items-width;
         box-sizing: border-box;
+        -ms-flex-preferred-size: $items-width;
     }
 
     @include res-max-mobile {
-        -webkit-box-direction: normal;
-        -webkit-box-orient: vertical;
         -webkit-flex-direction: column;
         -moz-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
 
         & > * {
             width: 100%;
@@ -135,9 +135,9 @@
 // their flex container, by assigning them to ordinal groups.
 
 @mixin flex-order-item($int) {
-    -webkit-box-ordinal-group: $int + 1;
     -webkit-order: $int;
     -moz-order: $int;
-    -ms-flex-order: $int;
     order: $int;
+    -webkit-box-ordinal-group: $int + 1;
+    -ms-flex-order: $int;
 }
