@@ -40,7 +40,7 @@
 
         gtag('config', 'UA-120163100-3');
 
-/**/</script>
+        /**/</script>
 
     <script type="application/ld+json">
         {
@@ -74,8 +74,6 @@
         }
 
     </script>
-
-    <link href="Resources/Scripts/Libs/aos/aos.min.css" rel="stylesheet" />
     <link href="Resources/Stylesheets/CSS/style.min.css" rel="stylesheet" />
 </head>
 
@@ -164,8 +162,8 @@
         </section>
         <section class="banner-window">
             <div class="banner-window__content">
-                <h3 data-aos="fade-right">Spolu najdeme vhodné řešení i pro <b>Vás</b></h3>
-                <a href="#Contact" data-aos="fade-left">Chci spolupracovat</a>
+                <h3>Spolu najdeme vhodné řešení i pro <b>Vás</b></h3>
+                <a href="#Contact">Chci spolupracovat</a>
             </div>
         </section>
         <section class="section section--references" id="References">
@@ -186,7 +184,7 @@
                         </a>
                     </div>
                     <div class="flex-container__box flex-container__box--with-padding">
-                        <div data-aos="fade-left">
+                        <div>
                             <h3 class="section__subtitle section__subtitle--left">Tisk / Výroba</h3>
                             <p class="section__desc section__desc--left section__desc--mo-margin">
                                 Technologické vybavení nám umožnuje vyhovět <b>nejmodernějším trendům</b>.
@@ -197,7 +195,7 @@
                 </div>
                 <div class="flex-container flex-container--center flex-container--mobile-reverse">
                     <div class="flex-container__box flex-container__box--with-padding">
-                        <div data-aos="fade-right">
+                        <div>
                             <h3 class="section__subtitle section__subtitle--right">Výstavy</h3>
                             <p class="section__desc section__desc--right section__desc--mo-margin">
                                 Poskytujeme komplexní servis od výroby veletržní grafiky až po montáž grafiky po <b>celém světe</b>.
@@ -233,7 +231,7 @@
                         </a>
                     </div>
                     <div class="flex-container__box flex-container__box--with-padding">
-                        <div data-aos="fade-left">
+                        <div>
                             <h3 class="section__subtitle section__subtitle--left">Polepy</h3>
                             <p class="section__desc section__desc--left section__desc--mo-margin">
                                 Provádíme velkoplošné reklamní polepy, polepy áut, polepy vozidel, výloh, od grafického návrhu až po samotné nalepení. Máte zájem o polep v Brně? <b>Kontaktujte nás</b>.
@@ -263,52 +261,13 @@
                     <div class="container container--no-padding">
                         <h2 class="section__title section__title--left">Napište nám</h2>
                         <div>
-                            <form class="form" name="contactform" method="post" action="Email.php">
-                                <div class="form__wrapper">
-                                    <input type="text"
-                                           name="first_name"
-                                           class="form__input"
-                                           placeholder=" "
-                                           required />
-                                    <label class="form__label">Jméno *</label>
-                                </div>
-                                <div class="form__wrapper">
-                                    <input type="text"
-                                           name="last_name"
-                                           class="form__input"
-                                           placeholder=" "
-                                           required />
-                                    <label class="form__label">Příjmení *</label>
-                                </div>
-                                <div class="form__wrapper">
-                                    <input type="email"
-                                           class="form__input"
-                                           placeholder=" "
-                                           name="email"
-                                           required />
-                                    <label class="form__label">Email *</label>
-                                </div>
-                                <div class="form__wrapper">
-                                    <input type="tel"
-                                           class="form__input"
-                                           placeholder=" "
-                                           name="telephone"
-                                           required
-                                           pattern="*." />
-                                    <label class="form__label">Telefon</label>
-                                </div>
-                                <div class="form__wrapper">
-                                    <textarea class="form__input form__input--textarea" name="comments" placeholder=" " required></textarea>
-                                    <label class="form__label">Vaše zpráva *</label>
-                                </div>
-                                <button type="submit" value="Submit" class="button button--submit">
-                                    <span class="button__text">Send</span>
-                                </button>
-                            </form>
+                            <p>
+                                Even though using "lorem ipsum" often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. "Lorem ipsum" also approximates a typical distribution of letters in English.
+                            </p>
+                            <a href="mailto:info@brand-design.cz?subject=Správa_z_brand-design.cz" class="contact__mail-to">
+                                Napšte nám
+                            </a>
                         </div>
-                        <buton class="switch" onclick="">Switch</buton>
-                        <pre id="pre-login">
-                        </pre>
                     </div>
                 </div>
             </div>
@@ -358,7 +317,7 @@
                     <strong>
                         ©BrandDESIGN&nbsp;
                     </strong>
-                    2018, Všechna práva vyhrazena
+                    2019, Všechna práva vyhrazena
                 </p>
             </div>
         </div>
@@ -366,8 +325,7 @@
 
     <script src="Resources/Scripts/Libs/jQuery/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="Resources/Scripts/Libs/Slick/slick.min.js" type="text/javascript"></script>
-    <script src="Resources/Scripts/Libs/aos/aos.min.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV0KW_yweaQJEXvzMdNr-2uEbO_3Ba-Ls&callback=conferenceMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV0KW_yweaQJEXvzMdNr-2uEbO_3Ba-Ls&callback=initMap" async defer></script>
     <script src="Resources/Scripts/JS/Init.min.js" type="text/javascript"></script>
     <script src="localisation.js"></script>
     <script type="text/javascript">
@@ -383,11 +341,6 @@
                 focusOnSelect: false,
                 arrows: false,
                 fade: true
-            });
-            AOS.init({
-                startEvent: 'load',
-                easing: 'ease-in-out-sine',
-                disable: 'mobile'
             });
         });
     </script>
