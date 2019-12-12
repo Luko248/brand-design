@@ -1,121 +1,33 @@
 @import "../base/global";
 
 .footer {
-    padding: 0 2rem;
-    padding-top: 3rem;
-    background-color: black;
+    background-color: $color-black;
 
     &__container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        display: grid;
+        align-items: stretch;
         justify-content: space-between;
-        width: 70%;
-        margin: 0 auto;
+        grid-template-columns: repeat(5, 1fr);
 
-        @include res-max-tablet {
-            width: 100%;
+        @include res-max-desktop-large {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include res-max-desktop-small {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
-    &__box {
-        flex: 0 0 33%;
-        width: 33%;
-        max-width: 33%;
+    &__map {
+        grid-column-end: span 3;
 
-        @include res-max-tablet {
-            flex: 0 0 100%;
-            width: 100%;
-            max-width: 100%;
+        @include res-max-desktop-large {
+            grid-column-end: span 1;
         }
 
-        &--social {
-            display: flex;
-            align-items: center;
-            align-self: center;
-            justify-content: center;
-
-            @include res-max-tablet {
-                padding: 2rem 0;
-            }
-
-            a {
-                display: block;
-                width: 3rem;
-                height: 3rem;
-                text-decoration: none;
-                transform: scale(1,1);
-                transition: $animate-all;
-
-                &:first-child {
-                    margin-right: 1rem;
-                }
-
-                &:hover {
-                    transform: scale(1.1,1.1);
-                    transition: $animate-all;
-                }
-            }
-
-            img {
-                width: 100%;
-            }
-        }
-
-        &--full-flex {
-            flex: 0 0 100%;
-            width: 100%;
-            max-width: 100%;
-            padding: .5rem 0;
-            text-align: center;
-
-            @include res-max-tablet {
-                padding-top: 2rem;
-            }
-        }
-    }
-
-    &__text-item {
-        position: relative;
-        margin-bottom: .5rem;
-        font-size: $font-size-s;
-        color: $color-white;
-
-        @include res-max-tablet {
-            text-align: center;
-        }
-
-        &--title {
-            margin-bottom: 1rem;
-            font-size: $font-size-l;
-
-            @include res-max-tablet {
-                text-align: center;
-            }
-        }
-
-        &--right {
-            text-align: right;
-
-            @include res-max-tablet {
-                text-align: center;
-            }
-        }
-    }
-
-    &__link {
-        font-size: $font-size-s;
-        color: $color-secondary;
-        transition: $animate-all;
-
-        @include res-max-tablet {
-            text-align: center;
-        }
-
-        &:hover {
-            color: $color-secondary-hover;
-            transition: $animate-all;
+        @include res-max-desktop-small {
+            height: 25rem;
+            grid-row-start: 2;
         }
     }
 }

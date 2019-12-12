@@ -24,7 +24,7 @@
     "bundle": "npm run bundle:css && npm run bundle:js",
     "postcss": "npm run compile:scss && postcss Resources/Stylesheets/CSS/style.css --config Resources/postcss.config.js -o Resources/Stylesheets/CSS/style.css",
     "bundle:css": "npm run stylelint && npm run compile:scss && postcss Resources/Stylesheets/CSS/style.css --config Resources/postcss.config.js | cleancss -o Resources/Stylesheets/CSS/style.min.css",
-    "bundle:js": "npm run compile:ts && uglifyjs -o Resources/JS/app.min.js -c -m -- Resources/JS/app.js",
+    "bundle:js": "npm run compile:ts && uglifyjs -o Resources/Scripts/JS/app.min.js -c -m -- Resources/Scripts/JS/app.js",
     "compile:scss": "node-sass --source-map=true Resources/Stylesheets/SCSS/style.scss Resources/Stylesheets/CSS/style.css",
     "stylelint": "stylelint --fix Resources/Stylesheets/SCSS/**/*.scss",
     "compile:ts": "tsc -p Resources",

@@ -1,5 +1,5 @@
 ﻿var google = (<any>window).google;
-function conferenceMap() {
+function initMap() {
 
     var LatLng = { lat: 49.1939695, lng: 16.5654526 };
 
@@ -196,7 +196,7 @@ function conferenceMap() {
 
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
-    var map = new google.maps.Map(document.getElementById('ConfMap'), {
+    var map = new google.maps.Map(document.getElementById('BrandDesignMap'), {
         center: LatLng,
         zoom: 14,
         disableDefaultUI: true,

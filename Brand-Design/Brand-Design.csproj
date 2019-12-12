@@ -494,6 +494,8 @@
     <Content Include="Resources\Images\Referencies\Sticks\KL4_480.jpg" />
     <Content Include="Resources\Images\Referencies\Sticks\KLV_1024.jpg" />
     <Content Include="Resources\Images\Referencies\Sticks\KLV_480.jpg" />
+    <Content Include="Resources\Scripts\JS\app.js" />
+    <Content Include="Resources\Scripts\JS\app.min.js" />
     <Content Include="Resources\Scripts\JS\Init.js" />
     <Content Include="Resources\Scripts\JS\Init.min.js">
       <DependentUpon>Init.js</DependentUpon>
@@ -529,7 +531,6 @@
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include=".htaccess" />
-    <None Include="bundleconfig.json" />
     <None Include="packages.config" />
     <Content Include="Resources\Fonts\Anja\Anja.ttf" />
     <Content Include="Resources\Fonts\Slick\slick.eot" />
@@ -575,6 +576,8 @@
     <Content Include="Resources\Stylesheets\CSS\style.css.map" />
     <Content Include="Resources\Stylesheets\SCSS\Components\gallery.scss" />
     <Content Include="Resources\.stylelintrc.json" />
+    <Content Include="Resources\Stylesheets\SCSS\Views\contact.scss" />
+    <Content Include="Resources\Scripts\JS\app.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

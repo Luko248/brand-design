@@ -1,0 +1,132 @@
+@import "../Base/global";
+
+.contact {
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5rem 7rem 2rem;
+    grid-column-end: span 2;
+    grid-gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include res-max-desktop-large {
+        grid-column-end: span 1;
+    }
+
+    @include res-max-desktop-small {
+        padding: 5rem 2rem;
+        grid-row-start: 1;
+        grid-template-columns: repeat(2, auto);
+    }
+
+    @include res-max-tablet {
+        grid-gap: 3rem;
+    }
+
+    > div {
+        @include res-max-mobile {
+            grid-column-end: span 2;
+        }
+    }
+
+    > h2 {
+        grid-column-end: span 2;
+
+        @include res-max-tablet {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__item {
+        position: relative;
+        margin-bottom: .5rem;
+        font-size: $font-size-s;
+        line-height: 1.5;
+        color: $color-white;
+        font-style: normal;
+
+        @include res-max-tablet {
+            text-align: center;
+        }
+
+        &--title {
+            margin-bottom: 1rem;
+            font-size: $font-size-l;
+
+            @include res-max-tablet {
+                text-align: center;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+
+        @include res-max-tablet {
+            justify-content: center;
+        }
+
+        a {
+            display: block;
+            width: 1.8rem;
+            height: 1.8rem;
+            text-decoration: none;
+            transform: scale(1,1);
+            transition: $animate-all;
+
+            &:first-child {
+                margin-right: 1rem;
+            }
+
+            &:hover {
+                transform: scale(1.1,1.1);
+                transition: $animate-all;
+            }
+        }
+
+        svg {
+            width: 100%;
+            fill: $color-white;
+        }
+    }
+
+    &__link {
+        font-size: $font-size-s;
+        color: $color-secondary;
+        transition: $animate-all;
+
+        @include res-max-tablet {
+            text-align: center;
+        }
+
+        &:hover {
+            color: $color-secondary-hover;
+            transition: $animate-all;
+        }
+    }
+
+    &__mail-to {
+        grid-column-end: span 2;
+
+        @include res-max-desktop-small {
+            text-align: center;
+        }
+    }
+
+    &__bottom {
+        text-align: left;
+        grid-column-end: span 2;
+
+        @include res-max-desktop-small {
+            display: none;
+        }
+
+        p {
+            margin: 0;
+            font-size: $font-size-xs;
+            color: $color-white;
+        }
+    }
+}

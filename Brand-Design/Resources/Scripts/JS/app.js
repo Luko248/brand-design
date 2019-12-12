@@ -1,5 +1,5 @@
 var google = window.google;
-function conferenceMap() {
+function initMap() {
     var LatLng = { lat: 49.1939695, lng: 16.5654526 };
     var styledMapType = new google.maps.StyledMapType([
         {
@@ -187,7 +187,7 @@ function conferenceMap() {
             ]
         }
     ], { name: 'Styled Map' });
-    var map = new google.maps.Map(document.getElementById('ConfMap'), {
+    var map = new google.maps.Map(document.getElementById('BrandDesignMap'), {
         center: LatLng,
         zoom: 14,
         disableDefaultUI: true,
