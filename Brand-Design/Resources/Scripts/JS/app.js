@@ -264,5 +264,6 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.loading-anim').css("display", "none");
     }, 1200);
+    $("#Year").text((new Date).getFullYear());
 });
 //# sourceMappingURL=app.js.map
