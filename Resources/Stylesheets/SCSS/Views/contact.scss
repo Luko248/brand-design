@@ -2,21 +2,21 @@
 
 .contact {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: flex-start;
     justify-content: center;
     padding: 5rem 7rem 2rem;
     grid-column-end: span 2;
     grid-gap: 5rem;
-    grid-template-columns: repeat(2, 1fr);
 
     @include res-max-desktop-large {
         grid-column-end: span 1;
     }
 
     @include res-max-desktop-small {
+        grid-template-columns: repeat(2, auto);
         padding: 5rem 2rem;
         grid-row-start: 1;
-        grid-template-columns: repeat(2, auto);
     }
 
     @include res-max-tablet {

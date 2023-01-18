@@ -486,10 +486,10 @@ a img {
   padding: 2rem;
   margin: 0 auto;
   background-position: center;
+  background-size: cover;
   color: #fff;
   text-decoration: none;
-  overflow: hidden;
-  background-size: cover; }
+  overflow: hidden; }
   @media only screen and (max-width: 768px) {
     .anim-box {
       flex: 0 0 100%;
@@ -1004,9 +1004,9 @@ a img {
     max-height: 1080px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     opacity: 1;
-    transition: all ease-in-out 0.3s;
-    background-size: cover; }
+    transition: all ease-in-out 0.3s; }
     .slider__item--first {
       background-image: url("/Resources/Images/Backgrounds/slider-home-1.jpg"); }
       @media only screen and (max-width: 1200px) {
@@ -1482,8 +1482,8 @@ h1.main-title {
     text-align: right;
     text-decoration: none;
     text-transform: uppercase;
-    z-index: 9999;
-    overflow-y: hidden; }
+    overflow-y: hidden;
+    z-index: 9999; }
     .nav__item:first-child {
       margin-left: 0; }
     @media only screen and (max-width: 768px) {
@@ -1592,9 +1592,9 @@ h1.main-title {
   background-color: #000; }
   .footer__container {
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: stretch;
-    justify-content: space-between;
-    grid-template-columns: repeat(5, 1fr); }
+    justify-content: space-between; }
     @media only screen and (max-width: 1200px) {
       .footer__container {
         grid-template-columns: repeat(2, 1fr); } }
@@ -1613,20 +1613,20 @@ h1.main-title {
 
 .contact {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: flex-start;
   justify-content: center;
   padding: 5rem 7rem 2rem;
   grid-column-end: span 2;
-  grid-gap: 5rem;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-gap: 5rem; }
   @media only screen and (max-width: 1200px) {
     .contact {
       grid-column-end: span 1; } }
   @media only screen and (max-width: 980px) {
     .contact {
+      grid-template-columns: repeat(2, auto);
       padding: 5rem 2rem;
-      grid-row-start: 1;
-      grid-template-columns: repeat(2, auto); } }
+      grid-row-start: 1; } }
   @media only screen and (max-width: 768px) {
     .contact {
       grid-gap: 3rem; } }

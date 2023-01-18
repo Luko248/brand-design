@@ -9,9 +9,9 @@
         max-height: 1080px;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         opacity: 1;
         transition: $animate-all;
-        background-size: cover;
 
         &--first {
             background-image: url('/Resources/Images/Backgrounds/slider-home-1.jpg');

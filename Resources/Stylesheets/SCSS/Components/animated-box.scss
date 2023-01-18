@@ -11,10 +11,10 @@
     padding: 2rem;
     margin: 0 auto;
     background-position: center;
+    background-size: cover;
     color: $color-white;
     text-decoration: none;
     overflow: hidden;
-    background-size: cover;
 
     @include res-max-tablet {
         flex: 0 0 100%;
