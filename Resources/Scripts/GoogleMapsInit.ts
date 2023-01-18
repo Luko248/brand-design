@@ -1,7 +1,7 @@
 ﻿var google = (<any>window).google;
 function initMap() {
 
-    var LatLng = { lat: 49.1939695, lng: 16.5654526 };
+    var LatLng = { lat: 49.407212, lng: 16.631153 };
 
     // Create a new StyledMapType object, passing it an array of styles,
     // and the name to be displayed on the map type control.
@@ -215,7 +215,7 @@ function initMap() {
     }
 
     var infowindow = new google.maps.InfoWindow({
-        content: "<div class='marker-window'><h3>Brand<br>DESIGN</h3><span>graphic solutions</span><br><div>Veslařská 254/349<br>637 00, Brno</div></div>",
+        content: "<div class='marker-window'><h3>Brand<br>DESIGN</h3><span>graphic solutions</span><br><div>Ol. Blažka,<br>679 02 Rájec-Jestřebí</div></div>",
         anchor: new google.maps.Point(0, 0)
     });
 
