@@ -1,0 +1,51 @@
+﻿// To get all mixins in other *.scss file use: @import "/Base/global";
+
+$color-white: #fff;
+$color-black: #000;
+$color-primary: #a815d7;
+$color-primary-hover: darken($color-primary, 10%);
+$color-secondary: #01ffa9;
+$color-secondary-hover: darken($color-secondary, 10%);
+$color-error: #e14242;
+$color-font: $color-black;
+$color-outline: lighten($color-primary, 20%);
+$color-placeholder: #999;
+$color-button: #454141;
+$color-bg: #170f24;
+$color-strong: #7e07db;
+$color-box-shadow: rgba(0,0,0,0.75);
+$color-overlay: rgba(0,0,0,0.6);
+$color-transparent: rgba(0, 0, 0, 0);
+
+$font-awesome: 'FontAwesome';
+$font-logo: 'Anja';
+$font-prometo-l: 'Prometo-l';
+$font-prometo-r: 'Prometo-r';
+$font-roboto-l: 'Roboto-l';
+$font-roboto-r: 'Roboto-l';
+$font-text: $font-roboto-l;
+$font-title: $font-prometo-l;
+
+// Helpfull variables
+$outline-width: .1rem;
+$radius: .2rem;
+$transition-time: .3s;
+$animate-all: all ease-in-out $transition-time;
+$btn-padding: .8rem 2.4rem;
+$base-border: $outline-width solid $color-primary;
+
+// All devices width for responsivity
+$width-mobile: 480px;
+$width-tablet: 768px;
+$width-desktop: 980px;
+$width-desktop-large: 1200px;
+$width-desktop-HD: 1440px;
+
+//font-sizes
+$font-size-xxl: 4.5rem;
+$font-size-xl: 2.2rem;
+$font-size-l: 2rem;
+$font-size-m: 1.8rem;
+$font-size-s: 1.6rem;
+$font-size-xs: 1.2rem;
+$font-size-xxs: 1rem;

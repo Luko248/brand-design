@@ -1,0 +1,48 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import Gallery from "@/components/Gallery.astro";
+import { loadTranslations } from "@/lib/i18n";
+
+const lang = (Astro.currentLocale as "cs" | "en") || "cs";
+const translations = await loadTranslations(lang, "pages/expositions");
+
+// Define exposition galleries
+const expositionFolders = [
+  "AirShow2019Paris", "Anuga", "Anuga2019Koln", "Argentina-Berlin", "Argentina-Paris",
+  "Biofach2019Nurnberg", "Brno", "Euah2018Hannover", "Geneva", "Mnichov",
+  "MostarFair2019Mostar", "ONS2018Stavanger", "Stuttgart", "ToolFair2019Exeter",
+  "Valtice", "Wien"
+];
+
+const expositionImages = expositionFolders.flatMap(folder => {
+  // Each folder typically has 1-5 images
+  return [
+    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/1_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/1_1024.jpg` },
+    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/2_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/2_1024.jpg` },
+    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/3_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/3_1024.jpg` },
+    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/4_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/4_1024.jpg` },
+    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/5_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/5_1024.jpg` },
+  ];
+});
+---
+
+<BaseLayout lang={lang} title={translations.title} description={translations.description}>
+  <header class="header" style="background-image: url('/Resources/Images/Backgrounds/exposition_bg.jpg')"></header>
+
+  <Navigation lang={lang} currentPath={lang === "en" ? "/en/expositions" : "/expositions"} />
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">{translations.heading}</h1>
+        <p class="section__desc">{translations.description}</p>
+        
+        <Gallery images={expositionImages} galleryId="expositions-gallery" />
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

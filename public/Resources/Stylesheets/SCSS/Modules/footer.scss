@@ -1,0 +1,33 @@
+@import "../base/global";
+
+.footer {
+    background-color: $color-black;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: stretch;
+        justify-content: space-between;
+
+        @include res-max-desktop-large {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include res-max-desktop-small {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__map {
+        grid-column-end: span 3;
+
+        @include res-max-desktop-large {
+            grid-column-end: span 1;
+        }
+
+        @include res-max-desktop-small {
+            height: 25rem;
+            grid-row-start: 2;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import "../Base/global";
+
+h1 {
+    font-size: $font-size-xxl;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: $font-size-xl;
+}
+
+h3 {
+    font-size: $font-size-l;
+}
+
+p, span, a {
+    font-family: $font-text;
+    font-size: $font-size-l;
+    
+}
+
+h1.main-title{
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-2000px);
+    z-index: -1;
+}

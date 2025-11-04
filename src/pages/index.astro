@@ -1,0 +1,143 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import { loadTranslations } from "@/lib/i18n";
+
+// Get language from query parameter
+import { detectLocale } from "@/lib/i18n";
+const lang = detectLocale(Astro.url);
+const translations = await loadTranslations(lang, "pages/index");
+const global = await loadTranslations(lang, "global");
+---
+
+<BaseLayout lang={lang} hasLandingHeader={true}>
+  <header class="header header--landing" id="Home">
+    <div class="slider">
+      <div class="slider__item slider__item--first">
+        <div class="slider__content">
+          <h3 class="slider__title" set:html={translations.hero.slide1.title} />
+          <a href="#About" class="slider__button to-about">
+            {translations.hero.slide1.button}
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <Navigation lang={lang} currentPath="/" />
+
+  <main>
+    <section class="section section--about" id="About">
+      <div class="container">
+        <div class="flex-container flex-container--small-reverse flex-container--center">
+          <div class="flex-container__box">
+            <div class="big-logo-container">
+              <img src="/Resources/Images/Logos/logo_circle.svg" alt="Main logo" class="main-logo" />
+            </div>
+          </div>
+          <div class="flex-container__box flex-container__box--with-padding">
+            <h1 class="main-title" set:html={translations.about.mainTitle} />
+            <h2 class="section__title section__title--left" set:html={translations.about.title} />
+            <p class="section__desc section__desc--left" set:html={translations.about.paragraph1} />
+            <p class="section__desc section__desc--left" set:html={translations.about.paragraph2} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner-window">
+      <div class="banner-window__content">
+        <h3 set:html={translations.banner.title} />
+        <a href="#Contact">{translations.banner.button}</a>
+      </div>
+    </section>
+
+    <section class="section section--references" id="References">
+      <div class="container">
+        <h2 class="section__title">{translations.services.title}</h2>
+        <div class="flex-container flex-container--center">
+          <div class="flex-container__box flex-container__box--with-padding">
+            <a href="/printing-and-production" class="anim-box anim-box--print">
+              <div class="anim-box__inner-box">
+                <div>
+                  <h3>{translations.services.printing.title}</h3>
+                  <p>{translations.services.printing.button}</p>
+                </div>
+              </div>
+              <div class="anim-box__view-ico">
+                <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" />
+              </div>
+            </a>
+          </div>
+          <div class="flex-container__box flex-container__box--with-padding">
+            <div>
+              <h3 class="section__subtitle section__subtitle--left">{translations.services.printing.title}</h3>
+              <p class="section__desc section__desc--left section__desc--mo-margin" set:html={translations.services.printing.description} />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-container flex-container--center flex-container--mobile-reverse">
+          <div class="flex-container__box flex-container__box--with-padding">
+            <div>
+              <h3 class="section__subtitle section__subtitle--right">{translations.services.expositions.title}</h3>
+              <p class="section__desc section__desc--right section__desc--mo-margin" set:html={translations.services.expositions.description} />
+            </div>
+          </div>
+          <div class="flex-container__box flex-container__box--with-padding">
+            <a href="/expositions" class="anim-box anim-box--expo">
+              <div class="anim-box__inner-box">
+                <div>
+                  <h3>{translations.services.expositions.title}</h3>
+                  <p>{translations.services.expositions.button}</p>
+                </div>
+              </div>
+              <div class="anim-box__view-ico">
+                <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-container flex-container--center">
+          <div class="flex-container__box flex-container__box--with-padding">
+            <a href="/sticks" class="anim-box anim-box--stick">
+              <div class="anim-box__inner-box">
+                <div>
+                  <h3>{translations.services.sticks.title}</h3>
+                  <p>{translations.services.sticks.button}</p>
+                </div>
+              </div>
+              <div class="anim-box__view-ico">
+                <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" />
+              </div>
+            </a>
+          </div>
+          <div class="flex-container__box flex-container__box--with-padding">
+            <div>
+              <h3 class="section__subtitle section__subtitle--left">{translations.services.sticks.title}</h3>
+              <p class="section__desc section__desc--left section__desc--mo-margin" set:html={translations.services.sticks.description} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--partners">
+      <div class="container">
+        <h2 class="section__title">{translations.partners.title}</h2>
+        <div class="partners">
+          <p class="partners__text">
+            {translations.partners.text}
+          </p>
+          <a href="https://www.mistrymont.cz/" class="partners__logo" target="_blank">
+            <img src="/Resources/Images/Logos/mistry-mont-logo.svg" alt="Mistry Mont Logo" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

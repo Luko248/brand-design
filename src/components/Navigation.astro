@@ -1,0 +1,71 @@
+---
+import { loadTranslations } from "@/lib/i18n";
+
+export interface Props {
+  lang: "cs" | "en";
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const global = await loadTranslations(lang, "global");
+
+const homeUrl = lang === "en" ? "/en" : "/";
+const langSwitchUrl = lang === "en" ? currentPath.replace("/en", "") || "/" : `/en${currentPath}`;
+---
+
+<nav class="nav">
+  <a href={homeUrl} class="nav__logo">
+    <img src="/Resources/Images/Logos/logo.svg" alt="logo" />
+    <img src="/Resources/Images/Logos/logo-black.svg" alt="logo-sec" />
+  </a>
+  <ul class="nav__menu">
+    <li>
+      <a href={`${homeUrl}#Home`} id="HomeScroll" class="nav__item nav__item--active">
+        <span>{global.nav.home}</span>
+      </a>
+    </li>
+    <li>
+      <a href={`${homeUrl}#About`} id="AboutScroll" class="nav__item">
+        <span>{global.nav.about}</span>
+      </a>
+    </li>
+    <li>
+      <a href={`${homeUrl}#References`} id="ReferencesScroll" class="nav__item">
+        <span>{global.nav.references}</span>
+      </a>
+    </li>
+    <li>
+      <a href={`${homeUrl}#Contact`} id="ContactScroll" class="nav__item">
+        <span>{global.nav.contact}</span>
+      </a>
+    </li>
+  </ul>
+  <div class="nav__right">
+    <div class="lang-switcher">
+      {lang === "en" ? (
+        <>
+          <a href={langSwitchUrl} class="active">
+            <span>{global.nav.langEn}</span>
+          </a>
+          <span>/</span>
+          <a href={langSwitchUrl}>
+            <span>{global.nav.langCs}</span>
+          </a>
+        </>
+      ) : (
+        <>
+          <a href={langSwitchUrl}>
+            <span>{global.nav.langEn}</span>
+          </a>
+          <span>/</span>
+          <a href={langSwitchUrl} class="active">
+            <span>{global.nav.langCs}</span>
+          </a>
+        </>
+      )}
+    </div>
+    <div class="burger-button">
+      <div></div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,68 @@
+---
+export interface Props {
+  images: Array<{
+    thumb: string;
+    full: string;
+    alt?: string;
+  }>;
+  galleryId: string;
+}
+
+const { images, galleryId } = Astro.props;
+---
+
+<div class="gallery">
+  {images.map((img, index) => (
+    <a 
+      href={img.full} 
+      data-fancybox={galleryId}
+      data-caption={img.alt || `Image ${index + 1}`}
+      class="gallery__item"
+    >
+      <img src={img.thumb} alt={img.alt || `Thumbnail ${index + 1}`} loading="lazy" />
+    </a>
+  ))}
+</div>
+
+<script>
+  import { Fancybox } from "@fancyapps/ui";
+  import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+  Fancybox.bind("[data-fancybox]", {
+    // Custom options
+  });
+</script>
+
+<style lang="scss">
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+
+    &__item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+</style>

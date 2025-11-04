@@ -1,0 +1,26 @@
+// Base
+@import "Base/default.scss";
+@import "Base/shared-classes.scss";
+@import "Base/fonts";
+
+// Components
+@import "Components/burger-button";
+@import "Components/animated-box";
+@import "Components/buttons.scss";
+@import "Components/flex-container";
+@import "Components/container.scss";
+@import "Components/gallery";
+@import "Components/form";
+@import "Components/parallax-custom";
+@import "Components/logo";
+@import "Components/slider";
+@import "Components/typography.scss";
+@import "Components/partners-box";
+// Modules
+@import "Modules/navigation.scss";
+@import "Modules/header.scss";
+@import "Modules/footer.scss";
+
+//Views
+@import "Views/contact";
+@import "Views/section";

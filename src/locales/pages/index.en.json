@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "slide1": {
+      "title": "<b>Your BRAND</b> is important",
+      "button": "Show More"
+    },
+    "slide2": {
+      "title": "Exhibition booths <br><b>all over the world</b>",
+      "button": "Show Gallery"
+    },
+    "slide3": {
+      "title": "Tattoo for <b>Your</b> car?",
+      "button": "Contact Us"
+    }
+  },
+  "about": {
+    "mainTitle": "BrandDESIGN - Graphic Solutions",
+    "title": "About Company",
+    "paragraph1": "<strong>BrandDESIGN</strong> has come into existence after many years of experience to make <b>Your brand</b>. It deals with digital large format printing, cutting graphics and gluing, based in Brno.",
+    "paragraph2": "We have long been collaborating with companies in the production of graphics for trade fairs, exhibitions and congresses, not only in the Czech Republic but also around the <b>world</b>. We carry out car stickers, shop windows and the like. Production of 3D log and textile printing. Production of advertising is ensured from design, through production to sticking itself."
+  },
+  "banner": {
+    "title": "Together we will find a suitable solution for <b>you</b>",
+    "button": "I want to work together"
+  },
+  "services": {
+    "title": "What we offer",
+    "printing": {
+      "title": "Printing / Production",
+      "description": "Technological equipment allows us to meet <b>state-of-the-art trends</b>. Production and digital printing of stickers, printing by cut, full-face printing of transparencies, posters, banners and the like. Production of 3D logos and textile printing.",
+      "button": "Show gallery"
+    },
+    "expositions": {
+      "title": "Expositions",
+      "description": "We provide a complete service from the production of fair trade to graphic art <b>worldwide</b>.",
+      "button": "Show gallery"
+    },
+    "sticks": {
+      "title": "Sticks",
+      "description": "We make large-scale advertising stickers, car stickers, vehicle stickers, shop windows, from graphic design to sticking. Are you interested in grooming in Brno? <b>Contact Us</b>.",
+      "button": "Show gallery"
+    }
+  },
+  "partners": {
+    "title": "Partners",
+    "text": "We actively cooperate with Mistry Mont s.r.o."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "hero": {
+    "slide1": {
+      "title": "<b>Vaše</b> značka je důležitá",
+      "button": "Zjistit více"
+    },
+    "slide2": {
+      "title": "Výstavní stánky <br>po <b>celém světě</b>",
+      "button": "Zobrazit galerii"
+    },
+    "slide3": {
+      "title": "Kérka pro <b>Váš</b> vůz?",
+      "button": "Kontaktujte nás"
+    }
+  },
+  "about": {
+    "mainTitle": "BrandDESIGN - Graphic Solutions",
+    "title": "O společnosti",
+    "paragraph1": "Společnost <strong>BrandDESIGN</strong> vznikla po dlouholetých zkušenostech, aby zviditelnila <b>Vaši značku</b>. Zabývá se digitální velkoformátovým tiskem, řezanou grafikou a lepením, se sídlem v Brně.",
+    "paragraph2": "Dlouhodobě spolupracujeme z firmami na výrobě grafiky pro veletrhy, výstavy a kongresy, nejen v ČR, ale i po <b>celém světě</b>. Realizujeme polepy aut, výloh a pod. Výrobou 3D log a potiskem textilu. Výrobu reklamy zajistímetot od návrhu, přes výrobu až po samotné nalepení"
+  },
+  "banner": {
+    "title": "Spolu najdeme vhodné řešení i pro <b>Vás</b>",
+    "button": "Chci spolupracovat"
+  },
+  "services": {
+    "title": "Co nabízíme",
+    "printing": {
+      "title": "Tisk / Výroba",
+      "description": "Technologické vybavení nám umožnuje vyhovět <b>nejmodernějším trendům</b>. Výroba a digitální tisk samolepek, tisk z ořezem, celoplošní tisk fólií, plakátů, bannerů a pod. Výroba 3D log a potisk textilu.",
+      "button": "Zobrazit galerii"
+    },
+    "expositions": {
+      "title": "Výstavy",
+      "description": "Poskytujeme komplexní servis od výroby veletržní grafiky až po montáž grafiky po <b>celém světe</b>.",
+      "button": "Zobrazit galerii"
+    },
+    "sticks": {
+      "title": "Polepy",
+      "description": "Provádíme velkoplošné reklamní polepy, polepy áut, polepy vozidel, výloh, od grafického návrhu až po samotné nalepení. Máte zájem o polep v Brně? <b>Kontaktujte nás</b>.",
+      "button": "Zobrazit galerii"
+    }
+  },
+  "partners": {
+    "title": "Partneři",
+    "text": "Aktivne spolupracujeme s firmou Mistry Mont s.r.o."
+  }
+}

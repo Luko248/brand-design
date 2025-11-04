@@ -1,0 +1,42 @@
+@import "../Base/global";
+
+.container {
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12rem 0;
+    margin: 0 auto;
+
+    @include res-max-desktop-small {
+        width: 100%;
+    }
+
+    @include res-max-tablet {
+        padding: 6rem 1rem;
+    }
+
+    @include res-max-mobile {
+        padding: 3rem 1rem;
+    }
+
+    &--no-padding {
+        padding: 0;
+
+        @include res-max-desktop-small {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        @include res-max-tablet {
+            width: 100%;
+        }
+    }
+
+    &--small-padding {
+        padding-bottom: 6rem;
+
+        @include res-max-tablet {
+            padding: 3rem 1rem;
+        }
+    }
+}

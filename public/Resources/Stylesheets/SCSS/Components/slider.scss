@@ -1,0 +1,210 @@
+@import "../Base/global";
+
+.slider {
+    width: 100%;
+
+    &__item {
+        position: relative;
+        height: 100vh;
+        max-height: 1080px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 1;
+        transition: $animate-all;
+
+        &--first {
+            background-image: url('/Resources/Images/Backgrounds/slider-home-1.jpg');
+
+            @include res-max-desktop-large {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_1200.jpg');
+            }
+
+            @include res-max-desktop-small {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_980.jpg');
+            }
+
+            @include res-max-tablet {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-1_768.jpg');
+            }
+        }
+
+        &--second {
+            background-image: url('/Resources/Images/Backgrounds/slider-home-2.jpg');
+
+            @include res-max-desktop-large {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_1200.jpg');
+            }
+
+            @include res-max-desktop-small {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_980.jpg');
+            }
+
+            @include res-max-tablet {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-2_768.jpg');
+            }
+        }
+
+        &--third {
+            background-image: url('/Resources/Images/Backgrounds/slider-home-3.jpg');
+
+            @include res-max-desktop-large {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_1200.jpg');
+            }
+
+            @include res-max-desktop-small {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_980.jpg');
+            }
+
+            @include res-max-tablet {
+                background-image: url('/Resources/Images/Backgrounds/OtherSizes/slider-home-3_768.jpg');
+            }
+        }
+
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+            opacity: 1;
+            transition: $animate-all;
+            z-index: 1;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &.slick-active {
+            .slider__content {
+                opacity: 1;
+                transition: all 1s;
+                transition-delay: .5s;
+            }
+
+            .slider__title {
+                transform: translateY(-10%);
+                transition: $animate-all;
+                transition: transform 1s;
+                transition-delay: .6s;
+            }
+
+            .slider__button {
+                transform: translateY(10%);
+                transition: $animate-all;
+                transition: transform 1s;
+                transition-delay: .6s;
+
+                &:hover {
+                    transition: $animate-all;
+                }
+            }
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        opacity: 0;
+        transform: translate(0, -50%);
+        transition: all 1s;
+        transition-delay: .5s;
+        z-index: 2;
+
+        @include res-max-tablet {
+            left: 50%;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 2rem;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-family: $font-title;
+        font-size: 5rem;
+        font-weight: 500;
+        letter-spacing: .5rem;
+        color: $color-white;
+        transform: translateY(0);
+        transition: all 1s;
+        transition-delay: .5s;
+
+        br {
+            @include res-max-tablet {
+                display: none;
+            }
+        }
+
+        @include res-max-tablet {
+            display: block;
+            width: 100%;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        &:after {
+            position: absolute;
+            bottom: -1rem;
+            left: .5rem;
+            display: block;
+            content: "";
+            width: 15rem;
+            height: .1rem;
+            border-bottom: .2rem dashed $color-secondary;
+
+            @include res-max-tablet {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__button {
+        display: block;
+        width: 26rem;
+        box-sizing: border-box;
+        padding: 2rem;
+        margin-top: 2rem;
+        border: .2rem solid $color-white;
+        font-size: $font-size-l;
+        letter-spacing: .2rem;
+        color: $color-white;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transform: translateY(0);
+        transition: transform 1s;
+        transition: $animate-all;
+        transition-delay: .5s;
+
+        @include res-max-tablet {
+            width: 24rem;
+            padding: 1rem;
+            margin: 0 auto;
+            margin-top: 2rem;
+            font-size: $font-size-m;
+        }
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-font;
+            transition: $animate-all;
+        }
+    }
+
+    .slick-list, .slick-track {
+        height: 100%;
+    }
+
+    .slick-dots {
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "site": {
+    "title": "Brand Design - grafické řešení vaší značky",
+    "description": "Navrh brandu a loga, velkoplošná grafika, Design konferenčních a veletržních stánků, návrh a výroba velkoplošních polepú na auta či výlohu"
+  },
+  "nav": {
+    "home": "Domů",
+    "about": "O společnosti",
+    "references": "Reference",
+    "contact": "Kontakt",
+    "langEn": "En",
+    "langCs": "Cz"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "contactPerson": "Kontaktní osoba",
+    "address": "Adresa",
+    "writeMessage": "Napsat zprávu",
+    "allRightsReserved": "Všechna práva vyhrazena.",
+    "createdBy": "Vytvořil"
+  },
+  "company": {
+    "name": "Brand Design",
+    "tagline": "graphic solutions",
+    "phone": "+420 777 135 686",
+    "email": "info@brand-design.cz",
+    "contactName": "Martin Luksaj",
+    "contactEmail": "luksaj@brand-design.cz",
+    "street": "Ol. Blažka",
+    "city": "Rájec-Jestřebí",
+    "zip": "679 02",
+    "ico": "3327108"
+  }
+}

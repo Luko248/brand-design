@@ -1,0 +1,103 @@
+---
+import { loadTranslations } from "@/lib/i18n";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  lang?: "cs" | "en";
+  hasLandingHeader?: boolean;
+}
+
+// Import styles
+import "../styles/style.scss";
+
+const { title, description, lang = "cs", hasLandingHeader = false } = Astro.props;
+
+const global = await loadTranslations(lang, "global");
+const pageTitle = title || global.site.title;
+const pageDescription = description || global.site.description;
+const alternateLang = lang === "cs" ? "en" : "cs";
+const alternateUrl = lang === "cs" ? `https://brand-design.cz/en${Astro.url.pathname}` : `https://brand-design.cz${Astro.url.pathname.replace("/en", "")}`;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{pageTitle}</title>
+    <meta name="author" content="Lukáš Chylík" />
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content="Návrg Loga Brno, Logo Brno, Návrh designu, Design Brno, Konferenční stánky, Návrh brandu, Brand, Design, Velkoplošní grafika, Polepy na auta" />
+    <meta name="google-site-verification" content="WlojpglePdITx8NvvfRNi0UoxVJ5Ft-Yy0G-QUHjUs0" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/Resources/Images/Favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Resources/Images/Favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/Resources/Images/Favicons/favicon-16x16.png" />
+    <link rel="mask-icon" href="/Resources/Images/Favicons/safari-pinned-tab.svg" color="#170f24" />
+    <meta name="msapplication-TileColor" content="#170f24" />
+    <meta name="theme-color" content="#170f24" />
+    <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />
+
+    <!-- Schema.org markup -->
+    <meta itemprop="name" content={global.company.name} />
+    <meta itemprop="description" content={pageDescription} />
+    <meta itemprop="image" content="/Resources/Images/Meta/meta-image-google.png" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content={global.company.name} />
+    <meta property="og:image" content="/Resources/Images/Meta/meta-image-fb.png" />
+    <meta property="og:description" content={pageDescription} />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:title" content={global.company.name} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content="/Resources/Images/Meta/meta-image-twitter.png" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120163100-3"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-120163100-3');
+    </script>
+
+    <!-- Schema.org Local Business -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": pageTitle,
+      "telephone": global.company.phone,
+      "email": global.company.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": global.company.street,
+        "addressLocality": global.company.city,
+        "addressRegion": "Brno",
+        "addressCountry": "Czech Republic",
+        "postalCode": global.company.zip
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "18:00"
+      },
+      "url": "https://brand-design.cz/",
+      "image": "https://brand-design.cz/Resources/Images/Logos/logo_circle.svg"
+    })} />
+  </head>
+  <body>
+    <slot />
+    
+    <script>
+      import "@/scripts/main";
+    </script>
+    
+    <script async defer
+      src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBY4zLp8W-E-RMzrGoi-kspnG95XacZNkQ&callback=initMap`}
+    ></script>
+  </body>
+</html>
