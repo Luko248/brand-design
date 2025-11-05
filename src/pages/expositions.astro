@@ -5,33 +5,25 @@ import Footer from "@/components/Footer.astro";
 import Gallery from "@/components/Gallery.astro";
 import { loadTranslations } from "@/lib/i18n";
 
-const lang = (Astro.currentLocale as "cs" | "en") || "cs";
+import { detectLocale } from "@/lib/i18n";
+const lang = detectLocale(Astro.url);
 const translations = await loadTranslations(lang, "pages/expositions");
 
-// Define exposition galleries
-const expositionFolders = [
-  "AirShow2019Paris", "Anuga", "Anuga2019Koln", "Argentina-Berlin", "Argentina-Paris",
-  "Biofach2019Nurnberg", "Brno", "Euah2018Hannover", "Geneva", "Mnichov",
-  "MostarFair2019Mostar", "ONS2018Stavanger", "Stuttgart", "ToolFair2019Exeter",
-  "Valtice", "Wien"
+// Manually list actual images from expositions
+const expositionImages = [
+  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/1_1024.jpg", alt: "Anuga" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/2_1024.jpg", alt: "Anuga" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Brno/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Brno/1_1024.jpg", alt: "Brno" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Geneva/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Geneva/1_1024.jpg", alt: "Geneva" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Stuttgart/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Stuttgart/1_1024.jpg", alt: "Stuttgart" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Wien/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Wien/1_1024.jpg", alt: "Wien" },
 ];
-
-const expositionImages = expositionFolders.flatMap(folder => {
-  // Each folder typically has 1-5 images
-  return [
-    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/1_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/1_1024.jpg` },
-    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/2_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/2_1024.jpg` },
-    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/3_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/3_1024.jpg` },
-    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/4_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/4_1024.jpg` },
-    { thumb: `/Resources/Images/Referencies/Expositions/${folder}/5_480.jpg`, full: `/Resources/Images/Referencies/Expositions/${folder}/5_1024.jpg` },
-  ];
-});
 ---
 
 <BaseLayout lang={lang} title={translations.title} description={translations.description}>
   <header class="header" style="background-image: url('/Resources/Images/Backgrounds/exposition_bg.jpg')"></header>
 
-  <Navigation lang={lang} currentPath={lang === "en" ? "/en/expositions" : "/expositions"} />
+  <Navigation lang={lang} currentPath="/expositions" />
 
   <main>
     <section class="section">

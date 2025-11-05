@@ -1,0 +1,41 @@
+<div id="BrandDesignMap" style="width: 100%; height: 400px;"></div>
+
+<script is:inline>
+  function initMap() {
+    const mapElement = document.getElementById("BrandDesignMap");
+    if (!mapElement) return;
+
+    const location = { lat: 49.407212, lng: 16.631153 };
+    
+    const map = new google.maps.Map(mapElement, {
+      center: location,
+      zoom: 15,
+      disableDefaultUI: true,
+      zoomControl: true,
+    });
+
+    // Using legacy Marker (AdvancedMarkerElement requires newer API)
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: "Brand DESIGN",
+      icon: {
+        url: "/Resources/Images/Icons/marker.png",
+        scaledSize: new google.maps.Size(32, 32)
+      }
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: '<div style="padding: 10px;"><h3 style="margin: 0 0 5px 0;">Brand<br>DESIGN</h3><span>graphic solutions</span><br><div>Ol. Blažka,<br>679 02 Rájec-Jestřebí</div></div>'
+    });
+
+    marker.addListener("click", () => {
+      infoWindow.open(map, marker);
+    });
+  }
+
+  // Expose to global
+  window.initMap = initMap;
+</script>
+
+<script is:inline async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY4zLp8W-E-RMzrGoi-kspnG95XacZNkQ&callback=initMap"></script>

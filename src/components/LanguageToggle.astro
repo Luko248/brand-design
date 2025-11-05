@@ -1,0 +1,65 @@
+---
+export interface Props {
+  lang: "cs" | "en";
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+// Get current URL without query params
+const cleanPath = currentPath.split('?')[0];
+const csUrl = cleanPath;
+const enUrl = cleanPath + "?lang=en";
+---
+
+<div class="language-toggle">
+  <a 
+    href={csUrl} 
+    class={`language-toggle__button ${lang === "cs" ? "language-toggle__button--active" : ""}`}
+    aria-label="Switch to Czech"
+  >
+    CZ
+  </a>
+  <span class="language-toggle__separator">/</span>
+  <a 
+    href={enUrl}
+    class={`language-toggle__button ${lang === "en" ? "language-toggle__button--active" : ""}`}
+    aria-label="Switch to English"
+  >
+    EN
+  </a>
+</div>
+
+<style lang="scss">
+  .language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &__button {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      &--active {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.2);
+        font-weight: 700;
+      }
+    }
+
+    &__separator {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+</style>

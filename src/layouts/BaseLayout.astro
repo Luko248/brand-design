@@ -5,13 +5,9 @@ export interface Props {
   title?: string;
   description?: string;
   lang?: "cs" | "en";
-  hasLandingHeader?: boolean;
 }
 
-// Import styles
-import "../styles/style.scss";
-
-const { title, description, lang = "cs", hasLandingHeader = false } = Astro.props;
+const { title, description, lang = "cs" } = Astro.props;
 
 const global = await loadTranslations(lang, "global");
 const pageTitle = title || global.site.title;
@@ -56,7 +52,7 @@ const alternateUrl = lang === "cs" ? `https://brand-design.cz/en${Astro.url.path
     <meta name="twitter:image" content="/Resources/Images/Meta/meta-image-twitter.png" />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120163100-3"></script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=UA-120163100-3"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
@@ -65,7 +61,7 @@ const alternateUrl = lang === "cs" ? `https://brand-design.cz/en${Astro.url.path
     </script>
 
     <!-- Schema.org Local Business -->
-    <script type="application/ld+json" set:html={JSON.stringify({
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
       "@context": "http://schema.org",
       "@type": "LocalBusiness",
       "name": pageTitle,
@@ -88,16 +84,10 @@ const alternateUrl = lang === "cs" ? `https://brand-design.cz/en${Astro.url.path
       "url": "https://brand-design.cz/",
       "image": "https://brand-design.cz/Resources/Images/Logos/logo_circle.svg"
     })} />
+    
+    <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
     <slot />
-    
-    <script>
-      import "@/scripts/main";
-    </script>
-    
-    <script async defer
-      src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBY4zLp8W-E-RMzrGoi-kspnG95XacZNkQ&callback=initMap`}
-    ></script>
   </body>
 </html>

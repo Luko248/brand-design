@@ -1,5 +1,6 @@
 ---
 import { loadTranslations } from "@/lib/i18n";
+import GoogleMaps from "./GoogleMaps.astro";
 
 export interface Props {
   lang: "cs" | "en";
@@ -11,7 +12,8 @@ const global = await loadTranslations(lang, "global");
 
 <footer class="footer" id="Contact">
   <div class="footer__container">
-    <div class="footer__map" id="BrandDesignMap"></div>
+    <!-- Google Maps -->
+    <GoogleMaps class="footer__map" id="BrandDesignMap" />
     <div class="contact">
       <h2 class="section__title section__title--no-margin section__title--left section__title--white">
         {global.footer.contact}
