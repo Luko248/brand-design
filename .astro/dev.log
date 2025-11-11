@@ -52,53 +52,66 @@ itions/Stuttgart/1_480.jpg 0ms
 23:16:34 [types] Generat23:16:34 [content] Syncing content
 23:16:34 [content] Astro config changed
 23:16:34 08:06:35 [vite] changed tsconfig file detected: /Users/lukaschylik/Projects/brand-design/public/Resources/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
-34 [vite] Port 4321 is in use, trying another one...
-23:16:34 [vite] 
-23:16:34 [vite]   ➜  Local:   http://localhost:4322/
-08:06:35 [vite] changed tsconfig file detected: /Users/lukaschylik/Projects/brand-design/public/Resources/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
-h updated config values.
-22:48:48 Configuration file updated. Restarting...
-22:48:48 [vite] Re-optimizing dependencies because vite config has changed
-22:48:48 [content] Syncing content
-22:48:48 [content] Astro config changed
-22:48:48 [content] Astro version changed
-22:48:48 [content] Clearing content store
-22:48:48 [content] Synced content
-22:48:48 [types] Generated 96ms
-22:48:48 [vite] Re-optimizing dependencies because vite config has changed
-22:48:48 [vite] Port 4321 is in use, trying another one...
-23:16:33 [vite] .env changed, restarting server...
-23:16:33 Restarting...
-23:16:34 [content] Syncing content
-23:16:34 [content] Astro config changed
-23:16:34 [content] Astro version changed
-23:16:34 [content] Clearing content store
-23:16:34 [content] Synced content
-23:16:34 [types] Generated 158ms
-23:16:34 [vite] Re-optimizing dependencies because vite config has changed
-23:16:34 [vite] Port 4321 is in use, trying another one...
-23:16:34 [vite] Port 4322 is in use, trying another one...
-23:16:34 [vite] 
-23:16:34 [vite]   ➜  Local:   http://localhost:4323/
-23:16:35 [200] / 4ms
-23:18:46 [200] / 31ms
-23:19:38 [200] / 8ms
-08:06:35 [vite] changed tsconfig file detected: /Users/lukaschylik/Projects/brand-design/public/Resources/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
-08:06:35 [200] / 4ms
-08:06:35 [404] /Resources/Images/Logos/logo.svg 1ms
-08:06:35 [404] /Resources/Images/Logos/logo-black.svg 0ms
-08:06:35 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:06:35 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-08:06:35 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-08:06:35 [404] /Resources/Images/Backgrounds/slider-home-1.jpg 0ms
-08:06:35 [404] /Resources/Images/Backgrounds/slider-home-2.jpg 0ms
-08:06:35 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 0ms
-08:06:35 [404] /Resources/Images/Logos/logo.svg 0ms
-08:06:35 [404] /Resources/Images/Logos/logo-black.svg 0ms
-08:06:35 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-08:06:35 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:06:35 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:06:35 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:06:35 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-08:06:35 [404] /Resources/Images/Favicons/favicon-32x32.png 0ms
-08:06:35 [404] /Resources/Images/Favicons/favicon-16x16.png 0ms
+08:08:01 Configuration file updated. Restarting...
+08:08:01 [vite] Re-optimizing dependencies because vite config has changed
+08:08:02 [content] Syncing content
+08:08:02 [content] Astro config changed
+08:08:02 [content] Astro version changed
+08:08:02 [content] Clearing content store
+08:08:02 [content] Synced content
+08:08:02 [types] Generated 362ms
+08:08:02 [vite] Re-optimizing dependencies because vite config has changed
+08:08:02 [vite] Port 4321 is in use, trying another one...
+08:08:02 [vite] Port 4322 is in use, trying another one...
+08:08:03 [200] / 10ms
+08:08:03 [404] /Resources/Images/Logos/logo.svg 1ms
+08:08:03 [404] /Resources/Images/Logos/logo-black.svg 0ms
+08:08:03 [404] /Resources/Images/Logos/logo_circle.svg 0ms
+08:08:03 [404] /Resources/Images/Icons/view-ico.svg 1ms
+08:08:03 [404] /Resources/Images/Logos/mistry-mont-logo.svg 1ms
+08:08:03 [404] /Resources/Images/Backgrounds/slider-home-1.jpg 1ms
+08:08:03 [404] /Resources/Images/Backgrounds/slider-home-2.jpg 2ms
+08:08:03 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 1ms
+08:08:03 [404] /Resources/Images/Logos/logo.svg 0ms
+08:08:03 [404] /Resources/Images/Logos/logo-black.svg 0ms
+08:08:03 [404] /Resources/Images/Logos/logo_circle.svg 0ms
+08:08:03 [404] /Resources/Images/Icons/view-ico.svg 0ms
+08:08:03 [404] /Resources/Images/Icons/view-ico.svg 0ms
+08:08:03 [404] /Resources/Images/Icons/view-ico.svg 0ms
+08:08:03 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
+08:08:16 [200] / 3ms
+08:08:16 [404] /Resources/Images/Logos/logo.svg 0ms
+08:08:16 [404] /Resources/Images/Logos/logo-black.svg 2ms
+08:08:16 [404] /Resources/Images/Logos/logo_circle.svg 0ms
+08:08:16 [404] /Resources/Images/Icons/view-ico.svg 1ms
+08:08:16 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
+08:08:16 [404] /Resources/Fonts/Anja/Anja.ttf 0ms
+08:08:16 [404] /Resources/Fonts/Roboto/roboto-regular.otf 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/slider-home-1.jpg 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/slider-home-2.jpg 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/parallax-bg-1.jpg 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 0ms
+08:08:16 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
+08:08:16 [404] /Resources/Images/Logos/logo.svg 0ms
+08:08:16 [404] /Resources/Images/Logos/logo-black.svg 0ms
+08:08:16 [404] /Resources/Images/Logos/logo_circle.svg 0ms
+08:08:16 [404] /Resources/Images/Icons/view-ico.svg 0ms
+08:08:16 [404] /Resources/Images/Icons/view-ico.svg 0ms
+08:08:16 [404] /Resources/Images/Icons/view-ico.svg 0ms
+08:08:16 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
+ng 0ms
+08:08:01 Configuration file updated. Restarting...
+08:08:01 [content] Syncing content
+08:08:01 [content] Synced content
+08:08:01 [types] Generated 148ms
+08:08:01 [vite] Port 4321 is in use, trying another one...
+08:08:02 [ERROR] [vite] error while updating dependencies:
+Error: ENOTEMPTY: directory not empty, rename '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps_temp_d0baf07e' -> '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps'
+    at Object.renameSync (node:fs:1021:11)
+    at Object.commit (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:14956:21)
+    at commitProcessing (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47103:32)
+    at runOptimizer (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47139:15)
+    at onCrawlEnd (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47343:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

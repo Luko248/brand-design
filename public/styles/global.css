@@ -33,6 +33,14 @@
 }
 
 /* Pseudo-elements and complex effects not expressible via utilities */
+/* Hide SEO-only main H1 on homepage (legacy parity) */
+h1.main-title {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-2000px);
+  z-index: -1;
+}
+
 .section__title::after {
   position: absolute;
   bottom: -2rem;

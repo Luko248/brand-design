@@ -23,8 +23,8 @@
     "tailwindcss": "^4.1.0"
   },
   "scripts": {
-    "dev": "./node_modules/.bin/tailwindcss -i public/styles/tailwind.source.css -o public/styles/tailwind.css && astro dev",
-    "start": "./node_modules/.bin/tailwindcss -i public/styles/tailwind.source.css -o public/styles/tailwind.css && astro dev",
+    "dev": "sh -c './node_modules/.bin/tailwindcss -i public/styles/tailwind.source.css -o public/styles/tailwind.css --watch & astro dev'",
+    "start": "sh -c './node_modules/.bin/tailwindcss -i public/styles/tailwind.source.css -o public/styles/tailwind.css --watch & astro dev'",
     "build": "./node_modules/.bin/tailwindcss -i public/styles/tailwind.source.css -o public/styles/tailwind.css --minify && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
