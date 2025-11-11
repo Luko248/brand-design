@@ -16,29 +16,31 @@ const global = await loadTranslations(lang, "global");
     <!-- Google Maps -->
     <GoogleMaps class="footer__map" id="BrandDesignMap" />
     <div>
-      <h2 class="section__title section__title--no-margin section__title--left section__title--white">
+      <h2 class="font-[Prometo-l] uppercase text-4xl md:text-5xl text-white mb-2 text-left">
         {global.footer.contact}
       </h2>
+      <div class="w-60 border-b-2 border-dashed border-[var(--color-secondary)] mb-4"></div>
       <div>
-        <h4 class="contact__item contact__item--title">
+        <h4 class="mb-2 text-2xl">
           {global.footer.contactPerson}
         </h4>
-        <p class="contact__item">
+        <p class="text-base leading-relaxed">
           {global.company.contactName}<br />
-          <a href={`mailto:${global.company.contactEmail}?subject=Správa_z_brand-design.cz`} class="contact__link">
+          <a href={`mailto:${global.company.contactEmail}?subject=Správa_z_brand-design.cz`} class="text-[var(--color-secondary)] hover:opacity-80 transition">
             {global.company.contactEmail}
           </a><br />
-          <a href={`tel:${global.company.phone}`} class="contact__link">
+          <a href={`tel:${global.company.phone}`} class="text-[var(--color-secondary)] hover:opacity-80 transition">
             {global.company.phone}
           </a>
         </p>
-        <div class="contact__social">
+        <div class="flex items-center gap-4 mt-4">
           <a
             href="https://www.facebook.com/BENDER-dEsign-153757514682594/?hc_ref=ARQc6hmJFU1LoxrJS361zeJXI63y5OITpFt0K3W--sfIcaF2lylSx4nrzrrCJF4-HxE&__xts__[0]=68.ARCCfKFOS3nc-dS7gWfyJwKKItqdo-R6e9dQfOls3EzuFa71rfcDqiQkLkctObvXKbYZJsdH85_oTMU7jXnVlRjBN20vtagM0dV4Nyy1he7uifkC9jbHfncvQ04Ku0kFGswr555w-pr-oQb8AGjSacTRwxOd3NVYIHSnciu5pQX_tCo-BEW2IA&__tn__=kC-R"
             target="_blank"
             title="Facebook"
+            class="block w-7 h-7 hover:scale-110 transition"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full fill-white">
               <path
                 d="M437,0H75A75.09,75.09,0,0,0,0,75V437a75.09,75.09,0,0,0,75,75H226V331H166V241h60V180a90.1,90.1,0,0,1,90-90h91v90H316v61h91l-15,90H316V512H437a75.09,75.09,0,0,0,75-75V75A75.09,75.09,0,0,0,437,0Z"
               ></path>
@@ -48,8 +50,9 @@ const global = await loadTranslations(lang, "global");
             href="https://www.instagram.com/brand_design.cz/?utm_source=ig_profile_share&igshid=1d0jlglxe2um2"
             target="_blank"
             title="Instagram"
+            class="block w-7 h-7 hover:scale-110 transition"
           >
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-full h-full fill-white">
               <path
                 d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h362c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm-180 390c-74.441406 0-135-60.558594-135-135s60.558594-135 135-135 135 60.558594 135 135-60.558594 135-135 135zm150-240c-24.8125 0-45-20.1875-45-45s20.1875-45 45-45 45 20.1875 45 45-20.1875 45-45 45zm0 0"
               ></path>
@@ -63,10 +66,10 @@ const global = await loadTranslations(lang, "global");
         </div>
       </div>
       <div>
-        <h4 class="contact__item contact__item--title">
+        <h4 class="mb-2 text-2xl">
           {global.footer.address}
         </h4>
-        <address class="contact__item">
+        <address class="not-italic text-base leading-relaxed">
           {global.company.street},<br />
           {global.company.zip} {global.company.city}<br />
           IČO: {global.company.ico}
@@ -90,9 +93,8 @@ const global = await loadTranslations(lang, "global");
           <strong>
             ©<span id="Year"></span>&nbsp;{global.company.name},&nbsp;
           </strong>
-          {global.footer.allRightsReserved}&nbsp;|&nbsp;<span class="contact__developer"
-            >{global.footer.createdBy} <a href="https://lukaschylik.sk/" target="_blank">Lukáš Chylík</a></span
-          >
+          {global.footer.allRightsReserved}&nbsp;|&nbsp;
+          <span>{global.footer.createdBy} <a href="https://lukaschylik.sk/" target="_blank" class="underline hover:opacity-80">Lukáš Chylík</a></span>
         </p>
       </div>
     </div>

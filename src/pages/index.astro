@@ -40,111 +40,130 @@ const translations = await loadTranslations(lang, "pages/index");
   <Navigation lang={lang} currentPath="/" isHomepage={true} />
 
   <main>
-    <section class="section section--about" id="About">
-      <div class="container">
-        <div class="flex-container flex-container--small-reverse flex-container--center">
-          <div class="flex-container__box">
-            <div class="big-logo-container">
-              <img src="/Resources/Images/Logos/logo_circle.svg" alt="Main logo" class="main-logo" />
-            </div>
+    <!-- About -->
+    <section id="About" class="py-16 md:py-24 bg-background">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div class="flex items-center justify-center">
+            <img
+              src="/Resources/Images/Logos/logo_circle.svg"
+              alt="Main logo"
+              class="w-[85%] md:w-1/2 sm:w-[85%] h-auto"
+            />
           </div>
-          <div class="flex-container__box flex-container__box--with-padding">
+          <div class="py-6">
             <h1 class="main-title" set:html={translations.about.mainTitle} />
-            <h2 class="section__title section__title--left" set:html={translations.about.title} />
-            <p class="section__desc section__desc--left" set:html={translations.about.paragraph1} />
-            <p class="section__desc section__desc--left" set:html={translations.about.paragraph2} />
+            <h2 class="font-[Prometo-l] uppercase text-4xl md:text-5xl text-black mb-6 text-left" set:html={translations.about.title} />
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-left mb-6" set:html={translations.about.paragraph1} />
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-left" set:html={translations.about.paragraph2} />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="banner-window">
-      <div class="banner-window__content">
-        <h3 set:html={translations.banner.title} />
-        <a href="#Contact">{translations.banner.button}</a>
-      </div>
-    </section>
-
-    <section class="section section--references" id="References">
-      <div class="container">
-        <h2 class="section__title">{translations.services.title}</h2>
-        <div class="flex-container flex-container--center">
-          <div class="flex-container__box flex-container__box--with-padding">
-            <a href="/printing-and-production" class="anim-box anim-box--print">
-              <div class="anim-box__inner-box">
-                <div>
-                  <h3>{translations.services.printing.title}</h3>
-                  <p>{translations.services.printing.button}</p>
-                </div>
-              </div>
-              <div class="anim-box__view-ico">
-                <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" />
-              </div>
-            </a>
-          </div>
-          <div class="flex-container__box flex-container__box--with-padding">
-            <div>
-              <h3 class="section__subtitle section__subtitle--left">{translations.services.printing.title}</h3>
-              <p class="section__desc section__desc--left section__desc--mo-margin" set:html={translations.services.printing.description} />
-            </div>
-          </div>
-        </div>
-
-        <div class="flex-container flex-container--center flex-container--mobile-reverse">
-          <div class="flex-container__box flex-container__box--with-padding">
-            <div>
-              <h3 class="section__subtitle section__subtitle--right">{translations.services.expositions.title}</h3>
-              <p class="section__desc section__desc--right section__desc--mo-margin" set:html={translations.services.expositions.description} />
-            </div>
-          </div>
-          <div class="flex-container__box flex-container__box--with-padding">
-            <a href="/expositions" class="anim-box anim-box--expo">
-              <div class="anim-box__inner-box">
-                <div>
-                  <h3>{translations.services.expositions.title}</h3>
-                  <p>{translations.services.expositions.button}</p>
-                </div>
-              </div>
-              <div class="anim-box__view-ico">
-                <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" />
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="flex-container flex-container--center">
-          <div class="flex-container__box flex-container__box--with-padding">
-            <a href="/sticks" class="anim-box anim-box--stick">
-              <div class="anim-box__inner-box">
-                <div>
-                  <h3>{translations.services.sticks.title}</h3>
-                  <p>{translations.services.sticks.button}</p>
-                </div>
-              </div>
-              <div class="anim-box__view-ico">
-                <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" />
-              </div>
-            </a>
-          </div>
-          <div class="flex-container__box flex-container__box--with-padding">
-            <div>
-              <h3 class="section__subtitle section__subtitle--left">{translations.services.sticks.title}</h3>
-              <p class="section__desc section__desc--left section__desc--mo-margin" set:html={translations.services.sticks.description} />
-            </div>
-          </div>
+    <!-- Banner CTA -->
+    <section class="relative aspect-[16/9] bg-cover bg-center" style="background-image: url('/Resources/Images/Backgrounds/parallax-bg-1.jpg')">
+      <div class="absolute inset-0 bg-[oklch(0_0_0_/_0.9)]"></div>
+      <div class="relative max-w-screen-xl mx-auto px-4 py-12 md:py-20 grid place-items-center text-center text-white">
+        <div>
+          <h3 class="font-[Prometo-l] uppercase text-3xl md:text-4xl" set:html={translations.banner.title} />
+          <a
+            href="#Contact"
+            class="inline-block mt-6 md:mt-8 px-6 py-3 md:px-8 md:py-3 bg-white text-black uppercase tracking-wide hover:bg-transparent hover:text-white border border-white transition-colors duration-300"
+          >
+            {translations.banner.button}
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section section--partners">
-      <div class="container">
-        <h2 class="section__title">{translations.partners.title}</h2>
-        <div class="partners">
-          <p class="partners__text">
-            {translations.partners.text}
-          </p>
-          <a href="https://www.mistrymont.cz/" class="partners__logo" target="_blank">
-            <img src="/Resources/Images/Logos/mistry-mont-logo.svg" alt="Mistry Mont Logo" />
+    <!-- Services / References -->
+    <section id="References" class="py-16 md:py-24 bg-white text-black">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <h2 class="font-[Prometo-l] uppercase text-4xl md:text-5xl text-center mb-8">{translations.services.title}</h2>
+
+        <!-- Printing row -->
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
+          <a href="/printing-and-production" class="group relative block w-full max-w-xl min-h-[25rem] md:min-h-[32rem] mx-auto text-white overflow-hidden">
+            <img src="/Resources/Images/Backgrounds/print_bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.45)_0%,rgba(0,0,0,1)_100%)] opacity-100 md:opacity-0 md:group-hover:opacity-0 transition"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(45deg,color-mix(in_oklch,var(--color-outline),transparent_40%),color-mix(in_oklch,var(--color-primary),transparent_40%))] opacity-0 md:opacity-100 md:group-hover:opacity-100 transition"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[87%] h-[85%] border border-white grid place-items-center opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition">
+                <div class="px-4 text-center">
+                  <h3 class="text-3xl md:text-4xl font-light uppercase mb-2">{translations.services.printing.title}</h3>
+                  <p class="text-lg md:text-xl font-light uppercase">{translations.services.printing.button}</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute right-4 bottom-4 w-9 h-9 opacity-15 md:opacity-0 group-hover:opacity-0 transition">
+              <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" class="w-full h-full" />
+            </div>
+          </a>
+          <div>
+            <h3 class="font-[Prometo-l] uppercase text-3xl md:text-4xl text-left mb-4">{translations.services.printing.title}</h3>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-left" set:html={translations.services.printing.description} />
+          </div>
+        </div>
+
+        <!-- Expositions row (reverse on md) -->
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
+          <div class="order-2 md:order-1">
+            <h3 class="font-[Prometo-l] uppercase text-3xl md:text-4xl text-right md:text-left mb-4">{translations.services.expositions.title}</h3>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-right md:text-left" set:html={translations.services.expositions.description} />
+          </div>
+          <a href="/expositions" class="group order-1 md:order-2 relative block w-full max-w-xl min-h-[25rem] md:min-h-[32rem] mx-auto text-white overflow-hidden">
+            <img src="/Resources/Images/Backgrounds/exposition_bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.45)_0%,rgba(0,0,0,1)_100%)] opacity-100 md:opacity-0 md:group-hover:opacity-0 transition"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(45deg,color-mix(in_oklch,var(--color-outline),transparent_40%),color-mix(in_oklch,var(--color-primary),transparent_40%))] opacity-0 md:opacity-100 md:group-hover:opacity-100 transition"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[87%] h-[85%] border border-white grid place-items-center opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition">
+                <div class="px-4 text-center">
+                  <h3 class="text-3xl md:text-4xl font-light uppercase mb-2">{translations.services.expositions.title}</h3>
+                  <p class="text-lg md:text-xl font-light uppercase">{translations.services.expositions.button}</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute right-4 bottom-4 w-9 h-9 opacity-15 md:opacity-0 group-hover:opacity-0 transition">
+              <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" class="w-full h-full" />
+            </div>
+          </a>
+        </div>
+
+        <!-- Sticks row -->
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <a href="/sticks" class="group relative block w-full max-w-xl min-h-[25rem] md:min-h-[32rem] mx-auto text-white overflow-hidden">
+            <img src="/Resources/Images/Backgrounds/stick_bg.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.45)_0%,rgba(0,0,0,1)_100%)] opacity-100 md:opacity-0 md:group-hover:opacity-0 transition"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(45deg,color-mix(in_oklch,var(--color-outline),transparent_40%),color-mix(in_oklch,var(--color-primary),transparent_40%))] opacity-0 md:opacity-100 md:group-hover:opacity-100 transition"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[87%] h-[85%] border border-white grid place-items-center opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 transition">
+                <div class="px-4 text-center">
+                  <h3 class="text-3xl md:text-4xl font-light uppercase mb-2">{translations.services.sticks.title}</h3>
+                  <p class="text-lg md:text-xl font-light uppercase">{translations.services.sticks.button}</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute right-4 bottom-4 w-9 h-9 opacity-15 md:opacity-0 group-hover:opacity-0 transition">
+              <img src="/Resources/Images/Icons/view-ico.svg" alt="search-icon" class="w-full h-full" />
+            </div>
+          </a>
+          <div>
+            <h3 class="font-[Prometo-l] uppercase text-3xl md:text-4xl text-left mb-4">{translations.services.sticks.title}</h3>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-left" set:html={translations.services.sticks.description} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <h2 class="font-[Prometo-l] uppercase text-4xl md:text-5xl text-center mb-8">{translations.partners.title}</h2>
+        <div class="flex flex-col items-center gap-6">
+          <p class="text-lg md:text-xl text-center">{translations.partners.text}</p>
+          <a href="https://www.mistrymont.cz/" class="block" target="_blank">
+            <img src="/Resources/Images/Logos/mistry-mont-logo.svg" alt="Mistry Mont Logo" class="h-12 md:h-16 w-auto" />
           </a>
         </div>
       </div>

@@ -12,18 +12,18 @@ const csUrl = cleanPath;
 const enUrl = cleanPath + "?lang=en";
 ---
 
-<div class="flex items-center gap-2 text-base font-semibold">
+<div class="lang-switcher text-[1.8rem] font-medium text-white md:pr-8 md:text-black md:text-right" data-fixed="false">
   <a
     href={csUrl}
     data-active={lang === 'cs'}
     aria-label="Switch to Czech"
-    class="no-underline text-[var(--color-white)] opacity-70 px-2 py-1 rounded-sm transition-opacity duration-[--duration-300] ease-[--ease-standard] hover:opacity-100 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] data-[active=true]:opacity-100 data-[active=true]:bg-[color-mix(in_oklch,var(--color-white),transparent_80%)]"
-  >CZ</a>
-  <span class="text-[var(--color-white)] opacity-50">/</span>
+    class="no-underline text-white md:text-black data-[active=true]:text-[var(--color-secondary)] md:data-[active=true]:text-[var(--color-primary)] hover:text-[var(--color-secondary-hover)] transition-all duration-300"
+  >Cz</a>
+  <span class="text-white md:text-black"> / </span>
   <a
     href={enUrl}
     data-active={lang === 'en'}
     aria-label="Switch to English"
-    class="no-underline text-[var(--color-white)] opacity-70 px-2 py-1 rounded-sm transition-opacity duration-[--duration-300] ease-[--ease-standard] hover:opacity-100 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] data-[active=true]:opacity-100 data-[active=true]:bg-[color-mix(in_oklch,var(--color-white),transparent_80%)]"
-  >EN</a>
+    class="no-underline text-white md:text-black data-[active=true]:text-[var(--color-secondary)] md:data-[active=true]:text-[var(--color-primary)] hover:text-[var(--color-secondary-hover)] transition-all duration-300"
+  >En</a>
 </div>
