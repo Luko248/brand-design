@@ -1,41 +1,49 @@
-<div id="BrandDesignMap" style="width: 100%; height: 400px;"></div>
+<div id="BrandDesignMap" class="w-full aspect-[var(--ratio-map)]"></div>
 
-<script is:inline>
-  function initMap() {
-    const mapElement = document.getElementById("BrandDesignMap");
-    if (!mapElement) return;
+<script>
+  import { Loader } from '@googlemaps/js-api-loader';
 
-    const location = { lat: 49.407212, lng: 16.631153 };
-    
-    const map = new google.maps.Map(mapElement, {
-      center: location,
-      zoom: 15,
-      disableDefaultUI: true,
-      zoomControl: true,
-    });
+  const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+  const mapElement = document.getElementById('BrandDesignMap');
 
-    // Using legacy Marker (AdvancedMarkerElement requires newer API)
-    const marker = new google.maps.Marker({
-      position: location,
-      map: map,
-      title: "Brand DESIGN",
-      icon: {
-        url: "/Resources/Images/Icons/marker.png",
-        scaledSize: new google.maps.Size(32, 32)
-      }
-    });
-
-    const infoWindow = new google.maps.InfoWindow({
-      content: '<div style="padding: 10px;"><h3 style="margin: 0 0 5px 0;">Brand<br>DESIGN</h3><span>graphic solutions</span><br><div>Ol. Blažka,<br>679 02 Rájec-Jestřebí</div></div>'
-    });
-
-    marker.addListener("click", () => {
-      infoWindow.open(map, marker);
-    });
+  if (!apiKey) {
+    console.warn('Missing PUBLIC_GOOGLE_MAPS_API_KEY');
   }
 
-  // Expose to global
-  window.initMap = initMap;
-</script>
+  if (mapElement && apiKey) {
+    const loader = new Loader({
+      apiKey,
+      version: 'weekly',
+      libraries: ['marker'],
+    });
 
-<script is:inline async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY4zLp8W-E-RMzrGoi-kspnG95XacZNkQ&callback=initMap"></script>
+    loader.load().then((google) => {
+      const location = { lat: 49.407212, lng: 16.631153 };
+
+      const map = new google.maps.Map(mapElement, {
+        center: location,
+        zoom: 15,
+        disableDefaultUI: true,
+        zoomControl: true,
+      });
+
+      // Prefer AdvancedMarker when library is available
+      if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+        const { AdvancedMarkerElement } = google.maps.marker;
+        new AdvancedMarkerElement({
+          map,
+          position: location,
+          title: 'Brand DESIGN',
+        });
+      } else {
+        new google.maps.Marker({
+          position: location,
+          map,
+          title: 'Brand DESIGN',
+        });
+      }
+    }).catch((err) => {
+      console.error('Google Maps load failed', err);
+    });
+  }
+  </script>

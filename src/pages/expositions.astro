@@ -11,25 +11,35 @@ const translations = await loadTranslations(lang, "pages/expositions");
 
 // Manually list actual images from expositions
 const expositionImages = [
-  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/1_1024.jpg", alt: "Anuga" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/2_1024.jpg", alt: "Anuga" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Brno/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Brno/1_1024.jpg", alt: "Brno" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Geneva/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Geneva/1_1024.jpg", alt: "Geneva" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Stuttgart/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Stuttgart/1_1024.jpg", alt: "Stuttgart" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Wien/1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Wien/1_1024.jpg", alt: "Wien" },
+  // Anuga
+  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-1_1024.jpg", alt: "Anuga" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-2_1024.jpg", alt: "Anuga" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-3_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-3_1024.jpg", alt: "Anuga" },
+  // Brno (Boehringer)
+  { thumb: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-1_1024.jpg", alt: "Brno" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-3_480.jpg", full: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-3_1024.jpg", alt: "Brno" },
+  // Geneva
+  { thumb: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-1_1024.jpg", alt: "Geneva" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-2_1024.jpg", alt: "Geneva" },
+  // Stuttgart
+  { thumb: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-1_1024.jpg", alt: "Stuttgart" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-3_480.jpg", full: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-3_1024.jpg", alt: "Stuttgart" },
+  // Wien
+  { thumb: "/Resources/Images/Referencies/Expositions/Wien/wien-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Wien/wien-1_1024.jpg", alt: "Wien" },
+  { thumb: "/Resources/Images/Referencies/Expositions/Wien/wien-2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Wien/wien-2_1024.jpg", alt: "Wien" },
 ];
 ---
 
 <BaseLayout lang={lang} title={translations.title} description={translations.description}>
-  <header class="header" style="background-image: url('/Resources/Images/Backgrounds/exposition_bg.jpg')"></header>
+  <header class="bg-cover bg-center aspect-[var(--ratio-hero)]" style="background-image: url('/Resources/Images/Backgrounds/exposition_bg.jpg')"></header>
 
   <Navigation lang={lang} currentPath="/expositions" />
 
   <main>
-    <section class="section">
-      <div class="container">
-        <h1 class="section__title">{translations.heading}</h1>
-        <p class="section__desc">{translations.description}</p>
+    <section class="py-16 md:py-24 bg-background">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">{translations.heading}</h1>
+        <p class="mt-4 text-white/80">{translations.description}</p>
         
         <Gallery images={expositionImages} galleryId="expositions-gallery" />
       </div>

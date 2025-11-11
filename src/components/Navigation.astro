@@ -12,88 +12,88 @@ const { lang, currentPath = "/", isHomepage = false } = Astro.props;
 const global = await loadTranslations(lang, "global");
 ---
 
-<nav class="nav" data-is-homepage={isHomepage}>
-  <a href="/" class="nav__logo">
-    <img src="/Resources/Images/Logos/logo.svg" alt="logo" />
-    <img src="/Resources/Images/Logos/logo-black.svg" alt="logo-sec" />
-  </a>
-  <ul class="nav__menu">
-    <li>
-      <a href="/#Home" id="HomeScroll" class="nav__item nav__item--active">
-        <span>{global.nav.home}</span>
-      </a>
-    </li>
-    <li>
-      <a href="/#About" id="AboutScroll" class="nav__item">
-        <span>{global.nav.about}</span>
-      </a>
-    </li>
-    <li>
-      <a href="/#References" id="ReferencesScroll" class="nav__item">
-        <span>{global.nav.references}</span>
-      </a>
-    </li>
-    <li>
-      <a href="/#Contact" id="ContactScroll" class="nav__item">
-        <span>{global.nav.contact}</span>
-      </a>
-    </li>
-  </ul>
-  <div class="nav__right">
-    <LanguageToggle lang={lang} currentPath={currentPath} />
-    <div class="burger-button">
-      <div></div>
+<nav class="sticky top-0 left-0 w-full z-[--z-sticky] data-[fixed=true]:bg-[color-mix(in_oklch,var(--color-background),transparent_10%)] data-[fixed=true]:shadow-md transition-colors duration-[--duration-300]" data-is-homepage={isHomepage}>
+  <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/Resources/Images/Logos/logo.svg" alt="logo" class="h-8" />
+      <img src="/Resources/Images/Logos/logo-black.svg" alt="logo-sec" class="h-8 hidden" />
+    </a>
+    <ul class="hidden md:flex items-center gap-6" id="NavMenu">
+      <li>
+        <a href="/#Home" id="HomeScroll" class="text-[var(--color-white)] opacity-80 hover:opacity-100 data-[active=true]:opacity-100" data-active>
+          <span>{global.nav.home}</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#About" id="AboutScroll" class="text-[var(--color-white)] opacity-80 hover:opacity-100">
+          <span>{global.nav.about}</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#References" id="ReferencesScroll" class="text-[var(--color-white)] opacity-80 hover:opacity-100">
+          <span>{global.nav.references}</span>
+        </a>
+      </li>
+      <li>
+        <a href="/#Contact" id="ContactScroll" class="text-[var(--color-white)] opacity-80 hover:opacity-100">
+          <span>{global.nav.contact}</span>
+        </a>
+      </li>
+    </ul>
+    <div class="flex items-center gap-4">
+      <LanguageToggle lang={lang} currentPath={currentPath} />
+      <button id="BurgerButton" class="md:hidden inline-flex items-center justify-center w-10 h-8 rounded-md bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] text-[var(--color-white)] data-[open=true]:bg-[color-mix(in_oklch,var(--color-white),transparent_80%)]" aria-label="Open menu" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <div class="w-6 h-0.5 bg-white relative">
+          <div class="absolute -top-2 left-0 w-6 h-0.5 bg-white"></div>
+          <div class="absolute top-2 left-0 w-6 h-0.5 bg-white"></div>
+        </div>
+      </button>
     </div>
+  </div>
+  <div class="md:hidden hidden data-[open=true]:block bg-[color-mix(in_oklch,var(--color-background),transparent_10%)]" id="MobileMenu">
+    <ul class="flex flex-col gap-2 px-4 py-3">
+      <li><a href="/#Home" class="block px-2 py-2 text-[var(--color-white)] opacity-90 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] rounded">{global.nav.home}</a></li>
+      <li><a href="/#About" class="block px-2 py-2 text-[var(--color-white)] opacity-90 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] rounded">{global.nav.about}</a></li>
+      <li><a href="/#References" class="block px-2 py-2 text-[var(--color-white)] opacity-90 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] rounded">{global.nav.references}</a></li>
+      <li><a href="/#Contact" class="block px-2 py-2 text-[var(--color-white)] opacity-90 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] rounded">{global.nav.contact}</a></li>
+    </ul>
   </div>
 </nav>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    const burgerButton = document.querySelector('.burger-button');
-    const menu = document.querySelector('.nav__menu');
-    const navItems = document.querySelectorAll('.nav__item');
-    const nav = document.querySelector('.nav');
+    const burgerButton = document.getElementById('BurgerButton');
+    const mobile = document.getElementById('MobileMenu');
+    const nav = document.querySelector('nav');
     const isHomepage = nav?.getAttribute('data-is-homepage') === 'true';
 
-    // Burger menu toggle
-    if (burgerButton && menu) {
+    if (burgerButton && mobile) {
       burgerButton.addEventListener('click', (e) => {
         e.stopPropagation();
-        burgerButton.classList.toggle('burger-button--open');
-        menu.classList.toggle('nav__menu--open');
+        const open = mobile.getAttribute('data-open') === 'true';
+        mobile.setAttribute('data-open', (!open).toString());
+        burgerButton.setAttribute('data-open', (!open).toString());
+        burgerButton.setAttribute('aria-expanded', (!open).toString());
       });
 
       document.addEventListener('click', (e) => {
-        if (!e.target.closest('.burger-button') && !e.target.closest('.nav__menu')) {
-          burgerButton.classList.remove('burger-button--open');
-          menu.classList.remove('nav__menu--open');
+        if (!e.target.closest('#BurgerButton') && !e.target.closest('#MobileMenu')) {
+          mobile.setAttribute('data-open', 'false');
+          burgerButton.setAttribute('data-open', 'false');
+          burgerButton.setAttribute('aria-expanded', 'false');
         }
       });
     }
 
-    // Nav item click
-    navItems.forEach((item) => {
-      item.addEventListener('click', () => {
-        navItems.forEach((navItem) => navItem.classList.remove('nav__item--active'));
-        item.classList.add('nav__item--active');
-      });
-    });
-
-    // Scroll behavior ONLY on homepage
     if (nav && isHomepage && window.innerWidth > 768) {
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          nav.classList.add('nav--fixed');
-        } else {
-          nav.classList.remove('nav--fixed');
-        }
+        nav.setAttribute('data-fixed', (window.scrollY > 50).toString());
       });
     } else if (nav && !isHomepage) {
-      // On other pages, always fixed
-      nav.classList.add('nav--fixed');
+      nav.setAttribute('data-fixed', 'true');
     }
 
-    // Update year
     const yearElement = document.getElementById('Year');
     if (yearElement) {
       yearElement.textContent = new Date().getFullYear().toString();

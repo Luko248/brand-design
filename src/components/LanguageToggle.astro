@@ -12,54 +12,18 @@ const csUrl = cleanPath;
 const enUrl = cleanPath + "?lang=en";
 ---
 
-<div class="language-toggle">
-  <a 
-    href={csUrl} 
-    class={`language-toggle__button ${lang === "cs" ? "language-toggle__button--active" : ""}`}
+<div class="flex items-center gap-2 text-base font-semibold">
+  <a
+    href={csUrl}
+    data-active={lang === 'cs'}
     aria-label="Switch to Czech"
-  >
-    CZ
-  </a>
-  <span class="language-toggle__separator">/</span>
-  <a 
+    class="no-underline text-[var(--color-white)] opacity-70 px-2 py-1 rounded-sm transition-opacity duration-[--duration-300] ease-[--ease-standard] hover:opacity-100 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] data-[active=true]:opacity-100 data-[active=true]:bg-[color-mix(in_oklch,var(--color-white),transparent_80%)]"
+  >CZ</a>
+  <span class="text-[var(--color-white)] opacity-50">/</span>
+  <a
     href={enUrl}
-    class={`language-toggle__button ${lang === "en" ? "language-toggle__button--active" : ""}`}
+    data-active={lang === 'en'}
     aria-label="Switch to English"
-  >
-    EN
-  </a>
+    class="no-underline text-[var(--color-white)] opacity-70 px-2 py-1 rounded-sm transition-opacity duration-[--duration-300] ease-[--ease-standard] hover:opacity-100 hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] data-[active=true]:opacity-100 data-[active=true]:bg-[color-mix(in_oklch,var(--color-white),transparent_80%)]"
+  >EN</a>
 </div>
-
-<style lang="scss">
-  .language-toggle {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-
-    &__button {
-      text-decoration: none;
-      color: #fff;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-      opacity: 0.7;
-
-      &:hover {
-        opacity: 1;
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      &--active {
-        opacity: 1;
-        background: rgba(255, 255, 255, 0.2);
-        font-weight: 700;
-      }
-    }
-
-    &__separator {
-      color: rgba(255, 255, 255, 0.5);
-    }
-  }
-</style>

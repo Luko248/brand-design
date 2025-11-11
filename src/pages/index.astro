@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Navigation from "@/components/Navigation.astro";
 import Footer from "@/components/Footer.astro";
+import HeroSlider from "@/components/HeroSlider.astro";
 import { loadTranslations } from "@/lib/i18n";
 
 // Get language from query parameter
@@ -11,17 +12,29 @@ const translations = await loadTranslations(lang, "pages/index");
 ---
 
 <BaseLayout lang={lang}>
-  <header class="header header--landing" id="Home">
-    <div class="slider">
-      <div class="slider__item slider__item--first">
-        <div class="slider__content">
-          <h3 class="slider__title" set:html={translations.hero.slide1.title} />
-          <a href="#About" class="slider__button to-about">
-            {translations.hero.slide1.button}
-          </a>
-        </div>
-      </div>
-    </div>
+  <header id="Home">
+    <HeroSlider
+      slides={[
+        {
+          image: '/Resources/Images/Backgrounds/slider-home-1.jpg',
+          titleHtml: translations.hero.slide1.title,
+          ctaText: translations.hero.slide1.button,
+          ctaHref: '#About',
+        },
+        {
+          image: '/Resources/Images/Backgrounds/slider-home-2.jpg',
+          titleHtml: translations.hero.slide2.title,
+          ctaText: translations.hero.slide2.button,
+          ctaHref: '#References',
+        },
+        {
+          image: '/Resources/Images/Backgrounds/slider-home-3.jpg',
+          titleHtml: translations.hero.slide3.title,
+          ctaText: translations.hero.slide3.button,
+          ctaHref: '#Contact',
+        },
+      ]}
+    />
   </header>
 
   <Navigation lang={lang} currentPath="/" isHomepage={true} />
