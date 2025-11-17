@@ -12,26 +12,26 @@ const translations = await loadTranslations(lang, "pages/expositions");
 // Manually list actual images from expositions
 const expositionImages = [
   // Anuga
-  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-1_1024.jpg", alt: "Anuga" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-2_1024.jpg", alt: "Anuga" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-3_480.jpg", full: "/Resources/Images/Referencies/Expositions/Anuga/Anuga-3_1024.jpg", alt: "Anuga" },
+  { thumb: "/images/Referencies/Expositions/Anuga/Anuga-1_480.jpg", full: "/images/Referencies/Expositions/Anuga/Anuga-1_1024.jpg", alt: "Anuga" },
+  { thumb: "/images/Referencies/Expositions/Anuga/Anuga-2_480.jpg", full: "/images/Referencies/Expositions/Anuga/Anuga-2_1024.jpg", alt: "Anuga" },
+  { thumb: "/images/Referencies/Expositions/Anuga/Anuga-3_480.jpg", full: "/images/Referencies/Expositions/Anuga/Anuga-3_1024.jpg", alt: "Anuga" },
   // Brno (Boehringer)
-  { thumb: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-1_1024.jpg", alt: "Brno" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-3_480.jpg", full: "/Resources/Images/Referencies/Expositions/Brno/Boehringer-3_1024.jpg", alt: "Brno" },
+  { thumb: "/images/Referencies/Expositions/Brno/Boehringer-1_480.jpg", full: "/images/Referencies/Expositions/Brno/Boehringer-1_1024.jpg", alt: "Brno" },
+  { thumb: "/images/Referencies/Expositions/Brno/Boehringer-3_480.jpg", full: "/images/Referencies/Expositions/Brno/Boehringer-3_1024.jpg", alt: "Brno" },
   // Geneva
-  { thumb: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-1_1024.jpg", alt: "Geneva" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Geneva/Geneva-2_1024.jpg", alt: "Geneva" },
+  { thumb: "/images/Referencies/Expositions/Geneva/Geneva-1_480.jpg", full: "/images/Referencies/Expositions/Geneva/Geneva-1_1024.jpg", alt: "Geneva" },
+  { thumb: "/images/Referencies/Expositions/Geneva/Geneva-2_480.jpg", full: "/images/Referencies/Expositions/Geneva/Geneva-2_1024.jpg", alt: "Geneva" },
   // Stuttgart
-  { thumb: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-1_1024.jpg", alt: "Stuttgart" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-3_480.jpg", full: "/Resources/Images/Referencies/Expositions/Stuttgart/VOITEQ-3_1024.jpg", alt: "Stuttgart" },
+  { thumb: "/images/Referencies/Expositions/Stuttgart/VOITEQ-1_480.jpg", full: "/images/Referencies/Expositions/Stuttgart/VOITEQ-1_1024.jpg", alt: "Stuttgart" },
+  { thumb: "/images/Referencies/Expositions/Stuttgart/VOITEQ-3_480.jpg", full: "/images/Referencies/Expositions/Stuttgart/VOITEQ-3_1024.jpg", alt: "Stuttgart" },
   // Wien
-  { thumb: "/Resources/Images/Referencies/Expositions/Wien/wien-1_480.jpg", full: "/Resources/Images/Referencies/Expositions/Wien/wien-1_1024.jpg", alt: "Wien" },
-  { thumb: "/Resources/Images/Referencies/Expositions/Wien/wien-2_480.jpg", full: "/Resources/Images/Referencies/Expositions/Wien/wien-2_1024.jpg", alt: "Wien" },
+  { thumb: "/images/Referencies/Expositions/Wien/wien-1_480.jpg", full: "/images/Referencies/Expositions/Wien/wien-1_1024.jpg", alt: "Wien" },
+  { thumb: "/images/Referencies/Expositions/Wien/wien-2_480.jpg", full: "/images/Referencies/Expositions/Wien/wien-2_1024.jpg", alt: "Wien" },
 ];
 ---
 
 <BaseLayout lang={lang} title={translations.title} description={translations.description}>
-  <header class="bg-cover bg-center aspect-[var(--ratio-hero)]" style="background-image: url('/Resources/Images/Backgrounds/exposition_bg.jpg')"></header>
+  <header class="bg-cover bg-center aspect-[var(--ratio-hero)]" style="background-image: url('/images/Backgrounds/exposition_bg.jpg')"></header>
 
   <Navigation lang={lang} currentPath="/expositions" />
 

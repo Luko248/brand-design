@@ -2,34 +2,34 @@
 @font-face {
   font-family: "Anja";
   font-display: swap;
-  src: url("/Resources/Fonts/Anja/Anja.ttf") format("truetype");
+  src: url("/fonts/Anja/Anja.ttf") format("truetype");
 }
 @font-face {
   font-family: "FontAwesome";
   font-display: swap;
-  src: url("/Resources/Fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"),
-       url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff") format("woff"),
-       url("/Resources/Fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2");
+  src: url("/fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"),
+       url("/fonts/FontAwesome/fontawesome-webfont.woff") format("woff"),
+       url("/fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2");
 }
 @font-face {
   font-family: "Prometo-l";
   font-display: swap;
-  src: url("/Resources/Fonts/Prometo/prometo-light.otf") format("opentype");
+  src: url("/fonts/Prometo/prometo-light.otf") format("opentype");
 }
 @font-face {
   font-family: "Preometo-r";
   font-display: swap;
-  src: url("/Resources/Fonts/Prometo/preometo-regular.otf") format("opentype");
+  src: url("/fonts/Prometo/preometo-regular.otf") format("opentype");
 }
 @font-face {
   font-family: "Roboto-l";
   font-display: swap;
-  src: url("/Resources/Fonts/Roboto/roboto-lifgt.otf") format("opentype");
+  src: url("/fonts/Roboto/roboto-lifgt.otf") format("opentype");
 }
 @font-face {
   font-family: "Roboto-r";
   font-display: swap;
-  src: url("/Resources/Fonts/Roboto/roboto-regular.otf") format("opentype");
+  src: url("/fonts/Roboto/roboto-regular.otf") format("opentype");
 }
 
 /* Pseudo-elements and complex effects not expressible via utilities */
@@ -120,12 +120,19 @@ h1.main-title {
 @media (max-width: 768px) {
   .slider__title::after { left: 50%; transform: translateX(-50%); }
 }
+.slider__title,
+.slider__button {
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+}
+.slider__item {
+  color: white;
+}
 
 /* Background images mapped from legacy modifiers */
-.banner-window { background-image: url('/Resources/Images/Backgrounds/parallax-bg-1.jpg'); }
-.anim-box--print { background-image: url('/Resources/Images/Backgrounds/print_bg.jpg'); }
-.anim-box--expo { background-image: url('/Resources/Images/Backgrounds/exposition_bg.jpg'); }
-.anim-box--stick { background-image: url('/Resources/Images/Backgrounds/stick_bg.jpg'); }
+.banner-window { background-image: url('/images/Backgrounds/parallax-bg-1.jpg'); }
+.anim-box--print { background-image: url('/images/Backgrounds/print_bg.jpg'); }
+.anim-box--expo { background-image: url('/images/Backgrounds/exposition_bg.jpg'); }
+.anim-box--stick { background-image: url('/images/Backgrounds/stick_bg.jpg'); }
 
 /* Anim box overlays */
 .anim-box::before {

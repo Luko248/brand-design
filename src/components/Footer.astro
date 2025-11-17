@@ -9,94 +9,98 @@ export interface Props {
 
 const { lang } = Astro.props;
 const global = await loadTranslations(lang, "global");
+const year = new Date().getFullYear();
 ---
 
-<footer id="Contact" class="bg-[var(--color-background)] text-[var(--color-white)] opacity-90">
-  <div class="max-w-screen-xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] items-start">
-    <!-- Google Maps -->
-    <GoogleMaps class="footer__map" id="BrandDesignMap" />
-    <div>
-      <h2 class="font-[Prometo-l] uppercase text-4xl md:text-5xl text-white mb-2 text-left">
-        {global.footer.contact}
-      </h2>
-      <div class="w-60 border-b-2 border-dashed border-[var(--color-secondary)] mb-4"></div>
-      <div>
-        <h4 class="mb-2 text-2xl">
-          {global.footer.contactPerson}
-        </h4>
-        <p class="text-base leading-relaxed">
-          {global.company.contactName}<br />
-          <a href={`mailto:${global.company.contactEmail}?subject=Správa_z_brand-design.cz`} class="text-[var(--color-secondary)] hover:opacity-80 transition">
-            {global.company.contactEmail}
-          </a><br />
-          <a href={`tel:${global.company.phone}`} class="text-[var(--color-secondary)] hover:opacity-80 transition">
-            {global.company.phone}
-          </a>
-        </p>
-        <div class="flex items-center gap-4 mt-4">
-          <a
-            href="https://www.facebook.com/BENDER-dEsign-153757514682594/?hc_ref=ARQc6hmJFU1LoxrJS361zeJXI63y5OITpFt0K3W--sfIcaF2lylSx4nrzrrCJF4-HxE&__xts__[0]=68.ARCCfKFOS3nc-dS7gWfyJwKKItqdo-R6e9dQfOls3EzuFa71rfcDqiQkLkctObvXKbYZJsdH85_oTMU7jXnVlRjBN20vtagM0dV4Nyy1he7uifkC9jbHfncvQ04Ku0kFGswr555w-pr-oQb8AGjSacTRwxOd3NVYIHSnciu5pQX_tCo-BEW2IA&__tn__=kC-R"
-            target="_blank"
-            title="Facebook"
-            class="block w-7 h-7 hover:scale-110 transition"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full fill-white">
-              <path
-                d="M437,0H75A75.09,75.09,0,0,0,0,75V437a75.09,75.09,0,0,0,75,75H226V331H166V241h60V180a90.1,90.1,0,0,1,90-90h91v90H316v61h91l-15,90H316V512H437a75.09,75.09,0,0,0,75-75V75A75.09,75.09,0,0,0,437,0Z"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.instagram.com/brand_design.cz/?utm_source=ig_profile_share&igshid=1d0jlglxe2um2"
-            target="_blank"
-            title="Instagram"
-            class="block w-7 h-7 hover:scale-110 transition"
-          >
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-full h-full fill-white">
-              <path
-                d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h362c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm-180 390c-74.441406 0-135-60.558594-135-135s60.558594-135 135-135 135 60.558594 135 135-60.558594 135-135 135zm150-240c-24.8125 0-45-20.1875-45-45s20.1875-45 45-45 45 20.1875 45 45-20.1875 45-45 45zm0 0"
-              ></path>
-              <path d="m407 90c-8.277344 0-15 6.722656-15 15s6.722656 15 15 15 15-6.722656 15-15-6.722656-15-15-15zm0 0"
-              ></path>
-              <path
-                d="m257 150c-57.890625 0-105 47.109375-105 105s47.109375 105 105 105 105-47.109375 105-105-47.109375-105-105-105zm0 0"
-              ></path>
-            </svg>
-          </a>
+<footer id="Contact" class="bg-[var(--color-background)] text-[var(--color-white)]">
+  <div class="max-w-screen-xl mx-auto px-4 py-14 space-y-10">
+    <div class="grid gap-10 lg:grid-cols-[1.05fr_1fr] items-start">
+      <GoogleMaps id="BrandDesignMap" class="h-[22rem] sm:h-[26rem] lg:h-[28rem]" />
+
+      <div class="space-y-6">
+        <div>
+          <h2 class="font-[Prometo-l] uppercase text-4xl md:text-5xl text-white mb-2">
+            {global.footer.contact}
+          </h2>
+          <div class="w-60 border-b-2 border-dashed border-[var(--color-secondary)]"></div>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="space-y-3">
+            <h4 class="text-2xl">{global.footer.contactPerson}</h4>
+            <p class="text-base leading-relaxed">
+              {global.company.contactName}<br />
+              <a href={`mailto:${global.company.contactEmail}?subject=Správa_z_brand-design.cz`} class="text-[var(--color-secondary)] hover:opacity-80 transition">
+                {global.company.contactEmail}
+              </a><br />
+              <a href={`tel:${global.company.phone}`} class="text-[var(--color-secondary)] hover:opacity-80 transition">
+                {global.company.phone}
+              </a>
+            </p>
+            <div class="flex items-center gap-4 pt-2">
+              <a
+                href="https://www.facebook.com/BENDER-dEsign-153757514682594/?hc_ref=ARQc6hmJFU1LoxrJS361zeJXI63y5OITpFt0K3W--sfIcaF2lylSx4nrzrrCJF4-HxE&__xts__[0]=68.ARCCfKFOS3nc-dS7gWfyJwKKItqdo-R6e9dQfOls3EzuFa71rfcDqiQkLkctObvXKbYZJsdH85_oTMU7jXnVlRjBN20vtagM0dV4Nyy1he7uifkC9jbHfncvQ04Ku0kFGswr555w-pr-oQb8AGjSacTRwxOd3NVYIHSnciu5pQX_tCo-BEW2IA&__tn__=kC-R"
+                target="_blank"
+                title="Facebook"
+                class="block w-8 h-8 hover:scale-110 transition"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-full h-full fill-white">
+                  <path
+                    d="M437,0H75A75.09,75.09,0,0,0,0,75V437a75.09,75.09,0,0,0,75,75H226V331H166V241h60V180a90.1,90.1,0,0,1,90-90h91v90H316v61h91l-15,90H316V512H437a75.09,75.09,0,0,0,75-75V75A75.09,75.09,0,0,0,437,0Z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/brand_design.cz/?utm_source=ig_profile_share&igshid=1d0jlglxe2um2"
+                target="_blank"
+                title="Instagram"
+                class="block w-8 h-8 hover:scale-110 transition"
+              >
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-full h-full fill-white">
+                  <path
+                    d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h362c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm-180 390c-74.441406 0-135-60.558594-135-135s60.558594-135 135-135 135 60.558594 135 135-60.558594 135-135 135zm150-240c-24.8125 0-45-20.1875-45-45s20.1875-45 45-45 45 20.1875 45 45-20.1875 45-45 45zm0 0"
+                  ></path>
+                  <path d="m407 90c-8.277344 0-15 6.722656-15 15s6.722656 15 15 15 15-6.722656 15-15-6.722656-15-15-15zm0 0"
+                  ></path>
+                  <path
+                    d="m257 150c-57.890625 0-105 47.109375-105 105s47.109375 105 105 105 105-47.109375 105-105-47.109375-105-105-105zm0 0"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-2xl">{global.footer.address}</h4>
+            <address class="not-italic text-base leading-relaxed">
+              Pražská 1602/7,<br />
+              678 01 Blansko 1<br />
+              IČO: {global.company.ico}
+            </address>
+            <Button as="a" href={`mailto:${global.company.email}?subject=Správa_z_brand-design.cz`} variant="primary" class="mt-2 w-full sm:w-max">
+              <span>{global.footer.writeMessage}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.63 401.99" class="w-5 h-5">
+                <path
+                  d="M49.11,178.73q9.7,6.86,58.52,40.68t74.81,52.1q2.85,2,12.13,8.71T210,291.07q6.15,4.14,14.85,9.28a86.11,86.11,0,0,0,16.42,7.7,45.2,45.2,0,0,0,14.28,2.57h.57a45.2,45.2,0,0,0,14.28-2.57,85.77,85.77,0,0,0,16.41-7.7q8.71-5.14,14.85-9.28t15.42-10.85q9.27-6.71,12.13-8.71,26.26-18.27,133.62-92.79a135.59,135.59,0,0,0,34.82-35.11q14-20.55,14-43.11a43.76,43.76,0,0,0-13.57-32.26Q484.5,54.82,465.94,54.82H45.68q-22,0-33.83,14.84T0,106.78q0,18,15.7,39T49.11,178.73Z"
+                  transform="translate(0 -54.82)"></path>
+                <path
+                  d="M483.07,209.27q-93.63,63.39-142.18,98.51-16.26,12-26.4,18.7t-27,13.7q-16.85,7-31.41,7h-.57q-14.57,0-31.41-7t-27-13.7q-10.12-6.71-26.41-18.7Q132.2,279.51,28.84,209.27A151.31,151.31,0,0,1,0,184.44V411.12a44,44,0,0,0,13.42,32.27,44,44,0,0,0,32.26,13.42H466a45.82,45.82,0,0,0,45.68-45.69V184.44A157.44,157.44,0,0,1,483.07,209.27Z"
+                  transform="translate(0 -54.82)"></path>
+              </svg>
+            </Button>
+          </div>
         </div>
       </div>
-      <div>
-        <h4 class="mb-2 text-2xl">
-          {global.footer.address}
-        </h4>
-        <address class="not-italic text-base leading-relaxed">
-          {global.company.street},<br />
-          {global.company.zip} {global.company.city}<br />
-          IČO: {global.company.ico}
-        </address>
-      </div>
-      <div>
-        <Button as="a" href={`mailto:${global.company.email}?subject=Správa_z_brand-design.cz`} variant="primary" class="mt-4">
-          <span>{global.footer.writeMessage}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.63 401.99" class="w-5 h-5">
-            <path
-              d="M49.11,178.73q9.7,6.86,58.52,40.68t74.81,52.1q2.85,2,12.13,8.71T210,291.07q6.15,4.14,14.85,9.28a86.11,86.11,0,0,0,16.42,7.7,45.2,45.2,0,0,0,14.28,2.57h.57a45.2,45.2,0,0,0,14.28-2.57,85.77,85.77,0,0,0,16.41-7.7q8.71-5.14,14.85-9.28t15.42-10.85q9.27-6.71,12.13-8.71,26.26-18.27,133.62-92.79a135.59,135.59,0,0,0,34.82-35.11q14-20.55,14-43.11a43.76,43.76,0,0,0-13.57-32.26Q484.5,54.82,465.94,54.82H45.68q-22,0-33.83,14.84T0,106.78q0,18,15.7,39T49.11,178.73Z"
-              transform="translate(0 -54.82)"></path>
-            <path
-              d="M483.07,209.27q-93.63,63.39-142.18,98.51-16.26,12-26.4,18.7t-27,13.7q-16.85,7-31.41,7h-.57q-14.57,0-31.41-7t-27-13.7q-10.12-6.71-26.41-18.7Q132.2,279.51,28.84,209.27A151.31,151.31,0,0,1,0,184.44V411.12a44,44,0,0,0,13.42,32.27,44,44,0,0,0,32.26,13.42H466a45.82,45.82,0,0,0,45.68-45.69V184.44A157.44,157.44,0,0,1,483.07,209.27Z"
-              transform="translate(0 -54.82)"></path>
-          </svg>
-        </Button>
-      </div>
-      <div class="mt-8">
-        <p class="text-[var(--color-white)] opacity-70 text-sm">
-          <strong>
-            ©<span id="Year"></span>&nbsp;{global.company.name},&nbsp;
-          </strong>
-          {global.footer.allRightsReserved}&nbsp;|&nbsp;
-          <span>{global.footer.createdBy} <a href="https://lukaschylik.sk/" target="_blank" class="underline hover:opacity-80">Lukáš Chylík</a></span>
-        </p>
-      </div>
+    </div>
+
+    <div class="flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/80 sm:flex-row sm:items-center sm:justify-between">
+      <p>
+        <strong>©{year} {global.company.name}</strong> — {global.footer.allRightsReserved}
+      </p>
+      <p>
+        {global.footer.createdBy}
+        <a href="https://lukaschylik.sk/" target="_blank" class="underline hover:opacity-80 ml-1">Lukáš Chylík</a>
+      </p>
     </div>
   </div>
 </footer>

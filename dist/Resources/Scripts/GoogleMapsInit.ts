@@ -209,7 +209,7 @@ function initMap() {
     });
 
     var image = {
-        url: '/Resources/Images/Icons/marker.png',
+        url: '/images/Icons/marker.png',
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 32)
     }

@@ -287,5 +287,5 @@
 @utility delay-300 { animation-delay: var(--duration-300); }
 @utility delay-600 { animation-delay: var(--duration-500); }
 @utility bg-hero-overlay {
-  background: radial-gradient(ellipse at center, var(--color-overlay) 0%, var(--color-black) 100%);
+  background: radial-gradient(ellipse at center, color-mix(in oklch, var(--color-overlay), rgba(0,0,0,0.25)) 0%, var(--color-black) 100%);
 }

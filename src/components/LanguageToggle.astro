@@ -1,4 +1,6 @@
 ---
+import { getLocalizedPath } from "@/lib/i18n";
+
 export interface Props {
   lang: "cs" | "en";
   currentPath: string;
@@ -6,10 +8,9 @@ export interface Props {
 
 const { lang, currentPath } = Astro.props;
 
-// Get current URL without query params
-const cleanPath = currentPath.split('?')[0];
-const csUrl = cleanPath;
-const enUrl = cleanPath + "?lang=en";
+const basePath = currentPath || `${Astro.url.pathname}${Astro.url.search}`;
+const csUrl = getLocalizedPath(basePath, "cs");
+const enUrl = getLocalizedPath(basePath, "en");
 ---
 
 <div class="lang-switcher text-[1.8rem] font-medium text-white md:pr-8 md:text-black md:text-right" data-fixed="false">

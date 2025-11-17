@@ -12,108 +12,207 @@ const { lang, currentPath = "/", isHomepage = false } = Astro.props;
 const global = await loadTranslations(lang, "global");
 ---
 
-<nav class="nav absolute top-[5rem] left-0 w-full h-[6rem] flex items-center justify-between px-[15%] box-border bg-transparent transition-all duration-300 z-[999] shadow-[0_0_5px_0_transparent] data-[fixed=true]:fixed data-[fixed=true]:top-0 data-[fixed=true]:bg-white data-[fixed=true]:shadow-[0_0_5px_0_rgba(0,0,0,0.75)] xl:px-8" data-is-homepage={isHomepage}>
-  <a href="/" class="nav__logo relative block w-[14rem] h-auto no-underline">
-    <img src="/Resources/Images/Logos/logo.svg" alt="logo" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-full opacity-100 transition-all duration-300" />
-    <img src="/Resources/Images/Logos/logo-black.svg" alt="logo-sec" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 block w-full opacity-0 transition-all duration-300 data-[fixed=true]:opacity-100" />
-  </a>
-  <ul class="nav__menu hidden md:flex flex-row flex-wrap items-center justify-center w-auto transition-all duration-300" id="NavMenu">
-    <li class="ml-[5rem] xl:ml-12">
-      <a href="/#Home" id="HomeScroll" class="nav__item relative block box-border leading-[6rem] text-right no-underline uppercase overflow-y-hidden z-[9999] before:absolute before:top-0 before:left-0 before:block before:content-[''] before:w-full before:h-[calc(100%-8px)] before:bg-transparent before:border-b-2 before:border-dashed before:border-white before:-translate-x-[110%] before:transition-all before:duration-300 before:-z-10 hover:before:translate-x-0 data-[active=true]:before:translate-x-0 md:before:top-[85%] md:before:left-8 md:before:w-[calc(100%-4rem)] md:before:h-[0.1rem] md:before:border-black md:before:translate-x-0" data-active>
-        <span class="text-white text-[2rem] transition-all duration-300 data-[fixed=true]:text-black">{global.nav.home}</span>
-      </a>
-    </li>
-    <li class="ml-[5rem] xl:ml-12">
-      <a href="/#About" id="AboutScroll" class="nav__item relative block box-border leading-[6rem] text-right no-underline uppercase overflow-y-hidden z-[9999] before:absolute before:top-0 before:left-0 before:block before:content-[''] before:w-full before:h-[calc(100%-8px)] before:bg-transparent before:border-b-2 before:border-dashed before:border-white before:-translate-x-[110%] before:transition-all before:duration-300 before:-z-10 hover:before:translate-x-0 md:before:top-[85%] md:before:left-8 md:before:w-[calc(100%-4rem)] md:before:h-[0.1rem] md:before:border-black md:before:translate-x-0">
-        <span class="text-white text-[2rem] transition-all duration-300 data-[fixed=true]:text-black">{global.nav.about}</span>
-      </a>
-    </li>
-    <li class="ml-[5rem] xl:ml-12">
-      <a href="/#References" id="ReferencesScroll" class="nav__item relative block box-border leading-[6rem] text-right no-underline uppercase overflow-y-hidden z-[9999] before:absolute before:top-0 before:left-0 before:block before:content-[''] before:w-full before:h-[calc(100%-8px)] before:bg-transparent before:border-b-2 before:border-dashed before:border-white before:-translate-x-[110%] before:transition-all before:duration-300 before:-z-10 hover:before:translate-x-0 md:before:top-[85%] md:before:left-8 md:before:w-[calc(100%-4rem)] md:before:h-[0.1rem] md:before:border-black md:before:translate-x-0">
-        <span class="text-white text-[2rem] transition-all duration-300 data-[fixed=true]:text-black">{global.nav.references}</span>
-      </a>
-    </li>
-    <li class="ml-[5rem] xl:ml-12">
-      <a href="/#Contact" id="ContactScroll" class="nav__item relative block box-border leading-[6rem] text-right no-underline uppercase overflow-y-hidden z-[9999] before:absolute before:top-0 before:left-0 before:block before:content-[''] before:w-full before:h-[calc(100%-8px)] before:bg-transparent before:border-b-2 before:border-dashed before:border-white before:-translate-x-[110%] before:transition-all before:duration-300 before:-z-10 hover:before:translate-x-0 md:before:top-[85%] md:before:left-8 md:before:w-[calc(100%-4rem)] md:before:h-[0.1rem] md:before:border-black md:before:translate-x-0">
-        <span class="text-white text-[2rem] transition-all duration-300 data-[fixed=true]:text-black">{global.nav.contact}</span>
-      </a>
-    </li>
-  </ul>
-  <div class="nav__right flex flex-row flex-nowrap items-center justify-end">
-    <LanguageToggle lang={lang} currentPath={currentPath} />
-    <button id="BurgerButton" class="md:hidden inline-flex items-center justify-center w-10 h-8 rounded-md bg-[color-mix(in_oklch,var(--color-white),transparent_90%)] text-[var(--color-white)] data-[open=true]:bg-[color-mix(in_oklch,var(--color-white),transparent_80%)] ml-4" aria-label="Open menu" aria-expanded="false">
-      <span class="sr-only">Menu</span>
-      <div class="w-6 h-0.5 bg-white relative">
-        <div class="absolute -top-2 left-0 w-6 h-0.5 bg-white"></div>
-        <div class="absolute top-2 left-0 w-6 h-0.5 bg-white"></div>
-      </div>
-    </button>
+<nav
+  data-nav
+  data-home={isHomepage}
+  class={`sticky top-0 z-[999] transition-[background-color,box-shadow,color] duration-300 ${
+    isHomepage ? "text-[var(--color-white)]" : "nav-solid text-[var(--color-foreground)]"
+  }`}
+>
+  <div class="max-w-screen-xl mx-auto px-4 lg:px-8 h-20 flex items-center gap-4 lg:gap-8">
+    <a href="/" class="relative flex items-center gap-3">
+      <img
+        data-logo="light"
+        src="/images/Logos/logo.svg"
+        alt="Brand Design"
+        class="h-12 w-auto transition-opacity duration-300 will-change-[opacity]"
+      />
+      <img
+        data-logo="dark"
+        src="/images/Logos/logo-black.svg"
+        alt=""
+        aria-hidden="true"
+        class="h-12 w-auto absolute inset-0 opacity-0 transition-opacity duration-300 will-change-[opacity]"
+      />
+    </a>
+
+    <div class="hidden lg:flex items-center gap-10 ml-auto text-sm uppercase tracking-[0.3rem] font-[Prometo-l]">
+      <a class="nav-link" href="/#Home">{global.nav.home}</a>
+      <a class="nav-link" href="/#About">{global.nav.about}</a>
+      <a class="nav-link" href="/#References">{global.nav.references}</a>
+      <a class="nav-link" href="/#Contact">{global.nav.contact}</a>
+    </div>
+
+    <div class="flex items-center gap-3 ml-auto lg:ml-6">
+      <LanguageToggle lang={lang} currentPath={currentPath} />
+      <button
+        type="button"
+        data-burger
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="burger-lines relative block h-[2px] w-6 bg-current transition-all duration-300">
+          <span class="absolute -top-2 left-0 block h-[2px] w-6 bg-current transition-all duration-300"></span>
+          <span class="absolute top-2 left-0 block h-[2px] w-6 bg-current transition-all duration-300"></span>
+        </span>
+      </button>
+    </div>
   </div>
-  <div class="md:hidden hidden data-[open=true]:flex absolute top-[6rem] right-0 flex-col flex-nowrap items-flex-start justify-flex-start w-[30rem] max-w-none border-b-[2rem] border-b-white border-l border-l-[rgba(0,0,0,0.75)] translate-x-full transition-all duration-300 data-[open=true]:translate-x-0 sm:w-full sm:border-l-0 after:content-[''] after:absolute after:top-full after:left-0 after:block after:w-full after:h-screen after:bg-white after:border-l after:border-l-[rgba(0,0,0,0.75)] sm:after:border-l-0" id="MobileMenu">
-    <ul class="flex flex-col w-full bg-white">
-      <li class="ml-auto bg-white sm:self-start sm:mb-0"><a href="/#Home" class="block box-border pr-8 leading-[6rem] text-right no-underline uppercase sm:text-right relative before:absolute before:top-[85%] before:left-8 before:w-[calc(100%-4rem)] before:h-[0.1rem] before:border-b-2 before:border-black before:translate-x-0 data-[active=true]:before:border-[var(--color-primary)]" data-active><span class="text-black text-[2rem]">{global.nav.home}</span></a></li>
-      <li class="ml-auto bg-white sm:self-start sm:mb-0"><a href="/#About" class="block box-border pr-8 leading-[6rem] text-right no-underline uppercase sm:text-right relative before:absolute before:top-[85%] before:left-8 before:w-[calc(100%-4rem)] before:h-[0.1rem] before:border-b-2 before:border-black before:translate-x-0"><span class="text-black text-[2rem]">{global.nav.about}</span></a></li>
-      <li class="ml-auto bg-white sm:self-start sm:mb-0"><a href="/#References" class="block box-border pr-8 leading-[6rem] text-right no-underline uppercase sm:text-right relative before:absolute before:top-[85%] before:left-8 before:w-[calc(100%-4rem)] before:h-[0.1rem] before:border-b-2 before:border-black before:translate-x-0"><span class="text-black text-[2rem]">{global.nav.references}</span></a></li>
-      <li class="ml-auto bg-white sm:self-start sm:mb-0"><a href="/#Contact" class="block box-border pr-8 leading-[6rem] text-right no-underline uppercase sm:text-right relative before:absolute before:top-[85%] before:left-8 before:w-[calc(100%-4rem)] before:h-[0.1rem] before:border-b-2 before:border-black before:translate-x-0"><span class="text-black text-[2rem]">{global.nav.contact}</span></a></li>
-    </ul>
+
+  <div
+    data-overlay
+    class="fixed inset-0 z-[998] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    id="mobile-nav"
+    data-menu
+    class="fixed inset-y-0 right-0 z-[999] flex w-[calc(100%-4rem)] max-w-[22rem] translate-x-full flex-col gap-4 bg-white px-6 py-8 shadow-2xl transition-transform duration-300 sm:max-w-[26rem] lg:hidden"
+  >
+    <div class="flex items-center justify-between border-b border-black/10 pb-4">
+      <img src="/images/Logos/logo-black.svg" alt="Brand Design" class="h-10 w-auto" />
+      <button
+        type="button"
+        data-close
+        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-black transition hover:bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
+        aria-label="Close navigation"
+      >
+        <span class="relative block h-[2px] w-5 rotate-45 bg-current after:absolute after:left-0 after:top-0 after:block after:h-[2px] after:w-5 after:-rotate-90 after:bg-current"></span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-3 text-base uppercase tracking-[0.25rem] font-[Prometo-l] text-black">
+      <a class="mobile-link" href="/#Home">{global.nav.home}</a>
+      <a class="mobile-link" href="/#About">{global.nav.about}</a>
+      <a class="mobile-link" href="/#References">{global.nav.references}</a>
+      <a class="mobile-link" href="/#Contact">{global.nav.contact}</a>
+    </nav>
   </div>
 </nav>
 
+<style>
+  [data-nav] {
+    backdrop-filter: blur(12px);
+    background-color: color-mix(in oklch, var(--color-background) 10%, transparent);
+  }
+  [data-nav].nav-solid {
+    background-color: color-mix(in oklch, white 92%, var(--color-background) 8%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  [data-nav].nav-solid .nav-link,
+  [data-nav].nav-solid [data-logo="dark"] {
+    color: var(--color-foreground);
+    opacity: 1;
+  }
+  [data-nav].nav-solid [data-logo="light"] {
+    opacity: 0;
+  }
+  .nav-link {
+    position: relative;
+    padding-bottom: 0.35rem;
+    color: currentColor;
+    transition: color 200ms ease, opacity 200ms ease;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.12rem;
+    width: 100%;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+  [data-nav] [data-burger] {
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  [data-nav].nav-solid [data-burger] {
+    color: var(--color-foreground);
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  [data-nav] [data-burger]:hover {
+    background-color: color-mix(in oklch, currentColor 20%, transparent);
+  }
+  .burger-open .burger-lines {
+    background-color: transparent;
+  }
+  .burger-open .burger-lines span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger-open .burger-lines span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  [data-menu][data-open="true"] {
+    transform: translateX(0);
+  }
+  [data-overlay][data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-link {
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .mobile-link:last-child {
+    border-bottom: none;
+  }
+</style>
+
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const burgerButton = document.getElementById('BurgerButton');
-    const mobile = document.getElementById('MobileMenu');
-    const nav = document.querySelector('nav');
-    const isHomepage = nav?.getAttribute('data-is-homepage') === 'true';
-    const navItems = nav?.querySelectorAll('.nav__item span');
-    const logoSecondary = nav?.querySelector('img[alt="logo-sec"]');
+  const nav = document.querySelector('[data-nav]');
+  const burger = document.querySelector('[data-burger]');
+  const closeBtn = document.querySelector('[data-close]');
+  const menu = document.querySelector('[data-menu]');
+  const overlay = document.querySelector('[data-overlay]');
+  const links = menu?.querySelectorAll('a');
+  const isHome = nav?.dataset.home === "true";
 
-    if (burgerButton && mobile) {
-      burgerButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const open = mobile.getAttribute('data-open') === 'true';
-        mobile.setAttribute('data-open', (!open).toString());
-        burgerButton.setAttribute('data-open', (!open).toString());
-        burgerButton.setAttribute('aria-expanded', (!open).toString());
-      });
+  const setMenuState = (open) => {
+    if (!menu || !burger || !overlay) return;
+    menu.dataset.open = open ? "true" : "false";
+    overlay.dataset.open = open ? "true" : "false";
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.classList.toggle("burger-open", open);
+    document.documentElement.classList.toggle("overflow-hidden", open);
+    document.body.classList.toggle("overflow-hidden", open);
+  };
 
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('#BurgerButton') && !e.target.closest('#MobileMenu')) {
-          mobile.setAttribute('data-open', 'false');
-          burgerButton.setAttribute('data-open', 'false');
-          burgerButton.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
+  const closeMenu = () => setMenuState(false);
 
-    if (nav && isHomepage && window.innerWidth > 768) {
-      window.addEventListener('scroll', () => {
-        const isFixed = window.scrollY > 50;
-        nav.setAttribute('data-fixed', isFixed.toString());
-        
-        // Update nav item colors
-        navItems?.forEach(span => {
-          span.setAttribute('data-fixed', isFixed.toString());
-        });
-        
-        // Update logo visibility
-        if (logoSecondary) {
-          logoSecondary.setAttribute('data-fixed', isFixed.toString());
-        }
-      });
-    } else if (nav && !isHomepage) {
-      nav.setAttribute('data-fixed', 'true');
-      navItems?.forEach(span => {
-        span.setAttribute('data-fixed', 'true');
-      });
-      if (logoSecondary) {
-        logoSecondary.setAttribute('data-fixed', 'true');
-      }
-    }
+  burger?.addEventListener('click', () => {
+    const isOpen = menu?.dataset.open === "true";
+    setMenuState(!isOpen);
+  });
 
-    const yearElement = document.getElementById('Year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear().toString();
+  closeBtn?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
+  links?.forEach((link) => link.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      closeMenu();
     }
   });
+
+  const applyScrollState = () => {
+    if (!nav) return;
+    const forceSolid = !isHome;
+    const breakpointSolid = window.matchMedia('(max-width: 64rem)').matches;
+    const shouldBeSolid = forceSolid || breakpointSolid || window.scrollY > 24;
+    nav.classList.toggle('nav-solid', shouldBeSolid);
+  };
+
+  applyScrollState();
+  window.addEventListener('scroll', applyScrollState, { passive: true });
+  window.addEventListener('resize', applyScrollState, { passive: true });
 </script>
