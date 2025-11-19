@@ -1,35 +1,28 @@
-/* Fonts (must be at top) */
-@font-face {
-  font-family: "Anja";
-  font-display: swap;
-  src: url("/fonts/Anja/Anja.ttf") format("truetype");
+/* Fonts */
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
-@font-face {
-  font-family: "FontAwesome";
-  font-display: swap;
-  src: url("/fonts/FontAwesome/fontawesome-webfont.ttf") format("truetype"),
-       url("/fonts/FontAwesome/fontawesome-webfont.woff") format("woff"),
-       url("/fonts/FontAwesome/fontawesome-webfont.woff2") format("woff2");
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-@font-face {
-  font-family: "Prometo-l";
-  font-display: swap;
-  src: url("/fonts/Prometo/prometo-light.otf") format("opentype");
-}
-@font-face {
-  font-family: "Preometo-r";
-  font-display: swap;
-  src: url("/fonts/Prometo/preometo-regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "Roboto-l";
-  font-display: swap;
-  src: url("/fonts/Roboto/roboto-lifgt.otf") format("opentype");
-}
-@font-face {
-  font-family: "Roboto-r";
-  font-display: swap;
-  src: url("/fonts/Roboto/roboto-regular.otf") format("opentype");
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+.button,
+.btn {
+  font-family: var(--font-display);
 }
 
 /* Pseudo-elements and complex effects not expressible via utilities */
@@ -102,7 +95,11 @@ h1.main-title {
   content: "";
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
   opacity: 1;
   transition: var(--duration-300) var(--ease-standard);
   z-index: 1;
@@ -110,15 +107,18 @@ h1.main-title {
 .slider__title::after {
   position: absolute;
   bottom: -1rem;
-  left: .5rem;
+  left: 0.5rem;
   display: block;
   content: "";
   width: var(--underline-hero-width);
-  height: .1rem;
+  height: 0.1rem;
   border-bottom: var(--underline-hero-border) dashed var(--color-secondary);
 }
 @media (max-width: 768px) {
-  .slider__title::after { left: 50%; transform: translateX(-50%); }
+  .slider__title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .slider__title,
 .slider__button {
@@ -129,10 +129,18 @@ h1.main-title {
 }
 
 /* Background images mapped from legacy modifiers */
-.banner-window { background-image: url('/images/Backgrounds/parallax-bg-1.jpg'); }
-.anim-box--print { background-image: url('/images/Backgrounds/print_bg.jpg'); }
-.anim-box--expo { background-image: url('/images/Backgrounds/exposition_bg.jpg'); }
-.anim-box--stick { background-image: url('/images/Backgrounds/stick_bg.jpg'); }
+.banner-window {
+  background-image: url("/images/Backgrounds/parallax-bg-1.jpg");
+}
+.anim-box--print {
+  background-image: url("/images/Backgrounds/print_bg.jpg");
+}
+.anim-box--expo {
+  background-image: url("/images/Backgrounds/exposition_bg.jpg");
+}
+.anim-box--stick {
+  background-image: url("/images/Backgrounds/stick_bg.jpg");
+}
 
 /* Anim box overlays */
 .anim-box::before {
@@ -143,13 +151,19 @@ h1.main-title {
   content: "";
   width: 110%;
   height: 110%;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
   opacity: 1;
   transition: var(--duration-300) var(--ease-standard);
   z-index: 1;
 }
 @media (max-width: 768px) {
-  .anim-box::before { opacity: 0; }
+  .anim-box::before {
+    opacity: 0;
+  }
 }
 .anim-box::after {
   position: absolute;
@@ -159,17 +173,29 @@ h1.main-title {
   content: "";
   width: 110%;
   height: 110%;
-  background: linear-gradient(45deg, color-mix(in oklch, var(--color-outline) 60%, transparent), color-mix(in oklch, var(--color-primary) 60%, transparent));
+  background: linear-gradient(
+    45deg,
+    color-mix(in oklch, var(--color-outline) 60%, transparent),
+    color-mix(in oklch, var(--color-primary) 60%, transparent)
+  );
   opacity: 0;
   transition: var(--duration-300) var(--ease-standard);
   z-index: 2;
 }
 @media (max-width: 768px) {
-  .anim-box::after { opacity: 1; }
+  .anim-box::after {
+    opacity: 1;
+  }
 }
-.anim-box:hover::before { opacity: 0; }
-.anim-box:hover::after { opacity: 1; }
-.anim-box:hover .anim-box__view-ico { opacity: 0; }
+.anim-box:hover::before {
+  opacity: 0;
+}
+.anim-box:hover::after {
+  opacity: 1;
+}
+.anim-box:hover .anim-box__view-ico {
+  opacity: 0;
+}
 .anim-box:hover .anim-box__inner-box {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1, 1);
@@ -184,6 +210,8 @@ h1.main-title {
 
   :root {
     --focus-ring: 0 0 0 0.2rem var(--color-outline);
+    --font-sans: "Open Sans", sans-serif;
+    --font-display: "Inter", sans-serif;
   }
 
   :where(a, button, input, textarea, select):focus-visible {

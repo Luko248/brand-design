@@ -26,9 +26,9 @@
 
   /* Fonts */
   --font-sans:
-    "Roboto-r", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "Open Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-  --font-display: "Anja", var(--font-sans);
+  --font-display: "Inter", var(--font-sans);
 
   /* Typography scale (rem) */
   --text-xs: 0.75rem;
