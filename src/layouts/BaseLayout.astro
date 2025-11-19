@@ -18,6 +18,10 @@ const basePath = Astro.url.pathname + Astro.url.search;
 const csUrl = getLocalizedPath(basePath, "cs");
 const enUrl = getLocalizedPath(basePath, "en");
 const canonicalUrl = lang === "en" ? enUrl : csUrl;
+
+const siteUrl = Astro.site ?? new URL("https://brand-design.cz");
+const siteOrigin = siteUrl.origin;
+const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
 ---
 
 <!doctype html>
@@ -134,11 +138,11 @@ const canonicalUrl = lang === "en" ? enUrl : csUrl;
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
-        "@id": "https://brand-design.cz/#localbusiness",
+        "@id": `${siteOrigin}/#localbusiness`,
         name: global.company.name,
         description: pageDescription,
-        url: "https://brand-design.cz/",
-        image: "https://brand-design.cz/images/logos/logo.svg",
+        url: siteOrigin + "/",
+        image: logoUrl,
         telephone: global.company.phone,
         email: global.company.email,
         address: {
