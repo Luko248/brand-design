@@ -17,6 +17,7 @@
   },
   "services": {
     "title": "What we offer",
+    "eyebrowLabel": "Service",
     "printing": {
       "title": "Printing / Production",
       "description": "Technological equipment allows us to meet <b>state-of-the-art trends</b>. Production and digital printing of stickers, printing by cut, full-face printing of transparencies, posters, banners and the like. Production of 3D logos and textile printing.",

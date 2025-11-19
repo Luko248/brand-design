@@ -17,6 +17,7 @@
   },
   "services": {
     "title": "Co nabízíme",
+    "eyebrowLabel": "Služba",
     "printing": {
       "title": "Tisk / Výroba",
       "description": "Technologické vybavení nám umožnuje vyhovět <b>nejmodernějším trendům</b>. Výroba a digitální tisk samolepek, tisk z ořezem, celoplošní tisk fólií, plakátů, bannerů a pod. Výroba 3D log a potisk textilu.",

@@ -1,0 +1,70 @@
+---
+import ArrowRightIcon from "@/components/icons/ArrowRightIcon.astro";
+
+export interface Props {
+  href: string;
+  image: string;
+  title: string;
+  description: string;
+  buttonLabel: string;
+  eyebrowLabel: string;
+}
+
+const { href, image, title, description, buttonLabel, eyebrowLabel } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative block h-[500px] overflow-hidden rounded-2xl shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/80"
+>
+  <!-- Background Image -->
+  <div
+    class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+    style={`background-image: url('${image}')`}
+  >
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20 opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+  ></div>
+
+  <!-- Content (bottom-aligned with grid to keep CTA aligned across cards) -->
+  <div
+    class="absolute inset-0 p-8 grid grid-rows-[1fr,auto] text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500"
+  >
+    <div class="grid grid-rows-[auto,1fr,auto] gap-4 row-start-2 transform transition-all duration-500 group-hover:-translate-y-4">
+      <!-- Eyebrow + title -->
+      <div class="space-y-2">
+        <span
+          class="text-primary text-xs font-bold tracking-widest uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100"
+        >
+          {eyebrowLabel}
+        </span>
+
+        <h3 class="font-display text-3xl uppercase mb-4 leading-tight">
+          {title}
+        </h3>
+      </div>
+
+      <!-- Description: animates height but stays in middle row -->
+      <div
+        class="max-h-0 overflow-hidden opacity-0 group-hover:opacity-100 group-hover:max-h-40 transition-[max-height,opacity] duration-500 delay-200"
+        style="interpolate-size: allow-keywords; transition-behavior: allow-discrete;"
+      >
+        <p
+          class="text-white/80 text-sm leading-relaxed line-clamp-3 mb-6"
+          set:html={description}
+        />
+      </div>
+
+      <!-- CTA pinned to bottom row -->
+      <span
+        class="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-primary group-hover:gap-4 transition-all duration-300 self-end"
+      >
+        {buttonLabel}
+        <ArrowRightIcon class="w-4 h-4" />
+      </span>
+    </div>
+  </div>
+</a>
