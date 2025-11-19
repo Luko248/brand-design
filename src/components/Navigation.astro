@@ -13,10 +13,10 @@ const { lang, currentPath = "/", isHomepage = false } = Astro.props;
 const global = await loadTranslations(lang, "global");
 const indexTranslations = await loadTranslations(lang, "pages/index");
 
-const homeUrl = getLocalizedPath("/#Home", lang);
-const aboutUrl = getLocalizedPath("/#About", lang);
-const referencesUrl = getLocalizedPath("/#References", lang);
-const contactUrl = getLocalizedPath("/#Contact", lang);
+const homeUrl = getLocalizedPath("/#home", lang);
+const aboutUrl = getLocalizedPath("/#about", lang);
+const referencesUrl = getLocalizedPath("/#references", lang);
+const contactUrl = getLocalizedPath("/#contact", lang);
 
 const referenceLinks = [
   {

@@ -177,27 +177,4 @@
   }
 }
 
-/* Legacy layout + components re-expressed with Tailwind utilities */
-@layer components {
-  /* Container */
-  .container {
-    @apply mx-auto h-full box-border py-48;
-    width: 70%;
-  }
-  @media (max-width: 980px) {
-    .container {
-      width: 100%;
-    }
-  }
-  @media (max-width: 768px) {
-    .container {
-      @apply py-24 px-4;
-    }
-  }
-  @media (max-width: 480px) {
-    .container {
-      @apply py-12 px-4;
-    }
-  }
-
-}
+/* Legacy layout + components have been migrated to Tailwind utilities and component abstractions */
