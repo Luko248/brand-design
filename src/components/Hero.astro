@@ -49,7 +49,7 @@ const { translations } = Astro.props;
         <img
           src="/images/Logos/logo.svg"
           alt="Brand Design"
-          class="h-20 md:h-28 lg:h-40 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)]"
+          class="h-24 md:h-32 lg:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)]"
         />
       </div>
 
@@ -92,11 +92,7 @@ const { translations } = Astro.props;
   <div
     class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10 opacity-0 animate-fade-in delay-1000"
   >
-    <IconButton
-      as="a"
-      href="#About"
-      title={translations.scrollLabel}
-    >
+    <IconButton as="a" href="#About" title={translations.scrollLabel}>
       <ChevronDownIcon class="w-6 h-6" />
     </IconButton>
   </div>

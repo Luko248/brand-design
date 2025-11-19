@@ -16,7 +16,7 @@ const { as = "button", href, title } = Astro.props;
 const baseClasses =
   "inline-flex items-center justify-center rounded-full bg-transparent text-white/60 hover:text-white/90 hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300";
 
-const sizeClasses = "p-3 md:p-3.5";
+const sizeClasses = "p-4 md:p-5";
 const classes = `${baseClasses} ${sizeClasses}`;
 ---
 
@@ -33,4 +33,3 @@ const classes = `${baseClasses} ${sizeClasses}`;
     <slot />
   </button>
 )}
-
