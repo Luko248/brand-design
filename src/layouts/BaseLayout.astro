@@ -1,5 +1,6 @@
 ---
 import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
+import PerformanceOptimizations from "@/components/PerformanceOptimizations.astro";
 
 export interface Props {
   title?: string;
@@ -91,6 +92,8 @@ const canonicalUrl = lang === "en" ? enUrl : csUrl;
     <meta name="twitter:title" content={global.company.name} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content="/images/Meta/meta-image-twitter.png" />
+
+    <PerformanceOptimizations />
 
     <!-- Styles: Tailwind first, then global overrides -->
     <link rel="stylesheet" href="/styles/tailwind.css" />

@@ -1,4 +1,7 @@
 ---
+import IconButton from "@/components/ui/IconButton.astro";
+import MagnifyIcon from "@/components/icons/MagnifyIcon.astro";
+
 export interface Props {
   images: Array<{
     thumb: string;
@@ -28,22 +31,9 @@ const { images, galleryId } = Astro.props;
             class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
           />
           <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
-                />
-              </svg>
-            </div>
+            <IconButton as="div" title={img.alt || ""}>
+              <MagnifyIcon class="w-6 h-6" />
+            </IconButton>
           </div>
         </a>
       ))

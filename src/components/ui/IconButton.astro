@@ -1,0 +1,36 @@
+---
+export interface Props {
+  /**
+   * Element type: "a" for links, "button" for buttons, "div" for decorative usage.
+   */
+  as?: "a" | "button" | "div";
+  href?: string;
+  /**
+   * Title attribute for hover tooltip / accessibility.
+   */
+  title?: string;
+}
+
+const { as = "button", href, title } = Astro.props;
+
+const baseClasses =
+  "inline-flex items-center justify-center rounded-full bg-transparent text-white/60 hover:text-white/90 hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300";
+
+const sizeClasses = "p-3 md:p-3.5";
+const classes = `${baseClasses} ${sizeClasses}`;
+---
+
+{as === "a" && href ? (
+  <a href={href} title={title} class={classes}>
+    <slot />
+  </a>
+) : as === "div" ? (
+  <div title={title} class={classes}>
+    <slot />
+  </div>
+) : (
+  <button type="button" title={title} class={classes}>
+    <slot />
+  </button>
+)}
+
