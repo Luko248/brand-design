@@ -1,9 +1,13 @@
 ---
 const { id = "BrandDesignMap", class: className = "" } = Astro.props;
+const apiKey =
+  import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
+  import.meta.env.GOOGLE_MAPS_API_KEY;
 ---
 
 <div
   data-map-container
+  data-api-key={apiKey}
   id={id}
   class:list={[
     "w-full min-h-[18rem] sm:min-h-[24rem] rounded-xl overflow-hidden shadow-lg",
@@ -16,12 +20,12 @@ const { id = "BrandDesignMap", class: className = "" } = Astro.props;
   import { Loader } from "@googlemaps/js-api-loader";
 
   const initMap = async (container: HTMLElement) => {
-    // Retrieve API key from a data attribute or some other way if env not available in client
-    // In Astro, import.meta.env.PUBLIC_* IS available in processed scripts
-    const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+    const apiKey = container.dataset.apiKey;
 
     if (!apiKey) {
-      console.warn("Missing PUBLIC_GOOGLE_MAPS_API_KEY");
+      console.error(
+        "Google Maps: Missing API Key. Please set PUBLIC_GOOGLE_MAPS_API_KEY or GOOGLE_MAPS_API_KEY in your .env file."
+      );
       return;
     }
 
@@ -43,7 +47,7 @@ const { id = "BrandDesignMap", class: className = "" } = Astro.props;
         zoom: 15,
         disableDefaultUI: true,
         zoomControl: true,
-        mapId: "DEMO_MAP_ID", // Required for AdvancedMarkerElement
+        mapId: "bfd60e560367f0091f02eb99", // Custom Map ID
       });
 
       new AdvancedMarkerElement({
@@ -52,7 +56,7 @@ const { id = "BrandDesignMap", class: className = "" } = Astro.props;
         title: "Brand DESIGN",
       });
     } catch (err) {
-      console.error("Google Maps load failed", err);
+      console.error("Google Maps load failed:", err);
     }
   };
 
