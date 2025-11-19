@@ -5,9 +5,14 @@ import MoonIcon from "./icons/MoonIcon.astro";
 export interface Props {
   class?: string;
   id?: string;
+  ariaLabel?: string;
 }
 
-const { class: className = "", id = "theme-toggle" } = Astro.props;
+const {
+  class: className = "",
+  id = "theme-toggle",
+  ariaLabel = "Toggle color theme",
+} = Astro.props;
 ---
 
 <button
@@ -17,7 +22,8 @@ const { class: className = "", id = "theme-toggle" } = Astro.props;
     "p-2 cursor-pointer rounded-full hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary",
     className,
   ]}
-  aria-label="Toggle theme"
+  aria-label={ariaLabel}
+  title={ariaLabel}
 >
   <div class="block dark:hidden">
     <MoonIcon class="w-5 h-5" />
@@ -30,7 +36,7 @@ const { class: className = "", id = "theme-toggle" } = Astro.props;
 <script>
   function initTheme() {
     const toggles = document.querySelectorAll(
-      "button[aria-label='Toggle theme']"
+      "button[aria-label][id^='theme-toggle']"
     );
 
     toggles.forEach((btn) => {

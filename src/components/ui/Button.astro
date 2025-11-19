@@ -4,6 +4,7 @@ import { tv } from "tailwind-variants";
 export interface Props {
   as?: "a" | "button";
   href?: string;
+  rel?: string;
   variant?: "primary" | "secondary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
@@ -14,6 +15,7 @@ const props = Astro.props as Props;
 const {
   as = "a",
   href = undefined,
+  rel = "nofollow",
   variant = "primary",
   size = "md",
   disabled = false,
@@ -50,7 +52,7 @@ const classes = button({ variant, size, class: className });
 
 {
   as === "a" ? (
-    <a class={classes} href={href}>
+    <a class={classes} href={href} rel={rel}>
       <slot />
     </a>
   ) : (
