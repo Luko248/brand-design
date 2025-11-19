@@ -1,0 +1,127 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import Gallery from "@/components/Gallery.astro";
+import { loadTranslations } from "@/lib/i18n";
+
+export interface Props {
+  lang: "cs" | "en";
+}
+
+const { lang } = Astro.props;
+const translations = await loadTranslations(lang, "pages/sticks");
+
+// Define sticks gallery images
+const sticksImages = [
+  // Autocentrum Cars Forever
+  {
+    thumb:
+      "/images/Referencies/Sticks/Autocentrum Cars Forever/autocars-forever-1_480.jpg",
+    full: "/images/Referencies/Sticks/Autocentrum Cars Forever/autocars-forever-1_1024.jpg",
+  },
+  {
+    thumb:
+      "/images/Referencies/Sticks/Autocentrum Cars Forever/autocars-forever-2_480.jpg",
+    full: "/images/Referencies/Sticks/Autocentrum Cars Forever/autocars-forever-2_1024.jpg",
+  },
+  {
+    thumb:
+      "/images/Referencies/Sticks/Autocentrum Cars Forever/autocars-forever-3_480.jpg",
+    full: "/images/Referencies/Sticks/Autocentrum Cars Forever/autocars-forever-3_1024.jpg",
+  },
+  // Categories and misc
+  {
+    thumb: "/images/Referencies/Sticks/Category_480.jpg",
+    full: "/images/Referencies/Sticks/Category_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/Category-2_480.jpg",
+    full: "/images/Referencies/Sticks/Category-2_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/Category-dilna_480.jpg",
+    full: "/images/Referencies/Sticks/Category-dilna_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/DPD_480.jpg",
+    full: "/images/Referencies/Sticks/DPD_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/DPD2_480.jpg",
+    full: "/images/Referencies/Sticks/DPD2_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/DPD3_480.jpg",
+    full: "/images/Referencies/Sticks/DPD3_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/Century21_480.jpg",
+    full: "/images/Referencies/Sticks/Century21_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/Century21-2_480.jpg",
+    full: "/images/Referencies/Sticks/Century21-2_1024.jpg",
+  },
+  // DPMB
+  {
+    thumb: "/images/Referencies/Sticks/DPMB/dpmb-40_480.jpg",
+    full: "/images/Referencies/Sticks/DPMB/dpmb-40_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/DPMB/dpmb-41_480.jpg",
+    full: "/images/Referencies/Sticks/DPMB/dpmb-41_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Sticks/DPMB/DPMB-7_480.jpg",
+    full: "/images/Referencies/Sticks/DPMB/DPMB-7_1024.jpg",
+  },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={translations.title}
+  description={translations.description}
+>
+  <Navigation lang={lang} currentPath="/sticks" isHomepage={false} />
+
+  <header
+    class="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-center z-0"
+      style="background-image: url('/images/Backgrounds/stick_bg.jpg')"
+    >
+    </div>
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+      <span
+        class="block text-primary font-bold tracking-[0.3em] uppercase mb-4 animate-slide-up"
+        >{translations.heading}</span
+      >
+      <h1
+        class="font-[Prometo-l] uppercase text-4xl md:text-6xl text-white mb-6 leading-tight animate-slide-up animation-delay-200"
+      >
+        {translations.title}
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-16 md:py-24 bg-background">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <p class="text-xl text-muted font-light leading-relaxed">
+            {translations.description}
+          </p>
+          <div class="h-1 w-20 bg-primary rounded-full mx-auto mt-8"></div>
+        </div>
+
+        <Gallery images={sticksImages} galleryId="sticks-gallery" />
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

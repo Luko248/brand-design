@@ -12,7 +12,7 @@ import printingEn from "../locales/pages/printing.en.json";
 type Locale = "cs" | "en";
 
 const translations: Record<string, Record<Locale, any>> = {
-  "global": {
+  global: {
     cs: globalCs,
     en: globalEn,
   },
@@ -57,10 +57,7 @@ export const loadTranslations = async (
 /**
  * Get nested translation value by dot notation key
  */
-export const getTranslation = (
-  translations: any,
-  key: string
-): string => {
+export const getTranslation = (translations: any, key: string): string => {
   const keys = key.split(".");
   let value: any = translations;
 
@@ -76,9 +73,12 @@ export const getTranslation = (
 };
 
 /**
- * Detect locale from URL query parameter
+ * Detect locale from URL
  */
 export const detectLocale = (url: URL): Locale => {
+  if (url.pathname.startsWith("/en")) {
+    return "en";
+  }
   const lang = url.searchParams.get("lang");
   if (lang === "en") {
     return "en";
@@ -87,16 +87,26 @@ export const detectLocale = (url: URL): Locale => {
 };
 
 /**
- * Get localized path with query param
+ * Get localized path
+ * Converts path to localized path:
+ * - If locale is 'cs': return /path
+ * - If locale is 'en': return /en/path
  */
 export const getLocalizedPath = (path: string, locale: Locale): string => {
-  const url = new URL(path, "http://localhost");
+  // Ensure path starts with /
+  const cleanPath = path.startsWith("/") ? path : "/" + path;
+
+  // Strip existing locale prefix if present
+  const pathWithoutLocale = cleanPath
+    .replace(/^\/en\//, "/")
+    .replace(/^\/en$/, "/");
+
   if (locale === "en") {
-    url.searchParams.set("lang", "en");
-  } else {
-    url.searchParams.delete("lang");
+    // Avoid double slash
+    if (pathWithoutLocale === "/") return "/en";
+    return `/en${pathWithoutLocale}`;
   }
-  return url.pathname + url.search;
+  return pathWithoutLocale;
 };
 
 /**

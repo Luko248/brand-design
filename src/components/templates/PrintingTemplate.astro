@@ -1,0 +1,109 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import Gallery from "@/components/Gallery.astro";
+import { loadTranslations } from "@/lib/i18n";
+
+export interface Props {
+  lang: "cs" | "en";
+}
+
+const { lang } = Astro.props;
+const translations = await loadTranslations(lang, "pages/printing");
+
+// Define printing gallery images
+const printingImages = [
+  {
+    thumb: "/images/Referencies/Print/printer_480.jpg",
+    full: "/images/Referencies/Print/printer_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/printer-2_480.jpg",
+    full: "/images/Referencies/Print/printer-2_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/printer-3_480.jpg",
+    full: "/images/Referencies/Print/printer-3_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-1_480.jpg",
+    full: "/images/Referencies/Print/update-1_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-2_480.jpg",
+    full: "/images/Referencies/Print/update-2_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-3_480.jpg",
+    full: "/images/Referencies/Print/update-3_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-4_480.jpg",
+    full: "/images/Referencies/Print/update-4_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-5_480.jpg",
+    full: "/images/Referencies/Print/update-5_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-6_480.jpg",
+    full: "/images/Referencies/Print/update-6_1024.jpg",
+  },
+  {
+    thumb: "/images/Referencies/Print/update-7_480.jpg",
+    full: "/images/Referencies/Print/update-7_1024.jpg",
+  },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={translations.title}
+  description={translations.description}
+>
+  <Navigation
+    lang={lang}
+    currentPath="/printing-and-production"
+    isHomepage={false}
+  />
+
+  <header
+    class="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-center z-0"
+      style="background-image: url('/images/Backgrounds/print_bg.jpg')"
+    >
+    </div>
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+      <span
+        class="block text-primary font-bold tracking-[0.3em] uppercase mb-4 animate-slide-up"
+        >{translations.heading}</span
+      >
+      <h1
+        class="font-[Prometo-l] uppercase text-4xl md:text-6xl text-white mb-6 leading-tight animate-slide-up animation-delay-200"
+      >
+        {translations.title}
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-16 md:py-24 bg-background">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <p class="text-xl text-muted font-light leading-relaxed">
+            {translations.description}
+          </p>
+          <div class="h-1 w-20 bg-primary rounded-full mx-auto mt-8"></div>
+        </div>
+
+        <Gallery images={printingImages} galleryId="printing-gallery" />
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

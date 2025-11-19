@@ -176,18 +176,80 @@ Error: ENOTEMPTY: directory not empty, rename '/Users/lukaschylik/Projects/brand
 08:54:13 [404] /sw.js 1ms
 08:54:16 [200] / 11ms
 08:54:44 [404] /sw.js 6ms
-ersion changed
-08:52:50 [content] Clearing content store
-08:52:50 [content] Synced content
-08:52:50 [types] Generated 541ms
-08:52:50 [vite] Re-optimizing dependencies because vite config has changed
-08:52:50 [vite] Port 4321 is in use, trying another one...
-08:52:50 [vite] Port 4322 is in use, trying another one...
-08:54:10 Configuration file updated. Restarting...
-08:54:10 [vite] Re-optimizing dependencies because lockfile has changed
-08:54:11 [content] Syncing content
-08:54:11 [content] Astro config changed
-08:54:11 [content] Astro version changed
-08:54:11 [content] Clearing content store
-08:54:11 [content] Synced content
-08:54:11 [types] Generated 397ms
+10:06:30 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=script&index=0&lang.ts". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42210:25:03 Configuration file updated. Restarting...
+10:25:04 [content] Syncing content
+10:25:04 [content] Astro config changed
+10:25:04 [content] Astro version changed
+10:25:04 [content] Clearing content store
+10:25:04 [content] Synced content
+10:25:04 [types] Generated 348ms
+10:25:04 [vite] Re-optimizing dependencies because vite config has changed
+10:25:04 [vite] Port 4321 is in use, trying another one...
+10:25:04 [ERROR] [vite] error while updating dependencies:
+Error: ENOTEMPTY: directory not empty, rename '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps_temp_d11c4459' -> '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps'
+    at Object.renameSync (node:fs:1021:11)
+    at Object.commit (file:///Users/lukaschylik/.npm-global/lib/node_modules/astro/node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:14956:21)
+    at commitProcessing (file:///Users/lukaschylik/.npm-global/lib/node_modules/astro/node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:47092:32)
+    at runOptimizer (file:///Users/lukaschylik/.npm-global/lib/node_modules/astro/node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:47128:15)
+    at onCrawlEnd (file:///Users/lukaschylik/.npm-global/lib/node_modules/astro/node_modules/vite/dist/node/chunks/dep-Bu492Fnd.js:47332:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+10:32:09 Configuration file updated. Restarting...
+10:32:10 [content] Syncing content
+10:32:10 [content] Astro config changed
+10:32:10 [content] Astro version changed
+10:32:10 [content] Clearing content store
+10:32:10 [content] Synced content
+10:32:10 [types] Generated 259ms
+10:32:10 [vite] Re-optimizing dependencies because vite config has changed
+10:32:10 [vite] Port 4321 is in use, trying another one...
+11:25:53 Configuration file updated. Restarting...
+11:25:53 [content] Syncing content
+11:25:53 [content] Synced content
+11:25:53 [types] Generated 247ms
+11:25:53 [vite] Re-optimizing dependencies because vite config has changed
+30 [404] /Users/lukaschylik/Projects/brand-design/astro-brand-design/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js 17ms
+10:06:30 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/HeroSlider.astro?astro&type=style&index=0&lang.css". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/HeroSlider.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+      at async viteTransformMiddleware (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:37254:24)
+10:06:30 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=style&index=0&lang.css". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+      at async viteTransformMiddleware (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:37254:24)
+10:06:30 [404] /src/styles/global.css 1ms
+10:06:30 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=style&index=1&lang.css". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+      at async viteTransformMiddleware (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:37254:24)
+10:06:31 [404] /sw.js 0ms
+10:25:03 Configuration file updated. Restarting...
+10:25:04 [content] Syncing content
+10:25:04 [content] Synced content
+10:25:04 [types] Generated 349ms
+10:25:04 [vite] Re-optimizing dependencies because vite config has changed
+10:25:04 [vite] Port 4321 is in use, trying another one...
+10:25:04 [vite] Port 4322 is in use, trying another one...
+10:25:46 [200] / 12ms
+10:32:09 Configuration file updated. Restarting...
+10:32:09 [vite] Re-optimizing dependencies because vite config has changed
+10:32:10 [content] Syncing content
+10:32:10 [content] Astro config changed
+10:32:10 [content] Astro version changed
+10:32:10 [content] Clearing content store
+10:32:10 [content] Synced content
+10:32:10 [types] Generated 302ms
+10:32:10 [vite] Re-optimizing dependencies because vite config has changed
+11:25:53 Configuration file updated. Restarting...
+11:25:53 [vite] Re-optimizing dependencies because lockfile has changed
+11:25:53 [ERROR] [config] ENOTEMPTY: directory not empty, rename '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps_temp_61a561d1' -> '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps'
+  Stack trace:
+    at Object.renameSync (node:fs:1021:11)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+
+11:25:53 [ERROR] Continuing with previous valid configuration
+

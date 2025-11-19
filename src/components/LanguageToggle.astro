@@ -9,36 +9,133 @@ export interface Props {
 
 const { lang, currentPath, class: className = "" } = Astro.props;
 
-const basePath = currentPath || `${Astro.url.pathname}${Astro.url.search}`;
+const basePath = currentPath || Astro.url.pathname;
 const csUrl = getLocalizedPath(basePath, "cs");
 const enUrl = getLocalizedPath(basePath, "en");
+
+const currentLangFlag = lang === "cs" ? "CZ" : "EN";
 ---
 
-<div
-  class:list={[
-    "flex items-center gap-1 text-sm font-medium uppercase tracking-wider",
-    className,
-  ]}
->
-  <a
-    href={csUrl}
-    class:list={[
-      "transition-colors duration-200 hover:text-primary",
-      lang === "cs" ? "text-primary font-bold" : "opacity-70",
-    ]}
-    aria-label="Switch to Czech"
+<div class:list={["relative group language-toggle", className]}>
+  <button
+    type="button"
+    class="flex items-center gap-2 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors focus:outline-none"
+    aria-expanded="false"
+    aria-haspopup="true"
   >
-    Cz
-  </a>
-  <span class="opacity-30">/</span>
-  <a
-    href={enUrl}
-    class:list={[
-      "transition-colors duration-200 hover:text-primary",
-      lang === "en" ? "text-primary font-bold" : "opacity-70",
-    ]}
-    aria-label="Switch to English"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-5 h-5"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S12 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S12 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+      ></path>
+    </svg>
+    <span>{currentLangFlag}</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="w-4 h-4 transition-transform duration-200"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </button>
+
+  <div
+    class="absolute right-0 top-full w-40 py-2 mt-2 bg-background/95 backdrop-blur-md border border-white/10 rounded-xl shadow-xl opacity-0 translate-y-2 invisible transition-all duration-200 dark:border-white/10 dark:bg-surface/95 z-60"
   >
-    En
-  </a>
+    <a
+      href={csUrl}
+      class:list={[
+        "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-primary/10 hover:text-primary",
+        lang === "cs"
+          ? "text-primary font-bold bg-primary/5"
+          : "text-foreground",
+      ]}
+      hreflang="cs"
+    >
+      <span class="w-5 text-center">🇨🇿</span>
+      Čeština
+    </a>
+    <a
+      href={enUrl}
+      class:list={[
+        "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-primary/10 hover:text-primary",
+        lang === "en"
+          ? "text-primary font-bold bg-primary/5"
+          : "text-foreground",
+      ]}
+      hreflang="en"
+    >
+      <span class="w-5 text-center">🇬🇧</span>
+      English
+    </a>
+  </div>
 </div>
+
+<script>
+  // Handle multiple language toggles (desktop/mobile)
+  const toggles = document.querySelectorAll(".language-toggle");
+
+  toggles.forEach((container) => {
+    const button = container.querySelector("button");
+    const dropdown = container.querySelector("div");
+    const arrow = container.querySelector("svg");
+
+    if (!button || !dropdown || !arrow) return;
+
+    function toggle(open: boolean) {
+      if (open) {
+        dropdown?.classList.remove("opacity-0", "translate-y-2", "invisible");
+        arrow?.classList.add("rotate-180");
+        button?.setAttribute("aria-expanded", "true");
+      } else {
+        dropdown?.classList.add("opacity-0", "translate-y-2", "invisible");
+        arrow?.classList.remove("rotate-180");
+        button?.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+      // Close all other toggles first
+      toggles.forEach((c) => {
+        if (c !== container) {
+          const b = c.querySelector("button");
+          const d = c.querySelector("div");
+          const a = c.querySelector("svg");
+          d?.classList.add("opacity-0", "translate-y-2", "invisible");
+          a?.classList.remove("rotate-180");
+          b?.setAttribute("aria-expanded", "false");
+        }
+      });
+      toggle(!isOpen);
+    });
+
+    // Close on click outside
+    document.addEventListener("click", (e) => {
+      if (!container.contains(e.target as Node)) {
+        toggle(false);
+      }
+    });
+
+    // Close on Escape
+    container.addEventListener("keydown", (e) => {
+      if ((e as KeyboardEvent).key === "Escape") {
+        toggle(false);
+        button.focus();
+      }
+    });
+  });
+</script>
