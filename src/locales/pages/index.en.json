@@ -7,6 +7,7 @@
   },
   "about": {
     "mainTitle": "BrandDESIGN - Graphic Solutions",
+    "sectionLabel": "About Us",
     "title": "About Company",
     "paragraph1": "<strong>BrandDESIGN</strong> has come into existence after many years of experience to make <b>Your brand</b>. It deals with digital large format printing, cutting graphics and gluing, based in Brno.",
     "paragraph2": "We have long been collaborating with companies in the production of graphics for trade fairs, exhibitions and congresses, not only in the Czech Republic but also around the <b>world</b>. We carry out car stickers, shop windows and the like. Production of 3D log and textile printing. Production of advertising is ensured from design, through production to sticking itself."
@@ -17,6 +18,8 @@
   },
   "services": {
     "title": "What we offer",
+    "sectionLabel": "Our Work",
+    "subtitle": "Discover our portfolio of successful projects and branding solutions.",
     "eyebrowLabel": "Service",
     "printing": {
       "title": "Printing / Production",

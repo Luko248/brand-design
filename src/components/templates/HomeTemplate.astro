@@ -35,7 +35,7 @@ const referenceCards = [
 
 <BaseLayout lang={lang}>
   <Navigation lang={lang} currentPath="/" isHomepage={true} />
-  
+
   <main>
     <!-- Hero Section -->
     <section id="Home">
@@ -43,13 +43,19 @@ const referenceCards = [
     </section>
 
     <!-- About Section -->
-    <section id="About" class="relative py-20 md:py-32 bg-surface overflow-hidden">
+    <section
+      id="About"
+      class="relative py-20 md:py-32 bg-surface overflow-hidden"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <!-- Logo visual -->
           <div class="flex justify-center md:justify-start order-2 md:order-1">
             <div class="relative w-[80%] max-w-md aspect-square">
-              <div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+              <div
+                class="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse"
+              >
+              </div>
               <img
                 src="/images/Logos/logo-black.svg"
                 alt="Brand Design Logo"
@@ -62,16 +68,24 @@ const referenceCards = [
           <div class="order-1 md:order-2 space-y-8 text-center md:text-left">
             <!-- Hidden H1 for SEO -->
             <h1 class="sr-only" set:html={translations.about.mainTitle} />
-            
+
             <div>
-              <h2 class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
-                <span class="block text-primary text-lg font-bold tracking-[0.3em] mb-2 uppercase">About Us</span>
+              <h2
+                class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
+              >
+                <span
+                  class="block text-primary text-lg font-bold tracking-[0.3em] mb-2 uppercase"
+                  >{translations.about.sectionLabel}</span
+                >
                 <span set:html={translations.about.title} />
               </h2>
-              <div class="h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0"></div>
+              <div class="h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0">
+              </div>
             </div>
 
-            <div class="space-y-6 text-lg md:text-xl text-muted font-light leading-relaxed">
+            <div
+              class="space-y-6 text-lg md:text-xl text-muted font-light leading-relaxed"
+            >
               <p set:html={translations.about.paragraph1} />
               <p set:html={translations.about.paragraph2} />
             </div>
@@ -81,22 +95,30 @@ const referenceCards = [
     </section>
 
     <!-- Banner Parallax -->
-    <section class="relative py-32 flex items-center justify-center overflow-hidden">
+    <section
+      class="relative py-32 flex items-center justify-center overflow-hidden"
+    >
       <div class="absolute inset-0 z-0">
-        <div 
+        <div
           class="w-full h-full bg-fixed bg-cover bg-center"
           style="background-image: url('/images/Backgrounds/parallax-bg-1.jpg')"
-        ></div>
+        >
+        </div>
         <div class="absolute inset-0 bg-black/70"></div>
       </div>
 
-      <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8">
-        <h3 class="font-display uppercase text-3xl md:text-5xl leading-snug" set:html={translations.banner.title} />
-        
-        <Button 
-          as="a" 
-          href="#Contact" 
-          variant="outline" 
+      <div
+        class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8"
+      >
+        <h3
+          class="font-display uppercase text-3xl md:text-5xl leading-snug"
+          set:html={translations.banner.title}
+        />
+
+        <Button
+          as="a"
+          href="#Contact"
+          variant="outline"
           size="lg"
           class="border-white text-white hover:bg-white hover:text-black text-lg tracking-widest uppercase min-w-[200px]"
         >
@@ -109,26 +131,35 @@ const referenceCards = [
     <section id="References" class="py-20 md:py-32 bg-background">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <span class="text-primary text-sm font-bold tracking-[0.3em] uppercase block mb-4">Our Work</span>
-          <h2 class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+          <span
+            class="text-primary text-sm font-bold tracking-[0.3em] uppercase block mb-4"
+          >
+            {translations.services.sectionLabel}
+          </span>
+          <h2
+            class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6"
+          >
             {translations.services.title}
           </h2>
           <p class="text-lg text-muted">
-            {translations.services.subtitle || "Discover our portfolio of successful projects and branding solutions."}
+            {translations.services.subtitle}
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          {referenceCards.map((card) => (
-            <ReferenceCard
-              href={card.href}
-              image={card.image}
-              title={card.title}
-              description={card.description}
-              buttonLabel={card.button}
-              eyebrowLabel={translations.services.eyebrowLabel}
-            />
-          ))}
+        <div class="grid md:grid-cols-3 gap-8 grid-rows-[1fr_auto_min-content]">
+          {
+            referenceCards.map((card) => (
+              <ReferenceCard
+                href={card.href}
+                image={card.image}
+                title={card.title}
+                description={card.description}
+                buttonLabel={card.button}
+                eyebrowLabel={translations.services.eyebrowLabel}
+                class="row-span-3"
+              />
+            ))
+          }
         </div>
       </div>
     </section>
@@ -136,13 +167,21 @@ const referenceCards = [
     <!-- Partners -->
     <section class="py-20 bg-surface border-t border-outline/10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="font-display uppercase text-3xl md:text-4xl text-foreground mb-12 opacity-80">
+        <h2
+          class="font-display uppercase text-3xl md:text-4xl text-foreground mb-12 opacity-80"
+        >
           {translations.partners.title}
         </h2>
-        
-        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 hover:opacity-100 transition-opacity duration-500">
-           <p class="text-xl font-light">{translations.partners.text}</p>
-           <a href="https://www.mistrymont.cz/" target="_blank" class="transition-transform duration-300 hover:scale-110">
+
+        <div
+          class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 hover:opacity-100 transition-opacity duration-500"
+        >
+          <p class="text-xl font-light">{translations.partners.text}</p>
+          <a
+            href="https://www.mistrymont.cz/"
+            target="_blank"
+            class="transition-transform duration-300 hover:scale-110"
+          >
             <img
               src="/images/Logos/mistry-mont-logo.svg"
               alt="Mistry Mont"
