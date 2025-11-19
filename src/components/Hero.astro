@@ -1,0 +1,176 @@
+---
+import Button from "@/components/ui/Button.astro";
+import LavaBackground from "@/components/ui/LavaBackground.astro";
+
+export interface Props {
+  translations: {
+    title: string;
+    subtitle: string;
+    buttonPrimary: string;
+    buttonSecondary: string;
+  };
+}
+
+const { translations } = Astro.props;
+---
+
+<section
+  class="relative w-full min-h-[100svh] flex items-center justify-center overflow-hidden bg-black"
+>
+  <!-- Background Layers -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <!-- 1. Base Theme Background (Deep Dark) -->
+    <div class="absolute inset-0 bg-[#050505]"></div>
+
+    <!-- 2. Lava Bubbles Animation -->
+    <LavaBackground />
+
+    <!-- 3. Semi-transparent Backdrop/Overlay -->
+    <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+
+    <!-- 4. Gradient Overlays for depth -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"
+    >
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="space-y-10 md:space-y-14">
+      <!-- Logo -->
+      <div class="flex justify-center animate-fade-in-down">
+        <img
+          src="/images/Logos/logo.svg"
+          alt="Brand Design"
+          class="h-24 md:h-32 lg:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)]"
+        />
+      </div>
+
+      <!-- Text -->
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <h1 class="sr-only">{translations.title}</h1>
+        <div
+          class="font-[Prometo-l] text-2xl md:text-4xl lg:text-6xl text-white leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
+          set:html={translations.subtitle}
+        />
+      </div>
+
+      <!-- Buttons -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6"
+      >
+        <Button
+          as="a"
+          href="#Contact"
+          variant="primary"
+          size="lg"
+          class="w-full sm:w-auto min-w-[200px] text-lg uppercase tracking-widest shadow-[0_0_25px_rgba(115,48,138,0.5)] hover:shadow-[0_0_40px_rgba(115,48,138,0.7)] transition-shadow duration-300"
+        >
+          {translations.buttonPrimary}
+        </Button>
+        <Button
+          as="a"
+          href="#References"
+          variant="outline"
+          size="lg"
+          class="w-full sm:w-auto min-w-[200px] text-lg uppercase tracking-widest backdrop-blur-sm border-white/30 text-white hover:border-white hover:bg-white/10"
+        >
+          {translations.buttonSecondary}
+        </Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10 opacity-0 animate-fade-in delay-1000"
+  >
+    <a
+      href="#About"
+      class="text-white/50 hover:text-white transition-colors p-4 rounded-full hover:bg-white/5"
+      aria-label="Scroll down"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scale-slow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+  .animate-scale-slow {
+    animation: scale-slow 20s linear infinite alternate;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+</style>

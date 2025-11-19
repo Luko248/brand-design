@@ -1,45 +1,61 @@
 ---
+import { tv } from "tailwind-variants";
+
 export interface Props {
-  as?: 'a' | 'button';
+  as?: "a" | "button";
   href?: string;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "ghost" | "outline";
+  size?: "sm" | "md" | "lg";
   disabled?: boolean;
   class?: string;
 }
 
 const props = Astro.props as Props;
 const {
-  as = 'a',
+  as = "a",
   href = undefined,
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   disabled = false,
-  class: className = '',
+  class: className = "",
 } = props;
 
-const base = `inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors duration-[--duration-300] ease-[--ease-standard] focus-visible:outline-none`;
+const button = tv({
+  base: "inline-flex items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none disabled:opacity-50 disabled:pointer-events-none motion-safe:transition-all motion-reduce:transition-none duration-300 ease-standard",
+  variants: {
+    variant: {
+      primary:
+        "bg-[var(--color-primary)] text-[var(--color-white)] hover:bg-[var(--color-primary-hover)] shadow-sm hover:shadow-md",
+      secondary:
+        "bg-[var(--color-secondary)] text-[var(--color-black)] hover:bg-[var(--color-secondary-hover)] shadow-sm hover:shadow-md",
+      outline:
+        "bg-transparent border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-white)]",
+      ghost:
+        "bg-transparent text-[var(--color-foreground)] hover:bg-black/5 dark:hover:bg-white/10",
+    },
+    size: {
+      sm: "px-3 py-1.5 text-xs md:px-4 md:py-2 md:text-sm",
+      md: "px-5 py-2.5 text-sm md:px-6 md:py-3 md:text-base",
+      lg: "px-6 py-3 text-base md:px-8 md:py-4 md:text-lg",
+    },
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
+});
 
-const sizes: Record<NonNullable<Props['size']>, string> = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
-  lg: 'px-8 py-4 text-lg',
-};
-const sizeCls = sizes[size];
-
-const variants: Record<NonNullable<Props['variant']>, string> = {
-  primary: 'bg-[var(--color-primary)] text-[var(--color-white)] hover:bg-[var(--color-primary-hover)]',
-  secondary: 'bg-[var(--color-secondary)] text-[var(--color-black)] hover:bg-[var(--color-secondary-hover)]',
-  outline: 'bg-transparent text-[var(--color-primary)] border border-[var(--color-primary)] hover:bg-[color-mix(in_oklch,var(--color-primary),transparent_90%)]',
-  ghost: 'bg-transparent text-[var(--color-foreground)] hover:bg-[color-mix(in_oklch,var(--color-white),transparent_90%)]',
-};
-const variantCls = variants[variant];
-
-const disabledCls = disabled ? 'opacity-50 pointer-events-none' : '';
-const all = `${base} ${sizeCls} ${variantCls} ${disabledCls} ${className}`.trim();
+const classes = button({ variant, size, class: className });
 ---
-{as === 'a' ? (
-  <a class={all} href={href}><slot /></a>
-) : (
-  <button class={all} disabled={disabled}><slot /></button>
-)}
+
+{
+  as === "a" ? (
+    <a class={classes} href={href}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classes} disabled={disabled}>
+      <slot />
+    </button>
+  )
+}

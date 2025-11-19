@@ -2,56 +2,62 @@
 const { id = "BrandDesignMap", class: className = "" } = Astro.props;
 ---
 
-<div data-map-container id={id} class={`w-full min-h-[18rem] sm:min-h-[24rem] rounded-xl overflow-hidden shadow-lg ${className}`}></div>
+<div
+  data-map-container
+  id={id}
+  class:list={[
+    "w-full min-h-[18rem] sm:min-h-[24rem] rounded-xl overflow-hidden shadow-lg",
+    className,
+  ]}
+>
+</div>
 
-<script is:inline>
-  import { Loader } from '@googlemaps/js-api-loader';
+<script>
+  import { Loader } from "@googlemaps/js-api-loader";
 
-  const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
-  const mapElement = document.currentScript?.previousElementSibling;
+  const initMap = async (container: HTMLElement) => {
+    // Retrieve API key from a data attribute or some other way if env not available in client
+    // In Astro, import.meta.env.PUBLIC_* IS available in processed scripts
+    const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
 
-  if (!apiKey) {
-    console.warn('Missing PUBLIC_GOOGLE_MAPS_API_KEY');
-  }
-
-  (async () => {
-    if (!mapElement || !apiKey) return;
+    if (!apiKey) {
+      console.warn("Missing PUBLIC_GOOGLE_MAPS_API_KEY");
+      return;
+    }
 
     try {
       const loader = new Loader({
         apiKey,
-        version: 'weekly',
+        version: "weekly",
       });
 
-      const [{ Map }, { Marker, AdvancedMarkerElement }] = await Promise.all([
-        loader.importLibrary('maps'),
-        loader.importLibrary('marker'),
+      const [{ Map }, { AdvancedMarkerElement }] = await Promise.all([
+        loader.importLibrary("maps"),
+        loader.importLibrary("marker"),
       ]);
 
       const location = { lat: 49.371588, lng: 16.644021 };
 
-      const map = new Map(mapElement, {
+      const map = new Map(container, {
         center: location,
         zoom: 15,
         disableDefaultUI: true,
         zoomControl: true,
+        mapId: "DEMO_MAP_ID", // Required for AdvancedMarkerElement
       });
 
-      if (AdvancedMarkerElement) {
-        new AdvancedMarkerElement({
-          map,
-          position: location,
-          title: 'Brand DESIGN',
-        });
-      } else if (Marker) {
-        new Marker({
-          map,
-          position: location,
-          title: 'Brand DESIGN',
-        });
-      }
+      new AdvancedMarkerElement({
+        map,
+        position: location,
+        title: "Brand DESIGN",
+      });
     } catch (err) {
-      console.error('Google Maps load failed', err);
+      console.error("Google Maps load failed", err);
     }
-  })();
+  };
+
+  // Initialize all maps
+  document.querySelectorAll("[data-map-container]").forEach((el) => {
+    initMap(el as HTMLElement);
+  });
 </script>

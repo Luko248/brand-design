@@ -11,17 +11,44 @@ export interface Props {
 const { images, galleryId } = Astro.props;
 ---
 
-<div class="grid grid-cols-[--grid-template-gallery] gap-6 py-8">
-  {images.map((img, index) => (
-    <a
-      href={img.full}
-      data-fancybox={galleryId}
-      data-caption={img.alt || `Image ${index + 1}`}
-      class="relative overflow-hidden rounded-lg shadow-md transition-transform duration-[--duration-300] ease-[--ease-standard] hover:-translate-y-1 hover:shadow-lg aspect-[var(--ratio-gallery)]"
-    >
-      <img src={img.thumb} alt={img.alt || `Thumbnail ${index + 1}`} loading="lazy" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[--duration-300] ease-[--ease-standard] hover:scale-105" />
-    </a>
-  ))}
+<div class="py-12">
+  <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+    {
+      images.map((img, index) => (
+        <a
+          href={img.full}
+          data-fancybox={galleryId}
+          data-caption={img.alt || ""}
+          class="group relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        >
+          <img
+            src={img.thumb}
+            alt={img.alt || ""}
+            loading="lazy"
+            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                />
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </div>
 
 <script>
@@ -29,8 +56,13 @@ const { images, galleryId } = Astro.props;
   import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
   Fancybox.bind("[data-fancybox]", {
-    // Custom options
-  });
+    Hash: false,
+    Toolbar: {
+      display: {
+        left: ["infobar"],
+        middle: [],
+        right: ["slideshow", "thumbs", "close"],
+      },
+    },
+  } as any);
 </script>
-
-<!-- Styles fully migrated to Tailwind utilities -->

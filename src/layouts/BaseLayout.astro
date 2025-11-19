@@ -1,5 +1,9 @@
 ---
-import { loadTranslations } from "@/lib/i18n";
+import {
+  loadTranslations,
+  getAlternateLocale,
+  getLocalizedPath,
+} from "@/lib/i18n";
 
 export interface Props {
   title?: string;
@@ -12,26 +16,56 @@ const { title, description, lang = "cs" } = Astro.props;
 const global = await loadTranslations(lang, "global");
 const pageTitle = title || global.site.title;
 const pageDescription = description || global.site.description;
-const alternateLang = lang === "cs" ? "en" : "cs";
-const alternateUrl = lang === "cs" ? `https://brand-design.cz/en${Astro.url.pathname}` : `https://brand-design.cz${Astro.url.pathname.replace("/en", "")}`;
+const alternateLang = getAlternateLocale(lang);
+const alternateUrl = getLocalizedPath(
+  `${Astro.url.pathname}${Astro.url.search}`,
+  alternateLang
+);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{pageTitle}</title>
     <meta name="author" content="Lukáš Chylík" />
     <meta name="description" content={pageDescription} />
-    <meta name="keywords" content="Návrg Loga Brno, Logo Brno, Návrh designu, Design Brno, Konferenční stánky, Návrh brandu, Brand, Design, Velkoplošní grafika, Polepy na auta" />
-    <meta name="google-site-verification" content="WlojpglePdITx8NvvfRNi0UoxVJ5Ft-Yy0G-QUHjUs0" />
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/Favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/Favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/Favicons/favicon-16x16.png" />
-    <link rel="mask-icon" href="/images/Favicons/safari-pinned-tab.svg" color="#170f24" />
+    <meta
+      name="keywords"
+      content="Návrg Loga Brno, Logo Brno, Návrh designu, Design Brno, Konferenční stánky, Návrh brandu, Brand, Design, Velkoplošní grafika, Polepy na auta"
+    />
+    <meta
+      name="google-site-verification"
+      content="WlojpglePdITx8NvvfRNi0UoxVJ5Ft-Yy0G-QUHjUs0"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/Favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/Favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/Favicons/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/images/Favicons/safari-pinned-tab.svg"
+      color="#170f24"
+    />
     <meta name="msapplication-TileColor" content="#170f24" />
     <meta name="theme-color" content="#170f24" />
     <link rel="alternate" hreflang={alternateLang} href={alternateUrl} />
@@ -55,43 +89,74 @@ const alternateUrl = lang === "cs" ? `https://brand-design.cz/en${Astro.url.path
     <link rel="stylesheet" href="/styles/tailwind.css" />
     <link rel="stylesheet" href="/styles/global.css" />
 
+    <!-- Theme bootstrap: initialize light/dark mode before paint -->
+    <script is:inline>
+      (function () {
+        try {
+          const root = document.documentElement;
+          const stored = window.localStorage.getItem("theme");
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          const next =
+            stored === "light" || stored === "dark"
+              ? stored
+              : prefersDark
+                ? "dark"
+                : "light";
+          root.dataset.theme = next;
+        } catch (error) {
+          // Fail silently, default CSS will be used
+        }
+      })();
+    </script>
+
     <!-- Google Analytics -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=UA-120163100-3"></script>
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-120163100-3"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'UA-120163100-3');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-120163100-3");
     </script>
 
     <!-- Schema.org Local Business -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      "@context": "http://schema.org",
-      "@type": "LocalBusiness",
-      "name": pageTitle,
-      "telephone": global.company.phone,
-      "email": global.company.email,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": global.company.street,
-        "addressLocality": global.company.city,
-        "addressRegion": "Brno",
-        "addressCountry": "Czech Republic",
-        "postalCode": global.company.zip
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "10:00",
-        "closes": "18:00"
-      },
-      "url": "https://brand-design.cz/",
-      "image": "https://brand-design.cz/images/Logos/logo_circle.svg"
-    })} />
-    
-    
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "http://schema.org",
+        "@type": "LocalBusiness",
+        name: pageTitle,
+        telephone: global.company.phone,
+        email: global.company.email,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: global.company.street,
+          addressLocality: global.company.city,
+          addressRegion: "Brno",
+          addressCountry: "Czech Republic",
+          postalCode: global.company.zip,
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "10:00",
+          closes: "18:00",
+        },
+        url: "https://brand-design.cz/",
+        image: "https://brand-design.cz/images/Logos/logo.svg",
+      })}
+    />
   </head>
-  <body>
+  <body
+    class="bg-background text-foreground transition-colors duration-[--duration-300]"
+  >
     <slot />
   </body>
 </html>

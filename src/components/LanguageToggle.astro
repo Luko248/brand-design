@@ -3,28 +3,42 @@ import { getLocalizedPath } from "@/lib/i18n";
 
 export interface Props {
   lang: "cs" | "en";
-  currentPath: string;
+  currentPath?: string;
+  class?: string;
 }
 
-const { lang, currentPath } = Astro.props;
+const { lang, currentPath, class: className = "" } = Astro.props;
 
 const basePath = currentPath || `${Astro.url.pathname}${Astro.url.search}`;
 const csUrl = getLocalizedPath(basePath, "cs");
 const enUrl = getLocalizedPath(basePath, "en");
 ---
 
-<div class="lang-switcher text-[1.8rem] font-medium text-white md:pr-8 md:text-black md:text-right" data-fixed="false">
+<div
+  class:list={[
+    "flex items-center gap-1 text-sm font-medium uppercase tracking-wider",
+    className,
+  ]}
+>
   <a
     href={csUrl}
-    data-active={lang === 'cs'}
+    class:list={[
+      "transition-colors duration-200 hover:text-primary",
+      lang === "cs" ? "text-primary font-bold" : "opacity-70",
+    ]}
     aria-label="Switch to Czech"
-    class="no-underline text-white md:text-black data-[active=true]:text-[var(--color-secondary)] md:data-[active=true]:text-[var(--color-primary)] hover:text-[var(--color-secondary-hover)] transition-all duration-300"
-  >Cz</a>
-  <span class="text-white md:text-black"> / </span>
+  >
+    Cz
+  </a>
+  <span class="opacity-30">/</span>
   <a
     href={enUrl}
-    data-active={lang === 'en'}
+    class:list={[
+      "transition-colors duration-200 hover:text-primary",
+      lang === "en" ? "text-primary font-bold" : "opacity-70",
+    ]}
     aria-label="Switch to English"
-    class="no-underline text-white md:text-black data-[active=true]:text-[var(--color-secondary)] md:data-[active=true]:text-[var(--color-primary)] hover:text-[var(--color-secondary-hover)] transition-all duration-300"
-  >En</a>
+  >
+    En
+  </a>
 </div>

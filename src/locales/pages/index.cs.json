@@ -1,17 +1,9 @@
 {
   "hero": {
-    "slide1": {
-      "title": "<b>Vaše</b> značka je důležitá",
-      "button": "Zjistit více"
-    },
-    "slide2": {
-      "title": "Výstavní stánky <br>po <b>celém světě</b>",
-      "button": "Zobrazit galerii"
-    },
-    "slide3": {
-      "title": "Kérka pro <b>Váš</b> vůz?",
-      "button": "Kontaktujte nás"
-    }
+    "title": "Brand Design",
+    "subtitle": "<b>Vaše</b> značka je důležitá. Vdechneme jí život.",
+    "buttonPrimary": "Začít projekt",
+    "buttonSecondary": "Naše práce"
   },
   "about": {
     "mainTitle": "BrandDESIGN - Graphic Solutions",

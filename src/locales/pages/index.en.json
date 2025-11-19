@@ -1,17 +1,9 @@
 {
   "hero": {
-    "slide1": {
-      "title": "<b>Your BRAND</b> is important",
-      "button": "Show More"
-    },
-    "slide2": {
-      "title": "Exhibition booths <br><b>all over the world</b>",
-      "button": "Show Gallery"
-    },
-    "slide3": {
-      "title": "Tattoo for <b>Your</b> car?",
-      "button": "Contact Us"
-    }
+    "title": "Brand Design",
+    "subtitle": "Your <b>Brand</b> is important. We bring it to life.",
+    "buttonPrimary": "Start a Project",
+    "buttonSecondary": "Our Work"
   },
   "about": {
     "mainTitle": "BrandDESIGN - Graphic Solutions",

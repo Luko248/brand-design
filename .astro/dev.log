@@ -71,15 +71,15 @@ itions/Stuttgart/1_480.jpg 0ms
 14:59:40 [types] Generated 215ms
 14:59:40 [vite] Re-optimizing dependencies because vite config has changed
 14:59:40 [vite] Port 4321 is in use, trying another one...
-/Resources/Images/Backgrounds/slider-home-2.jpg 2ms
-08:08:03 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 1ms
-08:08:03 [404] /Resources/Images/Logos/logo.svg 0ms
-08:08:03 [404] /Resources/Images/Logos/logo-black.svg 0ms
-08:08:03 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-08:08:03 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:08:03 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:08:03 [404] /Resources/Images/Icons/view-ico.svg 0ms
-08:08:03 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
+08:52:50 Configuration file updated. Restarting...
+08:52:50 [ERROR] [config] ENOTEMPTY: directory not empty, rename '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps_temp_e9ce10e4' -> '/Users/lukaschylik/Projects/brand-design/node_modules/.vite/deps'
+  Stack trace:
+    at Object.renameSync (node:fs:1021:11)
+    [...] See full stack trace in the browser, or rerun with --verbose.
+
+08:52:50 [ERROR] Continuing with previous valid configuration
+
+:03 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
 08:08:16 [200] / 3ms
 08:08:16 [404] /Resources/Images/Logos/logo.svg 0ms
 08:08:16 [404] /Resources/Images/Logos/logo-black.svg 2ms
@@ -134,96 +134,60 @@ Error: ENOTEMPTY: directory not empty, rename '/Users/lukaschylik/Projects/brand
     at runOptimizer (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47139:15)
     at onCrawlEnd (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:47343:9)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-logo-black.svg 0ms
-09:44:48 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:44:48 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:44:48 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:44:48 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:44:48 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-09:47:39 [200] / 4ms
-09:47:39 [404] /Resources/Images/Logos/logo.svg 0ms
-09:47:39 [404] /Resources/Images/Logos/logo-black.svg 0ms
-09:47:39 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
-09:47:39 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
-09:47:39 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/slider-home-1.jpg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/slider-home-2.jpg 1ms
-09:47:39 [404] /Resources/Fonts/Roboto/roboto-regular.otf 0ms
-09:47:39 [404] /Resources/Fonts/Anja/Anja.ttf 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/parallax-bg-1.jpg 0ms
-09:47:39 [404] /Resources/Images/Logos/logo.svg 0ms
-09:47:39 [404] /Resources/Images/Logos/logo-black.svg 0ms
-09:47:39 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
-09:47:39 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 0ms
-09:47:39 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:47:39 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
-09:47:39 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:47:39 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-09:48:10 [200] / 5ms
-09:48:10 [404] /Resources/Images/Logos/logo.svg 1ms
-09:48:10 [404] /Resources/Images/Logos/logo-black.svg 0ms
-09:48:10 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
-09:48:10 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 1ms
-09:48:10 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
-09:48:10 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/slider-home-1.jpg 0ms
-09:48:10 [404] /Resources/Fonts/Anja/Anja.ttf 1ms
-09:48:10 [404] /Resources/Fonts/Roboto/roboto-regular.otf 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/slider-home-2.jpg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/parallax-bg-1.jpg 0ms
-09:48:10 [404] /Resources/Images/Logos/logo.svg 0ms
-09:48:10 [404] /Resources/Images/Logos/logo-black.svg 0ms
-09:48:10 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
-09:48:10 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 0ms
-09:48:10 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:48:10 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
-09:48:10 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:48:10 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-09:49:02 [200] / 7ms
-09:49:02 [404] /Resources/Images/Logos/logo.svg 0ms
-09:49:02 [404] /Resources/Images/Logos/logo-black.svg 0ms
-09:49:02 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
-09:49:02 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
-09:49:02 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-09:49:02 [404] /Resources/Fonts/Prometo/prometo-light.otf 0ms
-09:49:02 [404] /Resources/Fonts/Anja/Anja.ttf 0ms
-09:49:02 [404] /Resources/Fonts/Roboto/roboto-regular.otf 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/slider-home-1.jpg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/slider-home-2.jpg 1ms
-09:49:02 [404] /Resources/Images/Backgrounds/slider-home-3.jpg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/parallax-bg-1.jpg 1ms
-09:49:02 [404] /Resources/Images/Logos/logo.svg 0ms
-09:49:02 [404] /Resources/Images/Logos/logo-black.svg 0ms
-09:49:02 [404] /Resources/Images/Logos/logo_circle.svg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/print_bg.jpg 0ms
-09:49:02 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/exposition_bg.jpg 0ms
-09:49:02 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:49:02 [404] /Resources/Images/Backgrounds/stick_bg.jpg 0ms
-09:49:02 [404] /Resources/Images/Icons/view-ico.svg 0ms
-09:49:02 [404] /Resources/Images/Logos/mistry-mont-logo.svg 0ms
-14:59:40 Configuration file updated. Restarting...
-14:59:40 [vite] Re-optimizing dependencies because vite config has changed
-14:59:40 [content] Syncing content
-14:59:40 [content] Astro config changed
-14:59:40 [content] Astro version changed
-14:59:40 [content] Clearing content store
-14:59:40 [content] Synced content
-14:59:40 [types] Generated 337ms
-14:59:40 [vite] Re-optimizing dependencies because vite config has changed
-14:59:40 [vite] Port 4321 is in use, trying another one...
-14:59:40 [vite] Port 4322 is in use, trying another one...
+08:52:50 Configuration file updated. Restarting...
+08:52:50 [content] Syncing content
+08:52:50 [content] Synced content
+08:52:50 [types] Generated 417ms
+08:52:50 [vite] Re-optimizing dependencies because vite config has changed
+08:54:10 Configuration file updated. Restarting...
+08:54:10 [vite] Re-optimizing dependencies because lockfile has changed
+08:54:11 [content] Syncing content
+08:54:11 [content] Synced content
+08:54:11 [types] Generated 390ms
+08:54:11 [vite] Re-optimizing dependencies because vite config has changed
+08:54:11 [vite] Port 4321 is in use, trying another one...
+08:54:11 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=script&index=0&lang.ts". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+08:54:11 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=script&index=1&lang.ts". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+08:54:11 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=style&index=0&lang.css". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+08:54:11 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/PerformanceOptimizations.astro?astro&type=style&index=1&lang.css". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/PerformanceOptimizations.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+08:54:12 [404] /src/styles/global.css 166ms
+08:54:12 [404] /Users/lukaschylik/Projects/brand-design/astro-brand-design/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js 126ms
+08:54:12 [ERROR] [vite] Internal server error: No cached compile metadata found for "/src/components/HeroSlider.astro?astro&type=style&index=0&lang.css". The main Astro module "/Users/lukaschylik/Projects/brand-design/src/components/HeroSlider.astro" should have compiled and filled the metadata first, before its virtual modules can be requested.
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:77:15)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+08:54:12 [ERROR] [vite] Internal server error: No Astro CSS at index 0
+      at LoadPluginContext.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/astro/dist/vite-plugin-astro/index.js:88:19)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async EnvironmentPluginContainer.load (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42293:22)
+      at async loadAndTransform (file:///Users/lukaschylik/Projects/brand-design/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:35673:22)
+08:54:13 [404] /sw.js 1ms
+08:54:16 [200] / 11ms
+08:54:44 [404] /sw.js 6ms
+ersion changed
+08:52:50 [content] Clearing content store
+08:52:50 [content] Synced content
+08:52:50 [types] Generated 541ms
+08:52:50 [vite] Re-optimizing dependencies because vite config has changed
+08:52:50 [vite] Port 4321 is in use, trying another one...
+08:52:50 [vite] Port 4322 is in use, trying another one...
+08:54:10 Configuration file updated. Restarting...
+08:54:10 [vite] Re-optimizing dependencies because lockfile has changed
+08:54:11 [content] Syncing content
+08:54:11 [content] Astro config changed
+08:54:11 [content] Astro version changed
+08:54:11 [content] Clearing content store
+08:54:11 [content] Synced content
+08:54:11 [types] Generated 397ms
