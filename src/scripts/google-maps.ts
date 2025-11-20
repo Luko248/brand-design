@@ -4,22 +4,15 @@ const MAP_INIT_FLAG = "__brandDesignMapsInitialized";
 
 const createInfoWindowContent = (addressLines: string[]) => {
   const content = document.createElement("div");
-  content.style.display = "flex";
-  content.style.flexDirection = "column";
-  content.style.gap = "10px";
-  content.style.minWidth = "200px";
-  content.style.padding = "4px 2px";
+  content.className = "brand-map-infowindow";
 
   const logo = document.createElement("img");
   logo.src = "/images/logos/logo-dark.svg";
   logo.alt = "Brand Design";
-  logo.style.width = "140px";
-  logo.style.height = "auto";
+  logo.className = "brand-map-infowindow__logo";
 
   const address = document.createElement("address");
-  address.style.fontStyle = "normal";
-  address.style.margin = "0";
-  address.style.lineHeight = "1.5";
+  address.className = "brand-map-infowindow__address";
 
   addressLines.forEach((line) => {
     const row = document.createElement("div");

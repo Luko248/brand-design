@@ -1,42 +1,17 @@
-/* Typography Overrides */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button,
-.button,
-.btn {
-  font-family: var(--font-display);
-}
-
 @layer base {
+  :root {
+    --focus-ring: 0 0 0 var(--spacing-1) var(--color-outline);
+    --nav-height: var(--spacing-20);
+  }
+
   html {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
 
-  :root {
-    --focus-ring: 0 0 0 0.2rem var(--color-outline);
-    --font-sans: "Open Sans", sans-serif;
-    --font-display: "Inter", sans-serif;
-    /* Default navigation height (matches header h-20) */
-    --nav-height: 5rem;
-  }
-
-  @media (max-width: 639px) {
-    :root {
-      /* Slightly smaller effective scroll margin on very small screens */
-      --nav-height: 4.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    :root {
-      --nav-height: 5rem;
-    }
+  :where(h1, h2, h3, h4, h5, h6, button, .button, .btn) {
+    font-family: var(--font-display);
   }
 
   :where(a, button, input):focus-visible {
@@ -44,8 +19,35 @@ button,
     box-shadow: var(--focus-ring);
   }
 
-  /* Ensure in-page anchors are not hidden under the fixed navigation */
   .page-section {
     scroll-margin-top: var(--nav-height);
+  }
+}
+
+@layer components {
+  .brand-map-infowindow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    min-width: var(--spacing-56);
+    padding: var(--spacing-3);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid color-mix(in oklch, var(--color-outline) 45%, transparent);
+    color: var(--color-foreground);
+  }
+
+  .brand-map-infowindow__logo {
+    width: 110px;
+    height: auto;
+    margin-bottom: var(--spacing-1);
+  }
+
+  .brand-map-infowindow__address {
+    font-style: normal;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--color-muted);
   }
 }

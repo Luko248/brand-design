@@ -9,13 +9,21 @@
   --color-foreground: oklch(0.18 0.03 280);
   --color-muted: oklch(0.7 0.02 285);
 
-  --color-primary: oklab(0.54 0.2 -0.11);
-  --color-primary-strong: oklch(0.5 0.26 300);
+  --color-primary: oklch(0.56 0.22 315);
+  --color-primary-strong: oklch(0.52 0.24 315);
   --color-primary-hover: oklch(0.47 0.22 315);
   --color-outline: oklch(0.72 0.22 317);
 
   --color-secondary: oklch(0.9 0.18 100);
   --color-secondary-hover: oklch(0.8 0.16 100);
+
+  /* Hero/parallax overlays */
+  --color-hero-grad-1: oklch(0.97 0.03 280 / 0.58);
+  --color-hero-grad-2: oklch(0.8 0.16 70 / 0.34);
+  --color-hero-grad-1-dark: oklch(0.31 0.06 280 / 0.72);
+  --color-hero-grad-2-dark: oklch(0.45 0.1 260 / 0.46);
+  --color-hero-backdrop-light: oklch(0.985 0.02 285);
+  --color-hero-backdrop-dark: oklch(0.12 0.02 280);
 
   --color-error: oklch(0.6113 0.1961 25.11);
   --color-button: oklch(0.3793 0.0055 17.37);
@@ -156,6 +164,26 @@
   .text-secondary {
     color: var(--color-secondary);
   }
+  .bg-parallax-hero {
+    background-image:
+      linear-gradient(
+        135deg,
+        light-dark(var(--color-hero-grad-1), var(--color-hero-grad-1-dark)),
+        light-dark(var(--color-hero-grad-2), var(--color-hero-grad-2-dark))
+      ),
+      image-set(
+        url("/images/backgrounds/paralax.avif") 1280w,
+        url("/images/backgrounds/paralax_768.avif") 768w,
+        url("/images/backgrounds/paralax_560.avif") 560w
+      );
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: light-dark(
+      var(--color-hero-backdrop-light),
+      var(--color-hero-backdrop-dark)
+    );
+  }
   .border-outline {
     border-color: var(--color-outline);
   }
@@ -174,7 +202,8 @@
     --color-muted: oklch(0.7 0.02 285);
     --color-overlay: oklch(0 0 0 / 0.8);
     --color-shadow: oklch(0 0 0 / 0.9);
+    --color-hero-grad-1: var(--color-hero-grad-1-dark);
+    --color-hero-grad-2: var(--color-hero-grad-2-dark);
+    --color-hero-backdrop-light: var(--color-hero-backdrop-dark);
   }
 }
-
-/* Legacy layout + components have been migrated to Tailwind utilities and component abstractions */
