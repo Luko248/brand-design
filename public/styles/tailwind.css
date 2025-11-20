@@ -849,6 +849,12 @@
   .bg-transparent {
     background-color: transparent;
   }
+  .bg-white\/20 {
+    background-color: color-mix(in srgb, oklch(1 0 0) 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+  }
   .bg-white\/50 {
     background-color: color-mix(in srgb, oklch(1 0 0) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {

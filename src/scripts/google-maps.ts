@@ -56,29 +56,12 @@ const initMap = async (container: HTMLElement) => {
       mapIds: mapId ? [mapId] : undefined,
     });
 
-    const [{ Map, InfoWindow }, { AdvancedMarkerElement }, { Geocoder }] =
-      await Promise.all([
-        importLibrary("maps"),
-        importLibrary("marker"),
-        importLibrary("geocoding"),
-      ]);
+    const [{ Map, InfoWindow }, { AdvancedMarkerElement }] = await Promise.all([
+      importLibrary("maps"),
+      importLibrary("marker"),
+    ]);
 
-    let position = { ...fallbackPosition };
-
-    try {
-      const geocoder = new Geocoder();
-      const { results } = await geocoder.geocode({ address: addressString });
-      const geocoded = results?.[0]?.geometry?.location?.toJSON?.();
-
-      if (geocoded) {
-        position = geocoded;
-      }
-    } catch (geocodeError) {
-      console.warn(
-        "Google Maps: Geocoding failed, using fallback coordinates",
-        geocodeError
-      );
-    }
+    const position = { ...fallbackPosition };
 
     const map = new Map(container, {
       center: position,

@@ -15,16 +15,10 @@ export interface Props {
 const { lang } = Astro.props;
 const translations = await loadTranslations(lang, "pages/index");
 
-const { images: printingGalleries } = await getPrintingCloudinaryData();
-const printingCardImage =
-  printingGalleries && printingGalleries.length > 0
-    ? printingGalleries[0].full || printingGalleries[0].thumb
-    : "/images/cards/printing.avif";
-
 const referenceCards = [
   {
     href: getLocalizedPath("/printing-and-production", lang),
-    image: printingCardImage,
+    image: "/images/cards/printing.avif",
     ...translations.services.printing,
   },
   {
