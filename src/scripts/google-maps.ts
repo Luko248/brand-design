@@ -1,4 +1,4 @@
-import { Loader } from "@googlemaps/js-api-loader";
+import { importLibrary, setOptions } from "@googlemaps/js-api-loader";
 
 const MAP_INIT_FLAG = "__brandDesignMapsInitialized";
 
@@ -50,16 +50,17 @@ const initMap = async (container: HTMLElement) => {
   const mapId = container.dataset.mapId;
 
   try {
-    const loader = new Loader({
-      apiKey,
-      version: "weekly",
+    setOptions({
+      key: apiKey,
+      v: "weekly",
+      mapIds: mapId ? [mapId] : undefined,
     });
 
     const [{ Map, InfoWindow }, { AdvancedMarkerElement }, { Geocoder }] =
       await Promise.all([
-        loader.importLibrary("maps"),
-        loader.importLibrary("marker"),
-        loader.importLibrary("geocoding"),
+        importLibrary("maps"),
+        importLibrary("marker"),
+        importLibrary("geocoding"),
       ]);
 
     let position = { ...fallbackPosition };
