@@ -17,7 +17,7 @@
         "@tailwindcss/cli": "^4.1.17",
         "@toolwind/anchors": "^1.0.10",
         "@types/google.maps": "^3.58.0",
-        "tailwindcss": "^4.1.0",
+        "tailwindcss": "^4.1.7",
       },
     },
   },

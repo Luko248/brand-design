@@ -4,4 +4,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://brand-design.cz",
   output: "static",
+  devToolbar: {
+    enabled: false,
+  },
 });

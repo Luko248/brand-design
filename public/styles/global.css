@@ -22,10 +22,30 @@ button,
     --focus-ring: 0 0 0 0.2rem var(--color-outline);
     --font-sans: "Open Sans", sans-serif;
     --font-display: "Inter", sans-serif;
+    /* Default navigation height (matches header h-20) */
+    --nav-height: 5rem;
   }
 
-  :where(a, button, input, textarea, select):focus-visible {
+  @media (max-width: 639px) {
+    :root {
+      /* Slightly smaller effective scroll margin on very small screens */
+      --nav-height: 4.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --nav-height: 5rem;
+    }
+  }
+
+  :where(a, button, input):focus-visible {
     outline: none;
     box-shadow: var(--focus-ring);
+  }
+
+  /* Ensure in-page anchors are not hidden under the fixed navigation */
+  .page-section {
+    scroll-margin-top: var(--nav-height);
   }
 }
