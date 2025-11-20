@@ -76,17 +76,27 @@ const { images, galleryId } = Astro.props;
   import { Fancybox } from "@fancyapps/ui";
   import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-  Fancybox.bind("[data-fancybox]", {
-    Hash: false,
-    Toolbar: {
-      display: {
-        left: ["infobar"],
-        middle: [],
-        right: ["slideshow", "thumbs", "close"],
+  const bindFancybox = () => {
+    Fancybox.bind("[data-fancybox]", {
+      Hash: false,
+      Toolbar: {
+        display: {
+          left: ["infobar"],
+          middle: [],
+          right: ["slideshow", "thumbs", "close"],
+        },
       },
-    },
-    Images: {
-      zoom: true,
-    },
-  } as any);
+      Images: {
+        zoom: true,
+      },
+    } as any);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindFancybox, { once: true });
+  } else {
+    bindFancybox();
+  }
+
+  document.addEventListener("astro:page-load", bindFancybox);
 </script>

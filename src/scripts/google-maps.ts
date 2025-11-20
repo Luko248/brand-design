@@ -88,6 +88,10 @@ const initMap = async (container: HTMLElement) => {
         map,
       });
     });
+
+    map.addListener("click", () => {
+      infoWindow.close();
+    });
   } catch (err) {
     console.error("Google Maps load failed:", err);
   }

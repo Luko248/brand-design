@@ -278,10 +278,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-QdwhRpW20w: auto;
-      --toolwind-toggle-lNAYac9Iyj: transparent;
-      --toolwind-toggle-uAA6zeXI7v: inherit;
-      --toolwind-toggle-4AkYW3JuDF: 0px;
+      --toolwind-toggle-TRI7cwwH5s: auto;
+      --toolwind-toggle-BVXHtntcyw: transparent;
+      --toolwind-toggle-eesJUAwLqh: inherit;
+      --toolwind-toggle-9vgtK3sgXO: 0px;
     }
   }
   .absolute {
@@ -853,12 +853,6 @@
     background-color: color-mix(in srgb, oklch(1 0 0) 20%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
-    }
-  }
-  .bg-white\/50 {
-    background-color: color-mix(in srgb, oklch(1 0 0) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-white) 50%, transparent);
     }
   }
   .bg-linear-to-b {
@@ -2166,11 +2160,13 @@
     color: var(--color-secondary);
   }
   .bg-parallax {
-    background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), image-set( url("/images/backgrounds/paralax.avif"), url("/images/backgrounds/paralax_768.avif") 768w, url("/images/backgrounds/paralax_560.avif") 560w );
+    background-color: var(--color-hero-backdrop-light);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-color: var(--color-hero-backdrop-light);
+    background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), url("/images/backgrounds/paralax.avif");
+    background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), -webkit-image-set( url("/images/backgrounds/paralax_560.avif") 1x, url("/images/backgrounds/paralax_768.avif") 2x, url("/images/backgrounds/paralax.avif") 3x );
+    background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), image-set( url("/images/backgrounds/paralax_560.avif") 1x, url("/images/backgrounds/paralax_768.avif") 2x, url("/images/backgrounds/paralax.avif") 3x );
   }
   .border-outline {
     border-color: var(--color-outline);
@@ -2195,10 +2191,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-QdwhRpW20w, 0px);
-    background-color: var(--toolwind-toggle-lNAYac9Iyj, canvas);
-    color: var(--toolwind-toggle-uAA6zeXI7v, canvastext);
-    margin: var(--toolwind-toggle-4AkYW3JuDF, auto);
+    inset: var(--toolwind-toggle-TRI7cwwH5s, 0px);
+    background-color: var(--toolwind-toggle-BVXHtntcyw, canvas);
+    color: var(--toolwind-toggle-eesJUAwLqh, canvastext);
+    margin: var(--toolwind-toggle-9vgtK3sgXO, auto);
   }
 }
 @property --tw-translate-x {
