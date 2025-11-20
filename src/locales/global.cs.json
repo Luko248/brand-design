@@ -1,13 +1,14 @@
 {
   "site": {
     "title": "Brand Design - grafické řešení vaší značky",
-    "description": "Navrh brandu a loga, velkoplošná grafika, Design konferenčních a veletržních stánků, návrh a výroba velkoplošních polepú na auta či výlohu"
+    "description": "Návrh brandu a loga, velkoplošná grafika, design konferenčních a veletržních stánků, návrh a výroba velkoplošných polepů na auta či výlohy."
   },
   "nav": {
     "home": "Domů",
     "about": "O společnosti",
-    "references": "Reference",
+    "references": "Naše práce",
     "contact": "Kontakt",
+    "themeToggle": "Přepnout barevné téma",
     "langEn": "En",
     "langCs": "Cz"
   },

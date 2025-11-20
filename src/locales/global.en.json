@@ -1,13 +1,14 @@
 {
   "site": {
     "title": "Brand Design - graphic solutions",
-    "description": "Design of brands and logos, large-area graphics, design of conference and exhibition stands, design and production of large-area covers for cars or shop windows"
+    "description": "Brand and logo design, large-format graphics, design of conference and exhibition stands, and design and production of large-format wraps for cars and shop windows."
   },
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "references": "References",
+    "references": "Our Work",
     "contact": "Contact",
+    "themeToggle": "Toggle color theme",
     "langEn": "En",
     "langCs": "Cz"
   },
@@ -15,7 +16,7 @@
     "contact": "Contact",
     "contactPerson": "Contact Person",
     "address": "Address",
-    "writeMessage": "Write Message",
+    "writeMessage": "Send Message",
     "allRightsReserved": "All rights reserved.",
     "createdBy": "Created by"
   },

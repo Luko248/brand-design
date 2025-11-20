@@ -10,11 +10,11 @@
     "mainTitle": "BrandDESIGN - Graphic Solutions",
     "sectionLabel": "O společnosti",
     "title": "O společnosti",
-    "paragraph1": "Společnost <strong>BrandDESIGN</strong> vznikla po dlouholetých zkušenostech, aby zviditelnila <b>Vaši značku</b>. Zabývá se digitální velkoformátovým tiskem, řezanou grafikou a lepením, se sídlem v Brně.",
-    "paragraph2": "Dlouhodobě spolupracujeme z firmami na výrobě grafiky pro veletrhy, výstavy a kongresy, nejen v ČR, ale i po <b>celém světě</b>. Realizujeme polepy aut, výloh a pod. Výrobou 3D log a potiskem textilu. Výrobu reklamy zajistímetot od návrhu, přes výrobu až po samotné nalepení"
+    "paragraph1": "Společnost <strong>BrandDESIGN</strong> vznikla na základě dlouholetých zkušeností, aby pomohla zviditelnit <b>vaši značku</b>. Zabýváme se digitálním velkoformátovým tiskem, řezanou grafikou a polepy, se sídlem v Brně.",
+    "paragraph2": "Dlouhodobě spolupracujeme s firmami na výrobě grafiky pro veletrhy, výstavy a kongresy, nejen v ČR, ale i po <b>celém světě</b>. Realizujeme polepy aut a výloh, vyrábíme 3D loga a zajišťujeme potisk textilu. Reklamu pro vás zajistíme od návrhu přes výrobu až po samotnou instalaci."
   },
   "banner": {
-    "title": "Spolu najdeme vhodné řešení i pro <b>Vás</b>",
+    "title": "Společně najdeme vhodné řešení i pro <b>vás</b>",
     "button": "Chci spolupracovat"
   },
   "services": {
@@ -24,22 +24,22 @@
     "eyebrowLabel": "Služba",
     "printing": {
       "title": "Tisk / Výroba",
-      "description": "Technologické vybavení nám umožnuje vyhovět <b>nejmodernějším trendům</b>. Výroba a digitální tisk samolepek, tisk z ořezem, celoplošní tisk fólií, plakátů, bannerů a pod. Výroba 3D log a potisk textilu.",
+      "description": "Naše technologické vybavení nám umožňuje splnit <b>nejmodernější trendy</b>. Zajišťujeme výrobu a digitální tisk samolepek, tisk s ořezem, celoplošný tisk fólií, plakátů a bannerů. Vyrábíme 3D loga a zajišťujeme potisk textilu.",
       "button": "Zobrazit galerii"
     },
     "expositions": {
       "title": "Výstavy",
-      "description": "Poskytujeme komplexní servis od výroby veletržní grafiky až po montáž grafiky po <b>celém světe</b>.",
+      "description": "Poskytujeme komplexní servis od návrhu a výroby veletržní grafiky až po montáž po <b>celém světě</b>.",
       "button": "Zobrazit galerii"
     },
     "sticks": {
       "title": "Polepy",
-      "description": "Provádíme velkoplošné reklamní polepy, polepy áut, polepy vozidel, výloh, od grafického návrhu až po samotné nalepení. Máte zájem o polep v Brně? <b>Kontaktujte nás</b>.",
+      "description": "Provádíme velkoplošné reklamní polepy – polepy aut, vozidel i výloh – od grafického návrhu až po samotné nalepení. Máte zájem o polep v Brně? <b>Kontaktujte nás</b>.",
       "button": "Zobrazit galerii"
     }
   },
   "partners": {
     "title": "Partneři",
-    "text": "Aktivne spolupracujeme s firmou Mistry Mont s.r.o."
+    "text": "Aktivně spolupracujeme s firmou Mistry Mont s.r.o."
   }
 }
