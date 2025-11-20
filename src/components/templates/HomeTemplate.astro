@@ -19,7 +19,7 @@ const { images: printingGalleries } = await getPrintingCloudinaryData();
 const printingCardImage =
   printingGalleries && printingGalleries.length > 0
     ? printingGalleries[0].full || printingGalleries[0].thumb
-    : "/images/backgrounds/print_bg.jpg";
+    : "/images/cards/printing.avif";
 
 const referenceCards = [
   {
@@ -29,13 +29,12 @@ const referenceCards = [
   },
   {
     href: getLocalizedPath("/expositions", lang),
-    image:
-      "/images/referencies/Expositions/Anuga2019Koln/anuga-2019-1_1024.jpg",
+    image: "/images/cards/expositions.avif",
     ...translations.services.expositions,
   },
   {
     href: getLocalizedPath("/sticks", lang),
-    image: "/images/referencies/Sticks/Total_1024.jpg",
+    image: "/images/cards/stickers.avif",
     ...translations.services.sticks,
   },
 ];
@@ -109,7 +108,7 @@ const referenceCards = [
       <div class="absolute inset-0 z-0">
         <div
           class="w-full h-full bg-fixed bg-cover bg-center"
-          style="background-image: url('/images/backgrounds/parallax-bg-1.jpg')"
+          style="background-image: url('/images/backgrounds/paralax.avif')"
         >
         </div>
         <div class="absolute inset-0 bg-black/70"></div>

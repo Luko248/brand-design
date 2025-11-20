@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import ArrowRightIcon from "@/components/icons/ArrowRightIcon.astro";
 
 export interface Props {
@@ -34,15 +33,16 @@ const {
 >
   <!-- Background Image -->
   <div
-    class="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105 z-10 overflow-clip bg-linear-to-b from-transparent via-white/20 to-surface"
+    class="absolute inset-0 z-10 overflow-clip bg-linear-to-b from-transparent via-white/20 to-surface transition-transform duration-700 ease-out group-hover:scale-105"
   >
-    <Image
+    <img
       src={image}
       alt={title}
-      class="w-full h-full object-cover absolute inset-0 scale-100 transition-transform -z-10 duration-700 ease-out group-hover:scale-110"
-      width={1024}
-      height={768}
       loading="lazy"
+      decoding="async"
+      width="1024"
+      height="1365"
+      class="w-full h-full object-cover absolute inset-0 scale-100 transition-transform duration-700 ease-out group-hover:scale-110"
     />
   </div>
 
