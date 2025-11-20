@@ -3,11 +3,15 @@ import { v2 as cloudinary } from "cloudinary";
 export type CloudinaryGalleryImage = {
   thumb: string;
   full: string;
+  width?: number;
+  height?: number;
   alt?: string;
   groupId?: string;
   groupTitle?: string;
   extraItems?: Array<{
     full: string;
+    width?: number;
+    height?: number;
     alt?: string;
   }>;
 };
@@ -17,8 +21,14 @@ export type CloudinaryPrintingData = {
   resources: any[];
 };
 
-// Main Cloudinary folder for printing galleries
-const PRINTING_BASE_FOLDER = "BrandDesign/print-and-production";
+export type CloudinaryGalleryData = CloudinaryPrintingData;
+
+type GalleryKey = "printing" | "stickers" | "expositions";
+const GALLERY_BASE_FOLDERS: Record<GalleryKey, string> = {
+  printing: "BrandDesign/print-and-production",
+  stickers: "BrandDesign/stickers",
+  expositions: "BrandDesign/expositions",
+};
 
 function toSlug(value: string): string {
   return (
@@ -29,16 +39,6 @@ function toSlug(value: string): string {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "") || "gallery"
   );
-}
-
-function altFromFilename(publicId: string): string | undefined {
-  const filename = publicId.split("/").pop();
-  if (!filename) return undefined;
-
-  return filename
-    .replace(/\.[a-z0-9]+$/i, "")
-    .replace(/[_-]+/g, " ")
-    .trim();
 }
 
 function configureCloudinary() {
@@ -68,10 +68,13 @@ function configureCloudinary() {
   }
 }
 
-export async function getPrintingCloudinaryData(): Promise<CloudinaryPrintingData> {
+async function getCloudinaryData(
+  gallery: GalleryKey
+): Promise<CloudinaryGalleryData> {
   const configured = configureCloudinary();
+  const baseFolder = GALLERY_BASE_FOLDERS[gallery];
 
-  if (!configured) {
+  if (!configured || !baseFolder) {
     return {
       images: [],
       resources: [],
@@ -80,8 +83,7 @@ export async function getPrintingCloudinaryData(): Promise<CloudinaryPrintingDat
 
   try {
     const result = await cloudinary.search
-      // Images are stored in BrandDesign/print-and-production and its subfolders
-      .expression(`folder:${PRINTING_BASE_FOLDER}/*`)
+      .expression(`folder:${baseFolder}/*`)
       .sort_by("public_id", "asc")
       .max_results(100)
       .execute();
@@ -90,14 +92,14 @@ export async function getPrintingCloudinaryData(): Promise<CloudinaryPrintingDat
       ? ((result as any).resources as any[])
       : [];
 
-    // Group resources by their first-level subfolder under the printing base folder.
+    // Group resources by their first-level subfolder under the base folder.
     const grouped = new Map<string, { title: string; resources: any[] }>();
 
     for (const resource of resources) {
       const folder: string = resource.folder || "";
 
-      let relativeFolder = folder.startsWith(`${PRINTING_BASE_FOLDER}/`)
-        ? folder.slice(PRINTING_BASE_FOLDER.length + 1)
+      let relativeFolder = folder.startsWith(`${baseFolder}/`)
+        ? folder.slice(baseFolder.length + 1)
         : folder;
 
       if (!relativeFolder) {
@@ -125,10 +127,16 @@ export async function getPrintingCloudinaryData(): Promise<CloudinaryPrintingDat
     const images: CloudinaryGalleryImage[] = Array.from(grouped.values()).map(
       (group, index) => {
         const groupTitle = group.title || `Gallery ${index + 1}`;
-        const groupId = `printing-${toSlug(groupTitle)}`;
+        const groupId = `${gallery}-${toSlug(groupTitle)}`;
+        const captionForIndex = (n: number) =>
+          n === 1 ? groupTitle : `${groupTitle} (${n})`;
 
         const [first, ...rest] = group.resources;
         const firstPublicId: string = first.public_id;
+        const firstWidth =
+          typeof first?.width === "number" ? first.width : undefined;
+        const firstHeight =
+          typeof first?.height === "number" ? first.height : undefined;
 
         const thumb = cloudinary.url(firstPublicId, {
           ...baseOptions,
@@ -142,23 +150,35 @@ export async function getPrintingCloudinaryData(): Promise<CloudinaryPrintingDat
 
         const extraItems =
           rest.length > 0
-            ? rest.map((res: any) => {
+            ? rest.map((res: any, idx: number) => {
                 const extraPublicId: string = res.public_id;
+                const extraWidth =
+                  typeof res?.width === "number" ? res.width : undefined;
+                const extraHeight =
+                  typeof res?.height === "number" ? res.height : undefined;
+
+                const caption = captionForIndex(idx + 2);
 
                 return {
                   full: cloudinary.url(extraPublicId, {
                     ...baseOptions,
                     width: 1024,
                   }),
-                  alt: altFromFilename(extraPublicId),
+                  width: extraWidth,
+                  height: extraHeight,
+                  alt: caption,
                 };
               })
             : undefined;
 
+        const firstCaption = captionForIndex(1);
+
         return {
           thumb,
           full,
-          alt: groupTitle,
+          width: firstWidth,
+          height: firstHeight,
+          alt: firstCaption,
           groupId,
           groupTitle,
           extraItems,
@@ -171,10 +191,22 @@ export async function getPrintingCloudinaryData(): Promise<CloudinaryPrintingDat
       resources,
     };
   } catch (err) {
-    console.error("Cloudinary: Failed to fetch printing resources", err);
+    console.error(`Cloudinary: Failed to fetch ${gallery} resources`, err);
     return {
       images: [],
       resources: [],
     };
   }
+}
+
+export async function getPrintingCloudinaryData(): Promise<CloudinaryGalleryData> {
+  return getCloudinaryData("printing");
+}
+
+export async function getStickersCloudinaryData(): Promise<CloudinaryGalleryData> {
+  return getCloudinaryData("stickers");
+}
+
+export async function getExpositionsCloudinaryData(): Promise<CloudinaryGalleryData> {
+  return getCloudinaryData("expositions");
 }

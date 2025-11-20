@@ -2,8 +2,8 @@
 import { loadTranslations } from "@/lib/i18n";
 import GoogleMaps from "./GoogleMaps.astro";
 import Button from "@/components/ui/Button.astro";
-import FacebookIcon from "./icons/FacebookIcon.astro";
-import InstagramIcon from "./icons/InstagramIcon.astro";
+import EnvelopeIcon from "./icons/EnvelopeIcon.astro";
+import PhoneIcon from "./icons/PhoneIcon.astro";
 
 export interface Props {
   lang: "cs" | "en";
@@ -47,18 +47,35 @@ const year = new Date().getFullYear();
             >
               {global.footer.contactPerson}
             </h4>
-            <div class="space-y-1">
-              <p class="text-xl font-medium">{global.company.contactName}</p>
-              <a
-                href={`mailto:${global.company.contactEmail}`}
-                class="block text-primary hover:underline"
-                >{global.company.contactEmail}</a
+            <div class="space-y-2 grid gap-4">
+              <div class="flex flex-col gap-2">
+                <p class="text-xl font-medium">{global.company.contactName}</p>
+                <a
+                  href={`mailto:${global.company.contactEmail}`}
+                  class="inline-flex items-center gap-2 text-primary hover:underline w-fit"
+                >
+                  <EnvelopeIcon class="w-4 h-4" />
+                  <span>{global.company.contactEmail}</span>
+                </a>
+                <a
+                  href={`tel:${global.company.phone}`}
+                  class="inline-flex items-center gap-2 text-primary hover:underline w-fit"
+                >
+                  <PhoneIcon class="w-4 h-4" />
+                  <span>{global.company.phone}</span>
+                </a>
+                <span class="block">
+                  {global.company.icoLabel}: {global.company.ico}
+                </span>
+              </div>
+              <Button
+                as="a"
+                href={`mailto:${global.company.email}`}
+                variant="primary"
+                class="w-full sm:w-auto mt-4"
               >
-              <a
-                href={`tel:${global.company.phone}`}
-                class="block text-primary hover:underline"
-                >{global.company.phone}</a
-              >
+                {global.footer.writeMessage}
+              </Button>
             </div>
           </div>
 
@@ -69,24 +86,10 @@ const year = new Date().getFullYear();
             >
               {global.footer.address}
             </h4>
-            <address
-              class="not-italic text-base leading-relaxed text-foreground/80"
-            >
+            <address class="not-italic text-base leading-relaxed">
               {global.company.street}<br />
-              {global.company.zip}
-              {global.company.city}<br />
-              IČO: {global.company.ico}
+              {global.company.zip},{global.company.city}
             </address>
-            <div class="pt-2">
-              <Button
-                as="a"
-                href={`mailto:${global.company.email}`}
-                variant="primary"
-                class="w-full sm:w-auto"
-              >
-                {global.footer.writeMessage}
-              </Button>
-            </div>
           </div>
         </div>
       </div>

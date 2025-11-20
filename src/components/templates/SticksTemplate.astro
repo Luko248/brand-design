@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation.astro";
 import Footer from "@/components/Footer.astro";
 import Gallery from "@/components/Gallery.astro";
 import { loadTranslations } from "@/lib/i18n";
+import { getStickersCloudinaryData } from "@/lib/cloudinary";
 
 export interface Props {
   lang: "cs" | "en";
@@ -12,71 +13,8 @@ export interface Props {
 const { lang } = Astro.props;
 const translations = await loadTranslations(lang, "pages/sticks");
 
-// Define sticks gallery images
-const sticksImages = [
-  // Autocentrum Cars Forever
-  {
-    thumb:
-      "/images/referencies/Sticks/Autocentrum Cars Forever/autocars-forever-1_480.jpg",
-    full: "/images/referencies/Sticks/Autocentrum Cars Forever/autocars-forever-1_1024.jpg",
-  },
-  {
-    thumb:
-      "/images/referencies/Sticks/Autocentrum Cars Forever/autocars-forever-2_480.jpg",
-    full: "/images/referencies/Sticks/Autocentrum Cars Forever/autocars-forever-2_1024.jpg",
-  },
-  {
-    thumb:
-      "/images/referencies/Sticks/Autocentrum Cars Forever/autocars-forever-3_480.jpg",
-    full: "/images/referencies/Sticks/Autocentrum Cars Forever/autocars-forever-3_1024.jpg",
-  },
-  // Categories and misc
-  {
-    thumb: "/images/referencies/Sticks/Category_480.jpg",
-    full: "/images/referencies/Sticks/Category_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/Category-2_480.jpg",
-    full: "/images/referencies/Sticks/Category-2_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/Category-dilna_480.jpg",
-    full: "/images/referencies/Sticks/Category-dilna_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/DPD_480.jpg",
-    full: "/images/referencies/Sticks/DPD_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/DPD2_480.jpg",
-    full: "/images/referencies/Sticks/DPD2_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/DPD3_480.jpg",
-    full: "/images/referencies/Sticks/DPD3_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/Century21_480.jpg",
-    full: "/images/referencies/Sticks/Century21_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/Century21-2_480.jpg",
-    full: "/images/referencies/Sticks/Century21-2_1024.jpg",
-  },
-  // DPMB
-  {
-    thumb: "/images/referencies/Sticks/DPMB/dpmb-40_480.jpg",
-    full: "/images/referencies/Sticks/DPMB/dpmb-40_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/DPMB/dpmb-41_480.jpg",
-    full: "/images/referencies/Sticks/DPMB/dpmb-41_1024.jpg",
-  },
-  {
-    thumb: "/images/referencies/Sticks/DPMB/DPMB-7_480.jpg",
-    full: "/images/referencies/Sticks/DPMB/DPMB-7_1024.jpg",
-  },
-];
+const { images: sticksImages, resources: sticksResources } =
+  await getStickersCloudinaryData();
 ---
 
 <BaseLayout
@@ -118,10 +56,30 @@ const sticksImages = [
           <div class="h-1 w-20 bg-primary rounded-full mx-auto mt-8"></div>
         </div>
 
-        <Gallery images={sticksImages} galleryId="sticks-gallery" />
+        {
+          sticksImages && sticksImages.length > 0 ? (
+            <Gallery images={sticksImages} galleryId="sticks-gallery" />
+          ) : (
+            <p class="text-center text-muted text-lg font-light">
+              {lang === "cs"
+                ? "Něco se pokazilo při načítání galerie. Zkuste to prosím později."
+                : "Something went wrong while loading the gallery. Please try again later."}
+            </p>
+          )
+        }
       </div>
     </section>
   </main>
+
+  <script is:inline define:vars={{ sticksResources }}>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (Array.isArray(sticksResources) && sticksResources.length) {
+        console.log("Cloudinary resources loaded for sticks gallery:", sticksResources);
+      } else {
+        console.warn("Cloudinary: No resources returned for sticks gallery.");
+      }
+    });
+  </script>
 
   <Footer lang={lang} />
 </BaseLayout>

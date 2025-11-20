@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation.astro";
 import Footer from "@/components/Footer.astro";
 import Gallery from "@/components/Gallery.astro";
 import { loadTranslations } from "@/lib/i18n";
+import { getExpositionsCloudinaryData } from "@/lib/cloudinary";
 
 export interface Props {
   lang: "cs" | "en";
@@ -12,69 +13,8 @@ export interface Props {
 const { lang } = Astro.props;
 const translations = await loadTranslations(lang, "pages/expositions");
 
-// Manually list actual images from expositions
-const expositionImages = [
-  // Anuga
-  {
-    thumb: "/images/referencies/Expositions/Anuga/Anuga-1_480.jpg",
-    full: "/images/referencies/Expositions/Anuga/Anuga-1_1024.jpg",
-    alt: "Anuga",
-  },
-  {
-    thumb: "/images/referencies/Expositions/Anuga/Anuga-2_480.jpg",
-    full: "/images/referencies/Expositions/Anuga/Anuga-2_1024.jpg",
-    alt: "Anuga",
-  },
-  {
-    thumb: "/images/referencies/Expositions/Anuga/Anuga-3_480.jpg",
-    full: "/images/referencies/Expositions/Anuga/Anuga-3_1024.jpg",
-    alt: "Anuga",
-  },
-  // Brno (Boehringer)
-  {
-    thumb: "/images/referencies/Expositions/Brno/Boehringer-1_480.jpg",
-    full: "/images/referencies/Expositions/Brno/Boehringer-1_1024.jpg",
-    alt: "Brno",
-  },
-  {
-    thumb: "/images/referencies/Expositions/Brno/Boehringer-3_480.jpg",
-    full: "/images/referencies/Expositions/Brno/Boehringer-3_1024.jpg",
-    alt: "Brno",
-  },
-  // Geneva
-  {
-    thumb: "/images/referencies/Expositions/Geneva/Geneva-1_480.jpg",
-    full: "/images/referencies/Expositions/Geneva/Geneva-1_1024.jpg",
-    alt: "Geneva",
-  },
-  {
-    thumb: "/images/referencies/Expositions/Geneva/Geneva-2_480.jpg",
-    full: "/images/referencies/Expositions/Geneva/Geneva-2_1024.jpg",
-    alt: "Geneva",
-  },
-  // Stuttgart
-  {
-    thumb: "/images/referencies/Expositions/Stuttgart/VOITEQ-1_480.jpg",
-    full: "/images/referencies/Expositions/Stuttgart/VOITEQ-1_1024.jpg",
-    alt: "Stuttgart",
-  },
-  {
-    thumb: "/images/referencies/Expositions/Stuttgart/VOITEQ-3_480.jpg",
-    full: "/images/referencies/Expositions/Stuttgart/VOITEQ-3_1024.jpg",
-    alt: "Stuttgart",
-  },
-  // Wien
-  {
-    thumb: "/images/referencies/Expositions/Wien/wien-1_480.jpg",
-    full: "/images/referencies/Expositions/Wien/wien-1_1024.jpg",
-    alt: "Wien",
-  },
-  {
-    thumb: "/images/referencies/Expositions/Wien/wien-2_480.jpg",
-    full: "/images/referencies/Expositions/Wien/wien-2_1024.jpg",
-    alt: "Wien",
-  },
-];
+const { images: expositionImages, resources: expositionResources } =
+  await getExpositionsCloudinaryData();
 ---
 
 <BaseLayout
@@ -116,10 +56,36 @@ const expositionImages = [
           <div class="h-1 w-20 bg-primary rounded-full mx-auto mt-8"></div>
         </div>
 
-        <Gallery images={expositionImages} galleryId="expositions-gallery" />
+        {
+          expositionImages && expositionImages.length > 0 ? (
+            <Gallery
+              images={expositionImages}
+              galleryId="expositions-gallery"
+            />
+          ) : (
+            <p class="text-center text-muted text-lg font-light">
+              {lang === "cs"
+                ? "Něco se pokazilo při načítání galerie. Zkuste to prosím později."
+                : "Something went wrong while loading the gallery. Please try again later."}
+            </p>
+          )
+        }
       </div>
     </section>
   </main>
+
+  <script is:inline define:vars={{ expositionResources }}>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (Array.isArray(expositionResources) && expositionResources.length) {
+        console.log(
+          "Cloudinary resources loaded for expositions gallery:",
+          expositionResources
+        );
+      } else {
+        console.warn("Cloudinary: No resources returned for expositions gallery.");
+      }
+    });
+  </script>
 
   <Footer lang={lang} />
 </BaseLayout>

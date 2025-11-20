@@ -27,9 +27,10 @@
     "email": "info@brand-design.cz",
     "contactName": "Martin Luksaj",
     "contactEmail": "luksaj@brand-design.cz",
-    "street": "Ol. Blažka",
-    "city": "Rájec-Jestřebí",
-    "zip": "679 02",
-    "ico": "3327108"
+    "street": "Pražská 1602/7",
+    "city": "Blansko 1",
+    "zip": "678 01",
+    "ico": "3327108",
+    "icoLabel": "VAT ID"
   }
 }

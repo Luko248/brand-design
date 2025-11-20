@@ -1,13 +1,24 @@
 ---
+import mapScript from "@/scripts/google-maps.ts?url";
+
 const { id = "BrandDesignMap", class: className = "" } = Astro.props;
 const apiKey =
   import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
   import.meta.env.GOOGLE_MAPS_API_KEY;
+const addressLines = ["Pražská 1602/7", "678 01 Blansko 1"];
+const addressString = addressLines.join(", ");
+const fallbackPosition = { lat: 49.363, lng: 16.6445 };
+const mapId = "bfd60e560367f0091f02eb99";
 ---
 
 <div
   data-map-container
   data-api-key={apiKey}
+  data-address-lines={addressLines.join("|")}
+  data-address-string={addressString}
+  data-fallback-lat={fallbackPosition.lat}
+  data-fallback-lng={fallbackPosition.lng}
+  data-map-id={mapId}
   id={id}
   class:list={[
     "w-full min-h-[18rem] sm:min-h-[24rem] rounded-xl overflow-hidden shadow-lg",
@@ -16,52 +27,4 @@ const apiKey =
 >
 </div>
 
-<script>
-  import { Loader } from "@googlemaps/js-api-loader";
-
-  const initMap = async (container: HTMLElement) => {
-    const apiKey = container.dataset.apiKey;
-
-    if (!apiKey) {
-      console.error(
-        "Google Maps: Missing API Key. Please set PUBLIC_GOOGLE_MAPS_API_KEY or GOOGLE_MAPS_API_KEY in your .env file."
-      );
-      return;
-    }
-
-    try {
-      const loader = new Loader({
-        apiKey,
-        version: "weekly",
-      });
-
-      const [{ Map }, { AdvancedMarkerElement }] = await Promise.all([
-        loader.importLibrary("maps"),
-        loader.importLibrary("marker"),
-      ]);
-
-      const location = { lat: 49.371588, lng: 16.644021 };
-
-      const map = new Map(container, {
-        center: location,
-        zoom: 15,
-        disableDefaultUI: true,
-        zoomControl: true,
-        mapId: "bfd60e560367f0091f02eb99", // Custom Map ID
-      });
-
-      new AdvancedMarkerElement({
-        map,
-        position: location,
-        title: "Brand DESIGN",
-      });
-    } catch (err) {
-      console.error("Google Maps load failed:", err);
-    }
-  };
-
-  // Initialize all maps
-  document.querySelectorAll("[data-map-container]").forEach((el) => {
-    initMap(el as HTMLElement);
-  });
-</script>
+<script is:inline type="module" src={mapScript}></script>
