@@ -6,6 +6,7 @@ import Hero from "@/components/Hero.astro";
 import Button from "@/components/ui/Button.astro";
 import ReferenceCard from "@/components/ReferenceCard.astro";
 import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
+import { getPrintingCloudinaryData } from "@/lib/cloudinary";
 
 export interface Props {
   lang: "cs" | "en";
@@ -14,10 +15,16 @@ export interface Props {
 const { lang } = Astro.props;
 const translations = await loadTranslations(lang, "pages/index");
 
+const { images: printingGalleries } = await getPrintingCloudinaryData();
+const printingCardImage =
+  printingGalleries && printingGalleries.length > 0
+    ? printingGalleries[0].full || printingGalleries[0].thumb
+    : "/images/backgrounds/print_bg.jpg";
+
 const referenceCards = [
   {
     href: getLocalizedPath("/printing-and-production", lang),
-    image: "/images/referencies/Print/printer-3_1024.jpg",
+    image: printingCardImage,
     ...translations.services.printing,
   },
   {

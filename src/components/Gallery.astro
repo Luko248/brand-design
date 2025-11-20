@@ -7,6 +7,12 @@ export interface Props {
     thumb: string;
     full: string;
     alt?: string;
+    groupId?: string;
+    groupTitle?: string;
+    extraItems?: Array<{
+      full: string;
+      alt?: string;
+    }>;
   }>;
   galleryId: string;
 }
@@ -17,26 +23,47 @@ const { images, galleryId } = Astro.props;
 <div class="py-12">
   <div class="columns-1 sm:columns-2 lg:columns-3 gap-6">
     {
-      images.map((img) => (
-        <a
-          href={img.full}
-          data-fancybox={galleryId}
-          data-caption={img.alt || ""}
-          class="group relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-6"
-        >
-          <img
-            src={img.thumb}
-            alt={img.alt || ""}
-            loading="lazy"
-            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
-          />
-          <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <IconButton as="div" title={img.alt || "Zobrazit"}>
-              <MagnifyIcon class="w-6 h-6" />
-            </IconButton>
+      images.map((img) => {
+        const groupId = img.groupId || galleryId;
+        const caption = img.groupTitle || img.alt || "";
+
+        return (
+          <div
+            class="group relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-6"
+          >
+            <a
+              href={img.full}
+              data-fancybox={groupId}
+              data-caption={caption}
+              class="block"
+            >
+              <img
+                src={img.thumb}
+                alt={caption}
+                loading="lazy"
+                class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <IconButton as="div" title={caption || "Zobrazit"}>
+                  <MagnifyIcon class="w-6 h-6" />
+                </IconButton>
+              </div>
+            </a>
+
+            {
+              img.extraItems &&
+                img.extraItems.map((extra) => (
+                  <a
+                    href={extra.full}
+                    data-fancybox={groupId}
+                    data-caption={extra.alt || caption}
+                    class="hidden"
+                  />
+                ))
+            }
           </div>
-        </a>
-      ))
+        );
+      })
     }
   </div>
 </div>
