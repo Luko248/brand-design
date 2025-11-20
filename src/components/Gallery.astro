@@ -28,9 +28,7 @@ const { images, galleryId } = Astro.props;
         const caption = img.groupTitle || img.alt || "";
 
         return (
-          <div
-            class="group relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-6"
-          >
+          <div class="group relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-6">
             <a
               href={img.full}
               data-fancybox={groupId}
@@ -41,6 +39,7 @@ const { images, galleryId } = Astro.props;
                 src={img.thumb}
                 alt={caption}
                 loading="lazy"
+                decoding="async"
                 class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
               />
               <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -50,17 +49,15 @@ const { images, galleryId } = Astro.props;
               </div>
             </a>
 
-            {
-              img.extraItems &&
-                img.extraItems.map((extra) => (
-                  <a
-                    href={extra.full}
-                    data-fancybox={groupId}
-                    data-caption={extra.alt || caption}
-                    class="hidden"
-                  />
-                ))
-            }
+            {img.extraItems &&
+              img.extraItems.map((extra) => (
+                <a
+                  href={extra.full}
+                  data-fancybox={groupId}
+                  data-caption={extra.alt || caption}
+                  class="hidden"
+                />
+              ))}
           </div>
         );
       })
