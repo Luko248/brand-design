@@ -164,25 +164,22 @@
   .text-secondary {
     color: var(--color-secondary);
   }
-  .bg-parallax-hero {
+  .bg-parallax {
     background-image:
       linear-gradient(
         135deg,
-        light-dark(var(--color-hero-grad-1), var(--color-hero-grad-1-dark)),
-        light-dark(var(--color-hero-grad-2), var(--color-hero-grad-2-dark))
+        var(--color-hero-grad-1),
+        var(--color-hero-grad-2)
       ),
       image-set(
-        url("/images/backgrounds/paralax.avif") 1280w,
+        url("/images/backgrounds/paralax.avif"),
         url("/images/backgrounds/paralax_768.avif") 768w,
         url("/images/backgrounds/paralax_560.avif") 560w
       );
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-color: light-dark(
-      var(--color-hero-backdrop-light),
-      var(--color-hero-backdrop-dark)
-    );
+    background-color: var(--color-hero-backdrop-light);
   }
   .border-outline {
     border-color: var(--color-outline);
