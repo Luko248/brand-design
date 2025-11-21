@@ -280,10 +280,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-0YsrEptGg2: auto;
-      --toolwind-toggle-XCEETGWTCt: transparent;
-      --toolwind-toggle-BYMjGBmwIq: inherit;
-      --toolwind-toggle-gozMW5GZTM: 0px;
+      --toolwind-toggle-eH13D8FRfo: auto;
+      --toolwind-toggle-myq8O8OqJn: transparent;
+      --toolwind-toggle-T5h6OtFVM4: inherit;
+      --toolwind-toggle-J52O3m52gV: 0px;
     }
   }
   .absolute {
@@ -2521,7 +2521,7 @@
     opacity: 0;
     animation: reveal linear both;
     animation-timeline: view();
-    animation-range: entry 10% cover 0%;
+    animation-range: entry 0% entry 100%;
   }
   @media (prefers-reduced-motion: reduce) {
     .animate-reveal, .animate-reveal-footer {
@@ -2549,10 +2549,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-0YsrEptGg2, 0px);
-    background-color: var(--toolwind-toggle-XCEETGWTCt, canvas);
-    color: var(--toolwind-toggle-BYMjGBmwIq, canvastext);
-    margin: var(--toolwind-toggle-gozMW5GZTM, auto);
+    inset: var(--toolwind-toggle-eH13D8FRfo, 0px);
+    background-color: var(--toolwind-toggle-myq8O8OqJn, canvas);
+    color: var(--toolwind-toggle-T5h6OtFVM4, canvastext);
+    margin: var(--toolwind-toggle-J52O3m52gV, auto);
   }
 }
 @property --tw-translate-x {
