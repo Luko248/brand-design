@@ -282,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-LgANx1ad5E: auto;
-      --toolwind-toggle-VM6a88KL0b: transparent;
-      --toolwind-toggle-4paIzUF44I: inherit;
-      --toolwind-toggle-9AzuylB0A5: 0px;
+      --toolwind-toggle-HganjfZ26G: auto;
+      --toolwind-toggle-ZS2j2IVy1D: transparent;
+      --toolwind-toggle-aAbxIzElJt: inherit;
+      --toolwind-toggle-YFT82eifDD: 0px;
     }
   }
   .absolute {
@@ -2671,7 +2671,8 @@
   }
   @media (width <= 768px) {
     .bg-parallax::before {
-      background-attachment: scroll;
+      background-attachment: initial;
+      background-position: center;
     }
   }
   .bg-parallax > * {
@@ -2732,10 +2733,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-LgANx1ad5E, 0px);
-    background-color: var(--toolwind-toggle-VM6a88KL0b, canvas);
-    color: var(--toolwind-toggle-4paIzUF44I, canvastext);
-    margin: var(--toolwind-toggle-9AzuylB0A5, auto);
+    inset: var(--toolwind-toggle-HganjfZ26G, 0px);
+    background-color: var(--toolwind-toggle-ZS2j2IVy1D, canvas);
+    color: var(--toolwind-toggle-aAbxIzElJt, canvastext);
+    margin: var(--toolwind-toggle-YFT82eifDD, auto);
   }
 }
 @property --tw-translate-x {
