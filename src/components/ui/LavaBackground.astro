@@ -51,6 +51,7 @@
   #lava-container {
     --cursor-x: 0.5;
     --cursor-y: 0.5;
+    --cursor-boost: 1.35; /* Slightly amplify cursor response for more motion */
   }
 
   .blob {
@@ -63,8 +64,8 @@
     /* The translate uses calc to offset based on cursor position relative to center */
     /* Movement factor (e.g., 5vh) determines how much they react */
     transform: translate(
-      calc((var(--cursor-x) - 0.5) * var(--move-factor, 5vh)),
-      calc((var(--cursor-y) - 0.5) * var(--move-factor, 5vh))
+      calc((var(--cursor-x) - 0.5) * var(--move-factor, 5vh) * var(--cursor-boost, 1)),
+      calc((var(--cursor-y) - 0.5) * var(--move-factor, 5vh) * var(--cursor-boost, 1))
     );
     transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth dampening */
     will-change: transform;
