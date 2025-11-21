@@ -281,10 +281,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-tnjvH3kUMe: auto;
-      --toolwind-toggle-uxtS6aXne0: transparent;
-      --toolwind-toggle-VARHS5dPut: inherit;
-      --toolwind-toggle-bCRREC5lP0: 0px;
+      --toolwind-toggle-3QfGn9LNTJ: auto;
+      --toolwind-toggle-bhQmQniI5E: transparent;
+      --toolwind-toggle-7ZU7fzoFmd: inherit;
+      --toolwind-toggle-fH1vSGGZsT: 0px;
     }
   }
   .absolute {
@@ -1359,6 +1359,9 @@
     --tw-ease: var(--ease-standard);
     transition-timing-function: var(--ease-standard);
   }
+  .\[scroll-marker-group\:after\] {
+    scroll-marker-group: after;
+  }
   .anchor\/nav-references {
     anchor-name: --tw-anchor_nav-references;
   }
@@ -2354,6 +2357,12 @@
       background-color: var(--color-primary);
     }
   }
+  .\[scroll-marker\]\:content-\[\'\'\] {
+    &:is(scroll-marker) {
+      --tw-content: '';
+      content: var(--tw-content);
+    }
+  }
 }
 @layer theme, base, components, utilities;
 @layer theme;
@@ -2612,10 +2621,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-tnjvH3kUMe, 0px);
-    background-color: var(--toolwind-toggle-uxtS6aXne0, canvas);
-    color: var(--toolwind-toggle-VARHS5dPut, canvastext);
-    margin: var(--toolwind-toggle-bCRREC5lP0, auto);
+    inset: var(--toolwind-toggle-3QfGn9LNTJ, 0px);
+    background-color: var(--toolwind-toggle-bhQmQniI5E, canvas);
+    color: var(--toolwind-toggle-7ZU7fzoFmd, canvastext);
+    margin: var(--toolwind-toggle-fH1vSGGZsT, auto);
   }
 }
 @property --tw-translate-x {
