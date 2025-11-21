@@ -91,13 +91,23 @@ export const detectLocale = (url: URL): Locale => {
 /**
  * Get localized path
  * Converts path to localized path:
- * - If locale is 'cs': return /path
- * - If locale is 'en': return /en/path
- * Note: Astro's base config (/brand-design) is automatically prepended
+ * - If locale is 'cs': return /brand-design/path
+ * - If locale is 'en': return /brand-design/en/path
+ * Automatically prepends Astro's base path
  */
 export const getLocalizedPath = (path: string, locale: Locale): string => {
+  const baseUrl = import.meta.env.BASE_URL;
+  const base = baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
+
   // Ensure path starts with /
-  const cleanPath = path.startsWith("/") ? path : "/" + path;
+  let cleanPath = path.startsWith("/") ? path : "/" + path;
+
+  // Strip base path if present (to avoid duplication)
+  if (cleanPath.startsWith(base)) {
+    cleanPath = cleanPath.slice(base.length);
+    // Ensure it still starts with /
+    if (!cleanPath.startsWith("/")) cleanPath = "/" + cleanPath;
+  }
 
   // Strip existing locale prefix if present
   const pathWithoutLocale = cleanPath
@@ -106,10 +116,13 @@ export const getLocalizedPath = (path: string, locale: Locale): string => {
 
   if (locale === "en") {
     // Avoid double slash
-    if (pathWithoutLocale === "/") return "/en/";
-    return `/en${pathWithoutLocale}`;
+    if (pathWithoutLocale === "/") return `${base}/en/`;
+    return `${base}/en${pathWithoutLocale}`;
   }
-  return pathWithoutLocale;
+
+  // For default locale (cs)
+  if (pathWithoutLocale === "/") return `${base}/`;
+  return `${base}${pathWithoutLocale}`;
 };
 
 /**
