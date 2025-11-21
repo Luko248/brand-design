@@ -24,22 +24,22 @@
     "eyebrowLabel": "Service",
     "printing": {
       "title": "Printing / Production",
-      "description": "Our technology allows us to meet <b>state-of-the-art standards</b>. We provide production and digital printing of stickers, contour cutting, full-coverage printing of films, posters and banners. We also produce 3D logos and offer textile printing.",
+      "description": "Production and digital printing of stickers, films, posters and banners with precise contour cutting.",
       "button": "Show gallery"
     },
     "expositions": {
       "title": "Expositions",
-      "description": "We provide a complete service from the design and production of trade fair graphics to on-site installation <b>worldwide</b>.",
+      "description": "We design, produce and install trade fair graphics <b>worldwide</b>.",
       "button": "Show gallery"
     },
     "sticks": {
       "title": "Sticks",
-      "description": "We create large-scale advertising graphics – car, vehicle and shop window stickers – from graphic design through to installation. Interested in a wrap in Brno? <b>Contact us</b>.",
+      "description": "Large-format wraps for cars, vehicles and shopfronts from design to installation.",
       "button": "Show gallery"
     }
   },
   "partners": {
     "title": "Partners",
-    "text": "We actively cooperate with Mistry Mont s.r.o."
+    "text": "We actively cooperate with <a href=\"https://mistrymont.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary font-semibold hover:underline\">Mistry Mont s.r.o.</a>."
   }
 }

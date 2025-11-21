@@ -96,7 +96,7 @@ const referenceCards = [
 
     <!-- Banner Parallax -->
     <section
-      class="page-section bg-parallax py-32 flex items-center justify-center overflow-hidden"
+      class="page-section bg-parallax py-32 flex items-center justify-center overflow-hidden backdrop-blur-sm"
     >
       <div
         class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8"
@@ -163,19 +163,21 @@ const referenceCards = [
           {translations.partners.title}
         </h2>
 
-        <div
-          class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 hover:opacity-100 transition-opacity duration-500"
-        >
-          <p class="text-xl font-light">{translations.partners.text}</p>
+        <div class="flex flex-col items-center gap-6 opacity-100 text-center">
+          <p class="text-xl font-light" set:html={translations.partners.text} />
           <a
-            href="https://www.mistrymont.cz/"
+            href="https://mistrymont.com/"
             target="_blank"
-            class="transition-transform duration-300 hover:scale-110"
+            rel="noopener noreferrer"
+            class="mistry-logo-wrapper transition-transform duration-300 hover:scale-110"
           >
+            <span class="sr-only">Mistry Mont</span>
             <img
-              src="/images/logos/mistry-mont-logo.svg"
+              src="/images/logos/mistry-mont-logo.webp"
               alt="Mistry Mont"
-              class="h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+              loading="lazy"
+              decoding="async"
+              class="mistry-logo-img filter invert dark:invert-0"
             />
           </a>
         </div>
@@ -185,3 +187,13 @@ const referenceCards = [
 
   <Footer lang={lang} />
 </BaseLayout>
+
+<style>
+  .mistry-logo-img {
+    display: block;
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    transition: filter 200ms ease;
+  }
+</style>

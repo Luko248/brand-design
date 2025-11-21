@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Navigation from "@/components/Navigation.astro";
 import Footer from "@/components/Footer.astro";
 import Gallery from "@/components/Gallery.astro";
+import Button from "@/components/ui/Button.astro";
 import SadFaceIcon from "@/components/icons/SadFaceIcon.astro";
 import { loadTranslations } from "@/lib/i18n";
 import { getExpositionsCloudinaryData } from "@/lib/cloudinary";
@@ -51,10 +52,19 @@ const { images: expositionImages, resources: expositionResources } =
     <section class="py-16 md:py-24 bg-background">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-16">
-          <p class="text-xl text-muted font-light leading-relaxed">
-            {translations.description}
-          </p>
-          <div class="h-1 w-20 bg-primary rounded-full mx-auto mt-8"></div>
+          <div class="h-1 w-20 bg-primary rounded-full mx-auto mb-10"></div>
+          <p
+            class="text-xl text-muted font-light leading-relaxed space-y-4"
+            set:html={translations.description}
+          />
+          <Button
+            as="a"
+            href="mailto:info@brand-design.cz"
+            variant="primary"
+            class="mt-8"
+          >
+            {translations.ctaLabel}
+          </Button>
         </div>
 
         {

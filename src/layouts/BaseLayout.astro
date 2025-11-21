@@ -12,7 +12,22 @@ const { title, description, lang = "cs" } = Astro.props;
 
 const global = await loadTranslations(lang, "global");
 const pageTitle = title || global.site.title;
-const pageDescription = description || global.site.description;
+
+const stripHtml = (value: string) => value.replace(/<[^>]+>/g, "");
+const truncate = (value: string, limit: number) =>
+  value.length > limit ? `${value.slice(0, limit - 3).trimEnd()}...` : value;
+
+const rawDescription = description || global.site.description;
+const cleanDescription =
+  typeof rawDescription === "string"
+    ? stripHtml(rawDescription)
+    : stripHtml(global.site.description);
+const metaTitle = truncate(pageTitle, 60);
+const metaDescription = truncate(cleanDescription, 155);
+const pageKeywords =
+  lang === "cs"
+    ? "brand design, grafické služby, velkoplošný tisk, digitální tisk, 3D loga, veletržní grafika, polepy aut, polepy výloh, výstavní expozice, Brno"
+    : "brand design, graphic services, large-format printing, digital printing, 3D logos, trade fair graphics, vehicle wraps, shopfront graphics, exhibition booth design, Brno";
 
 const basePath = Astro.url.pathname + Astro.url.search;
 const csUrl = getLocalizedPath(basePath, "cs");
@@ -33,13 +48,10 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
       content="width=device-width, initial-scale=1.0, maximum-scale=1"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{pageTitle}</title>
+    <title>{metaTitle}</title>
     <meta name="author" content="Lukáš Chylík" />
-    <meta name="description" content={pageDescription} />
-    <meta
-      name="keywords"
-      content="Návrg Loga Brno, Logo Brno, Návrh designu, Design Brno, Konferenční stánky, Návrh brandu, Brand, Design, Velkoplošní grafika, Polepy na auta"
-    />
+    <meta name="description" content={metaDescription} />
+    <meta name="keywords" content={pageKeywords} />
     <meta
       name="google-site-verification"
       content="WlojpglePdITx8NvvfRNi0UoxVJ5Ft-Yy0G-QUHjUs0"
@@ -76,17 +88,17 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
 
     <!-- Schema.org markup -->
     <meta itemprop="name" content={global.company.name} />
-    <meta itemprop="description" content={pageDescription} />
+    <meta itemprop="description" content={metaDescription} />
     <meta itemprop="image" content="/images/meta/meta-image-google.png" />
 
     <!-- Open Graph data -->
-    <meta property="og:title" content={global.company.name} />
+    <meta property="og:title" content={metaTitle} />
     <meta property="og:image" content="/images/meta/meta-image-fb.png" />
-    <meta property="og:description" content={pageDescription} />
+    <meta property="og:description" content={metaDescription} />
 
     <!-- Twitter Card data -->
-    <meta name="twitter:title" content={global.company.name} />
-    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content="/images/meta/meta-image-twitter.png" />
 
     <PerformanceOptimizations />
@@ -140,7 +152,7 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
         "@type": "LocalBusiness",
         "@id": `${siteOrigin}/#localbusiness`,
         name: global.company.name,
-        description: pageDescription,
+        description: metaDescription,
         url: siteOrigin + "/",
         image: logoUrl,
         telephone: global.company.phone,

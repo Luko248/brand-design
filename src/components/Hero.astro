@@ -54,7 +54,7 @@ const { translations } = Astro.props;
         <img
           src="/images/logos/logo.svg"
           alt="Brand Design"
-          class="h-24 md:h-32 lg:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)]"
+          class="h-24 md:h-32 lg:h-40 2xl:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)]"
         />
       </div>
 
@@ -62,21 +62,21 @@ const { translations } = Astro.props;
       <div class="space-y-8 max-w-4xl mx-auto">
         <h1 class="sr-only">{translations.title}</h1>
         <div
-          class="font-display font-light text-2xl md:text-4xl lg:text-6xl text-foreground leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
+          class="font-display font-light text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-foreground leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
           set:html={translations.subtitle}
         />
       </div>
 
       <!-- Buttons -->
       <div
-        class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6 w-full max-w-md sm:max-w-none mx-auto"
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6 w-full mx-auto"
       >
         <Button
           as="a"
           href="#contact"
           variant="primary"
           size="lg"
-          class="sm:w-auto min-w-[200px] text-lg uppercase tracking-widest shadow-[0_0_25px_rgba(115,48,138,0.5)] hover:shadow-[0_0_40px_rgba(115,48,138,0.7)] transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+          class="w-64 sm:w-auto min-w-[200px] text-lg uppercase tracking-widest shadow-[0_0_25px_rgba(115,48,138,0.5)] hover:shadow-[0_0_40px_rgba(115,48,138,0.7)] transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
           {translations.buttonPrimary}
         </Button>
@@ -85,7 +85,7 @@ const { translations } = Astro.props;
           href="#references"
           variant="outline"
           size="lg"
-          class="sm:w-auto min-w-[200px] text-lg uppercase tracking-widest backdrop-blur-sm border-foreground/30 text-foreground hover:border-foreground hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+          class="w-64 sm:w-auto min-w-[200px] text-lg uppercase tracking-widest backdrop-blur-sm border-foreground/30 text-foreground hover:border-foreground hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
           {translations.buttonSecondary}
         </Button>

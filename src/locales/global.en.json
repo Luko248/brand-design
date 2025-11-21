@@ -10,7 +10,9 @@
     "contact": "Contact",
     "themeToggle": "Toggle color theme",
     "langEn": "En",
-    "langCs": "Cz"
+    "langCs": "Cz",
+    "openMenu": "Open main menu",
+    "closeMenu": "Close menu"
   },
   "footer": {
     "contact": "Contact",

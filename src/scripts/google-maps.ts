@@ -67,14 +67,25 @@ const initMap = async (container: HTMLElement) => {
       center: position,
       zoom: 15,
       disableDefaultUI: true,
-      zoomControl: true,
+      zoomControl: false,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
       mapId,
     });
+
+    const markerContent = document.createElement("img");
+    markerContent.src = "/images/icons/marker.svg";
+    markerContent.alt = "Brand Design Location";
+    // Optional: Add a class for styling if needed, e.g. w-10 h-10 object-contain
+    markerContent.className =
+      "w-12 h-12 drop-shadow-lg cursor-pointer hover:scale-110 transition-transform duration-200";
 
     const marker = new AdvancedMarkerElement({
       map,
       position,
       title: addressString || "Brand Design",
+      content: markerContent,
     });
 
     const infoWindow = new InfoWindow({

@@ -24,22 +24,22 @@
     "eyebrowLabel": "Služba",
     "printing": {
       "title": "Tisk / Výroba",
-      "description": "Naše technologické vybavení nám umožňuje splnit <b>nejmodernější trendy</b>. Zajišťujeme výrobu a digitální tisk samolepek, tisk s ořezem, celoplošný tisk fólií, plakátů a bannerů. Vyrábíme 3D loga a zajišťujeme potisk textilu.",
+      "description": "Výroba a digitální tisk samolepek, fólií, plakátů a bannerů s precizním ořezem.",
       "button": "Zobrazit galerii"
     },
     "expositions": {
       "title": "Výstavy",
-      "description": "Poskytujeme komplexní servis od návrhu a výroby veletržní grafiky až po montáž po <b>celém světě</b>.",
+      "description": "Navrhujeme a instalujeme veletržní grafiku po <b>celém světě</b>.",
       "button": "Zobrazit galerii"
     },
     "sticks": {
       "title": "Polepy",
-      "description": "Provádíme velkoplošné reklamní polepy – polepy aut, vozidel i výloh – od grafického návrhu až po samotné nalepení. Máte zájem o polep v Brně? <b>Kontaktujte nás</b>.",
+      "description": "Polepy aut, vozidel i výloh od návrhu až po nalepení.",
       "button": "Zobrazit galerii"
     }
   },
   "partners": {
     "title": "Partneři",
-    "text": "Aktivně spolupracujeme s firmou Mistry Mont s.r.o."
+    "text": "Aktivně spolupracujeme s firmou <a href=\"https://mistrymont.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary font-semibold hover:underline\">Mistry Mont s.r.o.</a>."
   }
 }

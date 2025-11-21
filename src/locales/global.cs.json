@@ -10,7 +10,9 @@
     "contact": "Kontakt",
     "themeToggle": "Přepnout barevné téma",
     "langEn": "En",
-    "langCs": "Cz"
+    "langCs": "Cz",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu"
   },
   "footer": {
     "contact": "Kontakt",
