@@ -18,7 +18,7 @@ const { items, class: className, ...props } = Astro.props;
 <ul
   class:list={[
     "relative flex w-full overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none",
-    "[scroll-marker-group:after] [&::scroll-marker-group]:flex [&::scroll-marker-group]:justify-center [&::scroll-marker-group]:gap-3 [&::scroll-marker-group]:mt-6 animate-reveal",
+    "[scroll-marker-group:after] [&::scroll-marker-group]:flex [&::scroll-marker-group]:justify-center [&::scroll-marker-group]:gap-3 [&::scroll-marker-group]:mt-6",
     className,
   ]}
   {...props}
