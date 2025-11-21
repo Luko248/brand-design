@@ -94,7 +94,7 @@ const referenceCards = [
 <BaseLayout lang={lang}>
   <Navigation lang={lang} currentPath="/" isHomepage={true} />
 
-  <main>
+  <main id="main-content">
     <!-- Hero Section -->
     <section id="home" class="page-section">
       <Hero translations={translations.hero} />
@@ -124,8 +124,8 @@ const referenceCards = [
           <div
             class="order-1 md:order-1 space-y-8 text-center md:text-left animate-reveal"
           >
-            <!-- Hidden H1 for SEO -->
-            <h1 class="sr-only" set:html={translations.about.mainTitle} />
+            <!-- Hidden H2 for SEO structure -->
+            <h2 class="sr-only" set:html={translations.about.mainTitle} />
 
             <SectionHeader
               label={translations.about.sectionLabel}
@@ -205,7 +205,9 @@ const referenceCards = [
     </section>
 
     <!-- Partners -->
-    <section class="page-section py-16 md:py-20 bg-surface border-t border-outline/10">
+    <section
+      class="page-section py-16 md:py-20 bg-surface border-t border-outline/10"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div
           class="flex flex-col items-center text-center gap-8 opacity-100 animate-reveal"

@@ -210,6 +210,14 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
   <body
     class="bg-background text-foreground transition-colors duration-[--duration-300]"
   >
+    <!-- Skip to content link for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-1000 focus:top-4 focus:left-4 focus:px-6 focus:py-3 focus:bg-background focus:text-foreground focus:border focus:border-primary focus:rounded-lg focus:shadow-xl focus:font-bold focus:outline-none focus:ring-2 focus:ring-primary"
+    >
+      {lang === "cs" ? "Přeskočit na obsah" : "Skip to content"}
+    </a>
+
     <slot />
   </body>
 </html>

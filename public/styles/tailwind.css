@@ -48,6 +48,7 @@
     --leading-snug: 1.375;
     --leading-relaxed: 1.625;
     --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);
@@ -281,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-zHQGoyuIbC: auto;
-      --toolwind-toggle-hQnnOcNzCu: transparent;
-      --toolwind-toggle-ny0Dr5unwM: inherit;
-      --toolwind-toggle-afDrxwsvgQ: 0px;
+      --toolwind-toggle-W2pAKN9Dpr: auto;
+      --toolwind-toggle-XmZYi1YeMv: transparent;
+      --toolwind-toggle-2rnxzDd3Sc: inherit;
+      --toolwind-toggle-tDDTXFA1HD: 0px;
     }
   }
   .absolute {
@@ -1605,6 +1606,86 @@
       }
     }
   }
+  .focus\:not-sr-only {
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      clip-path: none;
+      white-space: normal;
+    }
+  }
+  .focus\:absolute {
+    &:focus {
+      position: absolute;
+    }
+  }
+  .focus\:top-4 {
+    &:focus {
+      top: var(--spacing-4);
+    }
+  }
+  .focus\:left-4 {
+    &:focus {
+      left: var(--spacing-4);
+    }
+  }
+  .focus\:z-1000 {
+    &:focus {
+      z-index: 1000;
+    }
+  }
+  .focus\:rounded-lg {
+    &:focus {
+      border-radius: var(--radius-lg);
+    }
+  }
+  .focus\:border {
+    &:focus {
+      border-style: var(--tw-border-style);
+      border-width: 1px;
+    }
+  }
+  .focus\:border-primary {
+    &:focus {
+      border-color: var(--color-primary);
+    }
+  }
+  .focus\:bg-background {
+    &:focus {
+      background-color: var(--color-background);
+    }
+  }
+  .focus\:px-6 {
+    &:focus {
+      padding-inline: var(--spacing-6);
+    }
+  }
+  .focus\:py-3 {
+    &:focus {
+      padding-block: var(--spacing-3);
+    }
+  }
+  .focus\:font-bold {
+    &:focus {
+      --tw-font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+  .focus\:text-foreground {
+    &:focus {
+      color: var(--color-foreground);
+    }
+  }
+  .focus\:shadow-xl {
+    &:focus {
+      --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
   .focus\:ring-2 {
     &:focus {
       --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
@@ -2341,12 +2422,6 @@
       background-color: var(--color-primary);
     }
   }
-  .\[scroll-marker\]\:content-\[\'\'\] {
-    &:is(scroll-marker) {
-      --tw-content: '';
-      content: var(--tw-content);
-    }
-  }
 }
 @layer theme, base, components, utilities;
 @layer theme;
@@ -2572,12 +2647,15 @@
     animation: reveal linear both;
     animation-timeline: view();
     animation-range: entry -10svb cover 30%;
+    will-change: opacity, transform;
   }
   .animate-reveal-footer {
     opacity: 0;
     animation: reveal linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 100%;
+    will-change: opacity, transform;
+    content-visibility: auto;
   }
   @media (prefers-reduced-motion: reduce) {
     .animate-reveal, .animate-reveal-footer {
@@ -2605,10 +2683,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-zHQGoyuIbC, 0px);
-    background-color: var(--toolwind-toggle-hQnnOcNzCu, canvas);
-    color: var(--toolwind-toggle-ny0Dr5unwM, canvastext);
-    margin: var(--toolwind-toggle-afDrxwsvgQ, auto);
+    inset: var(--toolwind-toggle-W2pAKN9Dpr, 0px);
+    background-color: var(--toolwind-toggle-XmZYi1YeMv, canvas);
+    color: var(--toolwind-toggle-2rnxzDd3Sc, canvastext);
+    margin: var(--toolwind-toggle-tDDTXFA1HD, auto);
   }
 }
 @property --tw-translate-x {

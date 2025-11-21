@@ -56,7 +56,7 @@ const bgImage560 =
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="py-16 md:py-24 bg-background">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto text-center mb-16 animate-reveal">
@@ -114,8 +114,6 @@ const bgImage560 =
 
 <style define:vars={{ bgImage, bgImage768, bgImage560 }}>
   .bg-parallax-printing::before {
-    background-position: center bottom;
-    background-size: cover;
     background-image:
       linear-gradient(
         135deg,
@@ -123,7 +121,10 @@ const bgImage560 =
         var(--color-hero-grad-2)
       ),
       url(var(--bgImage));
+    background-position: center bottom;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   @media (max-width: 768px) {
@@ -135,8 +136,6 @@ const bgImage560 =
           var(--color-hero-grad-2)
         ),
         url(var(--bgImage768));
-      background-size: contain;
-      background-position: center;
     }
   }
 
@@ -149,8 +148,6 @@ const bgImage560 =
           var(--color-hero-grad-2)
         ),
         url(var(--bgImage560));
-      background-size: contain;
-      background-position: center;
     }
   }
 </style>

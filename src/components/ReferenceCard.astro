@@ -48,7 +48,7 @@ const {
   <!-- Gradient Overlay -->
   <div
     class="pointer-events-none absolute inset-0 z-20"
-    style="background-image: linear-gradient(to bottom, oklch(0.16 0.035 285 / 0.2), oklch(0.16 0.035 285 / 0.5), oklch(0.16 0.035 285 / 0.85))"
+    style="background-image: linear-gradient(to bottom, oklch(0.16 0.035 285 / 0.3), oklch(0.16 0.035 285 / 0.6), oklch(0.16 0.035 285 / 0.95))"
   >
   </div>
 
@@ -71,7 +71,7 @@ const {
     </h3>
 
     <!-- Description -->
-    <div class="pt-3 mb-2">
+    <div class="pt-3">
       <p
         class="text-white/90 text-sm leading-relaxed line-clamp-3 font-light"
         set:html={description}
@@ -80,7 +80,7 @@ const {
 
     <!-- Button Wrapper -->
     <div
-      class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 group-hover:grid-rows-[1fr] card-button-wrapper"
+      class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 group-hover:grid-rows-[1fr] card-button-wrapper mt-4"
     >
       <div class="overflow-hidden">
         <span
@@ -97,7 +97,7 @@ const {
 </a>
 
 <style>
-  @media (hover: none) {
+  @media (hover: none), (pointer: coarse) {
     .card-button-wrapper {
       grid-template-rows: 1fr !important;
     }
