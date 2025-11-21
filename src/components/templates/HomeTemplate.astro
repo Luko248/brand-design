@@ -4,15 +4,72 @@ import Navigation from "@/components/Navigation.astro";
 import Footer from "@/components/Footer.astro";
 import Hero from "@/components/Hero.astro";
 import Button from "@/components/ui/Button.astro";
+import Carousel from "@/components/ui/Carousel.astro";
 import ReferenceCard from "@/components/ReferenceCard.astro";
 import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
+import {
+  getPrintingCloudinaryData,
+  getExpositionsCloudinaryData,
+  getStickersCloudinaryData,
+  type CloudinaryGalleryData,
+} from "@/lib/cloudinary";
 
 export interface Props {
   lang: "cs" | "en";
 }
 
 const { lang } = Astro.props;
-const translations = await loadTranslations(lang, "pages/index");
+const [pageTranslations, globalTranslations] = await Promise.all([
+  loadTranslations(lang, "pages/index"),
+  loadTranslations(lang, "global"),
+]);
+
+const translations = { ...globalTranslations, ...pageTranslations };
+
+// Fetch Cloudinary Data
+const printingData = await getPrintingCloudinaryData();
+const expositionsData = await getExpositionsCloudinaryData();
+const sticksData = await getStickersCloudinaryData();
+
+const findImage = (data: CloudinaryGalleryData, groupId: string) =>
+  data.images.find((img) => img.groupId === groupId);
+
+const selectedImages = [
+  {
+    data: findImage(printingData, "printing-3d-logo"),
+    fallbackImage: "/images/cards/printing.avif",
+    page: "/printing-and-production",
+    titleKey: "printing",
+  },
+  {
+    data: findImage(expositionsData, "expositions-biofach-2019-nurnberg"),
+    fallbackImage: "/images/cards/expositions.avif",
+    page: "/expositions",
+    titleKey: "expositions",
+  },
+  {
+    data: findImage(sticksData, "stickers-kangaroo"),
+    fallbackImage: "/images/cards/stickers.avif",
+    page: "/sticks",
+    titleKey: "sticks",
+  },
+];
+
+const carouselItems = selectedImages.map((item) => {
+  const title =
+    item.data?.groupTitle ||
+    translations.services[item.titleKey as keyof typeof translations.services]
+      .title;
+  const image = item.data?.full || item.fallbackImage;
+  const hash = item.data?.groupId ? `#${item.data.groupId}` : "";
+
+  return {
+    image,
+    title,
+    href: `${getLocalizedPath(item.page, lang)}${hash}`,
+    buttonLabel: translations.nav.references,
+  };
+});
 
 const referenceCards = [
   {
@@ -49,23 +106,21 @@ const referenceCards = [
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <!-- Logo visual -->
-          <div class="flex justify-center md:justify-start order-2 md:order-1">
-            <div class="relative w-[80%] max-w-md aspect-square">
+          <!-- Carousel Visual -->
+          <div
+            class="flex justify-center md:justify-end order-2 md:order-2 w-full"
+          >
+            <div class="relative w-full max-w-md mx-auto md:mx-0 aspect-square">
               <div
-                class="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse"
+                class="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse -z-10"
               >
               </div>
-              <img
-                src="/images/logos/logo-black.svg"
-                alt="Brand Design Logo"
-                class="relative z-10 w-full h-auto drop-shadow-2xl dark:invert transition-all duration-500 hover:scale-105"
-              />
+              <Carousel items={carouselItems} />
             </div>
           </div>
 
           <!-- Text Content -->
-          <div class="order-1 md:order-2 space-y-8 text-center md:text-left">
+          <div class="order-1 md:order-1 space-y-8 text-center md:text-left">
             <!-- Hidden H1 for SEO -->
             <h1 class="sr-only" set:html={translations.about.mainTitle} />
 
