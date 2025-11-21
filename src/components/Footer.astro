@@ -4,6 +4,7 @@ import GoogleMaps from "./GoogleMaps.astro";
 import Button from "@/components/ui/Button.astro";
 import EnvelopeIcon from "./icons/EnvelopeIcon.astro";
 import PhoneIcon from "./icons/PhoneIcon.astro";
+import SendIcon from "./icons/SendIcon.astro";
 
 export interface Props {
   lang: "cs" | "en";
@@ -20,7 +21,7 @@ const year = new Date().getFullYear();
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
       <!-- Map -->
       <div
-        class="w-full h-full min-h-[300px] rounded-3xl overflow-hidden shadow-lg ring-1 ring-black/5 dark:ring-white/10 order-2 lg:order-0"
+        class="w-full h-full min-h-[300px] rounded-xl overflow-hidden border border-indigo-200 hover:border-indigo-400 dark:border-white/40 dark:hover:border-white shadow-sm hover:shadow-xl transition-all duration-300 order-2 lg:order-0"
       >
         <GoogleMaps
           id="BrandDesignMap"
@@ -39,7 +40,38 @@ const year = new Date().getFullYear();
           <div class="h-1 w-24 bg-primary rounded-full"></div>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-10">
+        <div class="grid sm:grid-cols-2 gap-10 lg:gap-20">
+          <!-- Address -->
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <h4
+                class="text-lg font-semibold uppercase tracking-wider text-muted"
+              >
+                {global.footer.address}
+              </h4>
+              <address class="not-italic text-base leading-relaxed">
+                {global.company.street}<br />
+                {global.company.zip}, {global.company.city}
+              </address>
+            </div>
+
+            <div class="space-y-4">
+              <h4
+                class="text-lg font-semibold uppercase tracking-wider text-muted"
+              >
+                {global.footer.billingAddress}
+              </h4>
+              <address class="not-italic text-base leading-relaxed">
+                <strong>{global.company.legalName}</strong><br />
+                {global.company.billingStreet}<br />
+                {global.company.billingCity}
+                <span class="block mt-2 text-muted">
+                  {global.company.icoLabel}: {global.company.ico}
+                </span>
+              </address>
+            </div>
+          </div>
+
           <!-- Person -->
           <div class="space-y-4">
             <h4
@@ -64,9 +96,6 @@ const year = new Date().getFullYear();
                   <PhoneIcon class="w-4 h-4" />
                   <span>{global.company.phone}</span>
                 </a>
-                <span class="block">
-                  {global.company.icoLabel}: {global.company.ico}
-                </span>
               </div>
               <Button
                 as="a"
@@ -75,21 +104,9 @@ const year = new Date().getFullYear();
                 class="w-full sm:w-auto mt-4"
               >
                 {global.footer.writeMessage}
+                <SendIcon class="w-5 h-5 text-white" />
               </Button>
             </div>
-          </div>
-
-          <!-- Address -->
-          <div class="space-y-4">
-            <h4
-              class="text-lg font-semibold uppercase tracking-wider text-muted"
-            >
-              {global.footer.address}
-            </h4>
-            <address class="not-italic text-base leading-relaxed">
-              {global.company.street}<br />
-              {global.company.zip},{global.company.city}
-            </address>
           </div>
         </div>
       </div>

@@ -173,7 +173,7 @@
   .bg-parallax::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: -1rem;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -185,7 +185,6 @@
       ),
       url("/images/backgrounds/paralax.avif");
     filter: blur(6px);
-    transform: scale(1.05);
     z-index: 0;
   }
 

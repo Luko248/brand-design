@@ -18,12 +18,14 @@
     "contact": "Contact",
     "contactPerson": "Contact Person",
     "address": "Address",
+    "billingAddress": "Billing Address",
     "writeMessage": "Send Message",
     "allRightsReserved": "All rights reserved.",
     "createdBy": "Created by"
   },
   "company": {
     "name": "Brand Design",
+    "legalName": "Brand Design s.r.o.",
     "tagline": "graphic solutions",
     "phone": "+420 777 135 686",
     "email": "info@brand-design.cz",
@@ -32,7 +34,9 @@
     "street": "Pražská 1602/7",
     "city": "Blansko 1",
     "zip": "678 01",
-    "ico": "3327108",
+    "billingStreet": "třída Kpt. Jaroše 1922/3",
+    "billingCity": "Černá Pole (Brno-střed), 602 00 Brno",
+    "ico": "09147136",
     "icoLabel": "VAT ID"
   }
 }
