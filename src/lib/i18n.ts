@@ -76,7 +76,9 @@ export const getTranslation = (translations: any, key: string): string => {
  * Detect locale from URL
  */
 export const detectLocale = (url: URL): Locale => {
-  if (url.pathname.startsWith("/en")) {
+  const pathname = url.pathname;
+  // Check for /brand-design/en or /en patterns
+  if (pathname.includes("/en")) {
     return "en";
   }
   const lang = url.searchParams.get("lang");
@@ -89,24 +91,32 @@ export const detectLocale = (url: URL): Locale => {
 /**
  * Get localized path
  * Converts path to localized path:
- * - If locale is 'cs': return /path
- * - If locale is 'en': return /en/path
+ * - If locale is 'cs': return /brand-design/path
+ * - If locale is 'en': return /brand-design/en/path
  */
 export const getLocalizedPath = (path: string, locale: Locale): string => {
+  const BASE_PATH = "/brand-design";
+
   // Ensure path starts with /
   const cleanPath = path.startsWith("/") ? path : "/" + path;
 
-  // Strip existing locale prefix if present
-  const pathWithoutLocale = cleanPath
+  // Strip existing base path and locale prefix if present
+  let pathWithoutBase = cleanPath
+    .replace(new RegExp(`^${BASE_PATH}`), "")
     .replace(/^\/en\//, "/")
     .replace(/^\/en$/, "/");
 
+  // Ensure it starts with /
+  if (!pathWithoutBase.startsWith("/")) {
+    pathWithoutBase = "/" + pathWithoutBase;
+  }
+
   if (locale === "en") {
     // Avoid double slash
-    if (pathWithoutLocale === "/") return "/en";
-    return `/en${pathWithoutLocale}`;
+    if (pathWithoutBase === "/") return `${BASE_PATH}/en/`;
+    return `${BASE_PATH}/en${pathWithoutBase}`;
   }
-  return pathWithoutLocale;
+  return `${BASE_PATH}${pathWithoutBase}`;
 };
 
 /**
