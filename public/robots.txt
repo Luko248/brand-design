@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
-
-Allow: *.js
-Allow: *.css
+Disallow: /api/
+Disallow: /404
 
 Sitemap: https://brand-design.cz/sitemap.xml

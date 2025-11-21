@@ -45,11 +45,16 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+      content="width=device-width, initial-scale=1.0, maximum-scale=3, viewport-fit=cover"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width" />
+    <meta http-equiv="Content-Language" content={lang} />
+    <meta name="format-detection" content="telephone=no" />
     <title>{metaTitle}</title>
+    <meta name="robots" content="index, follow" />
     <meta name="author" content="Lukáš Chylík" />
+    <meta name="publisher" content="Lukáš Chylík" />
     <meta name="description" content={metaDescription} />
     <meta name="keywords" content={pageKeywords} />
     <meta
@@ -75,9 +80,9 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
       sizes="180x180"
       href="/images/favicons/apple-touch-icon.png"
     />
-    <link rel="manifest" href="/images/favicons/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#170f24" />
-    <meta name="theme-color" content="#170f24" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#1E1E1D" />
+    <meta name="theme-color" content="#1E1E1D" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -89,17 +94,17 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
     <!-- Schema.org markup -->
     <meta itemprop="name" content={global.company.name} />
     <meta itemprop="description" content={metaDescription} />
-    <meta itemprop="image" content="/images/meta/meta-image-google.png" />
+    <meta itemprop="image" content="/images/meta/meta.png" />
 
     <!-- Open Graph data -->
     <meta property="og:title" content={metaTitle} />
-    <meta property="og:image" content="/images/meta/meta-image-fb.png" />
+    <meta property="og:image" content="/images/meta/meta.png" />
     <meta property="og:description" content={metaDescription} />
 
     <!-- Twitter Card data -->
     <meta name="twitter:title" content={metaTitle} />
     <meta name="twitter:description" content={metaDescription} />
-    <meta name="twitter:image" content="/images/meta/meta-image-twitter.png" />
+    <meta name="twitter:image" content="/images/meta/meta.png" />
 
     <PerformanceOptimizations />
 
@@ -168,13 +173,7 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
-            dayOfWeek: [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-            ],
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             opens: "10:00",
             closes: "18:00",
           },

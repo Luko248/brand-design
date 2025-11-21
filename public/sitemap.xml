@@ -2,56 +2,67 @@
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://brand-design.cz/</loc>
-  <lastmod>2019-07-26T04:37:42+00:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en" />
+  <lastmod>2025-11-21</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://brand-design.cz/expositions.html</loc>
-  <lastmod>2019-07-26T04:37:41+00:00</lastmod>
+  <loc>https://brand-design.cz/expositions</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/expositions" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en/expositions" />
+  <lastmod>2025-11-21</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://brand-design.cz/en/index.html</loc>
-  <lastmod>2019-07-26T04:36:05+00:00</lastmod>
+  <loc>https://brand-design.cz/printing-and-production</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/printing-and-production" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en/printing-and-production" />
+  <lastmod>2025-11-21</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://brand-design.cz/index.html</loc>
-  <lastmod>2019-07-26T04:37:42+00:00</lastmod>
+  <loc>https://brand-design.cz/sticks</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/sticks" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en/sticks" />
+  <lastmod>2025-11-21</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://brand-design.cz/printing-and-production.html</loc>
-  <lastmod>2019-07-26T04:37:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://brand-design.cz/sticks.html</loc>
-  <lastmod>2019-07-26T04:37:42+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://brand-design.cz/en/expositions.html</loc>
-  <lastmod>2019-07-26T04:36:05+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://brand-design.cz/en/printing-and-production.html</loc>
-  <lastmod>2019-07-26T04:36:06+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://brand-design.cz/en/sticks.html</loc>
-  <lastmod>2019-07-26T04:36:06+00:00</lastmod>
-  <priority>0.64</priority>
 </url>
 
+<!-- English Versions -->
+<url>
+  <loc>https://brand-design.cz/en</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en" />
+  <lastmod>2025-11-21</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://brand-design.cz/en/expositions</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/expositions" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en/expositions" />
+  <lastmod>2025-11-21</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://brand-design.cz/en/printing-and-production</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/printing-and-production" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en/printing-and-production" />
+  <lastmod>2025-11-21</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://brand-design.cz/en/sticks</loc>
+  <xhtml:link rel="alternate" hreflang="cs" href="https://brand-design.cz/sticks" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://brand-design.cz/en/sticks" />
+  <lastmod>2025-11-21</lastmod>
+  <priority>0.64</priority>
+</url>
 
 </urlset>
