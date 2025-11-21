@@ -1,0 +1,174 @@
+---
+import Button from "@/components/ui/Button.astro";
+import LavaBackground from "@/components/ui/LavaBackground.astro";
+import ChevronDownIcon from "@/components/icons/ChevronDownIcon.astro";
+import IconButton from "@/components/ui/IconButton.astro";
+import Container from "./ui/Container.astro";
+
+export interface Props {
+  translations: {
+    title: string;
+    subtitle: string;
+    buttonPrimary: string;
+    buttonSecondary: string;
+    scrollLabel: string;
+  };
+}
+
+const { translations } = Astro.props;
+---
+
+<section
+  class="relative w-full h-svh grid place-items-center overflow-hidden bg-black"
+>
+  <!-- Background Layers -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <!-- 1. Base Theme Background (Deep Dark) -->
+    <div class="absolute inset-0 bg-[#050505]"></div>
+
+    <!-- 2. Lava Bubbles Animation -->
+    <LavaBackground />
+
+    <!-- 3. Semi-transparent Backdrop/Overlay -->
+    <div
+      class="absolute inset-0 bg-white/30 dark:bg-black/30 backdrop-blur-[2px]"
+    >
+    </div>
+
+    <!-- 4. Gradient Overlays for depth -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/90 dark:from-black/80 dark:to-black/90"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.55)_100%)] dark:bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]"
+    >
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full">
+    <Container class="text-center sm:px-6 lg:px-8">
+      <div class="space-y-10 md:space-y-14">
+        <!-- Logo -->
+        <div class="flex justify-center animate-fade-in-down">
+          <img
+            src="/images/logos/logo-dark.svg"
+            alt="Brand Design"
+            class="h-24 md:h-32 lg:h-40 2xl:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)] block dark:hidden"
+          />
+          <img
+            src="/images/logos/logo.svg"
+            alt="Brand Design"
+            class="h-24 md:h-32 lg:h-40 2xl:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)] hidden dark:block"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="space-y-8 max-w-4xl mx-auto">
+          <h1 class="sr-only">{translations.title}</h1>
+          <div
+            class="font-display font-light text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-foreground leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
+            set:html={translations.subtitle}
+          />
+        </div>
+
+        <!-- Buttons -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6 w-full mx-auto"
+        >
+          <Button
+            as="a"
+            href="#contact"
+            variant="hero-primary"
+            size="lg"
+            class="w-64 sm:w-auto min-w-[200px]"
+          >
+            {translations.buttonPrimary}
+          </Button>
+          <Button
+            as="a"
+            href="#references"
+            variant="hero-outline"
+            size="lg"
+            class="w-64 sm:w-auto min-w-[200px]"
+          >
+            {translations.buttonSecondary}
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10 opacity-0 animate-fade-in delay-1000"
+  >
+    <IconButton as="a" href="#about" title={translations.scrollLabel}>
+      <ChevronDownIcon class="w-6 h-6" />
+    </IconButton>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scale-slow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+  .animate-scale-slow {
+    animation: scale-slow 20s linear infinite alternate;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+</style>

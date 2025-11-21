@@ -1,0 +1,50 @@
+@layer base {
+  :root {
+    --focus-ring: 0 0 0 var(--spacing-1) var(--color-outline);
+    --nav-height: var(--spacing-20);
+  }
+
+  html {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, button, .button, .btn) {
+    font-family: var(--font-display);
+  }
+
+  :where(a, button, input):focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+
+  .page-section {
+    scroll-margin-top: var(--nav-height);
+  }
+}
+
+@layer components {
+  .brand-map-infowindow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    padding-block-start: var(--spacing-3);
+  }
+
+  .brand-map-infowindow__logo {
+    width: 7rem;
+    height: auto;
+  }
+
+  .brand-map-infowindow__address {
+    font-style: normal;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--color-black);
+  }
+
+  .gm-style-iw-chr {
+    display: none !important;
+}

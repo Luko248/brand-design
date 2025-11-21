@@ -1,0 +1,24 @@
+---
+import { twMerge } from "tailwind-merge";
+
+type Props = {
+  class?: string;
+  [key: string]: any;
+};
+
+const { class: className, ...rest } = Astro.props;
+
+const classes = twMerge(
+  // Base styles (Mobile First)
+  "mx-auto h-full box-border w-full px-4 py-12",
+  // Responsive styles
+  "min-[480px]:py-24",
+  "md:py-48 md:px-0",
+  "min-[980px]:w-[70%]",
+  className
+);
+---
+
+<div class={classes} {...rest}>
+  <slot />
+</div>

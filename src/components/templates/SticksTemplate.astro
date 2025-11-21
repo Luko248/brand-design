@@ -1,0 +1,137 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import Gallery from "@/components/Gallery.astro";
+import Button from "@/components/ui/Button.astro";
+import SadFaceIcon from "@/components/icons/SadFaceIcon.astro";
+import { loadTranslations } from "@/lib/i18n";
+import { getStickersCloudinaryData } from "@/lib/cloudinary";
+
+export interface Props {
+  lang: "cs" | "en";
+}
+
+const { lang } = Astro.props;
+const translations = await loadTranslations(lang, "pages/sticks");
+
+const { images: sticksImages, resources: sticksResources } =
+  await getStickersCloudinaryData();
+---
+
+<BaseLayout
+  lang={lang}
+  title={translations.title}
+  description={translations.description}
+>
+  <Navigation lang={lang} currentPath="/sticks" isHomepage={false} />
+
+  <header
+    class="bg-parallax bg-parallax-sticks relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden"
+  >
+    <div
+      class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-reveal"
+    >
+      <span class="block text-primary font-bold tracking-[0.3em] uppercase mb-4"
+        >{translations.heading}</span
+      >
+      <h1
+        class="font-display uppercase text-4xl md:text-6xl text-white mb-6 leading-tight"
+      >
+        {translations.title}
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-16 md:py-24 bg-background">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16 animate-reveal">
+          <div class="h-1 w-20 bg-primary rounded-full mx-auto mb-10"></div>
+          <p
+            class="text-xl dark:text-muted text-black/85 font-light leading-relaxed space-y-4"
+            set:html={translations.description}
+          />
+          <Button
+            as="a"
+            href="mailto:info@brand-design.cz"
+            variant="hero-primary"
+            size="lg"
+            class="mt-8 w-64 sm:w-auto min-w-[200px]"
+          >
+            {translations.ctaLabel}
+          </Button>
+        </div>
+
+        {
+          sticksImages && sticksImages.length > 0 ? (
+            <Gallery images={sticksImages} galleryId="sticks-gallery" />
+          ) : (
+            <div class="flex flex-col items-center gap-4 text-center text-muted">
+              <div class="text-primary">
+                <SadFaceIcon class="w-24 h-24" />
+              </div>
+              <p class="text-lg font-light">
+                {lang === "cs"
+                  ? "Něco se pokazilo při načítání galerie. Zkuste to prosím později."
+                  : "Something went wrong while loading the gallery. Please try again later."}
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </section>
+  </main>
+
+  <script is:inline define:vars={{ sticksResources }}>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (Array.isArray(sticksResources) && sticksResources.length) {
+        console.log(
+          "Cloudinary resources loaded for sticks gallery:",
+          sticksResources
+        );
+      } else {
+        console.warn("Cloudinary: No resources returned for sticks gallery.");
+      }
+    });
+  </script>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .bg-parallax-sticks::before {
+    background-position: center bottom;
+    background-image:
+      linear-gradient(
+        135deg,
+        var(--color-hero-grad-1),
+        var(--color-hero-grad-2)
+      ),
+      url("/images/backgrounds/stickers.avif");
+  }
+
+  @media (max-width: 768px) {
+    .bg-parallax-sticks::before {
+      background-image:
+        linear-gradient(
+          135deg,
+          var(--color-hero-grad-1),
+          var(--color-hero-grad-2)
+        ),
+        url("/images/backgrounds/stickers_768.avif");
+    }
+  }
+
+  @media (max-width: 560px) {
+    .bg-parallax-sticks::before {
+      background-image:
+        linear-gradient(
+          135deg,
+          var(--color-hero-grad-1),
+          var(--color-hero-grad-2)
+        ),
+        url("/images/backgrounds/stickers_560.avif");
+    }
+  }
+</style>

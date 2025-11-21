@@ -1,0 +1,397 @@
+<div
+  id="lava-container"
+  class="absolute inset-0 overflow-hidden pointer-events-none z-0 bg-background transition-opacity duration-1000"
+>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <div class="blob blob-5"></div>
+  <div class="blob blob-6"></div>
+  <div class="blob blob-7"></div>
+  <div class="blob blob-8"></div>
+</div>
+
+<script>
+  // Optimize: Only run on desktop
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    const container = document.getElementById("lava-container");
+    let rafId: number | null = null;
+    let mouseX = 0;
+    let mouseY = 0;
+
+    const updateStyles = () => {
+      if (!container) return;
+
+      // Calculate relative position (0 to 1)
+      const x = mouseX / window.innerWidth;
+      const y = mouseY / window.innerHeight;
+
+      container.style.setProperty("--cursor-x", x.toString());
+      container.style.setProperty("--cursor-y", y.toString());
+
+      rafId = null;
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateStyles);
+      }
+    };
+
+    // Initialize immediately to ensure it works, relying on RAF for performance
+    document.addEventListener("mousemove", onMouseMove, { passive: true });
+  }
+</script>
+
+<style>
+  #lava-container {
+    --cursor-x: 0.5;
+    --cursor-y: 0.5;
+  }
+
+  .blob {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    /* Combine float animation with cursor interaction */
+    /* The translate uses calc to offset based on cursor position relative to center */
+    /* Movement factor (e.g., 5vh) determines how much they react */
+    transform: translate(
+      calc((var(--cursor-x) - 0.5) * var(--move-factor, 5vh)),
+      calc((var(--cursor-y) - 0.5) * var(--move-factor, 5vh))
+    );
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth dampening */
+    will-change: transform;
+  }
+
+  /* Assign different movement factors for depth perception */
+  .blob-1 {
+    --move-factor: -4vh;
+  }
+  .blob-2 {
+    --move-factor: 6vh;
+  }
+  .blob-3 {
+    --move-factor: -8vh;
+  }
+  .blob-4 {
+    --move-factor: 5vh;
+  }
+  .blob-5 {
+    --move-factor: -3vh;
+  }
+  .blob-6 {
+    --move-factor: 7vh;
+  }
+  .blob-7 {
+    --move-factor: -6vh;
+  }
+  .blob-8 {
+    --move-factor: 4vh;
+  }
+
+  /* Keyframes remain unchanged */
+  @keyframes float-path-1 {
+    from,
+    to {
+      translate: -8vh 12vh;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      rotate: 0deg;
+    }
+    25% {
+      translate: 10vh -15vh;
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+      rotate: 90deg;
+    }
+    50% {
+      translate: 18vh 8vh;
+      border-radius: 70% 30% 60% 40% / 30% 40% 60% 50%;
+      rotate: 180deg;
+    }
+    75% {
+      translate: -12vh -10vh;
+      border-radius: 40% 60% 50% 30% / 70% 50% 40% 60%;
+      rotate: 270deg;
+    }
+  }
+
+  @keyframes float-path-2 {
+    from,
+    to {
+      translate: 8vh -12vh;
+      border-radius: 50% 50% 20% 80% / 25% 25% 75% 75%;
+      rotate: 0deg;
+    }
+    20% {
+      translate: -15vh 5vh;
+      border-radius: 80% 20% 60% 40% / 40% 70% 30% 60%;
+      rotate: 72deg;
+    }
+    40% {
+      translate: 12vh 18vh;
+      border-radius: 40% 80% 30% 70% / 60% 40% 80% 20%;
+      rotate: 144deg;
+    }
+    60% {
+      translate: -18vh 10vh;
+      border-radius: 70% 30% 50% 50% / 80% 20% 40% 60%;
+      rotate: 216deg;
+    }
+    80% {
+      translate: 6vh -8vh;
+      border-radius: 30% 70% 40% 60% / 50% 50% 20% 80%;
+      rotate: 288deg;
+    }
+  }
+
+  @keyframes float-path-3 {
+    from,
+    to {
+      translate: -12vh -15vh;
+      border-radius: 80% 20% 50% 50% / 20% 80% 50% 50%;
+      rotate: 0deg;
+    }
+    33% {
+      translate: 20vh 6vh;
+      border-radius: 50% 50% 80% 20% / 50% 50% 20% 80%;
+      rotate: 120deg;
+    }
+    66% {
+      translate: -8vh 22vh;
+      border-radius: 20% 80% 50% 50% / 80% 20% 50% 50%;
+      rotate: 240deg;
+    }
+  }
+
+  @keyframes float-path-4 {
+    from,
+    to {
+      translate: 15vh 10vh;
+      border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+      rotate: 0deg;
+    }
+    20% {
+      translate: -10vh -12vh;
+      border-radius: 60% 40% 30% 70% / 40% 60% 40% 60%;
+      rotate: -72deg;
+    }
+    40% {
+      translate: -18vh 16vh;
+      border-radius: 30% 70% 40% 60% / 70% 40% 60% 30%;
+      rotate: -144deg;
+    }
+    60% {
+      translate: 5vh 8vh;
+      border-radius: 70% 30% 60% 40% / 30% 70% 30% 70%;
+      rotate: -216deg;
+    }
+    80% {
+      translate: 12vh -18vh;
+      border-radius: 25% 75% 40% 60% / 55% 45% 65% 35%;
+      rotate: -288deg;
+    }
+  }
+
+  @keyframes float-path-5 {
+    from,
+    to {
+      translate: -16vh 8vh;
+      border-radius: 35% 65% 45% 55% / 70% 30% 60% 40%;
+      rotate: 0deg;
+    }
+    30% {
+      translate: 14vh -12vh;
+      border-radius: 65% 35% 55% 45% / 40% 60% 30% 70%;
+      rotate: 108deg;
+    }
+    60% {
+      translate: -10vh 20vh;
+      border-radius: 55% 45% 35% 65% / 60% 40% 70% 30%;
+      rotate: 216deg;
+    }
+    90% {
+      translate: 12vh -16vh;
+      border-radius: 45% 55% 65% 35% / 30% 70% 40% 60%;
+      rotate: 324deg;
+    }
+  }
+
+  @keyframes float-path-6 {
+    from,
+    to {
+      translate: 10vh -18vh;
+      border-radius: 75% 25% 40% 60% / 35% 65% 55% 45%;
+      rotate: 0deg;
+    }
+    16% {
+      translate: -14vh -8vh;
+      border-radius: 25% 75% 60% 40% / 65% 35% 45% 55%;
+      rotate: -58deg;
+    }
+    32% {
+      translate: 18vh 12vh;
+      border-radius: 60% 40% 75% 25% / 55% 45% 35% 65%;
+      rotate: -116deg;
+    }
+    48% {
+      translate: -12vh 16vh;
+      border-radius: 40% 60% 25% 75% / 45% 55% 65% 35%;
+      rotate: -174deg;
+    }
+    64% {
+      translate: 8vh -14vh;
+      border-radius: 55% 45% 65% 35% / 75% 25% 40% 60%;
+      rotate: -232deg;
+    }
+    80% {
+      translate: -16vh 6vh;
+      border-radius: 65% 35% 45% 55% / 40% 60% 75% 25%;
+      rotate: -290deg;
+    }
+  }
+
+  @keyframes float-path-7 {
+    from,
+    to {
+      translate: 14vh 12vh;
+      border-radius: 45% 55% 75% 25% / 60% 40% 35% 65%;
+      rotate: 0deg;
+    }
+    28% {
+      translate: -12vh -16vh;
+      border-radius: 55% 45% 25% 75% / 40% 60% 65% 35%;
+      rotate: 101deg;
+    }
+    56% {
+      translate: -18vh 14vh;
+      border-radius: 75% 25% 55% 45% / 65% 35% 40% 60%;
+      rotate: 202deg;
+    }
+    84% {
+      translate: 8vh -10vh;
+      border-radius: 25% 75% 45% 55% / 35% 65% 60% 40%;
+      rotate: 303deg;
+    }
+  }
+
+  @keyframes float-path-8 {
+    from,
+    to {
+      translate: -14vh -12vh;
+      border-radius: 65% 35% 55% 45% / 45% 55% 75% 25%;
+      rotate: 0deg;
+    }
+    22% {
+      translate: 18vh 8vh;
+      border-radius: 35% 65% 45% 55% / 55% 45% 25% 75%;
+      rotate: -79deg;
+    }
+    44% {
+      translate: -10vh 18vh;
+      border-radius: 55% 45% 65% 35% / 75% 25% 55% 45%;
+      rotate: -158deg;
+    }
+    66% {
+      translate: 12vh -16vh;
+      border-radius: 45% 55% 35% 65% / 25% 75% 45% 55%;
+      rotate: -237deg;
+    }
+    88% {
+      translate: -16vh 4vh;
+      border-radius: 75% 25% 45% 55% / 55% 45% 65% 35%;
+      rotate: -316deg;
+    }
+  }
+
+  .blob {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+  }
+
+  .blob-1 {
+    left: 2%;
+    top: 5%;
+    width: 36vh;
+    background: #73308a; /* Purple */
+    animation: float-path-1 78s linear infinite;
+    animation-delay: -7s;
+  }
+
+  .blob-2 {
+    left: 88%;
+    top: 15%;
+    width: 26vh;
+    background: #410099; /* Dark Purple */
+    animation: float-path-2 105s linear infinite;
+    animation-delay: -23s;
+  }
+
+  .blob-3 {
+    left: 15%;
+    top: 85%;
+    width: 40vh;
+    background: #b11cab; /* Magenta */
+    animation: float-path-3 126s linear infinite;
+    animation-delay: -41s;
+  }
+
+  .blob-4 {
+    left: 92%;
+    top: 75%;
+    width: 40vh;
+    background: #0071ce; /* Blue */
+    animation: float-path-4 194s linear infinite;
+    animation-delay: -67s;
+  }
+
+  .blob-5 {
+    left: 45%;
+    top: 2%;
+    width: 26vh;
+    background: #2ed9c3; /* Cyan */
+    animation: float-path-5 92s linear infinite;
+    animation-delay: -19s;
+  }
+
+  .blob-6 {
+    left: 5%;
+    top: 45%;
+    width: 30vh;
+    background: #73308a; /* Purple */
+    animation: float-path-6 157s linear infinite;
+    animation-delay: -89s;
+  }
+
+  .blob-7 {
+    left: 75%;
+    top: 92%;
+    width: 40vh;
+    background: #b11cab; /* Magenta */
+    animation: float-path-7 115s linear infinite;
+    animation-delay: -31s;
+  }
+
+  .blob-8 {
+    left: 65%;
+    top: 35%;
+    width: 26vh;
+    background: #0071ce; /* Blue */
+    animation: float-path-8 134s linear infinite;
+    animation-delay: -53s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blob {
+      animation: none;
+    }
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import mapScript from "@/scripts/google-maps.ts?url";
+
+const { id = "BrandDesignMap", class: className = "" } = Astro.props;
+const apiKey =
+  import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
+  import.meta.env.GOOGLE_MAPS_API_KEY;
+const addressLines = ["Pražská 1602/7", "678 01 Blansko 1"];
+const addressString = addressLines.join(", ");
+const fallbackPosition = { lat: 49.363, lng: 16.6445 };
+const mapId = "bfd60e560367f0091f02eb99";
+---
+
+<div
+  data-map-container
+  data-api-key={apiKey}
+  data-address-lines={addressLines.join("|")}
+  data-address-string={addressString}
+  data-fallback-lat={fallbackPosition.lat}
+  data-fallback-lng={fallbackPosition.lng}
+  data-map-id={mapId}
+  id={id}
+  class:list={[
+    "w-full min-h-[18rem] sm:min-h-[24rem] rounded-xl overflow-hidden shadow-lg",
+    className,
+  ]}
+>
+</div>
+
+<script is:inline type="module" src={mapScript}></script>

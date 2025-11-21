@@ -1,0 +1,63 @@
+---
+import SunIcon from "./icons/SunIcon.astro";
+import MoonIcon from "./icons/MoonIcon.astro";
+
+export interface Props {
+  class?: string;
+  id?: string;
+  ariaLabel?: string;
+}
+
+const {
+  class: className = "",
+  id = "theme-toggle",
+  ariaLabel = "Toggle color theme",
+} = Astro.props;
+---
+
+<button
+  id={id}
+  type="button"
+  class:list={[
+    "p-2 cursor-pointer rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary",
+    className,
+  ]}
+  aria-label={ariaLabel}
+  title={ariaLabel}
+>
+  <div class="block dark:hidden">
+    <MoonIcon class="w-5 h-5 cursor-pointer" />
+  </div>
+  <div class="hidden dark:block">
+    <SunIcon class="w-5 h-5 cursor-pointer" />
+  </div>
+</button>
+
+<script>
+  function initTheme() {
+    const toggles = document.querySelectorAll(
+      "button[aria-label][id^='theme-toggle']"
+    );
+
+    toggles.forEach((btn) => {
+      // Remove old event listeners to avoid duplicates if script runs multiple times
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode?.replaceChild(newBtn, btn);
+
+      newBtn.addEventListener("click", () => {
+        const current =
+          document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+        const next = current === "dark" ? "light" : "dark";
+
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("theme", next);
+      });
+    });
+  }
+
+  // Initialize on load
+  initTheme();
+
+  // Re-initialize on view transitions (if enabled in future)
+  document.addEventListener("astro:page-load", initTheme);
+</script>

@@ -1,0 +1,30 @@
+---
+/**
+ * Global performance-oriented tweaks.
+ * This component is intended to be used inside <head>.
+ */
+---
+
+<!-- Respect prefers-reduced-motion by toning down animations and smooth scrolling -->
+<style is:global>
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<!-- Minor global defaults that are safe and performance-friendly -->
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+</style>

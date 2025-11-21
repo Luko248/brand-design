@@ -1,0 +1,167 @@
+---
+import { getLocalizedPath } from "@/lib/i18n";
+import LanguageIcon from "./icons/LanguageIcon.astro";
+import ChevronDownIcon from "./icons/ChevronDownIcon.astro";
+
+export interface Props {
+  lang: "cs" | "en";
+  currentPath?: string;
+  class?: string;
+  upwards?: boolean;
+}
+
+const {
+  lang,
+  currentPath,
+  class: className = "",
+  upwards = false,
+} = Astro.props;
+
+const basePath = currentPath || Astro.url.pathname;
+const csUrl = getLocalizedPath(basePath, "cs");
+const enUrl = getLocalizedPath(basePath, "en");
+
+const currentLangFlag = lang === "cs" ? "CZ" : "EN";
+
+// Generate unique anchor name
+const anchorName = `lang-toggle-${Math.random().toString(36).substring(2, 9)}`;
+---
+
+<div class:list={["relative group language-toggle", className]}>
+  <button
+    type="button"
+    class={`cursor-pointer flex items-center gap-2 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors focus:outline-none anchor/${anchorName}`}
+    aria-expanded="false"
+    aria-haspopup="true"
+  >
+    <LanguageIcon />
+    <span>{currentLangFlag}</span>
+    <ChevronDownIcon
+      class="w-4 h-4 transition-transform duration-200 arrow-icon group-hover:rotate-180"
+    />
+  </button>
+
+  <div
+    class:list={[
+      `absolute w-40 py-2 bg-background/95 backdrop-blur-md border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 dark:border-white/10 dark:bg-surface/95 z-60`,
+      upwards
+        ? "left-0 bottom-full mb-2 -translate-y-2 group-hover:translate-y-0"
+        : "right-0 top-full mt-2 translate-y-2 group-hover:translate-y-0",
+    ]}
+  >
+    <a
+      href={csUrl}
+      class:list={[
+        "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-primary/10 hover:text-primary",
+        lang === "cs"
+          ? "text-primary font-bold bg-primary/5"
+          : "text-foreground",
+      ]}
+      hreflang="cs"
+    >
+      <span class="w-5 text-center">🇨🇿</span>
+      Čeština
+    </a>
+    <a
+      href={enUrl}
+      class:list={[
+        "flex items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-primary/10 hover:text-primary",
+        lang === "en"
+          ? "text-primary font-bold bg-primary/5"
+          : "text-foreground",
+      ]}
+      hreflang="en"
+    >
+      <span class="w-5 text-center">🇬🇧</span>
+      English
+    </a>
+  </div>
+
+  <script>
+    // Handle multiple language toggles (desktop/mobile)
+    const toggles = document.querySelectorAll(".language-toggle");
+
+    toggles.forEach((container) => {
+      const button = container.querySelector("button");
+      const dropdown = container.querySelector("div");
+      const arrow = container.querySelector(".arrow-icon");
+
+      if (!button || !dropdown || !arrow) return;
+
+      function toggle(open: boolean) {
+        if (open) {
+          dropdown?.classList.remove("opacity-0", "translate-y-2", "invisible");
+          arrow?.classList.add("rotate-180");
+          button?.setAttribute("aria-expanded", "true");
+        } else {
+          dropdown?.classList.add("opacity-0", "translate-y-2", "invisible");
+          arrow?.classList.remove("rotate-180");
+          button?.setAttribute("aria-expanded", "false");
+        }
+      }
+
+      // Detect if we're on mobile (no hover support)
+      const isMobileMenu = container.closest("#mobile-menu") !== null;
+
+      if (isMobileMenu) {
+        // Mobile: click-based toggle
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          // Close all other toggles first
+          toggles.forEach((c) => {
+            if (c !== container) {
+              const b = c.querySelector("button");
+              const d = c.querySelector("div");
+              const a = c.querySelector(".arrow-icon");
+              d?.classList.add("opacity-0", "translate-y-2", "invisible");
+              a?.classList.remove("rotate-180");
+              b?.setAttribute("aria-expanded", "false");
+            }
+          });
+          toggle(!isOpen);
+        });
+
+        // Close on click outside
+        document.addEventListener("click", (e) => {
+          if (!container.contains(e.target as Node)) {
+            toggle(false);
+          }
+        });
+      } else {
+        // Desktop: hover-based (group-hover handles it via CSS)
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          // Close all other toggles first
+          toggles.forEach((c) => {
+            if (c !== container) {
+              const b = c.querySelector("button");
+              const d = c.querySelector("div");
+              const a = c.querySelector(".arrow-icon");
+              d?.classList.add("opacity-0", "translate-y-2", "invisible");
+              a?.classList.remove("rotate-180");
+              b?.setAttribute("aria-expanded", "false");
+            }
+          });
+          toggle(!isOpen);
+        });
+
+        // Close on click outside
+        document.addEventListener("click", (e) => {
+          if (!container.contains(e.target as Node)) {
+            toggle(false);
+          }
+        });
+      }
+
+      // Close on Escape
+      container.addEventListener("keydown", (e) => {
+        if ((e as KeyboardEvent).key === "Escape") {
+          toggle(false);
+          button.focus();
+        }
+      });
+    });
+  </script>
+</div>

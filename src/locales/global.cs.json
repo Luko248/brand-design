@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Brand Design - grafické řešení vaší značky",
+    "description": "Návrh brandu a loga, velkoplošná grafika, design konferenčních a veletržních stánků, návrh a výroba velkoplošných polepů na auta či výlohy."
+  },
+  "nav": {
+    "home": "Domů",
+    "about": "O společnosti",
+    "references": "Naše práce",
+    "contact": "Kontakt",
+    "themeToggle": "Přepnout barevné téma",
+    "langEn": "En",
+    "langCs": "Cz",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "contactPerson": "Kontaktní osoba",
+    "address": "Adresa",
+    "billingAddress": "Fakturační adresa",
+    "writeMessage": "Napsat zprávu",
+    "allRightsReserved": "Všechna práva vyhrazena.",
+    "createdBy": "Vytvořil"
+  },
+  "company": {
+    "name": "Brand Design",
+    "legalName": "Brand Design s.r.o.",
+    "tagline": "graphic solutions",
+    "phone": "+420 777 135 686",
+    "email": "info@brand-design.cz",
+    "contactName": "Martin Luksaj",
+    "contactEmail": "luksaj@brand-design.cz",
+    "street": "Pražská 1602/7",
+    "city": "Blansko 1",
+    "zip": "678 01",
+    "billingStreet": "třída Kpt. Jaroše 1922/3",
+    "billingCity": "Černá Pole (Brno-střed), 602 00 Brno",
+    "ico": "09147136",
+    "icoLabel": "IČO"
+  }
+}

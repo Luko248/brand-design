@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Brand Design",
+    "subtitle": "Vdechneme život vaší značce",
+    "buttonPrimary": "Začít projekt",
+    "buttonSecondary": "Naše práce",
+    "scrollLabel": "Posunout dolů"
+  },
+  "about": {
+    "mainTitle": "BrandDESIGN - Graphic Solutions",
+    "sectionLabel": "O společnosti",
+    "title": "O společnosti",
+    "paragraph1": "Společnost <strong>BrandDESIGN</strong> vznikla na základě dlouholetých zkušeností, aby pomohla zviditelnit <b>vaši značku</b>. Zabýváme se digitálním velkoformátovým tiskem, řezanou grafikou a polepy, se sídlem v Brně.",
+    "paragraph2": "Dlouhodobě spolupracujeme s firmami na výrobě grafiky pro veletrhy, výstavy a kongresy, nejen v ČR, ale i po <b>celém světě</b>.",
+    "paragraph3": "Realizujeme polepy aut a výloh, vyrábíme 3D loga a zajišťujeme potisk textilu. Reklamu pro vás zajistíme od návrhu přes výrobu až po samotnou instalaci."
+  },
+  "banner": {
+    "title": "Společně najdeme vhodné řešení i pro <b>vás</b>",
+    "button": "Chci spolupracovat"
+  },
+  "services": {
+    "title": "Co nabízíme",
+    "sectionLabel": "Naše práce",
+    "subtitle": "Objevte naše portfolio úspěšných projektů a brandingových řešení.",
+    "eyebrowLabel": "Služba",
+    "printing": {
+      "title": "Tisk / Výroba",
+      "description": "Výroba a digitální tisk samolepek, fólií, plakátů a bannerů s precizním ořezem.",
+      "button": "Zobrazit galerii"
+    },
+    "expositions": {
+      "title": "Výstavy",
+      "description": "Navrhujeme a instalujeme veletržní grafiku po <b>celém světě</b>.",
+      "button": "Zobrazit galerii"
+    },
+    "sticks": {
+      "title": "Polepy",
+      "description": "Polepy aut, vozidel i výloh od návrhu až po nalepení.",
+      "button": "Zobrazit galerii"
+    }
+  },
+  "partners": {
+    "title": "Partneři",
+    "text": "Aktivně spolupracujeme s firmou <a href=\"https://mistrymont.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary font-semibold hover:underline\">Mistry Mont s.r.o.</a>."
+  }
+}

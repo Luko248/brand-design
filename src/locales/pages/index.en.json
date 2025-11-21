@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Brand Design",
+    "subtitle": "We breathe life into your brand",
+    "buttonPrimary": "Start a Project",
+    "buttonSecondary": "Our Work",
+    "scrollLabel": "Scroll down"
+  },
+  "about": {
+    "mainTitle": "BrandDESIGN - Graphic Solutions",
+    "sectionLabel": "About Us",
+    "title": "About the Company",
+    "paragraph1": "<strong>BrandDESIGN</strong> was founded on many years of experience to help make <b>your brand</b> stand out. We specialise in digital large-format printing, cut graphics and signage, and we are based in Brno.",
+    "paragraph2": "We have long worked with companies on graphics for trade fairs, exhibitions and congresses, not only in the Czech Republic but also around the <b>world</b>.",
+    "paragraph3": "We create car and shop window wraps, produce 3D logos and provide textile printing. We handle your advertising from concept and design through production all the way to installation."
+  },
+  "banner": {
+    "title": "Together we will find the right solution for <b>you</b>",
+    "button": "Work with us"
+  },
+  "services": {
+    "title": "What we offer",
+    "sectionLabel": "Our Work",
+    "subtitle": "Discover our portfolio of successful projects and branding solutions.",
+    "eyebrowLabel": "Service",
+    "printing": {
+      "title": "Printing / Production",
+      "description": "Production and digital printing of stickers, films, posters and banners with precise contour cutting.",
+      "button": "Show gallery"
+    },
+    "expositions": {
+      "title": "Expositions",
+      "description": "We design, produce and install trade fair graphics <b>worldwide</b>.",
+      "button": "Show gallery"
+    },
+    "sticks": {
+      "title": "Sticks",
+      "description": "Large-format wraps for cars, vehicles and shopfronts from design to installation.",
+      "button": "Show gallery"
+    }
+  },
+  "partners": {
+    "title": "Partners",
+    "text": "We actively cooperate with <a href=\"https://mistrymont.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary font-semibold hover:underline\">Mistry Mont s.r.o.</a>."
+  }
+}

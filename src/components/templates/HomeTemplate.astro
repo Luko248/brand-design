@@ -1,0 +1,266 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import Hero from "@/components/Hero.astro";
+import Button from "@/components/ui/Button.astro";
+import Carousel from "@/components/ui/Carousel.astro";
+import ReferenceCard from "@/components/ReferenceCard.astro";
+import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
+import {
+  getPrintingCloudinaryData,
+  getExpositionsCloudinaryData,
+  getStickersCloudinaryData,
+  type CloudinaryGalleryData,
+} from "@/lib/cloudinary";
+
+export interface Props {
+  lang: "cs" | "en";
+}
+
+const { lang } = Astro.props;
+const [pageTranslations, globalTranslations] = await Promise.all([
+  loadTranslations(lang, "pages/index"),
+  loadTranslations(lang, "global"),
+]);
+
+const translations = { ...globalTranslations, ...pageTranslations };
+
+// Fetch Cloudinary Data
+const printingData = await getPrintingCloudinaryData();
+const expositionsData = await getExpositionsCloudinaryData();
+const sticksData = await getStickersCloudinaryData();
+
+const findImage = (data: CloudinaryGalleryData, groupId: string) =>
+  data.images.find((img) => img.groupId === groupId);
+
+const selectedImages = [
+  {
+    data: findImage(printingData, "printing-3d-logo"),
+    fallbackImage: "/images/cards/printing.avif",
+    page: "/printing-and-production",
+    titleKey: "printing",
+  },
+  {
+    data: findImage(expositionsData, "expositions-biofach-2019-nurnberg"),
+    fallbackImage: "/images/cards/expositions.avif",
+    page: "/expositions",
+    titleKey: "expositions",
+  },
+  {
+    data: findImage(sticksData, "stickers-kangaroo"),
+    fallbackImage: "/images/cards/stickers.avif",
+    page: "/sticks",
+    titleKey: "sticks",
+  },
+];
+
+const carouselItems = selectedImages.map((item) => {
+  const title =
+    item.data?.groupTitle ||
+    translations.services[item.titleKey as keyof typeof translations.services]
+      .title;
+  const image = item.data?.full || item.fallbackImage;
+  const hash = item.data?.groupId ? `#${item.data.groupId}` : "";
+
+  return {
+    image,
+    title,
+    href: `${getLocalizedPath(item.page, lang)}${hash}`,
+    buttonLabel: translations.nav.references,
+  };
+});
+
+const referenceCards = [
+  {
+    href: getLocalizedPath("/printing-and-production", lang),
+    image: "/images/cards/printing.avif",
+    ...translations.services.printing,
+  },
+  {
+    href: getLocalizedPath("/expositions", lang),
+    image: "/images/cards/expositions.avif",
+    ...translations.services.expositions,
+  },
+  {
+    href: getLocalizedPath("/sticks", lang),
+    image: "/images/cards/stickers.avif",
+    ...translations.services.sticks,
+  },
+];
+---
+
+<BaseLayout lang={lang}>
+  <Navigation lang={lang} currentPath="/" isHomepage={true} />
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="page-section">
+      <Hero translations={translations.hero} />
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="page-section relative py-20 md:py-32 bg-surface overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <!-- Carousel Visual -->
+          <div
+            class="flex justify-center md:justify-end order-2 md:order-2 w-full animate-reveal"
+          >
+            <div class="relative w-full max-w-md mx-auto md:mx-0 aspect-square">
+              <div
+                class="absolute inset-0 bg-primary/40 rounded-full blur-[100px] scale-110 animate-pulse -z-10"
+              >
+              </div>
+              <Carousel items={carouselItems} />
+            </div>
+          </div>
+
+          <!-- Text Content -->
+          <div
+            class="order-1 md:order-1 space-y-8 text-center md:text-left animate-reveal"
+          >
+            <!-- Hidden H1 for SEO -->
+            <h1 class="sr-only" set:html={translations.about.mainTitle} />
+
+            <div class="animate-reveal">
+              <h2
+                class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
+              >
+                <span
+                  class="block text-primary text-lg font-bold tracking-[0.3em] mb-2 uppercase"
+                  >{translations.about.sectionLabel}</span
+                >
+                <span set:html={translations.about.title} />
+              </h2>
+              <div class="h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0">
+              </div>
+            </div>
+
+            <div
+              class="space-y-6 text-lg md:text-xl font-light leading-relaxed dark:text-muted text-black/85"
+            >
+              <p set:html={translations.about.paragraph1} />
+              <p set:html={translations.about.paragraph2} />
+              <p set:html={translations.about.paragraph3} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner Parallax -->
+    <section
+      class="page-section bg-parallax py-32 flex items-center justify-center overflow-hidden backdrop-blur-sm"
+    >
+      <div
+        class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8 animate-reveal"
+      >
+        <h3
+          class="font-display uppercase text-3xl md:text-5xl leading-snug"
+          set:html={translations.banner.title}
+        />
+
+        <Button
+          as="a"
+          href="#contact"
+          variant="outline"
+          size="lg"
+          class="border-white text-white hover:bg-white hover:text-black text-lg tracking-widest uppercase min-w-[200px]"
+        >
+          {translations.banner.button}
+        </Button>
+      </div>
+    </section>
+
+    <!-- Services / References -->
+    <section id="references" class="page-section py-20 md:py-32 bg-background">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="text-center max-w-2xl mx-auto mb-16 md:mb-24 animate-reveal"
+        >
+          <span
+            class="text-primary text-sm font-bold tracking-[0.3em] uppercase block mb-4"
+          >
+            {translations.services.sectionLabel}
+          </span>
+          <h2
+            class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6"
+          >
+            {translations.services.title}
+          </h2>
+          <p
+            class="text-lg md:text-xl font-light text-balance dark:text-muted text-black/85"
+            set:html={translations.services.subtitle}
+          />
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            referenceCards.map((card) => (
+              <ReferenceCard
+                class="animate-reveal"
+                href={card.href}
+                image={card.image}
+                title={card.title}
+                description={card.description}
+                buttonLabel={card.button}
+                eyebrowLabel={translations.services.eyebrowLabel}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="page-section py-20 bg-surface border-t border-outline/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          class="font-display uppercase text-3xl md:text-4xl text-foreground mb-12 opacity-80 animate-reveal"
+        >
+          {translations.partners.title}
+        </h2>
+
+        <div
+          class="flex flex-col items-center gap-6 opacity-100 text-center animate-reveal"
+        >
+          <p
+            class="text-xl font-light dark:text-muted text-black/85"
+            set:html={translations.partners.text}
+          />
+          <a
+            href="https://mistrymont.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mistry-logo-wrapper transition-transform duration-300 hover:scale-110"
+          >
+            <span class="sr-only">Mistry Mont</span>
+            <img
+              src="/images/logos/mistry-mont-logo.webp"
+              alt="Mistry Mont"
+              loading="lazy"
+              decoding="async"
+              class="mistry-logo-img invert dark:invert-0"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .mistry-logo-img {
+    display: block;
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    transition: filter 200ms ease;
+  }
+</style>

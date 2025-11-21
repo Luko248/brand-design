@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "Brand Design - graphic solutions",
+    "description": "Brand and logo design, large-format graphics, design of conference and exhibition stands, and design and production of large-format wraps for cars and shop windows."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "references": "Our Work",
+    "contact": "Contact",
+    "themeToggle": "Toggle color theme",
+    "langEn": "En",
+    "langCs": "Cz",
+    "openMenu": "Open main menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "contact": "Contact",
+    "contactPerson": "Contact Person",
+    "address": "Address",
+    "billingAddress": "Billing Address",
+    "writeMessage": "Send Message",
+    "allRightsReserved": "All rights reserved.",
+    "createdBy": "Created by"
+  },
+  "company": {
+    "name": "Brand Design",
+    "legalName": "Brand Design s.r.o.",
+    "tagline": "graphic solutions",
+    "phone": "+420 777 135 686",
+    "email": "info@brand-design.cz",
+    "contactName": "Martin Luksaj",
+    "contactEmail": "luksaj@brand-design.cz",
+    "street": "Pražská 1602/7",
+    "city": "Blansko 1",
+    "zip": "678 01",
+    "billingStreet": "třída Kpt. Jaroše 1922/3",
+    "billingCity": "Černá Pole (Brno-střed), 602 00 Brno",
+    "ico": "09147136",
+    "icoLabel": "VAT ID"
+  }
+}
