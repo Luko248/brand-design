@@ -48,14 +48,15 @@ const { images: sticksImages, resources: sticksResources } =
         <div class="max-w-3xl mx-auto text-center mb-16">
           <div class="h-1 w-20 bg-primary rounded-full mx-auto mb-10"></div>
           <p
-            class="text-xl text-muted font-light leading-relaxed space-y-4"
+            class="text-xl dark:text-muted text-black/85 font-light leading-relaxed space-y-4"
             set:html={translations.description}
           />
           <Button
             as="a"
             href="mailto:info@brand-design.cz"
-            variant="primary"
-            class="mt-8"
+            variant="hero-primary"
+            size="lg"
+            class="mt-8 w-64 sm:w-auto min-w-[200px]"
           >
             {translations.ctaLabel}
           </Button>

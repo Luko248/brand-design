@@ -59,7 +59,7 @@ const referenceLinks = [
             class:list={[
               "h-7 lg:h-10 w-auto transition-all duration-300",
               isHomepage
-                ? "dark:invert lg:invert lg:group-[.is-scrolled]/header:invert-0 dark:lg:group-[.is-scrolled]/header:invert"
+                ? "dark:invert lg:group-[.is-scrolled]/header:invert-0 dark:lg:group-[.is-scrolled]/header:invert"
                 : "dark:invert",
             ]}
           />
@@ -130,7 +130,7 @@ const referenceLinks = [
               title={global.nav.themeToggle}
               size="sm"
               class={isHomepage
-                ? "lg:text-white/60 lg:hover:text-white/90 lg:hover:bg-white/10 lg:group-[.is-scrolled]/header:text-foreground/60 lg:group-[.is-scrolled]/header:hover:text-foreground/90 lg:group-[.is-scrolled]/header:hover:bg-foreground/10"
+                ? "lg:hover:bg-foreground/10 lg:group-[.is-scrolled]/header:hover:bg-foreground/10"
                 : ""}
             >
               <svg
@@ -288,7 +288,7 @@ const referenceLinks = [
             class="block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
             >{global.nav.references}</a
           >
-          <div class="pl-4 space-y-3 border-l-2 border-outline/20">
+          <div class="flex flex-col gap-4 pl-2 mt-2">
             {
               referenceLinks.map((link) => (
                 <a

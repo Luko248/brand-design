@@ -6,7 +6,7 @@
   /* Colors (OKLCH) */
   --color-background: oklch(0.985 0.02 285);
   --color-surface: oklch(0.97 0.04 300);
-  --color-foreground: oklch(0.18 0.03 280);
+  --color-foreground: oklch(0.1 0.03 280);
   --color-muted: oklch(0.7 0.02 285);
 
   --color-primary: oklch(0.56 0.22 315);
@@ -18,8 +18,8 @@
   --color-secondary-hover: oklch(0.8 0.16 100);
 
   /* Hero/parallax overlays */
-  --color-hero-grad-1: oklch(0.97 0.03 280 / 0.58);
-  --color-hero-grad-2: oklch(0.8 0.16 70 / 0.34);
+  --color-hero-grad-1: oklch(0.31 0.06 280 / 0.72);
+  --color-hero-grad-2: oklch(0.45 0.1 260 / 0.46);
   --color-hero-grad-1-dark: oklch(0.31 0.06 280 / 0.72);
   --color-hero-grad-2-dark: oklch(0.45 0.1 260 / 0.46);
   --color-hero-backdrop-light: oklch(0.985 0.02 285);

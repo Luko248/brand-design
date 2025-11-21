@@ -19,7 +19,7 @@ const { translations } = Astro.props;
 ---
 
 <section
-  class="relative w-full h-svh flex items-center justify-center overflow-hidden bg-black pt-16"
+  class="relative w-full h-svh grid place-items-center overflow-hidden bg-black"
 >
   <!-- Background Layers -->
   <div class="absolute inset-0 z-0 pointer-events-none">
@@ -47,51 +47,58 @@ const { translations } = Astro.props;
   </div>
 
   <!-- Content -->
-  <Container class="relative z-10 text-center sm:px-6 lg:px-8">
-    <div class="space-y-10 md:space-y-14">
-      <!-- Logo -->
-      <div class="flex justify-center animate-fade-in-down">
-        <img
-          src="/images/logos/logo.svg"
-          alt="Brand Design"
-          class="h-24 md:h-32 lg:h-40 2xl:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)]"
-        />
-      </div>
+  <div class="relative z-10 w-full">
+    <Container class="text-center sm:px-6 lg:px-8">
+      <div class="space-y-10 md:space-y-14">
+        <!-- Logo -->
+        <div class="flex justify-center animate-fade-in-down">
+          <img
+            src="/images/logos/logo-dark.svg"
+            alt="Brand Design"
+            class="h-24 md:h-32 lg:h-40 2xl:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)] block dark:hidden"
+          />
+          <img
+            src="/images/logos/logo.svg"
+            alt="Brand Design"
+            class="h-24 md:h-32 lg:h-40 2xl:h-48 w-auto drop-shadow-[0_0_35px_rgba(115,48,138,0.6)] hidden dark:block"
+          />
+        </div>
 
-      <!-- Text -->
-      <div class="space-y-8 max-w-4xl mx-auto">
-        <h1 class="sr-only">{translations.title}</h1>
+        <!-- Text -->
+        <div class="space-y-8 max-w-4xl mx-auto">
+          <h1 class="sr-only">{translations.title}</h1>
+          <div
+            class="font-display font-light text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-foreground leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
+            set:html={translations.subtitle}
+          />
+        </div>
+
+        <!-- Buttons -->
         <div
-          class="font-display font-light text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-foreground leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
-          set:html={translations.subtitle}
-        />
-      </div>
-
-      <!-- Buttons -->
-      <div
-        class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6 w-full mx-auto"
-      >
-        <Button
-          as="a"
-          href="#contact"
-          variant="primary"
-          size="lg"
-          class="w-64 sm:w-auto min-w-[200px] text-lg uppercase tracking-widest shadow-[0_0_25px_rgba(115,48,138,0.5)] hover:shadow-[0_0_40px_rgba(115,48,138,0.7)] transition-shadow duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6 w-full mx-auto"
         >
-          {translations.buttonPrimary}
-        </Button>
-        <Button
-          as="a"
-          href="#references"
-          variant="outline"
-          size="lg"
-          class="w-64 sm:w-auto min-w-[200px] text-lg uppercase tracking-widest backdrop-blur-sm border-foreground/30 text-foreground hover:border-foreground hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-        >
-          {translations.buttonSecondary}
-        </Button>
+          <Button
+            as="a"
+            href="#contact"
+            variant="hero-primary"
+            size="lg"
+            class="w-64 sm:w-auto min-w-[200px]"
+          >
+            {translations.buttonPrimary}
+          </Button>
+          <Button
+            as="a"
+            href="#references"
+            variant="hero-outline"
+            size="lg"
+            class="w-64 sm:w-auto min-w-[200px]"
+          >
+            {translations.buttonSecondary}
+          </Button>
+        </div>
       </div>
-    </div>
-  </Container>
+    </Container>
+  </div>
 
   <!-- Scroll Down Indicator -->
   <div
