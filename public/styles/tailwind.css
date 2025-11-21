@@ -282,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-W2pAKN9Dpr: auto;
-      --toolwind-toggle-XmZYi1YeMv: transparent;
-      --toolwind-toggle-2rnxzDd3Sc: inherit;
-      --toolwind-toggle-tDDTXFA1HD: 0px;
+      --toolwind-toggle-e4nBJ1hOSo: auto;
+      --toolwind-toggle-B4cYrTQZY7: transparent;
+      --toolwind-toggle-oTpMSWeqqA: inherit;
+      --toolwind-toggle-XcieHj9nl7: 0px;
     }
   }
   .absolute {
@@ -2603,31 +2603,75 @@
     position: relative;
     overflow: clip;
     background-color: transparent;
+    --bg-parallax-image: url("../images/backgrounds/paralax.avif");
+    --bg-parallax-position: center;
+  }
+  @media (width <= 768px) {
+    .bg-parallax {
+      --bg-parallax-image: url("../images/backgrounds/paralax_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax {
+      --bg-parallax-image: url("../images/backgrounds/paralax_560.avif");
+    }
+  }
+  .bg-parallax-sticks {
+    --bg-parallax-image: url("../images/backgrounds/stickers.avif");
+    --bg-parallax-position: center bottom;
+  }
+  @media (width <= 768px) {
+    .bg-parallax-sticks {
+      --bg-parallax-image: url("../images/backgrounds/stickers_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax-sticks {
+      --bg-parallax-image: url("../images/backgrounds/stickers_560.avif");
+    }
+  }
+  .bg-parallax-printing {
+    --bg-parallax-image: url("../images/backgrounds/printing.avif");
+    --bg-parallax-position: center bottom;
+  }
+  @media (width <= 768px) {
+    .bg-parallax-printing {
+      --bg-parallax-image: url("../images/backgrounds/printing_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax-printing {
+      --bg-parallax-image: url("../images/backgrounds/printing_560.avif");
+    }
+  }
+  .bg-parallax-expositions {
+    --bg-parallax-image: url("../images/backgrounds/expositions.avif");
+    --bg-parallax-position: center bottom;
+  }
+  @media (width <= 768px) {
+    .bg-parallax-expositions {
+      --bg-parallax-image: url("../images/backgrounds/expositions_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax-expositions {
+      --bg-parallax-image: url("../images/backgrounds/expositions_560.avif");
+    }
   }
   .bg-parallax::before {
     content: "";
     position: absolute;
     inset: -1rem;
     background-size: cover;
-    background-position: center;
+    background-position: var(--bg-parallax-position);
     background-attachment: fixed;
-    background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), url("../images/backgrounds/paralax.avif");
+    background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), var(--bg-parallax-image);
     filter: blur(6px);
     z-index: 0;
   }
   .bg-parallax > * {
     position: relative;
     z-index: 1;
-  }
-  @media (max-width: 768px) {
-    .bg-parallax::before {
-      background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), url("../images/backgrounds/paralax_768.avif");
-    }
-  }
-  @media (max-width: 560px) {
-    .bg-parallax::before {
-      background-image: linear-gradient( 135deg, var(--color-hero-grad-1), var(--color-hero-grad-2) ), url("../images/backgrounds/paralax_560.avif");
-    }
   }
   .border-outline {
     border-color: var(--color-outline);
@@ -2683,10 +2727,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-W2pAKN9Dpr, 0px);
-    background-color: var(--toolwind-toggle-XmZYi1YeMv, canvas);
-    color: var(--toolwind-toggle-2rnxzDd3Sc, canvastext);
-    margin: var(--toolwind-toggle-tDDTXFA1HD, auto);
+    inset: var(--toolwind-toggle-e4nBJ1hOSo, 0px);
+    background-color: var(--toolwind-toggle-B4cYrTQZY7, canvas);
+    color: var(--toolwind-toggle-oTpMSWeqqA, canvastext);
+    margin: var(--toolwind-toggle-XcieHj9nl7, auto);
   }
 }
 @property --tw-translate-x {

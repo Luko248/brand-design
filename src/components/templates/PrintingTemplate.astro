@@ -20,12 +20,6 @@ const { images: cloudinaryImages, resources: cloudinaryResources } =
   await getPrintingCloudinaryData();
 
 const printingImages = cloudinaryImages;
-
-const bgImage = import.meta.env.BASE_URL + "images/backgrounds/printing.avif";
-const bgImage768 =
-  import.meta.env.BASE_URL + "images/backgrounds/printing_768.avif";
-const bgImage560 =
-  import.meta.env.BASE_URL + "images/backgrounds/printing_560.avif";
 ---
 
 <BaseLayout
@@ -111,43 +105,3 @@ const bgImage560 =
 
   <Footer lang={lang} />
 </BaseLayout>
-
-<style define:vars={{ bgImage, bgImage768, bgImage560 }}>
-  .bg-parallax-printing::before {
-    background-image:
-      linear-gradient(
-        135deg,
-        var(--color-hero-grad-1),
-        var(--color-hero-grad-2)
-      ),
-      url(var(--bgImage));
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-
-  @media (max-width: 768px) {
-    .bg-parallax-printing::before {
-      background-image:
-        linear-gradient(
-          135deg,
-          var(--color-hero-grad-1),
-          var(--color-hero-grad-2)
-        ),
-        url(var(--bgImage768));
-    }
-  }
-
-  @media (max-width: 560px) {
-    .bg-parallax-printing::before {
-      background-image:
-        linear-gradient(
-          135deg,
-          var(--color-hero-grad-1),
-          var(--color-hero-grad-2)
-        ),
-        url(var(--bgImage560));
-    }
-  }
-</style>

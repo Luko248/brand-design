@@ -168,6 +168,70 @@
     position: relative;
     overflow: clip;
     background-color: transparent;
+
+    /* Default (Home) - Define the image variable */
+    --bg-parallax-image: url("../images/backgrounds/paralax.avif");
+    --bg-parallax-position: center;
+  }
+
+  @media (width <= 768px) {
+    .bg-parallax {
+      --bg-parallax-image: url("../images/backgrounds/paralax_768.avif");
+    }
+  }
+
+  @media (width <= 560px) {
+    .bg-parallax {
+      --bg-parallax-image: url("../images/backgrounds/paralax_560.avif");
+    }
+  }
+
+  /* Sticks Override */
+  .bg-parallax-sticks {
+    --bg-parallax-image: url("../images/backgrounds/stickers.avif");
+    --bg-parallax-position: center bottom;
+  }
+  @media (width <= 768px) {
+    .bg-parallax-sticks {
+      --bg-parallax-image: url("../images/backgrounds/stickers_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax-sticks {
+      --bg-parallax-image: url("../images/backgrounds/stickers_560.avif");
+    }
+  }
+
+  /* Printing Override */
+  .bg-parallax-printing {
+    --bg-parallax-image: url("../images/backgrounds/printing.avif");
+    --bg-parallax-position: center bottom;
+  }
+  @media (width <= 768px) {
+    .bg-parallax-printing {
+      --bg-parallax-image: url("../images/backgrounds/printing_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax-printing {
+      --bg-parallax-image: url("../images/backgrounds/printing_560.avif");
+    }
+  }
+
+  /* Expositions Override */
+  .bg-parallax-expositions {
+    --bg-parallax-image: url("../images/backgrounds/expositions.avif");
+    --bg-parallax-position: center bottom;
+  }
+  @media (width <= 768px) {
+    .bg-parallax-expositions {
+      --bg-parallax-image: url("../images/backgrounds/expositions_768.avif");
+    }
+  }
+  @media (width <= 560px) {
+    .bg-parallax-expositions {
+      --bg-parallax-image: url("../images/backgrounds/expositions_560.avif");
+    }
   }
 
   .bg-parallax::before {
@@ -175,7 +239,7 @@
     position: absolute;
     inset: -1rem;
     background-size: cover;
-    background-position: center;
+    background-position: var(--bg-parallax-position);
     background-attachment: fixed;
     background-image:
       linear-gradient(
@@ -183,7 +247,7 @@
         var(--color-hero-grad-1),
         var(--color-hero-grad-2)
       ),
-      url("../images/backgrounds/paralax.avif");
+      var(--bg-parallax-image);
     filter: blur(6px);
     z-index: 0;
   }
@@ -191,30 +255,6 @@
   .bg-parallax > * {
     position: relative;
     z-index: 1;
-  }
-
-  @media (max-width: 768px) {
-    .bg-parallax::before {
-      background-image:
-        linear-gradient(
-          135deg,
-          var(--color-hero-grad-1),
-          var(--color-hero-grad-2)
-        ),
-        url("../images/backgrounds/paralax_768.avif");
-    }
-  }
-
-  @media (max-width: 560px) {
-    .bg-parallax::before {
-      background-image:
-        linear-gradient(
-          135deg,
-          var(--color-hero-grad-1),
-          var(--color-hero-grad-2)
-        ),
-        url("../images/backgrounds/paralax_560.avif");
-    }
   }
   .border-outline {
     border-color: var(--color-outline);
