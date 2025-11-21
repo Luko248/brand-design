@@ -20,6 +20,12 @@ const { images: cloudinaryImages, resources: cloudinaryResources } =
   await getPrintingCloudinaryData();
 
 const printingImages = cloudinaryImages;
+
+const bgImage = import.meta.env.BASE_URL + "images/backgrounds/printing.avif";
+const bgImage768 =
+  import.meta.env.BASE_URL + "images/backgrounds/printing_768.avif";
+const bgImage560 =
+  import.meta.env.BASE_URL + "images/backgrounds/printing_560.avif";
 ---
 
 <BaseLayout
@@ -106,7 +112,7 @@ const printingImages = cloudinaryImages;
   <Footer lang={lang} />
 </BaseLayout>
 
-<style>
+<style define:vars={{ bgImage, bgImage768, bgImage560 }}>
   .bg-parallax-printing::before {
     background-position: center bottom;
     background-image:
@@ -115,7 +121,7 @@ const printingImages = cloudinaryImages;
         var(--color-hero-grad-1),
         var(--color-hero-grad-2)
       ),
-      url("/images/backgrounds/printing.avif");
+      url(var(--bgImage));
   }
 
   @media (max-width: 768px) {
@@ -126,7 +132,7 @@ const printingImages = cloudinaryImages;
           var(--color-hero-grad-1),
           var(--color-hero-grad-2)
         ),
-        url("/images/backgrounds/printing_768.avif");
+        url(var(--bgImage768));
     }
   }
 
@@ -138,7 +144,7 @@ const printingImages = cloudinaryImages;
           var(--color-hero-grad-1),
           var(--color-hero-grad-2)
         ),
-        url("/images/backgrounds/printing_560.avif");
+        url(var(--bgImage560));
     }
   }
 </style>

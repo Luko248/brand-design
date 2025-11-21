@@ -7,7 +7,7 @@ const createInfoWindowContent = (addressLines: string[]) => {
   content.className = "brand-map-infowindow";
 
   const logo = document.createElement("img");
-  logo.src = "/images/logos/logo-dark.svg";
+  logo.src = import.meta.env.BASE_URL + "images/logos/logo-dark.svg";
   logo.alt = "Brand Design";
   logo.className = "brand-map-infowindow__logo";
 
@@ -75,7 +75,7 @@ const initMap = async (container: HTMLElement) => {
     });
 
     const markerContent = document.createElement("img");
-    markerContent.src = "/images/icons/marker.svg";
+    markerContent.src = import.meta.env.BASE_URL + "images/icons/marker.svg";
     markerContent.alt = "Brand Design Location";
     // Optional: Add a class for styling if needed, e.g. w-10 h-10 object-contain
     markerContent.className =

@@ -17,6 +17,12 @@ const translations = await loadTranslations(lang, "pages/sticks");
 
 const { images: sticksImages, resources: sticksResources } =
   await getStickersCloudinaryData();
+
+const bgImage = import.meta.env.BASE_URL + "images/backgrounds/stickers.avif";
+const bgImage768 =
+  import.meta.env.BASE_URL + "images/backgrounds/stickers_768.avif";
+const bgImage560 =
+  import.meta.env.BASE_URL + "images/backgrounds/stickers_560.avif";
 ---
 
 <BaseLayout
@@ -99,7 +105,7 @@ const { images: sticksImages, resources: sticksResources } =
   <Footer lang={lang} />
 </BaseLayout>
 
-<style>
+<style define:vars={{ bgImage, bgImage768, bgImage560 }}>
   .bg-parallax-sticks::before {
     background-position: center bottom;
     background-image:
@@ -108,7 +114,7 @@ const { images: sticksImages, resources: sticksResources } =
         var(--color-hero-grad-1),
         var(--color-hero-grad-2)
       ),
-      url("/images/backgrounds/stickers.avif");
+      url(var(--bgImage));
   }
 
   @media (max-width: 768px) {
@@ -119,7 +125,7 @@ const { images: sticksImages, resources: sticksResources } =
           var(--color-hero-grad-1),
           var(--color-hero-grad-2)
         ),
-        url("/images/backgrounds/stickers_768.avif");
+        url(var(--bgImage768));
     }
   }
 
@@ -131,7 +137,7 @@ const { images: sticksImages, resources: sticksResources } =
           var(--color-hero-grad-1),
           var(--color-hero-grad-2)
         ),
-        url("/images/backgrounds/stickers_560.avif");
+        url(var(--bgImage560));
     }
   }
 </style>

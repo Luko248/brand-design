@@ -52,9 +52,9 @@ const referenceLinks = [
     <div class="flex items-center h-16 relative">
       <!-- Logo -->
       <div class="flex items-center shrink-0">
-        <a href="/" rel="home" class="relative z-50 group">
+        <a href={homeUrl} rel="home" class="relative z-50 group">
           <img
-            src="/images/logos/logo-black.svg"
+            src={import.meta.env.BASE_URL + "images/logos/logo-black.svg"}
             alt="Brand Design"
             class:list={[
               "h-7 lg:h-10 w-auto transition-all duration-300",
@@ -239,9 +239,9 @@ const referenceLinks = [
     <div
       class="flex items-center justify-between p-4 border-b border-outline/20"
     >
-      <a href="/" rel="home" class="flex-shrink-0">
+      <a href={homeUrl} rel="home" class="flex-shrink-0">
         <img
-          src="/images/logos/logo-black.svg"
+          src={import.meta.env.BASE_URL + "images/logos/logo-black.svg"}
           alt="Brand Design"
           class="h-7 w-auto transition-all duration-300 dark:invert"
         />

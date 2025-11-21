@@ -37,19 +37,19 @@ const findImage = (data: CloudinaryGalleryData, groupId: string) =>
 const selectedImages = [
   {
     data: findImage(printingData, "printing-3d-logo"),
-    fallbackImage: "/images/cards/printing.avif",
+    fallbackImage: import.meta.env.BASE_URL + "images/cards/printing.avif",
     page: "/printing-and-production",
     titleKey: "printing",
   },
   {
     data: findImage(expositionsData, "expositions-biofach-2019-nurnberg"),
-    fallbackImage: "/images/cards/expositions.avif",
+    fallbackImage: import.meta.env.BASE_URL + "images/cards/expositions.avif",
     page: "/expositions",
     titleKey: "expositions",
   },
   {
     data: findImage(sticksData, "stickers-kangaroo"),
-    fallbackImage: "/images/cards/stickers.avif",
+    fallbackImage: import.meta.env.BASE_URL + "images/cards/stickers.avif",
     page: "/sticks",
     titleKey: "sticks",
   },
@@ -74,17 +74,17 @@ const carouselItems = selectedImages.map((item) => {
 const referenceCards = [
   {
     href: getLocalizedPath("/printing-and-production", lang),
-    image: "/images/cards/printing.avif",
+    image: import.meta.env.BASE_URL + "images/cards/printing.avif",
     ...translations.services.printing,
   },
   {
     href: getLocalizedPath("/expositions", lang),
-    image: "/images/cards/expositions.avif",
+    image: import.meta.env.BASE_URL + "images/cards/expositions.avif",
     ...translations.services.expositions,
   },
   {
     href: getLocalizedPath("/sticks", lang),
-    image: "/images/cards/stickers.avif",
+    image: import.meta.env.BASE_URL + "images/cards/stickers.avif",
     ...translations.services.sticks,
   },
 ];
@@ -240,7 +240,8 @@ const referenceCards = [
           >
             <span class="sr-only">Mistry Mont</span>
             <img
-              src="/images/logos/mistry-mont-logo.webp"
+              src={import.meta.env.BASE_URL +
+                "images/logos/mistry-mont-logo.webp"}
               alt="Mistry Mont"
               loading="lazy"
               decoding="async"
