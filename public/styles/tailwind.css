@@ -11,6 +11,7 @@
     --color-indigo-400: oklch(67.3% 0.182 276.935);
     --color-black: oklch(0 0 0);
     --color-white: oklch(1 0 0);
+    --spacing: 0.25rem;
     --container-md: 28rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
@@ -512,6 +513,9 @@
   }
   .min-h-6 {
     min-height: var(--spacing-6);
+  }
+  .min-h-72 {
+    min-height: calc(var(--spacing) * 72);
   }
   .min-h-\[18rem\] {
     min-height: 18rem;
@@ -1738,6 +1742,11 @@
   .min-\[980px\]\:w-\[70\%\] {
     @media (width >= 980px) {
       width: 70%;
+    }
+  }
+  .sm\:min-h-96 {
+    @media (width >= 40rem) {
+      min-height: calc(var(--spacing) * 96);
     }
   }
   .sm\:min-h-\[24rem\] {
