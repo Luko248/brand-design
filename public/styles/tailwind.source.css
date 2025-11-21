@@ -252,6 +252,14 @@
     z-index: 0;
   }
 
+  @media (width <= 768px) {
+    .bg-parallax::before {
+      background-attachment: scroll;
+      /* On iOS, fixed background often causes zoom issues.
+         Scroll allows the image to fit 'cover' naturally. */
+    }
+  }
+
   .bg-parallax > * {
     position: relative;
     z-index: 1;

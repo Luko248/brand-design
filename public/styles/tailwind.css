@@ -282,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-e4nBJ1hOSo: auto;
-      --toolwind-toggle-B4cYrTQZY7: transparent;
-      --toolwind-toggle-oTpMSWeqqA: inherit;
-      --toolwind-toggle-XcieHj9nl7: 0px;
+      --toolwind-toggle-LgANx1ad5E: auto;
+      --toolwind-toggle-VM6a88KL0b: transparent;
+      --toolwind-toggle-4paIzUF44I: inherit;
+      --toolwind-toggle-9AzuylB0A5: 0px;
     }
   }
   .absolute {
@@ -2669,6 +2669,11 @@
     filter: blur(6px);
     z-index: 0;
   }
+  @media (width <= 768px) {
+    .bg-parallax::before {
+      background-attachment: scroll;
+    }
+  }
   .bg-parallax > * {
     position: relative;
     z-index: 1;
@@ -2727,10 +2732,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-e4nBJ1hOSo, 0px);
-    background-color: var(--toolwind-toggle-B4cYrTQZY7, canvas);
-    color: var(--toolwind-toggle-oTpMSWeqqA, canvastext);
-    margin: var(--toolwind-toggle-XcieHj9nl7, auto);
+    inset: var(--toolwind-toggle-LgANx1ad5E, 0px);
+    background-color: var(--toolwind-toggle-VM6a88KL0b, canvas);
+    color: var(--toolwind-toggle-4paIzUF44I, canvastext);
+    margin: var(--toolwind-toggle-9AzuylB0A5, auto);
   }
 }
 @property --tw-translate-x {
