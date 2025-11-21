@@ -73,10 +73,10 @@
     --color-outline: oklch(0.72 0.22 317);
     --color-secondary: oklch(0.9 0.18 100);
     --color-secondary-hover: oklch(0.8 0.16 100);
-    --color-hero-grad-1: oklch(0.31 0.06 280 / 0.72);
-    --color-hero-grad-2: oklch(0.45 0.1 260 / 0.46);
-    --color-hero-grad-1-dark: oklch(0.31 0.06 280 / 0.72);
-    --color-hero-grad-2-dark: oklch(0.45 0.1 260 / 0.46);
+    --color-hero-grad-1: oklch(0.31 0.06 280 / 0.75);
+    --color-hero-grad-2: oklch(0.45 0.1 260 / 0.5);
+    --color-hero-grad-1-dark: oklch(0.31 0.06 280 / 0.8);
+    --color-hero-grad-2-dark: oklch(0.45 0.1 260 / 0.6);
     --color-hero-backdrop-dark: oklch(0.12 0.02 280);
     --color-shadow: oklch(0 0 0 / 0.75);
     --font-display: "Inter", var(--font-sans);
@@ -282,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-HganjfZ26G: auto;
-      --toolwind-toggle-ZS2j2IVy1D: transparent;
-      --toolwind-toggle-aAbxIzElJt: inherit;
-      --toolwind-toggle-YFT82eifDD: 0px;
+      --toolwind-toggle-qQV50tPCJ1: auto;
+      --toolwind-toggle-zfplK5fL37: transparent;
+      --toolwind-toggle-CP1Axpd1re: inherit;
+      --toolwind-toggle-fIawMOHwY4: 0px;
     }
   }
   .absolute {
@@ -2733,10 +2733,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-HganjfZ26G, 0px);
-    background-color: var(--toolwind-toggle-ZS2j2IVy1D, canvas);
-    color: var(--toolwind-toggle-aAbxIzElJt, canvastext);
-    margin: var(--toolwind-toggle-YFT82eifDD, auto);
+    inset: var(--toolwind-toggle-qQV50tPCJ1, 0px);
+    background-color: var(--toolwind-toggle-zfplK5fL37, canvas);
+    color: var(--toolwind-toggle-CP1Axpd1re, canvastext);
+    margin: var(--toolwind-toggle-fIawMOHwY4, auto);
   }
 }
 @property --tw-translate-x {
