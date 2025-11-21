@@ -1,7 +1,9 @@
 @layer base {
   :root {
     --focus-ring: 0 0 0 var(--spacing-1) var(--color-outline);
-    --nav-height: var(--spacing-20);
+    --nav-height-mobile: var(--spacing-16);
+    --nav-height-desktop: var(--spacing-20);
+    --nav-height: var(--nav-height-mobile);
   }
 
   html {
@@ -21,6 +23,12 @@
 
   .page-section {
     scroll-margin-top: var(--nav-height);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --nav-height: var(--nav-height-desktop);
   }
 }
 

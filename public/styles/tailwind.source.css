@@ -183,7 +183,7 @@
         var(--color-hero-grad-1),
         var(--color-hero-grad-2)
       ),
-      url("/images/backgrounds/paralax.avif");
+      url("../images/backgrounds/paralax.avif");
     filter: blur(6px);
     z-index: 0;
   }
@@ -201,7 +201,7 @@
           var(--color-hero-grad-1),
           var(--color-hero-grad-2)
         ),
-        url("/images/backgrounds/paralax_768.avif");
+        url("../images/backgrounds/paralax_768.avif");
     }
   }
 
@@ -213,7 +213,7 @@
           var(--color-hero-grad-1),
           var(--color-hero-grad-2)
         ),
-        url("/images/backgrounds/paralax_560.avif");
+        url("../images/backgrounds/paralax_560.avif");
     }
   }
   .border-outline {

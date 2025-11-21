@@ -5,6 +5,7 @@ import Footer from "@/components/Footer.astro";
 import Hero from "@/components/Hero.astro";
 import Button from "@/components/ui/Button.astro";
 import Carousel from "@/components/ui/Carousel.astro";
+import SectionHeader from "@/components/ui/SectionHeader.astro";
 import ReferenceCard from "@/components/ReferenceCard.astro";
 import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
 import {
@@ -126,19 +127,11 @@ const referenceCards = [
             <!-- Hidden H1 for SEO -->
             <h1 class="sr-only" set:html={translations.about.mainTitle} />
 
-            <div class="animate-reveal">
-              <h2
-                class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
-              >
-                <span
-                  class="block text-primary text-lg font-bold tracking-[0.3em] mb-2 uppercase"
-                  >{translations.about.sectionLabel}</span
-                >
-                <span set:html={translations.about.title} />
-              </h2>
-              <div class="h-1.5 w-24 bg-primary rounded-full mx-auto md:mx-0">
-              </div>
-            </div>
+            <SectionHeader
+              label={translations.about.sectionLabel}
+              title={translations.about.title}
+              class="md:items-start md:text-left"
+            />
 
             <div
               class="space-y-6 text-lg md:text-xl font-light leading-relaxed dark:text-muted text-black/85"
@@ -180,18 +173,12 @@ const referenceCards = [
     <section id="references" class="page-section py-20 md:py-32 bg-background">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          class="text-center max-w-2xl mx-auto mb-16 md:mb-24 animate-reveal"
+          class="flex flex-col items-center text-center gap-6 max-w-2xl mx-auto mb-16 md:mb-24 animate-reveal"
         >
-          <span
-            class="text-primary text-sm font-bold tracking-[0.3em] uppercase block mb-4"
-          >
-            {translations.services.sectionLabel}
-          </span>
-          <h2
-            class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6"
-          >
-            {translations.services.title}
-          </h2>
+          <SectionHeader
+            label={translations.services.sectionLabel}
+            title={translations.services.title}
+          />
           <p
             class="text-lg md:text-xl font-light text-balance dark:text-muted text-black/85"
             set:html={translations.services.subtitle}
@@ -219,15 +206,13 @@ const referenceCards = [
     <!-- Partners -->
     <section class="page-section py-20 bg-surface border-t border-outline/10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2
-          class="font-display uppercase text-3xl md:text-4xl text-foreground mb-12 opacity-80 animate-reveal"
-        >
-          {translations.partners.title}
-        </h2>
-
         <div
-          class="flex flex-col items-center gap-6 opacity-100 text-center animate-reveal"
+          class="flex flex-col items-center text-center gap-8 opacity-100 animate-reveal"
         >
+          <SectionHeader
+            label={translations.partners.sectionLabel}
+            title={translations.partners.title}
+          />
           <p
             class="text-xl font-light dark:text-muted text-black/85"
             set:html={translations.partners.text}
