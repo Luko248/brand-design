@@ -36,15 +36,15 @@ const bgImage560 =
     class="bg-parallax bg-parallax-sticks relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden"
   >
     <div
-      class="relative z-10 text-center px-4 max-w-4xl mx-auto animate-reveal"
+      class="page-hero__content relative z-10 text-center px-4 max-w-4xl mx-auto"
     >
       <span class="block text-primary font-bold tracking-[0.3em] uppercase mb-4"
-        >{translations.heading}</span
+        >Brand DESIGN</span
       >
       <h1
-        class="font-display uppercase text-4xl md:text-6xl text-white mb-6 leading-tight"
+        class="font-display uppercase text-4xl md:text-6xl text-white mb-0 leading-tight"
       >
-        {translations.title}
+        {translations.heading}
       </h1>
     </div>
   </header>
@@ -108,6 +108,7 @@ const bgImage560 =
 <style define:vars={{ bgImage, bgImage768, bgImage560 }}>
   .bg-parallax-sticks::before {
     background-position: center bottom;
+    background-size: cover;
     background-image:
       linear-gradient(
         135deg,
@@ -115,6 +116,7 @@ const bgImage560 =
         var(--color-hero-grad-2)
       ),
       url(var(--bgImage));
+    background-repeat: no-repeat;
   }
 
   @media (max-width: 768px) {
@@ -126,6 +128,8 @@ const bgImage560 =
           var(--color-hero-grad-2)
         ),
         url(var(--bgImage768));
+      background-size: contain;
+      background-position: center;
     }
   }
 
@@ -138,6 +142,8 @@ const bgImage560 =
           var(--color-hero-grad-2)
         ),
         url(var(--bgImage560));
+      background-size: contain;
+      background-position: center;
     }
   }
 </style>

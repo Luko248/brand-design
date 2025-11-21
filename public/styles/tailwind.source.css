@@ -166,7 +166,7 @@
   }
   .bg-parallax {
     position: relative;
-    overflow: hidden;
+    overflow: clip;
     background-color: transparent;
   }
 

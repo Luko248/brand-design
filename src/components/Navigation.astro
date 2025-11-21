@@ -56,6 +56,10 @@ const normalizePath = (value: string) => {
 };
 
 const normalizedCurrentPath = normalizePath(currentPath);
+
+const isReferenceActive = referenceLinks.some(
+  (link) => normalizePath(link.href) === normalizedCurrentPath
+);
 ---
 
 <header
@@ -100,8 +104,7 @@ const normalizedCurrentPath = normalizePath(currentPath);
           class:list={[
             "nav-link text-sm whitespace-nowrap uppercase tracking-widest transition-colors",
             "hover:text-primary",
-          ]}
-          >{global.nav.home}</a
+          ]}>{global.nav.home}</a
         >
         <a
           href={aboutUrl}
@@ -110,8 +113,7 @@ const normalizedCurrentPath = normalizePath(currentPath);
           class:list={[
             "nav-link text-sm whitespace-nowrap uppercase tracking-widest transition-colors",
             "hover:text-primary",
-          ]}
-          >{global.nav.about}</a
+          ]}>{global.nav.about}</a
         >
 
         <div class="relative group">
@@ -122,7 +124,9 @@ const normalizedCurrentPath = normalizePath(currentPath);
             class:list={[
               "nav-link text-sm whitespace-nowrap uppercase cursor-pointer tracking-widest transition-colors flex items-center gap-1 anchor/nav-references",
               "hover:text-primary",
+              isReferenceActive && "text-primary",
             ]}
+            aria-current={isReferenceActive ? "true" : undefined}
           >
             {global.nav.references}
             <ChevronDownIcon
@@ -163,8 +167,7 @@ const normalizedCurrentPath = normalizePath(currentPath);
           class:list={[
             "nav-link text-sm uppercase tracking-widest transition-colors",
             "hover:text-primary",
-          ]}
-          >{global.nav.contact}</a
+          ]}>{global.nav.contact}</a
         >
       </nav>
 
@@ -340,13 +343,13 @@ const normalizedCurrentPath = normalizePath(currentPath);
             class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
             >{global.nav.references}</a
           >
-          <div class="flex flex-col gap-4 pl-2 mt-2">
+          <div class="flex flex-col gap-5 pl-2 mt-2">
             {
               referenceLinks.map((link) => (
                 <a
                   href={link.href}
                   class:list={[
-                    "nav-sub-link block text-sm text-muted transition-colors",
+                    "nav-sub-link block text-sm text-foreground/80 dark:text-white/80 transition-colors",
                     "hover:text-primary",
                     normalizePath(link.href) === normalizedCurrentPath &&
                       "text-primary is-active",
@@ -407,88 +410,86 @@ const normalizedCurrentPath = normalizePath(currentPath);
 
     const initScrollSpy = () => {
       if (!isHomepage) return;
-      const navLinks = Array.from(
-        document.querySelectorAll("[data-nav-link]")
-      );
-      if (!navLinks.length) return;
 
-      const seen = new Set();
-      const targets = [];
-      navLinks.forEach((link) => {
-        const id = link.dataset.navLink;
-        if (!id || seen.has(id)) return;
-        const section = document.getElementById(id);
-        if (!section) return;
-        seen.add(id);
-        targets.push({ id, section });
-      });
+      const navLinks = document.querySelectorAll("[data-nav-link]");
+      const sections = Array.from(navLinks)
+        .map((link) => {
+          const id = link.dataset.navLink;
+          const section = document.getElementById(id);
+          return section ? { id, link, section } : null;
+        })
+        .filter(Boolean);
 
-      if (!targets.length) return;
+      if (!sections.length) return;
 
-      const applyActive = (id) => {
+      let throttleTimer = null;
+
+      const updateActive = () => {
+        const scrollY = window.scrollY;
+        // Offset to account for fixed header (approx 80px) + some buffer
+        const offset = 100;
+        const viewPosition = scrollY + offset;
+
+        let currentId = "";
+
+        // Find the current section
+        for (const { id, section } of sections) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+
+          if (top <= viewPosition && bottom > viewPosition) {
+            currentId = id;
+            break;
+          }
+        }
+
+        // Fallback: if at bottom of page, highlight last item (Contact)
+        if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
+          currentId = sections[sections.length - 1].id;
+        }
+
         navLinks.forEach((link) => {
-          const isMatch = link.dataset.navLink === id;
-          link.classList.toggle("is-active", isMatch);
-          if (isMatch) {
+          if (link.dataset.navLink === currentId) {
+            link.classList.add("is-active", "text-primary");
             link.setAttribute("aria-current", "true");
           } else {
+            link.classList.remove("is-active", "text-primary");
             link.removeAttribute("aria-current");
           }
         });
       };
 
-      const getNavHeight = () => {
-        const raw = getComputedStyle(
-          document.documentElement
-        ).getPropertyValue("--nav-height");
-        const parsed = Number.parseFloat(raw);
-        return Number.isFinite(parsed) ? parsed : 80;
+      const onScroll = () => {
+        if (throttleTimer) return;
+        throttleTimer = setTimeout(() => {
+          updateActive();
+          throttleTimer = null;
+        }, 100);
       };
-
-      const updateActive = () => {
-        const navHeight = getNavHeight();
-        let activeId = targets[0].id;
-        let bestVisible = -Infinity;
-        const viewportHeight = window.innerHeight;
-
-        for (const { id, section } of targets) {
-          const rect = section.getBoundingClientRect();
-          const visibleAmount =
-            Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-          const intersectsNav =
-            rect.top <= navHeight + 1 && rect.bottom > navHeight + 1;
-
-          if (intersectsNav) {
-            activeId = id;
-            break;
-          }
-
-          const score =
-            (visibleAmount > 0 ? visibleAmount : 0) -
-            Math.abs(rect.top - navHeight) * 0.1;
-
-          if (score > bestVisible) {
-            bestVisible = score;
-            activeId = id;
-          }
-        }
-
-        const atPageBottom =
-          window.innerHeight + window.scrollY >=
-          document.documentElement.scrollHeight - 4;
-        if (atPageBottom) {
-          activeId = targets[targets.length - 1].id;
-        }
-
-        applyActive(activeId);
-      };
-
-      const onScroll = debounce(updateActive, 80);
-      const onResize = debounce(updateActive, 150);
 
       window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", onResize);
-      updateActive();
+
+      // Initial check: prioritize hash if present to avoid flash of wrong active state
+      // before browser finishes scrolling to anchor
+      const hash = window.location.hash.substring(1);
+      const hasValidHash = sections.some((s) => s.id === hash);
+
+      if (hasValidHash) {
+        navLinks.forEach((link) => {
+          if (link.dataset.navLink === hash) {
+            link.classList.add("is-active", "text-primary");
+            link.setAttribute("aria-current", "true");
+          } else {
+            link.classList.remove("is-active", "text-primary");
+            link.removeAttribute("aria-current");
+          }
+        });
+      } else {
+        updateActive();
+      }
+
+      // Re-check after load to ensure sync with final scroll position
+      window.addEventListener("load", () => setTimeout(updateActive, 100));
     };
 
     const initMobileMenu = () => {
@@ -566,7 +567,12 @@ const normalizedCurrentPath = normalizePath(currentPath);
       syncHeaderState();
     }
 
-    initScrollSpy();
+    // Wait for DOM content to be fully loaded before initializing scrollspy
+    // because Navigation is at the top and sections are further down
+    document.addEventListener("DOMContentLoaded", () => {
+      initScrollSpy();
+    });
+
     initMobileMenu();
     initThemeToggle();
   })();
@@ -579,6 +585,5 @@ const normalizedCurrentPath = normalizePath(currentPath);
 
   :global(.nav-sub-link.is-active) {
     color: var(--color-primary);
-    background-color: color-mix(in oklab, var(--color-primary) 14%, transparent);
   }
 </style>

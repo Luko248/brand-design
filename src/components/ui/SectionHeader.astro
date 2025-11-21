@@ -3,14 +3,30 @@ export interface Props {
   label?: string;
   title: string;
   align?: "center" | "start";
+  dividerAlign?: "center" | "start" | "end";
+  dividerClass?: string;
   class?: string;
 }
 
-const { label, title, align = "center", class: className = "" } = Astro.props;
+const {
+  label,
+  title,
+  align = "center",
+  dividerAlign,
+  dividerClass = "",
+  class: className = "",
+} = Astro.props;
 
 const alignmentClasses =
   align === "start" ? "items-start text-left" : "items-center text-center";
-const dividerClasses = align === "start" ? "" : "mx-auto";
+const effectiveDividerAlign =
+  dividerAlign ?? (align === "center" ? "center" : "start");
+const dividerClasses = [
+  "h-1 w-20 md:w-24 bg-primary rounded-full",
+  effectiveDividerAlign === "center" && "mx-auto",
+  effectiveDividerAlign === "end" && "ml-auto",
+  dividerClass,
+];
 ---
 
 <div class:list={["flex flex-col gap-3", alignmentClasses, className]}>
@@ -25,5 +41,5 @@ const dividerClasses = align === "start" ? "" : "mx-auto";
     set:html={title}
   />
 
-  <div class:list={["h-1 w-20 md:w-24 bg-primary rounded-full", dividerClasses]} />
+  <div class:list={dividerClasses} />
 </div>
