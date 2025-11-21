@@ -109,8 +109,14 @@ const logoUrl = new URL("/images/logos/logo.svg", siteUrl).toString();
     <PerformanceOptimizations />
 
     <!-- Styles: Tailwind first, then global overrides -->
-    <link rel="stylesheet" href="/styles/tailwind.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
+    <link
+      rel="stylesheet"
+      href={new URL("/styles/tailwind.css", Astro.site).pathname}
+    />
+    <link
+      rel="stylesheet"
+      href={new URL("/styles/global.css", Astro.site).pathname}
+    />
 
     <!-- Theme bootstrap: initialize light/dark mode before paint -->
     <script is:inline>
