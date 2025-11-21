@@ -7,9 +7,15 @@ export interface Props {
   lang: "cs" | "en";
   currentPath?: string;
   class?: string;
+  upwards?: boolean;
 }
 
-const { lang, currentPath, class: className = "" } = Astro.props;
+const {
+  lang,
+  currentPath,
+  class: className = "",
+  upwards = false,
+} = Astro.props;
 
 const basePath = currentPath || Astro.url.pathname;
 const csUrl = getLocalizedPath(basePath, "cs");
@@ -24,19 +30,24 @@ const anchorName = `lang-toggle-${Math.random().toString(36).substring(2, 9)}`;
 <div class:list={["relative group language-toggle", className]}>
   <button
     type="button"
-    class={`group cursor-pointer flex items-center gap-2 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors focus:outline-none anchor/${anchorName}`}
+    class={`cursor-pointer flex items-center gap-2 text-sm font-medium uppercase tracking-wider hover:text-primary transition-colors focus:outline-none anchor/${anchorName}`}
     aria-expanded="false"
     aria-haspopup="true"
   >
     <LanguageIcon />
     <span>{currentLangFlag}</span>
     <ChevronDownIcon
-      class="w-4 h-4 group-hover:rotate-180 transition-transform duration-200"
+      class="w-4 h-4 transition-transform duration-200 arrow-icon group-hover:rotate-180"
     />
   </button>
 
   <div
-    class={`absolute top-full right-0 anchored-bottom-right/${anchorName} w-40 py-2 mt-2 bg-background/95 backdrop-blur-md border border-white/10 rounded-xl shadow-xl opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 dark:border-white/10 dark:bg-surface/95 z-60`}
+    class:list={[
+      `absolute w-40 py-2 bg-background/95 backdrop-blur-md border border-white/10 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 dark:border-white/10 dark:bg-surface/95 z-60`,
+      upwards
+        ? "left-0 bottom-full mb-2 -translate-y-2 group-hover:translate-y-0"
+        : "right-0 top-full mt-2 translate-y-2 group-hover:translate-y-0",
+    ]}
   >
     <a
       href={csUrl}
@@ -89,29 +100,60 @@ const anchorName = `lang-toggle-${Math.random().toString(36).substring(2, 9)}`;
         }
       }
 
-      button.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isOpen = button.getAttribute("aria-expanded") === "true";
-        // Close all other toggles first
-        toggles.forEach((c) => {
-          if (c !== container) {
-            const b = c.querySelector("button");
-            const d = c.querySelector("div");
-            const a = c.querySelector(".arrow-icon");
-            d?.classList.add("opacity-0", "translate-y-2", "invisible");
-            a?.classList.remove("rotate-180");
-            b?.setAttribute("aria-expanded", "false");
+      // Detect if we're on mobile (no hover support)
+      const isMobileMenu = container.closest("#mobile-menu") !== null;
+
+      if (isMobileMenu) {
+        // Mobile: click-based toggle
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          // Close all other toggles first
+          toggles.forEach((c) => {
+            if (c !== container) {
+              const b = c.querySelector("button");
+              const d = c.querySelector("div");
+              const a = c.querySelector(".arrow-icon");
+              d?.classList.add("opacity-0", "translate-y-2", "invisible");
+              a?.classList.remove("rotate-180");
+              b?.setAttribute("aria-expanded", "false");
+            }
+          });
+          toggle(!isOpen);
+        });
+
+        // Close on click outside
+        document.addEventListener("click", (e) => {
+          if (!container.contains(e.target as Node)) {
+            toggle(false);
           }
         });
-        toggle(!isOpen);
-      });
+      } else {
+        // Desktop: hover-based (group-hover handles it via CSS)
+        button.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const isOpen = button.getAttribute("aria-expanded") === "true";
+          // Close all other toggles first
+          toggles.forEach((c) => {
+            if (c !== container) {
+              const b = c.querySelector("button");
+              const d = c.querySelector("div");
+              const a = c.querySelector(".arrow-icon");
+              d?.classList.add("opacity-0", "translate-y-2", "invisible");
+              a?.classList.remove("rotate-180");
+              b?.setAttribute("aria-expanded", "false");
+            }
+          });
+          toggle(!isOpen);
+        });
 
-      // Close on click outside
-      document.addEventListener("click", (e) => {
-        if (!container.contains(e.target as Node)) {
-          toggle(false);
-        }
-      });
+        // Close on click outside
+        document.addEventListener("click", (e) => {
+          if (!container.contains(e.target as Node)) {
+            toggle(false);
+          }
+        });
+      }
 
       // Close on Escape
       container.addEventListener("keydown", (e) => {

@@ -24,16 +24,15 @@ const {
 
 <a
   href={href}
-  style="aspect-ratio: 3/4;"
   class:list={[
-    "border border-white/40 hover:border-white",
+    "border aspect-4/3 md:aspect-3/4 border-indigo-200 hover:border-indigo-400 dark:border-white/40 dark:hover:border-white",
     "group relative flex flex-col overflow-hidden rounded-xl w-full shadow-sm transition-all duration-300 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
     className,
   ]}
 >
   <!-- Background Image -->
   <div
-    class="absolute inset-0 z-10 overflow-clip bg-linear-to-b from-transparent via-white/20 to-surface transition-transform duration-700 ease-out group-hover:scale-105"
+    class="absolute inset-0 z-10 overflow-clip transition-transform duration-700 ease-out group-hover:scale-105"
   >
     <img
       src={image}
@@ -46,9 +45,16 @@ const {
     />
   </div>
 
+  <!-- Gradient Overlay -->
+  <div
+    class="pointer-events-none absolute inset-0 z-20"
+    style="background-image: linear-gradient(to bottom, oklch(0.16 0.035 285 / 0.2), oklch(0.16 0.035 285 / 0.5), oklch(0.16 0.035 285 / 0.85))"
+  >
+  </div>
+
   <!-- Content -->
   <div
-    class="relative z-20 flex flex-col justify-end h-full p-6 md:p-8 text-white"
+    class="relative z-30 flex flex-col justify-end h-full p-6 md:p-8 text-white"
   >
     <!-- Eyebrow -->
     <span
@@ -66,11 +72,11 @@ const {
 
     <!-- Description & Button Wrapper -->
     <div
-      class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 group-hover:grid-rows-[1fr]"
+      class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 group-hover:grid-rows-[1fr] card-description-wrapper"
     >
       <div class="overflow-hidden">
         <div
-          class="pt-3 space-y-4 opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100"
+          class="pt-3 space-y-4 opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100 card-description-content"
         >
           <p
             class="text-white/90 text-sm leading-relaxed line-clamp-3 font-light"
@@ -90,3 +96,15 @@ const {
     </div>
   </div>
 </a>
+
+<style>
+  @media (hover: none) {
+    .card-description-wrapper {
+      grid-template-rows: 1fr !important;
+    }
+
+    .card-description-content {
+      opacity: 1 !important;
+    }
+  }
+</style>
