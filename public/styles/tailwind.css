@@ -280,10 +280,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-eH13D8FRfo: auto;
-      --toolwind-toggle-myq8O8OqJn: transparent;
-      --toolwind-toggle-T5h6OtFVM4: inherit;
-      --toolwind-toggle-J52O3m52gV: 0px;
+      --toolwind-toggle-5MNWKq2s31: auto;
+      --toolwind-toggle-G7zg0TZxxU: transparent;
+      --toolwind-toggle-3TfF7Ye5Dr: inherit;
+      --toolwind-toggle-48leCAm77v: 0px;
     }
   }
   .absolute {
@@ -1319,6 +1319,10 @@
   .duration-700 {
     --tw-duration: 700ms;
     transition-duration: 700ms;
+  }
+  .duration-1000 {
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
   }
   .duration-\[--duration-300\] {
     --tw-duration: --duration-300;
@@ -2515,7 +2519,7 @@
     opacity: 0;
     animation: reveal linear both;
     animation-timeline: view();
-    animation-range: entry 10% cover 30%;
+    animation-range: entry -10svb cover 30%;
   }
   .animate-reveal-footer {
     opacity: 0;
@@ -2549,10 +2553,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-eH13D8FRfo, 0px);
-    background-color: var(--toolwind-toggle-myq8O8OqJn, canvas);
-    color: var(--toolwind-toggle-T5h6OtFVM4, canvastext);
-    margin: var(--toolwind-toggle-J52O3m52gV, auto);
+    inset: var(--toolwind-toggle-5MNWKq2s31, 0px);
+    background-color: var(--toolwind-toggle-G7zg0TZxxU, canvas);
+    color: var(--toolwind-toggle-3TfF7Ye5Dr, canvastext);
+    margin: var(--toolwind-toggle-48leCAm77v, auto);
   }
 }
 @property --tw-translate-x {

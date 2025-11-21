@@ -1,9 +1,6 @@
----
-
----
-
 <div
-  class="absolute inset-0 overflow-hidden pointer-events-none z-0 bg-background"
+  id="lava-container"
+  class="absolute inset-0 overflow-hidden pointer-events-none z-0 bg-background transition-opacity duration-1000"
 >
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
@@ -15,7 +12,91 @@
   <div class="blob blob-8"></div>
 </div>
 
+<script>
+  // Optimize: Only run on desktop
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    const container = document.getElementById("lava-container");
+    let rafId: number | null = null;
+    let mouseX = 0;
+    let mouseY = 0;
+
+    const updateStyles = () => {
+      if (!container) return;
+
+      // Calculate relative position (0 to 1)
+      const x = mouseX / window.innerWidth;
+      const y = mouseY / window.innerHeight;
+
+      container.style.setProperty("--cursor-x", x.toString());
+      container.style.setProperty("--cursor-y", y.toString());
+
+      rafId = null;
+    };
+
+    const onMouseMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateStyles);
+      }
+    };
+
+    // Initialize immediately to ensure it works, relying on RAF for performance
+    document.addEventListener("mousemove", onMouseMove, { passive: true });
+  }
+</script>
+
 <style>
+  #lava-container {
+    --cursor-x: 0.5;
+    --cursor-y: 0.5;
+  }
+
+  .blob {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    /* Combine float animation with cursor interaction */
+    /* The translate uses calc to offset based on cursor position relative to center */
+    /* Movement factor (e.g., 5vh) determines how much they react */
+    transform: translate(
+      calc((var(--cursor-x) - 0.5) * var(--move-factor, 5vh)),
+      calc((var(--cursor-y) - 0.5) * var(--move-factor, 5vh))
+    );
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth dampening */
+    will-change: transform;
+  }
+
+  /* Assign different movement factors for depth perception */
+  .blob-1 {
+    --move-factor: -4vh;
+  }
+  .blob-2 {
+    --move-factor: 6vh;
+  }
+  .blob-3 {
+    --move-factor: -8vh;
+  }
+  .blob-4 {
+    --move-factor: 5vh;
+  }
+  .blob-5 {
+    --move-factor: -3vh;
+  }
+  .blob-6 {
+    --move-factor: 7vh;
+  }
+  .blob-7 {
+    --move-factor: -6vh;
+  }
+  .blob-8 {
+    --move-factor: 4vh;
+  }
+
+  /* Keyframes remain unchanged */
   @keyframes float-path-1 {
     from,
     to {

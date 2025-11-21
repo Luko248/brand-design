@@ -235,7 +235,7 @@
     opacity: 0;
     animation: reveal linear both;
     animation-timeline: view();
-    animation-range: entry 10% cover 30%;
+    animation-range: entry -10svb cover 30%;
   }
 
   .animate-reveal-footer {

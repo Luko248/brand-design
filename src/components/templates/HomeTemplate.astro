@@ -102,13 +102,13 @@ const referenceCards = [
     <!-- About Section -->
     <section
       id="about"
-      class="page-section relative py-20 md:py-32 bg-surface overflow-hidden animate-reveal"
+      class="page-section relative py-20 md:py-32 bg-surface overflow-hidden"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <!-- Carousel Visual -->
           <div
-            class="flex justify-center md:justify-end order-2 md:order-2 w-full animate-reveal"
+            class="flex justify-center md:justify-end order-2 md:order-2 w-full"
           >
             <div class="relative w-full max-w-md mx-auto md:mx-0 aspect-square">
               <div
@@ -120,13 +120,15 @@ const referenceCards = [
           </div>
 
           <!-- Text Content -->
-          <div
-            class="order-1 md:order-1 space-y-8 text-center md:text-left animate-reveal"
-          >
+          <div class="order-1 md:order-1 space-y-8 text-center md:text-left">
             <!-- Hidden H1 for SEO -->
-            <h1 class="sr-only" set:html={translations.about.mainTitle} />
+            <h1
+              class="sr-only"
+              set:html={translations.about.mainTitle}
+              animate-reveal
+            />
 
-            <div>
+            <div class="animate-reveal">
               <h2
                 class="font-display uppercase text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
               >
@@ -145,6 +147,7 @@ const referenceCards = [
             >
               <p set:html={translations.about.paragraph1} />
               <p set:html={translations.about.paragraph2} />
+              <p set:html={translations.about.paragraph3} />
             </div>
           </div>
         </div>
@@ -156,10 +159,10 @@ const referenceCards = [
       class="page-section bg-parallax py-32 flex items-center justify-center overflow-hidden backdrop-blur-sm"
     >
       <div
-        class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8 animate-reveal"
+        class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8"
       >
         <h3
-          class="font-display uppercase text-3xl md:text-5xl leading-snug"
+          class="font-display uppercase text-3xl md:text-5xl leading-snug animate-reveal"
           set:html={translations.banner.title}
         />
 
@@ -168,7 +171,7 @@ const referenceCards = [
           href="#contact"
           variant="outline"
           size="lg"
-          class="border-white text-white hover:bg-white hover:text-black text-lg tracking-widest uppercase min-w-[200px]"
+          class="border-white text-white hover:bg-white hover:text-black text-lg tracking-widest uppercase min-w-[200px] animate-reveal"
         >
           {translations.banner.button}
         </Button>
