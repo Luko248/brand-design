@@ -124,7 +124,7 @@ const isReferenceActive = referenceLinks.some(
             class:list={[
               "nav-link text-sm whitespace-nowrap uppercase cursor-pointer tracking-widest transition-colors flex items-center gap-1 anchor/nav-references",
               "hover:text-primary",
-              isReferenceActive && "text-primary",
+              isReferenceActive && "text-primary is-active",
             ]}
             aria-current={isReferenceActive ? "true" : undefined}
           >
@@ -340,7 +340,12 @@ const isReferenceActive = referenceLinks.some(
           <a
             href={referencesUrl}
             data-nav-link="references"
-            class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
+            class:list={[
+              "nav-link block text-lg font-medium uppercase tracking-wider transition-colors",
+              "hover:text-primary",
+              isReferenceActive ? "text-primary is-active" : "text-foreground",
+            ]}
+            aria-current={isReferenceActive ? "true" : undefined}
             >{global.nav.references}</a
           >
           <div class="flex flex-col gap-5 pl-2 mt-2">

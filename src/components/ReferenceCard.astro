@@ -46,11 +46,7 @@ const {
   </div>
 
   <!-- Gradient Overlay -->
-  <div
-    class="pointer-events-none absolute inset-0 z-20"
-    style="background-image: linear-gradient(to bottom, oklch(0.16 0.035 285 / 0.3), oklch(0.16 0.035 285 / 0.6), oklch(0.16 0.035 285 / 0.95))"
-  >
-  </div>
+  <div class="card-gradient pointer-events-none absolute inset-0 z-20"></div>
 
   <!-- Content -->
   <div
@@ -97,7 +93,28 @@ const {
 </a>
 
 <style>
-  @media (hover: none), (pointer: coarse) {
+  .card-gradient {
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0.16 0.035 285 / 0.3),
+      oklch(0.16 0.035 285 / 0.6),
+      oklch(0.16 0.035 285 / 0.95)
+    );
+  }
+
+  @media (width <= 768px) {
+    .card-gradient {
+      background-image: linear-gradient(
+        to bottom,
+        oklch(0.16 0.035 285 / 0.2) 0%,
+        oklch(0.16 0.035 285 / 0.6) 40%,
+        oklch(0.16 0.035 285 / 0.9) 70%,
+        oklch(0.16 0.035 285 / 0.98) 100%
+      );
+    }
+  }
+
+  @media (hover: none), (pointer: coarse), (width <= 768px) {
     .card-button-wrapper {
       grid-template-rows: 1fr !important;
     }
