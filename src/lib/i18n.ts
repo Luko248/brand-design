@@ -91,32 +91,25 @@ export const detectLocale = (url: URL): Locale => {
 /**
  * Get localized path
  * Converts path to localized path:
- * - If locale is 'cs': return /brand-design/path
- * - If locale is 'en': return /brand-design/en/path
+ * - If locale is 'cs': return /path
+ * - If locale is 'en': return /en/path
+ * Note: Astro's base config (/brand-design) is automatically prepended
  */
 export const getLocalizedPath = (path: string, locale: Locale): string => {
-  const BASE_PATH = "/brand-design";
-
   // Ensure path starts with /
   const cleanPath = path.startsWith("/") ? path : "/" + path;
 
-  // Strip existing base path and locale prefix if present
-  let pathWithoutBase = cleanPath
-    .replace(new RegExp(`^${BASE_PATH}`), "")
+  // Strip existing locale prefix if present
+  const pathWithoutLocale = cleanPath
     .replace(/^\/en\//, "/")
     .replace(/^\/en$/, "/");
 
-  // Ensure it starts with /
-  if (!pathWithoutBase.startsWith("/")) {
-    pathWithoutBase = "/" + pathWithoutBase;
-  }
-
   if (locale === "en") {
     // Avoid double slash
-    if (pathWithoutBase === "/") return `${BASE_PATH}/en/`;
-    return `${BASE_PATH}/en${pathWithoutBase}`;
+    if (pathWithoutLocale === "/") return "/en/";
+    return `/en${pathWithoutLocale}`;
   }
-  return `${BASE_PATH}${pathWithoutBase}`;
+  return pathWithoutLocale;
 };
 
 /**
