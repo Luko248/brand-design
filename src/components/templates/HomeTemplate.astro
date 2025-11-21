@@ -102,17 +102,17 @@ const referenceCards = [
     <!-- About Section -->
     <section
       id="about"
-      class="page-section relative py-20 md:py-32 bg-surface overflow-hidden"
+      class="page-section relative py-20 md:py-32 bg-surface overflow-hidden animate-reveal"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <!-- Carousel Visual -->
           <div
-            class="flex justify-center md:justify-end order-2 md:order-2 w-full"
+            class="flex justify-center md:justify-end order-2 md:order-2 w-full animate-reveal"
           >
             <div class="relative w-full max-w-md mx-auto md:mx-0 aspect-square">
               <div
-                class="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse -z-10"
+                class="absolute inset-0 bg-primary/40 rounded-full blur-[100px] scale-110 animate-pulse -z-10"
               >
               </div>
               <Carousel items={carouselItems} />
@@ -120,7 +120,9 @@ const referenceCards = [
           </div>
 
           <!-- Text Content -->
-          <div class="order-1 md:order-1 space-y-8 text-center md:text-left">
+          <div
+            class="order-1 md:order-1 space-y-8 text-center md:text-left animate-reveal"
+          >
             <!-- Hidden H1 for SEO -->
             <h1 class="sr-only" set:html={translations.about.mainTitle} />
 
@@ -154,7 +156,7 @@ const referenceCards = [
       class="page-section bg-parallax py-32 flex items-center justify-center overflow-hidden backdrop-blur-sm"
     >
       <div
-        class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8"
+        class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8 animate-reveal"
       >
         <h3
           class="font-display uppercase text-3xl md:text-5xl leading-snug"
@@ -176,7 +178,9 @@ const referenceCards = [
     <!-- Services / References -->
     <section id="references" class="page-section py-20 md:py-32 bg-background">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+        <div
+          class="text-center max-w-2xl mx-auto mb-16 md:mb-24 animate-reveal"
+        >
           <span
             class="text-primary text-sm font-bold tracking-[0.3em] uppercase block mb-4"
           >
@@ -197,6 +201,7 @@ const referenceCards = [
           {
             referenceCards.map((card) => (
               <ReferenceCard
+                class="animate-reveal"
                 href={card.href}
                 image={card.image}
                 title={card.title}
@@ -214,12 +219,14 @@ const referenceCards = [
     <section class="page-section py-20 bg-surface border-t border-outline/10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2
-          class="font-display uppercase text-3xl md:text-4xl text-foreground mb-12 opacity-80"
+          class="font-display uppercase text-3xl md:text-4xl text-foreground mb-12 opacity-80 animate-reveal"
         >
           {translations.partners.title}
         </h2>
 
-        <div class="flex flex-col items-center gap-6 opacity-100 text-center">
+        <div
+          class="flex flex-col items-center gap-6 opacity-100 text-center animate-reveal"
+        >
           <p
             class="text-xl font-light dark:text-muted text-black/85"
             set:html={translations.partners.text}

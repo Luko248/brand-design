@@ -21,7 +21,7 @@ const year = new Date().getFullYear();
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
       <!-- Map -->
       <div
-        class="w-full h-full min-h-[300px] rounded-xl overflow-hidden border border-indigo-200 hover:border-indigo-400 dark:border-white/40 dark:hover:border-white shadow-sm hover:shadow-xl transition-all duration-300 order-2 lg:order-0"
+        class="w-full h-full min-h-[300px] rounded-xl overflow-hidden border border-indigo-200 hover:border-indigo-400 dark:border-white/40 dark:hover:border-white shadow-sm hover:shadow-xl transition-all duration-300 order-2 lg:order-0 animate-reveal-footer"
       >
         <GoogleMaps
           id="BrandDesignMap"
@@ -30,7 +30,9 @@ const year = new Date().getFullYear();
       </div>
 
       <!-- Contact Info -->
-      <div class="flex flex-col justify-center space-y-8 order-1 lg:order-0">
+      <div
+        class="flex flex-col justify-center space-y-8 order-1 lg:order-0 animate-reveal-footer"
+      >
         <div>
           <h2
             class="font-display uppercase text-4xl md:text-5xl text-foreground mb-4"
@@ -115,9 +117,9 @@ const year = new Date().getFullYear();
 
     <!-- Bottom Section -->
     <div
-      class="border-t border-outline/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60 w-full"
+      class="border-t border-outline/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60 w-full animate-reveal-footer"
     >
-      <p>© {year} {global.company.name} — {global.footer.allRightsReserved}</p>
+      <p>{year} {global.company.name} — {global.footer.allRightsReserved}</p>
       <p>
         {global.footer.createdBy}
         <a

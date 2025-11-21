@@ -31,7 +31,7 @@ const { images, galleryId } = Astro.props;
         const caption = img.alt || img.groupTitle || "";
 
         return (
-          <div class="relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-6">
+          <div class="relative block break-inside-avoid rounded-xl overflow-hidden bg-surface shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 mb-6 animate-reveal">
             <a
               href={img.full}
               data-fancybox={groupId}
