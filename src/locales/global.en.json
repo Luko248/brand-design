@@ -35,7 +35,8 @@
     "city": "Blansko 1",
     "zip": "678 01",
     "billingStreet": "třída Kpt. Jaroše 1922/3",
-    "billingCity": "Černá Pole (Brno-střed), 602 00 Brno",
+    "billingCity": "Černá Pole (Brno-střed)",
+    "billingCityLine2": "602 00, Brno",
     "ico": "09147136",
     "icoLabel": "VAT ID"
   }

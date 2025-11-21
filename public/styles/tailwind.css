@@ -281,10 +281,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-3QfGn9LNTJ: auto;
-      --toolwind-toggle-bhQmQniI5E: transparent;
-      --toolwind-toggle-7ZU7fzoFmd: inherit;
-      --toolwind-toggle-fH1vSGGZsT: 0px;
+      --toolwind-toggle-zHQGoyuIbC: auto;
+      --toolwind-toggle-hQnnOcNzCu: transparent;
+      --toolwind-toggle-ny0Dr5unwM: inherit;
+      --toolwind-toggle-afDrxwsvgQ: 0px;
     }
   }
   .absolute {
@@ -1017,14 +1017,8 @@
   .py-16 {
     padding-block: var(--spacing-16);
   }
-  .py-20 {
-    padding-block: var(--spacing-20);
-  }
   .py-24 {
     padding-block: var(--spacing-24);
-  }
-  .py-32 {
-    padding-block: var(--spacing-32);
   }
   .pt-3 {
     padding-top: var(--spacing-3);
@@ -1949,16 +1943,6 @@
       order: 0;
     }
   }
-  .lg\:mr-0 {
-    @media (width >= 64rem) {
-      margin-right: var(--spacing-0);
-    }
-  }
-  .lg\:ml-auto {
-    @media (width >= 64rem) {
-      margin-left: auto;
-    }
-  }
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
@@ -2621,10 +2605,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-3QfGn9LNTJ, 0px);
-    background-color: var(--toolwind-toggle-bhQmQniI5E, canvas);
-    color: var(--toolwind-toggle-7ZU7fzoFmd, canvastext);
-    margin: var(--toolwind-toggle-fH1vSGGZsT, auto);
+    inset: var(--toolwind-toggle-zHQGoyuIbC, 0px);
+    background-color: var(--toolwind-toggle-hQnnOcNzCu, canvas);
+    color: var(--toolwind-toggle-ny0Dr5unwM, canvastext);
+    margin: var(--toolwind-toggle-afDrxwsvgQ, auto);
   }
 }
 @property --tw-translate-x {
