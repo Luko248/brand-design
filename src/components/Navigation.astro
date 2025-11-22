@@ -234,12 +234,16 @@ const referenceLinks: ReferenceLink[] = [
       if (!mobileBtn || !overlay || !menu) return;
 
       let isOpen = false;
+      let savedScrollY = 0;
 
       const toggleMenu = (show) => {
         const shouldShow = show === undefined ? !isOpen : show;
 
         if (shouldShow) {
+          savedScrollY = window.scrollY;
+          document.body.style.top = `-${savedScrollY}px`;
           document.body.classList.add("is-menu-open");
+          document.documentElement.classList.add("is-menu-open");
           menu.classList.remove("translate-x-full");
           overlay.classList.remove("opacity-0", "pointer-events-none");
           mobileBtn.classList.add("is-open");
@@ -247,6 +251,9 @@ const referenceLinks: ReferenceLink[] = [
           isOpen = true;
         } else {
           document.body.classList.remove("is-menu-open");
+          document.documentElement.classList.remove("is-menu-open");
+          document.body.style.top = "";
+          window.scrollTo(0, savedScrollY);
           menu.classList.add("translate-x-full");
           overlay.classList.add("opacity-0", "pointer-events-none");
           mobileBtn.classList.remove("is-open");
