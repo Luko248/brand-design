@@ -1,0 +1,119 @@
+---
+import LanguageToggle from "@/components/LanguageToggle.astro";
+import { normalizePath } from "@/lib/navigation";
+
+export interface ReferenceLink {
+  href: string;
+  label: string;
+}
+
+export interface Props {
+  lang: "cs" | "en";
+  global: any;
+  referenceLinks: ReferenceLink[];
+  currentPath?: string;
+  homeUrl: string;
+  aboutUrl: string;
+  referencesUrl: string;
+  contactUrl: string;
+}
+
+const {
+  lang,
+  global,
+  referenceLinks,
+  currentPath = "/",
+  homeUrl,
+  aboutUrl,
+  referencesUrl,
+  contactUrl,
+} = Astro.props;
+
+const normalizedCurrentPath = normalizePath(currentPath);
+
+const isReferenceActive = referenceLinks.some(
+  (link) => normalizePath(link.href) === normalizedCurrentPath
+);
+---
+
+<!-- Mobile Menu Overlay -->
+<div
+  id="mobile-menu-overlay"
+  class="fixed inset-0 top-(--nav-height) bg-black/40 backdrop-blur-md z-105 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+  aria-hidden="true"
+>
+</div>
+
+<!-- Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="fixed top-(--nav-height) left-0 w-full h-[calc(100svb-var(--nav-height))] bg-background z-200 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col border-t border-white/10 dark:border-white/5 pb-safe"
+>
+  <nav class="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6">
+    <div class="space-y-4">
+      <a
+        href={homeUrl}
+        data-nav-link="home"
+        class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
+        >{global.nav.home}</a
+      >
+      <a
+        href={aboutUrl}
+        data-nav-link="about"
+        class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
+        >{global.nav.about}</a
+      >
+      <div class="space-y-3">
+        <a
+          href={referencesUrl}
+          data-nav-link="references"
+          class:list={[
+            "nav-link block text-lg font-medium uppercase tracking-wider transition-colors",
+            "hover:text-primary",
+            isReferenceActive ? "text-primary is-active" : "text-foreground",
+          ]}
+          aria-current={isReferenceActive ? "true" : undefined}
+        >
+          {global.nav.references}
+        </a>
+        <div class="flex flex-col gap-5 pl-2 mt-2">
+          {
+            referenceLinks.map((link) => (
+              <a
+                href={link.href}
+                class:list={[
+                  "nav-sub-link block text-sm text-foreground/80 dark:text-white/80 transition-colors",
+                  "hover:text-primary",
+                  normalizePath(link.href) === normalizedCurrentPath &&
+                    "text-primary is-active",
+                ]}
+                aria-current={
+                  normalizePath(link.href) === normalizedCurrentPath
+                    ? "page"
+                    : undefined
+                }
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <a
+        href={contactUrl}
+        data-nav-link="contact"
+        class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
+        >{global.nav.contact}</a
+      >
+    </div>
+  </nav>
+
+  <div class="p-6 border-t border-outline/20">
+    <LanguageToggle
+      lang={lang}
+      currentPath={currentPath}
+      class="text-foreground"
+      upwards={true}
+    />
+  </div>
+</div>

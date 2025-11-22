@@ -1,0 +1,21 @@
+---
+import IconButton from "@/components/ui/IconButton.astro";
+import MoonIcon from "@/components/icons/MoonIcon.astro";
+import SunIcon from "@/components/icons/SunIcon.astro";
+
+export interface Props {
+  id: string;
+  title: string;
+  class?: string;
+  iconButtonClass?: string;
+}
+
+const { id, title, class: className, iconButtonClass } = Astro.props;
+---
+
+<div id={id} class={className}>
+  <IconButton as="button" title={title} size="sm" class={iconButtonClass}>
+    <MoonIcon class="w-5 h-5 block dark:hidden" />
+    <SunIcon class="w-5 h-5 hidden dark:block" />
+  </IconButton>
+</div>

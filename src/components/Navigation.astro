@@ -1,10 +1,12 @@
 ---
 import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle.astro";
-import ChevronDownIcon from "./icons/ChevronDownIcon.astro";
-import IconButton from "./ui/IconButton.astro";
-import MoonIcon from "./icons/MoonIcon.astro";
-import SunIcon from "./icons/SunIcon.astro";
+import DesktopNav from "./navigation/DesktopNav.astro";
+import MobileMenu from "./navigation/MobileMenu.astro";
+import MobileMenuButton from "./navigation/MobileMenuButton.astro";
+import Logo from "./navigation/Logo.astro";
+import ThemeToggle from "./navigation/ThemeToggle.astro";
+import { normalizePath, type ReferenceLink } from "@/lib/navigation";
 
 export interface Props {
   lang: "cs" | "en";
@@ -21,7 +23,7 @@ const aboutUrl = getLocalizedPath("/#about", lang);
 const referencesUrl = getLocalizedPath("/#references", lang);
 const contactUrl = getLocalizedPath("/#contact", lang);
 
-const referenceLinks = [
+const referenceLinks: ReferenceLink[] = [
   {
     href: getLocalizedPath("/printing-and-production", lang),
     label: indexTranslations.services.printing.title,
@@ -35,33 +37,6 @@ const referenceLinks = [
     label: indexTranslations.services.sticks.title,
   },
 ];
-
-const normalizePath = (value: string) => {
-  if (!value) return "/";
-  try {
-    const base = import.meta.env.BASE_URL || "/";
-    const tmp = new URL(value, "http://local");
-    let path = tmp.pathname;
-    const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base;
-    if (cleanBase !== "/" && path.startsWith(cleanBase)) {
-      path = path.slice(cleanBase.length) || "/";
-    }
-    path = path.replace(/^\/en\//, "/").replace(/^\/en$/, "/");
-    if (path !== "/" && path.endsWith("/")) {
-      path = path.slice(0, -1);
-    }
-    return path || "/";
-  } catch (error) {
-    console.warn("Failed to normalize path", value, error);
-    return value;
-  }
-};
-
-const normalizedCurrentPath = normalizePath(currentPath);
-
-const isReferenceActive = referenceLinks.some(
-  (link) => normalizePath(link.href) === normalizedCurrentPath
-);
 ---
 
 <header
@@ -80,243 +55,75 @@ const isReferenceActive = referenceLinks.some(
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center h-16 relative">
       <!-- Logo -->
-      <div class="flex items-center shrink-0">
-        <a href={homeUrl} rel="home" class="relative z-50 group">
-          <img
-            src={import.meta.env.BASE_URL + "images/logos/logo-black.svg"}
-            alt="Brand Design"
-            class:list={[
-              "h-7 lg:h-10 w-auto transition-all duration-300",
-              isHomepage
-                ? "dark:invert lg:group-[.is-scrolled]/header:invert-0 dark:lg:group-[.is-scrolled]/header:invert"
-                : "dark:invert",
-            ]}
-          />
-        </a>
-      </div>
+      <Logo homeUrl={homeUrl} isHomepage={isHomepage} />
 
       <!-- Desktop Navigation -->
-      <nav
-        class="hidden lg:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-      >
-        <a
-          href={homeUrl}
-          rel="section"
-          data-nav-link="home"
-          class:list={[
-            "nav-link text-sm whitespace-nowrap uppercase tracking-widest transition-colors",
-            "hover:text-primary",
-          ]}>{global.nav.home}</a
-        >
-        <a
-          href={aboutUrl}
-          rel="section"
-          data-nav-link="about"
-          class:list={[
-            "nav-link text-sm whitespace-nowrap uppercase tracking-widest transition-colors",
-            "hover:text-primary",
-          ]}>{global.nav.about}</a
-        >
-
-        <div class="relative group">
-          <a
-            href={referencesUrl}
-            rel="section"
-            data-nav-link="references"
-            class:list={[
-              "nav-link text-sm whitespace-nowrap uppercase cursor-pointer tracking-widest transition-colors flex items-center gap-1 anchor/nav-references",
-              "hover:text-primary",
-              isReferenceActive && "text-primary is-active",
-            ]}
-            aria-current={isReferenceActive ? "true" : undefined}
-          >
-            {global.nav.references}
-            <ChevronDownIcon
-              class="w-4 h-4 group-hover:rotate-180 transition-transform duration-200"
-            />
-          </a>
-          <div
-            class="absolute anchored-bottom-center/nav-references w-56 py-2 mt-2 bg-background/95 backdrop-blur-md border border-white/10 rounded-xl shadow-xl opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 dark:border-white/10 dark:bg-surface/95"
-          >
-            {
-              referenceLinks.map((link) => (
-                <a
-                  href={link.href}
-                  rel="bookmark"
-                  class:list={[
-                    "nav-sub-link block whitespace-nowrap px-4 py-2 text-sm text-foreground transition-colors",
-                    "hover:bg-primary/10 hover:text-primary",
-                    normalizePath(link.href) === normalizedCurrentPath &&
-                      "bg-primary/10 text-primary is-active",
-                  ]}
-                  aria-current={
-                    normalizePath(link.href) === normalizedCurrentPath
-                      ? "page"
-                      : undefined
-                  }
-                >
-                  {link.label}
-                </a>
-              ))
-            }
-          </div>
-        </div>
-
-        <a
-          href={contactUrl}
-          rel="section"
-          data-nav-link="contact"
-          class:list={[
-            "nav-link text-sm uppercase tracking-widest transition-colors",
-            "hover:text-primary",
-          ]}>{global.nav.contact}</a
-        >
-      </nav>
+      <DesktopNav
+        homeUrl={homeUrl}
+        aboutUrl={aboutUrl}
+        referencesUrl={referencesUrl}
+        contactUrl={contactUrl}
+        referenceLinks={referenceLinks}
+        currentPath={currentPath}
+        global={global}
+      />
 
       <!-- Actions -->
       <div class="flex items-center gap-4 ml-auto">
         <div class="hidden lg:flex items-center gap-6">
           <LanguageToggle lang={lang} currentPath={currentPath} />
 
-          <div id="theme-toggle" class="cursor-pointer">
-            <IconButton
-              as="button"
-              title={global.nav.themeToggle}
-              size="sm"
-              class={isHomepage
-                ? "lg:hover:bg-foreground/10 lg:group-[.is-scrolled]/header:hover:bg-foreground/10"
-                : ""}
-            >
-              <MoonIcon class="w-5 h-5 block dark:hidden" />
-              <SunIcon class="w-5 h-5 hidden dark:block" />
-            </IconButton>
-          </div>
+          <ThemeToggle
+            id="theme-toggle"
+            title={global.nav.themeToggle}
+            class="cursor-pointer"
+            iconButtonClass={isHomepage
+              ? "lg:hover:bg-foreground/10 lg:group-[.is-scrolled]/header:hover:bg-foreground/10"
+              : ""}
+          />
         </div>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile Actions -->
         <div class="lg:hidden flex items-center gap-1 h-full">
-          <div id="theme-toggle-mobile" class="flex items-center h-full">
-            <IconButton as="button" title={global.nav.themeToggle} size="sm">
-              <MoonIcon class="w-5 h-5 block dark:hidden" />
-              <SunIcon class="w-5 h-5 hidden dark:block" />
-            </IconButton>
-          </div>
+          <ThemeToggle
+            id="theme-toggle-mobile"
+            title={global.nav.themeToggle}
+            class="flex items-center h-full"
+          />
 
-          <div id="mobile-menu-btn" class="flex items-center h-full">
-            <IconButton
-              as="button"
-              title={global.nav.openMenu}
-              size="sm"
-              class="group"
-            >
-              <div
-                class="flex flex-col gap-[5px] w-5 h-5 justify-center overflow-hidden"
-              >
-                <span
-                  class="w-5 h-0.5 bg-current transition-all duration-300 origin-center group-[.is-open]:rotate-45 group-[.is-open]:translate-y-[7px]"
-                ></span>
-                <span
-                  class="w-5 h-0.5 bg-current transition-all duration-300 group-[.is-open]:translate-x-full group-[.is-open]:opacity-0"
-                ></span>
-                <span
-                  class="w-5 h-0.5 bg-current transition-all duration-300 origin-center group-[.is-open]:-rotate-45 group-[.is-open]:-translate-y-[7px]"
-                ></span>
-              </div>
-            </IconButton>
-          </div>
+          <MobileMenuButton title={global.nav.openMenu} />
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div
-    id="mobile-menu-overlay"
-    class="fixed inset-0 top-(--nav-height) bg-black/40 backdrop-blur-md z-105 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="fixed top-(--nav-height) left-0 w-full h-[calc(100svb-var(--nav-height))] bg-background z-200 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col border-t border-white/10 dark:border-white/5 pb-safe"
-  >
-    <nav class="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6">
-      <div class="space-y-4">
-        <a
-          href={homeUrl}
-          data-nav-link="home"
-          class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
-          >{global.nav.home}</a
-        >
-        <a
-          href={aboutUrl}
-          data-nav-link="about"
-          class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
-          >{global.nav.about}</a
-        >
-        <div class="space-y-3">
-          <a
-            href={referencesUrl}
-            data-nav-link="references"
-            class:list={[
-              "nav-link block text-lg font-medium uppercase tracking-wider transition-colors",
-              "hover:text-primary",
-              isReferenceActive ? "text-primary is-active" : "text-foreground",
-            ]}
-            aria-current={isReferenceActive ? "true" : undefined}
-          >
-            {global.nav.references}
-          </a>
-          <div class="flex flex-col gap-5 pl-2 mt-2">
-            {
-              referenceLinks.map((link) => (
-                <a
-                  href={link.href}
-                  class:list={[
-                    "nav-sub-link block text-sm text-foreground/80 dark:text-white/80 transition-colors",
-                    "hover:text-primary",
-                    normalizePath(link.href) === normalizedCurrentPath &&
-                      "text-primary is-active",
-                  ]}
-                  aria-current={
-                    normalizePath(link.href) === normalizedCurrentPath
-                      ? "page"
-                      : undefined
-                  }
-                >
-                  {link.label}
-                </a>
-              ))
-            }
-          </div>
-        </div>
-        <a
-          href={contactUrl}
-          data-nav-link="contact"
-          class="nav-link block text-lg font-medium uppercase tracking-wider text-foreground hover:text-primary transition-colors"
-          >{global.nav.contact}</a
-        >
-      </div>
-    </nav>
-
-    <div class="p-6 border-t border-outline/20">
-      <LanguageToggle
-        lang={lang}
-        currentPath={currentPath}
-        class="text-foreground"
-        upwards={true}
-      />
-    </div>
-  </div>
+  <MobileMenu
+    lang={lang}
+    global={global}
+    referenceLinks={referenceLinks}
+    currentPath={currentPath}
+    homeUrl={homeUrl}
+    aboutUrl={aboutUrl}
+    referencesUrl={referencesUrl}
+    contactUrl={contactUrl}
+  />
 </header>
 
 <script is:inline>
   (() => {
-    const header = document.getElementById("main-header");
+    const SELECTORS = {
+      header: "main-header",
+      mobileBtn: "mobile-menu-btn",
+      mobileOverlay: "mobile-menu-overlay",
+      mobileMenu: "mobile-menu",
+      themeToggles: "#theme-toggle, #theme-toggle-mobile",
+      navLinks: "[data-nav-link]",
+    };
+
+    const header = document.getElementById(SELECTORS.header);
     const isHomepage = header?.dataset.homepage === "true";
 
+    // --- Utils ---
     const debounce = (fn, delay = 80) => {
       let timeout;
       return (...args) => {
@@ -325,19 +132,21 @@ const isReferenceActive = referenceLinks.some(
       };
     };
 
+    // --- Header Scroll State ---
     const syncHeaderState = () => {
       if (!header) return;
-      if (window.scrollY > 20) {
+      if (window.scrollY > 0) {
         header.classList.add("is-scrolled");
       } else {
         header.classList.remove("is-scrolled");
       }
     };
 
+    // --- Scroll Spy ---
     const initScrollSpy = () => {
       if (!isHomepage) return;
 
-      const navLinks = document.querySelectorAll("[data-nav-link]");
+      const navLinks = document.querySelectorAll(SELECTORS.navLinks);
       const sections = Array.from(navLinks)
         .map((link) => {
           const id = link.dataset.navLink;
@@ -350,30 +159,7 @@ const isReferenceActive = referenceLinks.some(
 
       let throttleTimer = null;
 
-      const updateActive = () => {
-        const scrollY = window.scrollY;
-        // Offset to account for fixed header (approx 80px) + some buffer
-        const offset = 100;
-        const viewPosition = scrollY + offset;
-
-        let currentId = "";
-
-        // Find the current section
-        for (const { id, section } of sections) {
-          const top = section.offsetTop;
-          const bottom = top + section.offsetHeight;
-
-          if (top <= viewPosition && bottom > viewPosition) {
-            currentId = id;
-            break;
-          }
-        }
-
-        // Fallback: if at bottom of page, highlight last item (Contact)
-        if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
-          currentId = sections[sections.length - 1].id;
-        }
-
+      const updateActiveState = (currentId) => {
         navLinks.forEach((link) => {
           if (link.dataset.navLink === currentId) {
             link.classList.add("is-active", "text-primary");
@@ -385,44 +171,64 @@ const isReferenceActive = referenceLinks.some(
         });
       };
 
+      const calculateActiveSection = () => {
+        const scrollY = window.scrollY;
+        const offset = 100; // Header offset + buffer
+        const viewPosition = scrollY + offset;
+
+        // Check if at bottom
+        if (window.innerHeight + scrollY >= document.body.offsetHeight - 50) {
+          return sections[sections.length - 1].id;
+        }
+
+        // Find current section
+        for (const { id, section } of sections) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+          if (top <= viewPosition && bottom > viewPosition) {
+            return id;
+          }
+        }
+        return "";
+      };
+
       const onScroll = () => {
         if (throttleTimer) return;
         throttleTimer = setTimeout(() => {
-          updateActive();
+          const activeId = calculateActiveSection();
+          if (activeId) updateActiveState(activeId);
           throttleTimer = null;
         }, 100);
       };
 
       window.addEventListener("scroll", onScroll, { passive: true });
 
-      // Initial check: prioritize hash if present to avoid flash of wrong active state
-      // before browser finishes scrolling to anchor
+      // Initial Check
       const hash = window.location.hash.substring(1);
       const hasValidHash = sections.some((s) => s.id === hash);
 
       if (hasValidHash) {
-        navLinks.forEach((link) => {
-          if (link.dataset.navLink === hash) {
-            link.classList.add("is-active", "text-primary");
-            link.setAttribute("aria-current", "true");
-          } else {
-            link.classList.remove("is-active", "text-primary");
-            link.removeAttribute("aria-current");
-          }
-        });
+        updateActiveState(hash);
       } else {
-        updateActive();
+        const activeId = calculateActiveSection();
+        if (activeId) updateActiveState(activeId);
       }
 
-      // Re-check after load to ensure sync with final scroll position
-      window.addEventListener("load", () => setTimeout(updateActive, 100));
+      // Re-check after load
+      window.addEventListener("load", () =>
+        setTimeout(() => {
+          const activeId = calculateActiveSection();
+          if (activeId) updateActiveState(activeId);
+        }, 100)
+      );
     };
 
+    // --- Mobile Menu ---
     const initMobileMenu = () => {
-      const mobileBtnWrapper = document.getElementById("mobile-menu-btn");
+      const mobileBtnWrapper = document.getElementById(SELECTORS.mobileBtn);
       const mobileBtn = mobileBtnWrapper?.querySelector("button");
-      const overlay = document.getElementById("mobile-menu-overlay");
-      const menu = document.getElementById("mobile-menu");
+      const overlay = document.getElementById(SELECTORS.mobileOverlay);
+      const menu = document.getElementById(SELECTORS.mobileMenu);
       const links = menu?.querySelectorAll("a");
 
       if (!mobileBtn || !overlay || !menu) return;
@@ -434,21 +240,17 @@ const isReferenceActive = referenceLinks.some(
 
         if (shouldShow) {
           document.body.style.overflow = "hidden";
-
           menu.classList.remove("translate-x-full");
           overlay.classList.remove("opacity-0", "pointer-events-none");
           mobileBtn.classList.add("is-open");
           mobileBtn.setAttribute("aria-expanded", "true");
-
           isOpen = true;
         } else {
           document.body.style.overflow = "";
-
           menu.classList.add("translate-x-full");
           overlay.classList.add("opacity-0", "pointer-events-none");
           mobileBtn.classList.remove("is-open");
           mobileBtn.setAttribute("aria-expanded", "false");
-
           isOpen = false;
         }
       };
@@ -466,9 +268,10 @@ const isReferenceActive = referenceLinks.some(
       });
     };
 
+    // --- Theme Toggle ---
     const initThemeToggle = () => {
       const themeToggleWrappers = document.querySelectorAll(
-        "#theme-toggle, #theme-toggle-mobile"
+        SELECTORS.themeToggles
       );
 
       const setTheme = (theme) => {
@@ -488,6 +291,7 @@ const isReferenceActive = referenceLinks.some(
       });
     };
 
+    // --- Initialization ---
     if (isHomepage) {
       window.addEventListener("scroll", debounce(syncHeaderState, 30), {
         passive: true,
@@ -495,8 +299,6 @@ const isReferenceActive = referenceLinks.some(
       syncHeaderState();
     }
 
-    // Wait for DOM content to be fully loaded before initializing scrollspy
-    // because Navigation is at the top and sections are further down
     document.addEventListener("DOMContentLoaded", () => {
       initScrollSpy();
     });

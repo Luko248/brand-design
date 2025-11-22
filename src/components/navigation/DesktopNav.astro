@@ -1,0 +1,112 @@
+---
+import ChevronDownIcon from "@/components/icons/ChevronDownIcon.astro";
+import { normalizePath } from "@/lib/navigation";
+
+export interface ReferenceLink {
+  href: string;
+  label: string;
+}
+
+export interface Props {
+  homeUrl: string;
+  aboutUrl: string;
+  referencesUrl: string;
+  contactUrl: string;
+  referenceLinks: ReferenceLink[];
+  currentPath?: string;
+  global: any; // Using any for now to match existing usage, ideally type it properly
+}
+
+const {
+  homeUrl,
+  aboutUrl,
+  referencesUrl,
+  contactUrl,
+  referenceLinks,
+  currentPath = "/",
+  global,
+} = Astro.props;
+
+const normalizedCurrentPath = normalizePath(currentPath);
+
+const isReferenceActive = referenceLinks.some(
+  (link) => normalizePath(link.href) === normalizedCurrentPath
+);
+---
+
+<nav
+  class="hidden lg:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+>
+  <a
+    href={homeUrl}
+    rel="section"
+    data-nav-link="home"
+    class:list={[
+      "nav-link text-sm whitespace-nowrap uppercase tracking-widest transition-colors",
+      "hover:text-primary",
+    ]}>{global.nav.home}</a
+  >
+  <a
+    href={aboutUrl}
+    rel="section"
+    data-nav-link="about"
+    class:list={[
+      "nav-link text-sm whitespace-nowrap uppercase tracking-widest transition-colors",
+      "hover:text-primary",
+    ]}>{global.nav.about}</a
+  >
+
+  <div class="relative group">
+    <a
+      href={referencesUrl}
+      rel="section"
+      data-nav-link="references"
+      class:list={[
+        "nav-link text-sm whitespace-nowrap uppercase cursor-pointer tracking-widest transition-colors flex items-center gap-1 anchor/nav-references",
+        "hover:text-primary",
+        isReferenceActive && "text-primary is-active",
+      ]}
+      aria-current={isReferenceActive ? "true" : undefined}
+    >
+      {global.nav.references}
+      <ChevronDownIcon
+        class="w-4 h-4 group-hover:rotate-180 transition-transform duration-200"
+      />
+    </a>
+    <div
+      class="absolute anchored-bottom-center/nav-references w-56 py-2 mt-2 bg-background/95 backdrop-blur-md border border-white/10 rounded-xl shadow-xl opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-200 dark:border-white/10 dark:bg-surface/95"
+    >
+      {
+        referenceLinks.map((link) => (
+          <a
+            href={link.href}
+            rel="bookmark"
+            class:list={[
+              "nav-sub-link block whitespace-nowrap px-4 py-2 text-sm text-foreground transition-colors",
+              "hover:bg-primary/10 hover:text-primary",
+              normalizePath(link.href) === normalizedCurrentPath &&
+                "bg-primary/10 text-primary is-active",
+            ]}
+            aria-current={
+              normalizePath(link.href) === normalizedCurrentPath
+                ? "page"
+                : undefined
+            }
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <a
+    href={contactUrl}
+    rel="section"
+    data-nav-link="contact"
+    class:list={[
+      "nav-link text-sm uppercase tracking-widest transition-colors",
+      "hover:text-primary",
+    ]}>{global.nav.contact}</a
+  >
+</nav>
