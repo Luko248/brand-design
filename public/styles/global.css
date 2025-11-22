@@ -62,3 +62,19 @@
     display: none !important;
   }
 }
+
+/* Mobile Menu States */
+body.is-menu-open {
+  overflow: hidden !important;
+  height: 100dvh !important;
+}
+
+body.is-menu-open > *:not(#main-header):not(script) {
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+}
+
+body > *:not(#main-header):not(script) {
+  transition: filter 0.3s ease-out;
+}

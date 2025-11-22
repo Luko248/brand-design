@@ -493,6 +493,9 @@
   .h-\[calc\(100dvh-var\(--nav-height\)\)\] {
     height: calc(100dvh - var(--nav-height));
   }
+  .h-\[calc\(100lvh-var\(--nav-height\)\)\] {
+    height: calc(100lvh - var(--nav-height));
+  }
   .h-auto {
     height: auto;
   }

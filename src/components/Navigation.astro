@@ -239,14 +239,14 @@ const referenceLinks: ReferenceLink[] = [
         const shouldShow = show === undefined ? !isOpen : show;
 
         if (shouldShow) {
-          document.body.style.overflow = "hidden";
+          document.body.classList.add("is-menu-open");
           menu.classList.remove("translate-x-full");
           overlay.classList.remove("opacity-0", "pointer-events-none");
           mobileBtn.classList.add("is-open");
           mobileBtn.setAttribute("aria-expanded", "true");
           isOpen = true;
         } else {
-          document.body.style.overflow = "";
+          document.body.classList.remove("is-menu-open");
           menu.classList.add("translate-x-full");
           overlay.classList.add("opacity-0", "pointer-events-none");
           mobileBtn.classList.remove("is-open");
