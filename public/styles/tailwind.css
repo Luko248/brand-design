@@ -490,6 +490,9 @@
   .h-\[40vh\] {
     height: 40vh;
   }
+  .h-\[calc\(100dvb-var\(--nav-height\)\)\] {
+    height: calc(100dvb - var(--nav-height));
+  }
   .h-\[calc\(100svb-var\(--nav-height\)\)\] {
     height: calc(100svb - var(--nav-height));
   }
@@ -2114,9 +2117,19 @@
       background-color: transparent;
     }
   }
+  .lg\:px-6 {
+    @media (width >= 64rem) {
+      padding-inline: var(--spacing-6);
+    }
+  }
   .lg\:px-8 {
     @media (width >= 64rem) {
       padding-inline: var(--spacing-8);
+    }
+  }
+  .lg\:py-3 {
+    @media (width >= 64rem) {
+      padding-block: var(--spacing-3);
     }
   }
   .lg\:py-24 {
@@ -2134,6 +2147,12 @@
     @media (width >= 64rem) {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
+    }
+  }
+  .lg\:text-base {
+    @media (width >= 64rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
   .lg\:text-white {
