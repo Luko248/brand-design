@@ -3,6 +3,8 @@ import { loadTranslations, getLocalizedPath } from "@/lib/i18n";
 import LanguageToggle from "./LanguageToggle.astro";
 import ChevronDownIcon from "./icons/ChevronDownIcon.astro";
 import IconButton from "./ui/IconButton.astro";
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
 
 export interface Props {
   lang: "cs" | "en";
@@ -65,7 +67,7 @@ const isReferenceActive = referenceLinks.some(
 <header
   id="main-header"
   class:list={[
-    "fixed top-0 w-full z-[100] transition-all duration-300 group/header",
+    "fixed top-0 w-full z-100 transition-all duration-300 group/header",
     isHomepage
       ? "text-foreground lg:text-white lg:group-[.is-scrolled]/header:text-foreground"
       : "text-foreground",
@@ -176,7 +178,7 @@ const isReferenceActive = referenceLinks.some(
         <div class="hidden lg:flex items-center gap-6">
           <LanguageToggle lang={lang} currentPath={currentPath} />
 
-          <div id="theme-toggle">
+          <div id="theme-toggle" class="cursor-pointer">
             <IconButton
               as="button"
               title={global.nav.themeToggle}
@@ -185,88 +187,41 @@ const isReferenceActive = referenceLinks.some(
                 ? "lg:hover:bg-foreground/10 lg:group-[.is-scrolled]/header:hover:bg-foreground/10"
                 : ""}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 block dark:hidden"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                ></path>
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 hidden dark:block"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                ></path>
-              </svg>
+              <MoonIcon class="w-5 h-5 block dark:hidden" />
+              <SunIcon class="w-5 h-5 hidden dark:block" />
             </IconButton>
           </div>
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="lg:hidden flex items-center gap-3">
-          <div id="theme-toggle-mobile">
+        <div class="lg:hidden flex items-center gap-1 h-full">
+          <div id="theme-toggle-mobile" class="flex items-center h-full">
             <IconButton as="button" title={global.nav.themeToggle} size="sm">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 block dark:hidden"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                ></path>
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 hidden dark:block"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                ></path>
-              </svg>
+              <MoonIcon class="w-5 h-5 block dark:hidden" />
+              <SunIcon class="w-5 h-5 hidden dark:block" />
             </IconButton>
           </div>
 
-          <div id="mobile-menu-btn">
-            <IconButton as="button" title={global.nav.openMenu} size="sm">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5"
+          <div id="mobile-menu-btn" class="flex items-center h-full">
+            <IconButton
+              as="button"
+              title={global.nav.openMenu}
+              size="sm"
+              class="group"
+            >
+              <div
+                class="flex flex-col gap-[5px] w-5 h-5 justify-center overflow-hidden"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-              </svg>
+                <span
+                  class="w-5 h-0.5 bg-current transition-all duration-300 origin-center group-[.is-open]:rotate-45 group-[.is-open]:translate-y-[7px]"
+                ></span>
+                <span
+                  class="w-5 h-0.5 bg-current transition-all duration-300 group-[.is-open]:translate-x-full group-[.is-open]:opacity-0"
+                ></span>
+                <span
+                  class="w-5 h-0.5 bg-current transition-all duration-300 origin-center group-[.is-open]:-rotate-45 group-[.is-open]:-translate-y-[7px]"
+                ></span>
+              </div>
             </IconButton>
           </div>
         </div>
@@ -277,7 +232,7 @@ const isReferenceActive = referenceLinks.some(
   <!-- Mobile Menu Overlay -->
   <div
     id="mobile-menu-overlay"
-    class="fixed inset-0 bg-black/40 backdrop-blur-md z-105 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+    class="fixed inset-0 top-(--nav-height) bg-black/40 backdrop-blur-md z-105 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
     aria-hidden="true"
   >
   </div>
@@ -285,44 +240,9 @@ const isReferenceActive = referenceLinks.some(
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="fixed inset-0 w-full h-dvh bg-background z-200 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col"
+    class="fixed top-(--nav-height) left-0 w-full h-[calc(100svb-var(--nav-height))] bg-background z-200 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col border-t border-white/10 dark:border-white/5 pb-safe"
   >
-    <!-- Header with Logo and Close Button -->
-    <div
-      class="flex items-center justify-between p-4 border-b border-outline/20"
-    >
-      <a href={homeUrl} rel="home" class="flex-shrink-0">
-        <img
-          src={import.meta.env.BASE_URL + "images/logos/logo-black.svg"}
-          alt="Brand Design"
-          class="h-7 w-auto transition-all duration-300 dark:invert"
-        />
-      </a>
-      <div id="close-menu-btn">
-        <IconButton
-          as="button"
-          title={global.nav.closeMenu}
-          size="sm"
-          class="text-foreground hover:text-white"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </IconButton>
-      </div>
-    </div>
-
-    <nav class="flex-1 overflow-y-auto py-6 px-6 flex flex-col gap-6">
+    <nav class="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6">
       <div class="space-y-4">
         <a
           href={homeUrl}
@@ -346,8 +266,9 @@ const isReferenceActive = referenceLinks.some(
               isReferenceActive ? "text-primary is-active" : "text-foreground",
             ]}
             aria-current={isReferenceActive ? "true" : undefined}
-            >{global.nav.references}</a
           >
+            {global.nav.references}
+          </a>
           <div class="flex flex-col gap-5 pl-2 mt-2">
             {
               referenceLinks.map((link) => (
@@ -498,39 +419,41 @@ const isReferenceActive = referenceLinks.some(
     };
 
     const initMobileMenu = () => {
-      const mobileBtn = document.querySelector("#mobile-menu-btn button");
-      const closeBtn = document.querySelector("#close-menu-btn button");
+      const mobileBtnWrapper = document.getElementById("mobile-menu-btn");
+      const mobileBtn = mobileBtnWrapper?.querySelector("button");
       const overlay = document.getElementById("mobile-menu-overlay");
       const menu = document.getElementById("mobile-menu");
       const links = menu?.querySelectorAll("a");
 
-      if (!mobileBtn || !closeBtn || !overlay || !menu) return;
+      if (!mobileBtn || !overlay || !menu) return;
 
-      let scrollPosition = 0;
+      let isOpen = false;
 
       const toggleMenu = (show) => {
-        if (show) {
-          scrollPosition = window.scrollY;
-          document.body.style.position = "fixed";
-          document.body.style.top = `-${scrollPosition}px`;
-          document.body.style.width = "100%";
+        const shouldShow = show === undefined ? !isOpen : show;
+
+        if (shouldShow) {
+          document.body.style.overflow = "hidden";
 
           menu.classList.remove("translate-x-full");
           overlay.classList.remove("opacity-0", "pointer-events-none");
+          mobileBtn.classList.add("is-open");
+          mobileBtn.setAttribute("aria-expanded", "true");
+
+          isOpen = true;
         } else {
+          document.body.style.overflow = "";
+
           menu.classList.add("translate-x-full");
           overlay.classList.add("opacity-0", "pointer-events-none");
+          mobileBtn.classList.remove("is-open");
+          mobileBtn.setAttribute("aria-expanded", "false");
 
-          document.body.style.position = "";
-          document.body.style.top = "";
-          document.body.style.width = "";
-
-          window.scrollTo(0, scrollPosition);
+          isOpen = false;
         }
       };
 
-      mobileBtn.addEventListener("click", () => toggleMenu(true));
-      closeBtn.addEventListener("click", () => toggleMenu(false));
+      mobileBtn.addEventListener("click", () => toggleMenu());
       overlay.addEventListener("click", () => toggleMenu(false));
       links?.forEach((link) =>
         link.addEventListener("click", () => toggleMenu(false))
