@@ -37,7 +37,7 @@ const { translations } = Astro.props;
 
     <!-- 4. Gradient Overlays for depth -->
     <div
-      class="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/90 dark:from-black/80 dark:to-black/90"
+      class="absolute inset-0 bg-linear-to-b from-white/80 via-transparent to-white/90 dark:from-black/80 dark:to-black/90"
     >
     </div>
     <div
@@ -49,7 +49,7 @@ const { translations } = Astro.props;
   <!-- Content -->
   <div class="relative z-10 w-full">
     <Container class="text-center sm:px-6 lg:px-8">
-      <div class="space-y-10 md:space-y-14">
+      <div class="space-y-6 md:space-y-10 lg:space-y-12">
         <!-- Logo -->
         <div class="flex justify-center animate-fade-in-down">
           <img
@@ -65,7 +65,7 @@ const { translations } = Astro.props;
         </div>
 
         <!-- Text -->
-        <div class="space-y-8 max-w-4xl mx-auto">
+        <div class="space-y-6 md:space-y-8 max-w-4xl mx-auto">
           <h1 class="sr-only">{translations.title}</h1>
           <div
             class="font-display font-light text-2xl md:text-4xl lg:text-5xl 2xl:text-6xl text-foreground leading-relaxed tracking-wide animate-fade-in-up delay-300 drop-shadow-xl"
@@ -75,7 +75,7 @@ const { translations } = Astro.props;
 
         <!-- Buttons -->
         <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 animate-fade-in-up delay-500 pt-6 w-full mx-auto"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 animate-fade-in-up delay-500 pt-4 md:pt-6 w-full mx-auto"
         >
           <Button
             as="a"
