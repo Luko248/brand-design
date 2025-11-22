@@ -283,10 +283,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-iOBRJbwTo4: auto;
-      --toolwind-toggle-YoQcrb4y7V: transparent;
-      --toolwind-toggle-6AFXsidaV3: inherit;
-      --toolwind-toggle-zCJ0tpIwsm: 0px;
+      --toolwind-toggle-fesZo7f4VU: auto;
+      --toolwind-toggle-1ms7P03X9p: transparent;
+      --toolwind-toggle-dpA1HTTgwJ: inherit;
+      --toolwind-toggle-DqKZ7B8iDs: 0px;
     }
   }
   .absolute {
@@ -490,11 +490,8 @@
   .h-\[40vh\] {
     height: 40vh;
   }
-  .h-\[calc\(100dvb-var\(--nav-height\)\)\] {
-    height: calc(100dvb - var(--nav-height));
-  }
-  .h-\[calc\(100svb-var\(--nav-height\)\)\] {
-    height: calc(100svb - var(--nav-height));
+  .h-\[calc\(100dvh-var\(--nav-height\)\)\] {
+    height: calc(100dvh - var(--nav-height));
   }
   .h-auto {
     height: auto;
@@ -2791,10 +2788,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-iOBRJbwTo4, 0px);
-    background-color: var(--toolwind-toggle-YoQcrb4y7V, canvas);
-    color: var(--toolwind-toggle-6AFXsidaV3, canvastext);
-    margin: var(--toolwind-toggle-zCJ0tpIwsm, auto);
+    inset: var(--toolwind-toggle-fesZo7f4VU, 0px);
+    background-color: var(--toolwind-toggle-1ms7P03X9p, canvas);
+    color: var(--toolwind-toggle-dpA1HTTgwJ, canvastext);
+    margin: var(--toolwind-toggle-DqKZ7B8iDs, auto);
   }
 }
 @property --tw-translate-x {
