@@ -15,8 +15,7 @@ export interface Props {
 const { lang } = Astro.props;
 const translations = await loadTranslations(lang, "pages/expositions");
 
-const { images: expositionImages, resources: expositionResources } =
-  await getExpositionsCloudinaryData();
+const { images: expositionImages } = await getExpositionsCloudinaryData();
 ---
 
 <BaseLayout
@@ -85,21 +84,6 @@ const { images: expositionImages, resources: expositionResources } =
       </div>
     </section>
   </main>
-
-  <script is:inline define:vars={{ expositionResources }}>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (Array.isArray(expositionResources) && expositionResources.length) {
-        console.log(
-          "Cloudinary resources loaded for expositions gallery:",
-          expositionResources
-        );
-      } else {
-        console.warn(
-          "Cloudinary: No resources returned for expositions gallery."
-        );
-      }
-    });
-  </script>
 
   <Footer lang={lang} />
 </BaseLayout>

@@ -15,8 +15,7 @@ export interface Props {
 const { lang } = Astro.props;
 const translations = await loadTranslations(lang, "pages/sticks");
 
-const { images: sticksImages, resources: sticksResources } =
-  await getStickersCloudinaryData();
+const { images: sticksImages } = await getStickersCloudinaryData();
 ---
 
 <BaseLayout
@@ -82,19 +81,6 @@ const { images: sticksImages, resources: sticksResources } =
       </div>
     </section>
   </main>
-
-  <script is:inline define:vars={{ sticksResources }}>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (Array.isArray(sticksResources) && sticksResources.length) {
-        console.log(
-          "Cloudinary resources loaded for sticks gallery:",
-          sticksResources
-        );
-      } else {
-        console.warn("Cloudinary: No resources returned for sticks gallery.");
-      }
-    });
-  </script>
 
   <Footer lang={lang} />
 </BaseLayout>
