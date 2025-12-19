@@ -4,8 +4,6 @@ type GoogleMapsProps = {
   class?: string;
 };
 
-import mapScript from "@/scripts/google-maps.ts?url";
-
 const { id = "BrandDesignMap", class: className = "" } =
   Astro.props as GoogleMapsProps;
 
@@ -32,4 +30,5 @@ const mapId = "bfd60e560367f0091f02eb99";
 >
 </div>
 
-<script type="module" src={mapScript}></script>
+<!-- Must be a literal string for Astro/Vite to process and transpile TS to JS -->
+<script src="../scripts/google-maps.ts"></script>

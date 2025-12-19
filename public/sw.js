@@ -1,6 +1,5 @@
-const CACHE_NAME = "brand-design-v1";
+const CACHE_NAME = "brand-design-v2";
 const ASSETS_TO_CACHE = [
-  "./",
   "./manifest.json",
   "./images/favicons/favicon.svg",
   "./images/favicons/favicon.ico",
@@ -34,16 +33,26 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch event - cache first for assets, network first for documents
+// Fetch event - network-first for navigations, cache-first for assets
 self.addEventListener("fetch", (event) => {
   // Skip cross-origin requests
   if (!event.request.url.startsWith(self.location.origin)) return;
 
+  const accept = event.request.headers.get("accept") || "";
+  const isNavigation = event.request.mode === "navigate" || accept.includes("text/html");
+
+  if (isNavigation) {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match(event.request);
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
+      if (cachedResponse) return cachedResponse;
 
       return fetch(event.request).then((response) => {
         // Don't cache if not a valid response
@@ -56,11 +65,7 @@ self.addEventListener("fetch", (event) => {
 
         caches.open(CACHE_NAME).then((cache) => {
           // Only cache static assets, images, css, js
-          if (
-            event.request.url.match(
-              /\.(js|css|png|jpg|jpeg|svg|ico|json|woff2)$/
-            )
-          ) {
+          if (event.request.url.match(/\.(js|css|png|jpg|jpeg|svg|ico|json|woff2)$/)) {
             cache.put(event.request, responseToCache);
           }
         });
