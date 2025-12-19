@@ -1,4 +1,6 @@
 ---
+import mapScript from "../scripts/google-maps.ts?url";
+
 const { id = "BrandDesignMap", class: className = "" } = Astro.props;
 const FALLBACK_API_KEY = "AIzaSyC-Bvp8gkuUa289LYVvIcqx4pXNdmwQrTM";
 
@@ -28,6 +30,4 @@ const mapId = "bfd60e560367f0091f02eb99";
 >
 </div>
 
-<script type="module">
-  import "@/scripts/google-maps.ts";
-</script>
+<script is:inline type="module" src={mapScript}></script>
