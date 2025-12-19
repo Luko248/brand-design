@@ -4,11 +4,11 @@ type GoogleMapsProps = {
   class?: string;
 };
 
+import mapScript from "@/scripts/google-maps.ts?url";
+
 const { id = "BrandDesignMap", class: className = "" } =
   Astro.props as GoogleMapsProps;
 const FALLBACK_API_KEY = "AIzaSyC-Bvp8gkuUa289LYVvIcqx4pXNdmwQrTM";
-const mapScript = new URL("../scripts/google-maps.ts", import.meta.url)
-  .pathname;
 
 const apiKey =
   import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
