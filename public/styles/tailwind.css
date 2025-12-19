@@ -282,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-HNzQNl9l36: auto;
-      --toolwind-toggle-d6D734j0Xg: transparent;
-      --toolwind-toggle-HN7rFZE8y1: inherit;
-      --toolwind-toggle-ltu6tWwRlP: 0px;
+      --toolwind-toggle-Ypk7OpNEVV: auto;
+      --toolwind-toggle-zXKvDsWSYL: transparent;
+      --toolwind-toggle-UYIV7DzOXH: inherit;
+      --toolwind-toggle-0qrM2mQo6S: 0px;
     }
   }
   .absolute {
@@ -2832,10 +2832,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-HNzQNl9l36, 0px);
-    background-color: var(--toolwind-toggle-d6D734j0Xg, canvas);
-    color: var(--toolwind-toggle-HN7rFZE8y1, canvastext);
-    margin: var(--toolwind-toggle-ltu6tWwRlP, auto);
+    inset: var(--toolwind-toggle-Ypk7OpNEVV, 0px);
+    background-color: var(--toolwind-toggle-zXKvDsWSYL, canvas);
+    color: var(--toolwind-toggle-UYIV7DzOXH, canvastext);
+    margin: var(--toolwind-toggle-0qrM2mQo6S, auto);
   }
 }
 @property --tw-translate-x {
