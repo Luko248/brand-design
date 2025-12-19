@@ -1,8 +1,14 @@
 ---
-import mapScript from "../scripts/google-maps.ts?url";
+type GoogleMapsProps = {
+  id?: string;
+  class?: string;
+};
 
-const { id = "BrandDesignMap", class: className = "" } = Astro.props;
+const { id = "BrandDesignMap", class: className = "" } =
+  Astro.props as GoogleMapsProps;
 const FALLBACK_API_KEY = "AIzaSyC-Bvp8gkuUa289LYVvIcqx4pXNdmwQrTM";
+const mapScript = new URL("../scripts/google-maps.ts", import.meta.url)
+  .pathname;
 
 const apiKey =
   import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
@@ -30,4 +36,4 @@ const mapId = "bfd60e560367f0091f02eb99";
 >
 </div>
 
-<script is:inline type="module" src={mapScript}></script>
+<script type="module" src={mapScript}></script>
