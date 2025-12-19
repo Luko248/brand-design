@@ -8,12 +8,8 @@ import mapScript from "@/scripts/google-maps.ts?url";
 
 const { id = "BrandDesignMap", class: className = "" } =
   Astro.props as GoogleMapsProps;
-const FALLBACK_API_KEY = "AIzaSyC-Bvp8gkuUa289LYVvIcqx4pXNdmwQrTM";
 
-const apiKey =
-  import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY ||
-  import.meta.env.GOOGLE_MAPS_API_KEY ||
-  FALLBACK_API_KEY;
+const apiKey = "AIzaSyC-Bvp8gkuUa289LYVvIcqx4pXNdmwQrTM";
 const addressLines = ["Pražská 1602/7", "678 01 Blansko 1"];
 const addressString = addressLines.join(", ");
 const fallbackPosition = { lat: 49.363, lng: 16.6445 };
