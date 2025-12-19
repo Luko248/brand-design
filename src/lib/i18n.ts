@@ -77,8 +77,8 @@ export const getTranslation = (translations: any, key: string): string => {
  */
 export const detectLocale = (url: URL): Locale => {
   const pathname = url.pathname;
-  // Check for /brand-design/en or /en patterns
-  if (pathname.includes("/en")) {
+  // Check for /en or /en/ prefix
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
     return "en";
   }
   const lang = url.searchParams.get("lang");
@@ -91,8 +91,8 @@ export const detectLocale = (url: URL): Locale => {
 /**
  * Get localized path
  * Converts path to localized path:
- * - If locale is 'cs': return /brand-design/path
- * - If locale is 'en': return /brand-design/en/path
+ * - If locale is 'cs': return /path
+ * - If locale is 'en': return /en/path
  * Automatically prepends Astro's base path
  */
 export const getLocalizedPath = (path: string, locale: Locale): string => {

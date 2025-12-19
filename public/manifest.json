@@ -1,6 +1,8 @@
 {
   "name": "brand-design.cz",
   "short_name": "Brand DESIGN",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "images/favicons/web-app-manifest-192x192.png",
