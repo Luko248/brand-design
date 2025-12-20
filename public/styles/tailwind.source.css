@@ -186,18 +186,18 @@
     }
   }
 
-  /* Sticks Override */
-  .bg-parallax-sticks {
+  /* Stickers Override */
+  .bg-parallax-stickers {
     --bg-parallax-image: url("../images/backgrounds/stickers.avif");
     --bg-parallax-position: center bottom;
   }
   @media (width <= 768px) {
-    .bg-parallax-sticks {
+    .bg-parallax-stickers {
       --bg-parallax-image: url("../images/backgrounds/stickers_768.avif");
     }
   }
   @media (width <= 560px) {
-    .bg-parallax-sticks {
+    .bg-parallax-stickers {
       --bg-parallax-image: url("../images/backgrounds/stickers_560.avif");
     }
   }

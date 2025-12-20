@@ -4,8 +4,8 @@ import indexCs from "../locales/pages/index.cs.json";
 import indexEn from "../locales/pages/index.en.json";
 import expositionsCs from "../locales/pages/expositions.cs.json";
 import expositionsEn from "../locales/pages/expositions.en.json";
-import sticksCs from "../locales/pages/sticks.cs.json";
-import sticksEn from "../locales/pages/sticks.en.json";
+import stickersCs from "../locales/pages/stickers.cs.json";
+import stickersEn from "../locales/pages/stickers.en.json";
 import printingCs from "../locales/pages/printing.cs.json";
 import printingEn from "../locales/pages/printing.en.json";
 
@@ -24,9 +24,9 @@ const translations: Record<string, Record<Locale, any>> = {
     cs: expositionsCs,
     en: expositionsEn,
   },
-  "pages/sticks": {
-    cs: sticksCs,
-    en: sticksEn,
+  "pages/stickers": {
+    cs: stickersCs,
+    en: stickersEn,
   },
   "pages/printing": {
     cs: printingCs,

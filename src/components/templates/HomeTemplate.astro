@@ -30,7 +30,7 @@ const translations = { ...globalTranslations, ...pageTranslations };
 // Fetch Cloudinary Data
 const printingData = await getPrintingCloudinaryData();
 const expositionsData = await getExpositionsCloudinaryData();
-const sticksData = await getStickersCloudinaryData();
+const stickersData = await getStickersCloudinaryData();
 
 const findImage = (data: CloudinaryGalleryData, groupId: string) =>
   data.images.find((img) => img.groupId === groupId);
@@ -49,10 +49,10 @@ const selectedImages = [
     titleKey: "expositions",
   },
   {
-    data: findImage(sticksData, "stickers-kangaroo"),
+    data: findImage(stickersData, "stickers-kangaroo"),
     fallbackImage: import.meta.env.BASE_URL + "images/cards/stickers.avif",
-    page: "/sticks",
-    titleKey: "sticks",
+    page: "/stickers",
+    titleKey: "stickers",
   },
 ];
 
@@ -84,9 +84,9 @@ const referenceCards = [
     ...translations.services.expositions,
   },
   {
-    href: getLocalizedPath("/sticks", lang),
+    href: getLocalizedPath("/stickers", lang),
     image: import.meta.env.BASE_URL + "images/cards/stickers.avif",
-    ...translations.services.sticks,
+    ...translations.services.stickers,
   },
 ];
 ---

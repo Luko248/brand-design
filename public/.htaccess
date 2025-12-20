@@ -34,6 +34,11 @@ RewriteRule ^subdom/[^/]+/(.+[^/])$ /$1/ [R]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Legacy redirects
+RewriteRule ^sticks/?$ /stickers/ [R=301,L]
+RewriteRule ^en/sticks/?$ /en/stickers/ [R=301,L]
+
+
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^ /%1 [NC,L,R]
 

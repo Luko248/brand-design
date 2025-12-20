@@ -13,9 +13,9 @@ export interface Props {
 }
 
 const { lang } = Astro.props;
-const translations = await loadTranslations(lang, "pages/sticks");
+const translations = await loadTranslations(lang, "pages/stickers");
 
-const { images: sticksImages } = await getStickersCloudinaryData();
+const { images: stickersImages } = await getStickersCloudinaryData();
 ---
 
 <BaseLayout
@@ -23,10 +23,10 @@ const { images: sticksImages } = await getStickersCloudinaryData();
   title={translations.title}
   description={translations.description}
 >
-  <Navigation lang={lang} currentPath="/sticks" isHomepage={false} />
+  <Navigation lang={lang} currentPath="/stickers" isHomepage={false} />
 
   <header
-    class="bg-parallax bg-parallax-sticks relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden"
+    class="bg-parallax bg-parallax-stickers relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden"
   >
     <div
       class="page-hero__content relative z-10 text-center px-4 max-w-4xl mx-auto"
@@ -63,8 +63,8 @@ const { images: sticksImages } = await getStickersCloudinaryData();
         </div>
 
         {
-          sticksImages && sticksImages.length > 0 ? (
-            <Gallery images={sticksImages} galleryId="sticks-gallery" />
+          stickersImages && stickersImages.length > 0 ? (
+            <Gallery images={stickersImages} galleryId="stickers-gallery" />
           ) : (
             <div class="flex flex-col items-center gap-4 text-center text-muted">
               <div class="text-primary">
