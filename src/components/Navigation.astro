@@ -18,7 +18,7 @@ const { lang, currentPath = "/", isHomepage = false } = Astro.props;
 const global = await loadTranslations(lang, "global");
 const indexTranslations = await loadTranslations(lang, "pages/index");
 
-const homeUrl = getLocalizedPath("/#home", lang);
+const homeUrl = getLocalizedPath("/", lang);
 const aboutUrl = getLocalizedPath("/#about", lang);
 const referencesUrl = getLocalizedPath("/#references", lang);
 const contactUrl = getLocalizedPath("/#contact", lang);
