@@ -282,10 +282,10 @@
     &:where(&) {
       position: absolute;
       view-transition-name: --tw-anchor-view-transition-322p3a19362t2u2t362t322r2t37;
-      --toolwind-toggle-0ypnhFsxKN: auto;
-      --toolwind-toggle-HrDwSt0y7B: transparent;
-      --toolwind-toggle-vqKOL7DslP: inherit;
-      --toolwind-toggle-WzLVLyZdiq: 0px;
+      --toolwind-toggle-8L7Gpw2R8d: auto;
+      --toolwind-toggle-gMJF4H9Y9O: transparent;
+      --toolwind-toggle-Ace6IdfrPG: inherit;
+      --toolwind-toggle-nMzsD6x9JH: 0px;
     }
   }
   .absolute {
@@ -431,9 +431,6 @@
   }
   .block {
     display: block;
-  }
-  .contents {
-    display: contents;
   }
   .flex {
     display: flex;
@@ -2832,10 +2829,10 @@
 }
 @layer base {
   [popover] {
-    inset: var(--toolwind-toggle-0ypnhFsxKN, 0px);
-    background-color: var(--toolwind-toggle-HrDwSt0y7B, canvas);
-    color: var(--toolwind-toggle-vqKOL7DslP, canvastext);
-    margin: var(--toolwind-toggle-WzLVLyZdiq, auto);
+    inset: var(--toolwind-toggle-8L7Gpw2R8d, 0px);
+    background-color: var(--toolwind-toggle-gMJF4H9Y9O, canvas);
+    color: var(--toolwind-toggle-Ace6IdfrPG, canvastext);
+    margin: var(--toolwind-toggle-nMzsD6x9JH, auto);
   }
 }
 @property --tw-translate-x {
