@@ -29,7 +29,7 @@
     "dev": "run-p css:dev astro:dev",
     "start": "bun run dev",
     "build:cloudinary": "bun scripts/build-cloudinary-galleries.mjs",
-    "build": "bun run css:build && astro check && astro build",
+    "build": "bun run build:cloudinary && bun run css:build && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "astro:dev": "astro dev",
