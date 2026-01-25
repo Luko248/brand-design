@@ -27,9 +27,9 @@
   },
   "scripts": {
     "dev": "run-p css:dev astro:dev",
-    "start": "npm run dev",
-    "build:cloudinary": "node scripts/build-cloudinary-galleries.mjs",
-    "build": "npm run css:build && astro check && astro build",
+    "start": "bun run dev",
+    "build:cloudinary": "bun scripts/build-cloudinary-galleries.mjs",
+    "build": "bun run css:build && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "astro:dev": "astro dev",

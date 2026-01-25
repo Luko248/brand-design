@@ -1,3 +1,4 @@
 name = "brand-design"
 pages_build_output_dir = "./dist"
+command = "bun run build"
 compatibility_date = "2024-09-23"
